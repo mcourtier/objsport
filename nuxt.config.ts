@@ -1,28 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/ui'
-  ],
-
-  devtools: {
-    enabled: true
+  modules: ["@nuxt/content", "nuxt-studio"],
+  devtools: { enabled: true },
+  future: {
+    compatibilityVersion: 4,
   },
+  studio: {
+    // Studio admin route (default: '/_studio')
+    route: "/_studio",
 
-  css: ['~/assets/css/main.css'],
-
-  routeRules: {
-    '/': { prerender: true }
+    // Git repository configuration (owner and repo are required)
+    repository: {
+      provider: "github", // 'github' or 'gitlab'
+      owner: "mcourtier", // your GitHub/GitLab username or organization
+      repo: "objsport", // your repository name
+      branch: "main", // the branch to commit to (default: main)
+    },
   },
-
-  compatibilityDate: '2025-01-15',
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  }
-})
+  compatibilityDate: "2024-04-03",
+});
