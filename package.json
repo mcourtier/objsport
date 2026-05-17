@@ -2,6 +2,7 @@
   "name": "objsport",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.33.4",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -17,9 +18,18 @@
     "nuxt": "^4.4.4",
     "playwright-core": "^1.60.0"
   },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  },
+  "overrides": {
+    "tailwindcss": "3.4.19"
+  },
   "pnpm": {
     "onlyBuiltDependencies": [
       "better-sqlite3"
-    ]
+    ],
+    "overrides": {
+      "tailwindcss": "3.4.19"
+    }
   }
 }
