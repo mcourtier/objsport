@@ -1,54 +1,56 @@
 <template>
   <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
       <h1 class="font-display text-4xl font-bold uppercase tracking-wide text-text-primary md:text-5xl">
         L’équipe
       </h1>
       <p class="mt-6 max-w-prose text-lg text-text-secondary">
-        Rencontrez les professionnels Objectif Sport.
+        {{ intro }}
       </p>
 
-      <ul class="mt-12 space-y-8">
+      <ul
+        v-if="profiles?.length"
+        class="mt-12 space-y-12"
+      >
         <li
-          v-for="profile in teamProfiles"
-          :key="profile.id"
+          v-for="profile in profiles"
+          :key="profile.slug"
         >
-          <article class="border border-border-subtle bg-bg-elevated p-8 md:p-10">
-            <h2 class="font-display text-2xl font-bold uppercase tracking-wide text-text-primary">
-              {{ profile.name }}
-            </h2>
-            <p
-              v-if="profile.role"
-              class="mt-2 font-display text-sm font-semibold uppercase tracking-button text-brand-red"
-            >
-              {{ profile.role }}
-            </p>
-            <p class="mt-4 text-text-secondary">
-              Contenu à venir.
-            </p>
-          </article>
+          <TeamMemberProfile :profile="profile" />
         </li>
       </ul>
+
+      <p
+        v-else
+        class="mt-12 text-text-muted"
+      >
+        Aucun profil disponible pour le moment.
+      </p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-interface TeamProfile {
-  id: string
-  name: string
-  role?: string
+interface EquipePageContent {
+  title?: string
+  description?: string
+  intro?: string
 }
 
-const teamProfiles: TeamProfile[] = [
-  {
-    id: 'pierre-vespignani',
-    name: 'Pierre Vespignani',
-  },
-]
+const { data: page } = await useAsyncData('equipe-page', () =>
+  queryCollection('content').path('/equipe').first(),
+)
+
+const { data: profiles } = await useTeamProfiles()
+
+const pageContent = computed(() => page.value as EquipePageContent | null)
+
+const intro = computed(
+  () => pageContent.value?.intro ?? 'Rencontrez les professionnels Objectif Sport.',
+)
 
 useSeoMeta({
-  title: 'L’équipe — Objectif Sport',
-  description: 'Rencontrez les professionnels Objectif Sport.',
+  title: () => pageContent.value?.title ?? 'L’équipe — Objectif Sport',
+  description: () => pageContent.value?.description,
 })
 </script>
