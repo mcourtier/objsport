@@ -1,0 +1,25 @@
+<template>
+  <ContentRenderer
+    v-if="page"
+    :value="page"
+  />
+</template>
+
+<script setup lang="ts">
+const { data: page } = await useAsyncData('contact', () =>
+  queryCollection('content').path('/contact').first(),
+)
+
+if (!page.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page introuvable',
+    fatal: true,
+  })
+}
+
+useSeoMeta({
+  title: () => page.value?.title,
+  description: () => page.value?.description,
+})
+</script>

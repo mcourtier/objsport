@@ -3,6 +3,7 @@ import { stubRoutes } from './app/utils/siteRoutes'
 
 const prerenderedPaths = [
   '/',
+  '/contact',
   '/equipe',
   ...Object.keys(stubRoutes),
 ]

@@ -49,10 +49,6 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
     title: 'Le Studio',
     description: 'Cours collectifs et coaching en petit groupe.',
   },
-  '/contact': {
-    title: 'Contact',
-    description: 'Écrivez-nous pour toute question ou demande d’information.',
-  },
   '/audit': {
     title: 'Demande d’audit',
     description: 'Formulaire dédié aux demandes d’audit entreprise.',
