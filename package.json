@@ -1,0 +1,25 @@
+{
+  "name": "objsport",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.13.0",
+    "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/seo": "5.1.3",
+    "@nuxtjs/tailwindcss": "6.14.0",
+    "better-sqlite3": "^12.5.0",
+    "nuxt": "^4.4.4",
+    "playwright-core": "^1.60.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
+  }
+}

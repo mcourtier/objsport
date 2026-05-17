@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply min-h-screen bg-bg-base font-body text-text-secondary;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-white;
+  }
+}
