@@ -4,20 +4,31 @@
     aria-labelledby="pillars-heading"
   >
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-      <h2
-        id="pillars-heading"
-        class="sr-only"
-      >
-        Nos espaces
-      </h2>
-      <ul class="grid gap-10 sm:grid-cols-3">
+      <header class="text-center">
+        <h2
+          id="pillars-heading"
+          class="font-display text-2xl font-bold uppercase tracking-wide text-text-primary md:text-3xl"
+        >
+          {{ heading }}
+        </h2>
+        <p
+          v-if="intro"
+          class="mx-auto mt-3 max-w-2xl text-text-secondary"
+        >
+          {{ intro }}
+        </p>
+      </header>
+
+      <ul class="mt-12 grid gap-8 sm:grid-cols-3">
         <li
           v-for="pillar in pillars"
           :key="pillar.name"
-          class="text-center"
+          class="flex flex-col border-t-4 bg-bg-card p-6 text-center"
+          :class="pillarBorderClass(pillar.accent)"
         >
           <div
-            class="mx-auto flex h-16 w-16 items-center justify-center border border-border-subtle text-text-primary"
+            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full"
+            :class="pillarIconSurfaceClass(pillar.accent)"
             aria-hidden="true"
           >
             <svg
@@ -26,30 +37,16 @@
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
-              class="h-8 w-8"
+              class="h-9 w-9"
+              :class="pillarIconColorClass(pillar.accent)"
             >
-              <path
-                v-if="pillar.name === 'Le Gym'"
-                d="M4 10h16M6 14h12M8 6v12M16 6v12"
-              />
-              <path
-                v-else-if="pillar.name === 'Le Lab'"
-                d="M9 3v2M15 3v2M4 9h16M6 19h12a2 2 0 002-2V9H4v8a2 2 0 002 2z"
-              />
-              <template v-else>
-                <circle
-                  cx="12"
-                  cy="8"
-                  r="3"
-                />
-                <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" />
-              </template>
+              <path :d="pillarIconPath(pillar.accent)" />
             </svg>
           </div>
-          <p class="mt-4 font-display text-sm font-semibold uppercase tracking-button text-text-primary">
+          <p class="mt-5 font-display text-lg font-bold uppercase tracking-button text-text-primary">
             {{ pillar.name }}
           </p>
-          <p class="mt-2 text-sm text-text-muted">
+          <p class="mt-2 flex-1 text-sm text-text-muted">
             {{ pillar.description }}
           </p>
         </li>
@@ -59,13 +56,51 @@
 </template>
 
 <script setup lang="ts">
-import type { HomePillarsContent } from '~/types/homepage'
+import type { HomePillarsContent, PillarAccent } from '~/types/homepage'
 
-withDefaults(defineProps<HomePillarsContent>(), {
+withDefaults(defineProps<HomePillarsContent & { heading?: string, intro?: string }>(), {
+  heading: 'La performance professionnelle',
+  intro: 'Trois espaces complémentaires pour prévenir, optimiser et performer.',
   pillars: () => [
-    { name: 'Le Gym', description: 'Préparation physique et musculation' },
-    { name: 'Le Lab', description: 'Tests et analyse de performance' },
-    { name: 'Le Studio', description: 'Cours collectifs et coaching' },
+    { name: 'Le Gym', description: 'Préparation physique et musculation', accent: 'gym' },
+    { name: 'Le Lab', description: 'Tests et analyse de performance', accent: 'lab' },
+    { name: 'Le Studio', description: 'Cours collectifs et coaching', accent: 'studio' },
   ],
 })
+
+function pillarBorderClass(accent: PillarAccent) {
+  const map: Record<PillarAccent, string> = {
+    gym: 'border-pillar-gym',
+    lab: 'border-pillar-lab',
+    studio: 'border-pillar-studio',
+  }
+  return map[accent]
+}
+
+function pillarIconSurfaceClass(accent: PillarAccent) {
+  const map: Record<PillarAccent, string> = {
+    gym: 'bg-pillar-gym/15 ring-2 ring-pillar-gym',
+    lab: 'bg-pillar-lab/15 ring-2 ring-pillar-lab',
+    studio: 'bg-pillar-studio/15 ring-2 ring-pillar-studio',
+  }
+  return map[accent]
+}
+
+function pillarIconColorClass(accent: PillarAccent) {
+  const map: Record<PillarAccent, string> = {
+    gym: 'text-pillar-gym',
+    lab: 'text-pillar-lab',
+    studio: 'text-pillar-studio',
+  }
+  return map[accent]
+}
+
+function pillarIconPath(accent: PillarAccent) {
+  const paths: Record<PillarAccent, string> = {
+    gym: 'M6 4h12v2H6zm2 4h8v12H8zm2 2v8h4v-8z',
+    lab: 'M9 3v2M15 3v2M5 9h14v10H5zM8 12h8M10 15h4',
+    studio: 'M8 10a4 4 0 118 0M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6',
+  }
+  return paths[accent]
+}
 </script>

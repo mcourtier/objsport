@@ -17,10 +17,6 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
     title: 'Conception',
     description: 'Conception de parcours et d’espaces dédiés au bien-être.',
   },
-  '/club': {
-    title: 'Club',
-    description: 'Accompagnement des clubs sportifs sur site ou à domicile.',
-  },
   '/club/monitoring': {
     title: 'Monitoring',
     description: 'Suivi et analyse de la performance des athlètes.',
@@ -32,10 +28,6 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
   '/club/staffing': {
     title: 'Staffing',
     description: 'Mise à disposition de professionnels qualifiés.',
-  },
-  '/sportif': {
-    title: 'Sportif',
-    description: 'Coaching, espaces et programmes pour les athlètes.',
   },
   '/sportif/le-gym': {
     title: 'Le Gym',

@@ -5,9 +5,10 @@ description: Objectif Sport accompagne entreprises, clubs sportifs et sportifs. 
 
 ::home-hero
 ---
+tagline: Santé • Performance • Résultats
 eyebrow: Sur site ou à domicile
-titleBefore: Atteignez vos
-titleHighlight: objectifs
+titleBefore: 'Un objectif commun : votre'
+titleHighlight: performance
 description: Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.
 primaryCtaLabel: Entreprise
 primaryCtaTo: /entreprise
@@ -42,22 +43,27 @@ blocks:
 
 ::home-pillars
 ---
+heading: La performance professionnelle
+intro: Trois espaces complémentaires pour prévenir, optimiser et performer.
 pillars:
   - name: Le Gym
     description: Préparation physique et musculation
+    accent: gym
   - name: Le Lab
     description: Tests et analyse de performance
+    accent: lab
   - name: Le Studio
     description: Cours collectifs et coaching
+    accent: studio
 ---
 ::
 
 ::home-eztm-block
 ---
-eyebrow: Application mobile
-titleBefore: Téléchargez
+eyebrow: Plateforme digitale
+titleBefore: Découvrez
 titleHighlight: EZTM
-description: L'application EZTM arrive bientôt sur l'App Store et Google Play. Restez connectés pour suivre votre progression avec Objectif Sport.
+description: L'application EZTM arrive bientôt sur l'App Store et Google Play. Pilotez la santé et la performance de vos équipes avec Objectif Sport.
 appStoreLabel: App Store — bientôt
 playStoreLabel: Google Play — bientôt
 ---

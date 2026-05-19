@@ -5,18 +5,22 @@ const prerenderedPaths = [
   '/',
   '/contact',
   '/equipe',
+  '/sportif',
+  '/club',
   ...Object.keys(stubRoutes),
 ]
 
 export default defineNuxtConfig({
   ssr: true,
 
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/seo',
-    '@nuxtjs/google-fonts',
-  ],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/seo', '@nuxtjs/google-fonts', '@nuxt/icon'],
+
+  icon: {
+    serverBundle: {
+      collections: ['mdi'],
+    },
+  },
+
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
 
@@ -29,7 +33,10 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      'Barlow+Condensed': [600, 700, 800],
+      Raleway: {
+        wght: [600, 700, 800],
+        ital: [600, 700, 800],
+      },
       'Source+Sans+3': [400, 500, 600],
     },
     display: 'swap',

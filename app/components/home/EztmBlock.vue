@@ -4,17 +4,22 @@
     aria-labelledby="eztm-heading"
   >
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-      <div class="border border-border-subtle bg-bg-elevated p-8 md:flex md:items-center md:justify-between md:gap-12 md:p-12">
+      <div class="border border-border-subtle border-t-4 border-t-brand-red bg-bg-card p-8 md:flex md:items-center md:justify-between md:gap-12 md:p-12">
         <div class="max-w-xl">
           <p class="font-display text-sm font-semibold uppercase tracking-widest text-brand-red">
             {{ eyebrow }}
           </p>
           <h2
             id="eztm-heading"
-            class="mt-2 font-display text-2xl font-bold uppercase tracking-wide text-text-primary md:text-3xl"
+            class="brand-headline mt-2 text-2xl md:text-3xl"
           >
-            {{ titleBefore }} <span class="text-brand-red">{{ titleHighlight }}</span>
+            {{ titleBefore }}
+            <span class="text-brand-red">{{ titleHighlight }}</span>
+            {{ titleAfter }}
           </h2>
+          <p class="mt-1 font-display text-xs font-semibold uppercase tracking-wider text-text-muted">
+            EasyTeam Cockpit Santé de Performance
+          </p>
           <p class="mt-4 text-text-secondary">
             {{ description }}
           </p>
@@ -42,11 +47,12 @@
 import type { HomeEztmContent } from '~/types/homepage'
 
 withDefaults(defineProps<HomeEztmContent>(), {
-  eyebrow: 'Application mobile',
-  titleBefore: 'Téléchargez',
+  eyebrow: 'Plateforme digitale',
+  titleBefore: 'Découvrez',
   titleHighlight: 'EZTM',
+  titleAfter: '',
   description:
-    'L’application EZTM arrive bientôt sur l’App Store et Google Play. Restez connectés pour suivre votre progression avec Objectif Sport.',
+    'L’application EZTM arrive bientôt sur l’App Store et Google Play. Pilotez la santé et la performance de vos équipes avec Objectif Sport.',
   appStoreLabel: 'App Store — bientôt',
   playStoreLabel: 'Google Play — bientôt',
 })

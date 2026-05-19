@@ -3,15 +3,59 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-brand-red: #de241b;
+    --color-brand-red-hover: #c41f17;
+    --color-brand-charcoal: #222527;
+    --color-brand-white: #ffffff;
+    --color-bg-base: #000000;
+    --color-bg-elevated: #141414;
+    --color-bg-card: #1a1a1a;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e0e0e0;
+    --color-text-muted: #9ca3af;
+    --color-border-subtle: #2e3236;
+    --color-accent-consulting: #fcee21;
+    --color-accent-care: #b0b0b0;
+    --color-accent-coaching: #00aeef;
+    --color-pillar-gym: #4caf50;
+    --color-pillar-lab: #ffc107;
+    --color-pillar-studio: #2196f3;
+  }
+
   html {
     @apply scroll-smooth antialiased;
   }
 
   body {
     @apply min-h-screen bg-bg-base font-body text-text-secondary;
+    background-image: theme(backgroundImage.brand-grain);
+    background-size: 180px 180px;
   }
 
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-white;
+  }
+}
+
+@layer components {
+  .brand-tagline {
+    @apply font-display text-sm font-semibold uppercase tracking-widest text-text-primary;
+  }
+
+  .brand-tagline-bullet {
+    @apply text-brand-red;
+  }
+
+  .brand-headline {
+    @apply font-display font-extrabold uppercase italic leading-tight text-text-primary;
+  }
+
+  .brand-section-rule {
+    @apply h-px w-full bg-brand-red;
+  }
+
+  .brand-headline-accent {
+    @apply relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:bg-brand-red after:content-[''];
   }
 }

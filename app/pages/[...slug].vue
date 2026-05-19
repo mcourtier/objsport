@@ -1,9 +1,11 @@
 <template>
-  <LayoutPageStub
-    v-if="pageMeta"
-    :title="pageMeta.title"
-    :description="pageMeta.description"
-  />
+  <div v-if="pageMeta">
+    <PageHero
+      :title="pageMeta.title"
+      :description="pageMeta.description"
+    />
+    <LayoutPageStub />
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -4,31 +4,87 @@
     aria-labelledby="hero-heading"
   >
     <div
-      class="absolute inset-0 bg-cover bg-center"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
       :style="heroBackgroundStyle"
       role="img"
-      aria-label="Salle de sport et coaching performance"
+      :aria-label="backgroundImageAlt"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-r from-bg-base/90 via-bg-base/70 to-transparent"
+      class="absolute inset-0 bg-gradient-to-r from-bg-base via-bg-base/80 to-transparent"
       aria-hidden="true"
     />
 
     <div class="relative mx-auto w-full max-w-7xl px-4 py-20 md:px-6 lg:px-8">
-      <p class="font-display text-sm font-semibold uppercase tracking-widest text-brand-red">
+      <p
+        v-if="showTagline && taglineSegments.length"
+        class="brand-tagline"
+      >
+        <template
+          v-for="(segment, index) in taglineSegments"
+          :key="segment"
+        >
+          <span
+            v-if="index > 0"
+            class="brand-tagline-bullet"
+            aria-hidden="true"
+          >
+            •
+          </span>
+          {{ segment }}
+        </template>
+      </p>
+      <p
+        v-if="showEyebrow && eyebrow"
+        class="mt-3 font-display text-sm font-semibold uppercase tracking-widest text-brand-red"
+        :class="{ 'mt-3': showTagline && taglineSegments.length }"
+      >
         {{ eyebrow }}
       </p>
+
+      <template v-if="useStackedTitle">
+        <h1
+          id="hero-heading"
+          class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+          :class="headlineTopMarginClass"
+        >
+          {{ title }}
+        </h1>
+        <p
+          v-if="titleAccent"
+          class="brand-headline mt-2 max-w-3xl text-4xl text-brand-red md:text-5xl lg:text-6xl"
+        >
+          {{ titleAccent }}
+        </p>
+      </template>
       <h1
+        v-else
         id="hero-heading"
-        class="mt-4 max-w-3xl font-display text-4xl font-extrabold uppercase leading-tight text-text-primary md:text-5xl lg:text-6xl"
+        class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+        :class="headlineTopMarginClass"
       >
         {{ titleBefore }}
-        <span class="text-brand-red">{{ titleHighlight }}</span>
+        <span
+          v-if="titleHighlight"
+          class="text-brand-red"
+        >{{ titleHighlight }}</span>
+        {{ titleAfter }}
       </h1>
-      <p class="mt-6 max-w-xl text-lg text-text-secondary md:text-xl">
+
+      <div
+        v-if="showDescription && description"
+        class="brand-section-rule mt-6 max-w-md"
+        aria-hidden="true"
+      />
+      <p
+        v-if="showDescription && description"
+        class="mt-6 max-w-xl text-lg text-text-secondary md:text-xl"
+      >
         {{ description }}
       </p>
-      <div class="mt-10 flex flex-wrap gap-4">
+      <div
+        v-if="showCtas"
+        class="mt-10 flex flex-wrap gap-4"
+      >
         <AppButton :to="primaryCtaTo">
           {{ primaryCtaLabel }}
         </AppButton>
@@ -44,22 +100,41 @@
 </template>
 
 <script setup lang="ts">
-import type { HomeHeroContent } from '~/types/homepage'
+import type { PageHeroContent } from '~/types/pageHero'
 
-withDefaults(defineProps<HomeHeroContent>(), {
+const props = withDefaults(defineProps<PageHeroContent>(), {
+  tagline: 'Santé • Performance • Résultats',
   eyebrow: 'Sur site ou à domicile',
-  titleBefore: 'Atteignez vos',
-  titleHighlight: 'objectifs',
+  titleBefore: 'Un objectif commun : votre',
+  titleHighlight: 'performance',
+  titleAfter: '',
   description:
     'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
   primaryCtaLabel: 'Entreprise',
   primaryCtaTo: '/entreprise',
   secondaryCtaLabel: 'Demander un audit',
   secondaryCtaTo: '/audit',
+  backgroundImage: '/images/brand/hero-cover.jpg',
+  backgroundImageAlt: 'Athlète en sprint — coaching performance Objectif Sport',
+  showTagline: true,
+  showEyebrow: true,
+  showDescription: true,
+  showCtas: true,
 })
 
-const heroBackgroundStyle = {
-  backgroundImage:
-    'linear-gradient(rgba(15, 16, 17, 0.4), rgba(15, 16, 17, 0.6)), url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80&auto=format&fit=crop")',
-}
+const useStackedTitle = computed(() => Boolean(props.title))
+
+const taglineSegments = computed(() =>
+  (props.tagline ?? '').split(/\s*•\s*/).map((s) => s.trim()).filter(Boolean),
+)
+
+const headlineTopMarginClass = computed(() => {
+  if (props.showTagline && taglineSegments.value.length) return ''
+  if (props.showEyebrow && props.eyebrow) return ''
+  return 'mt-0'
+})
+
+const heroBackgroundStyle = computed(() => ({
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url("${props.backgroundImage}")`,
+}))
 </script>

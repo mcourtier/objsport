@@ -7,11 +7,15 @@
       <header class="max-w-2xl">
         <h2
           id="audiences-heading"
-          class="font-display text-3xl font-bold uppercase tracking-wide text-text-primary md:text-4xl"
+          class="brand-headline text-3xl not-italic md:text-4xl"
         >
           {{ heading }}
           <span class="text-brand-red">{{ headingHighlight }}</span>
         </h2>
+        <div
+          class="brand-section-rule mt-6 max-w-xs"
+          aria-hidden="true"
+        />
         <p class="mt-4 text-lg text-text-secondary">
           {{ intro }}
         </p>

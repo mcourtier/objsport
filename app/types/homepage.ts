@@ -1,15 +1,22 @@
 import type { AudienceBlock } from '~/types/navigation'
+import type { PageHeroContent } from '~/types/pageHero'
 
-export interface HomeHeroContent {
-  eyebrow: string
-  titleBefore: string
-  titleHighlight: string
-  description: string
-  primaryCtaLabel: string
-  primaryCtaTo: string
-  secondaryCtaLabel: string
-  secondaryCtaTo: string
-}
+/** @deprecated Use `PageHeroContent` — kept for content block typings. */
+export type HomeHeroContent = Required<
+  Pick<
+    PageHeroContent,
+    | 'tagline'
+    | 'eyebrow'
+    | 'titleBefore'
+    | 'titleHighlight'
+    | 'description'
+    | 'primaryCtaLabel'
+    | 'primaryCtaTo'
+    | 'secondaryCtaLabel'
+    | 'secondaryCtaTo'
+  >
+> &
+  Pick<PageHeroContent, 'titleAfter'>
 
 export interface HomeAudienceGridContent {
   heading: string
@@ -18,9 +25,12 @@ export interface HomeAudienceGridContent {
   blocks: AudienceBlock[]
 }
 
+export type PillarAccent = 'gym' | 'lab' | 'studio'
+
 export interface HomePillar {
   name: string
   description: string
+  accent: PillarAccent
 }
 
 export interface HomePillarsContent {
@@ -31,6 +41,7 @@ export interface HomeEztmContent {
   eyebrow: string
   titleBefore: string
   titleHighlight: string
+  titleAfter: string
   description: string
   appStoreLabel: string
   playStoreLabel: string

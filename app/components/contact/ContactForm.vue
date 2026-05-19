@@ -4,12 +4,12 @@
     aria-labelledby="contact-form-heading"
   >
     <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
-      <h1
+      <h2
         id="contact-form-heading"
         class="font-display text-4xl font-bold uppercase tracking-wide text-text-primary md:text-5xl"
       >
         {{ heading }}
-      </h1>
+      </h2>
       <p
         v-if="intro"
         class="mt-6 max-w-prose text-lg text-text-secondary"

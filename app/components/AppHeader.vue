@@ -13,15 +13,14 @@
           class="hidden items-center gap-8 lg:flex"
           aria-label="Navigation principale"
         >
-          <NuxtLink
+          <AppNavLink
             v-for="link in mainNav"
             :key="link.to"
             :to="link.to"
-            class="font-display text-base font-semibold uppercase tracking-button text-text-primary transition-colors hover:text-brand-red lg:text-lg"
-            active-class="text-brand-red"
+            class="text-base lg:text-lg"
           >
             {{ link.label }}
-          </NuxtLink>
+          </AppNavLink>
         </nav>
 
         <button
@@ -71,14 +70,13 @@
           v-for="link in mainNav"
           :key="link.to"
         >
-          <NuxtLink
+          <AppNavLink
             :to="link.to"
-            class="block py-3 font-display text-lg font-semibold uppercase tracking-button text-text-primary hover:text-brand-red"
-            active-class="text-brand-red"
+            class="block py-3 text-lg"
             @click="mobileOpen = false"
           >
             {{ link.label }}
-          </NuxtLink>
+          </AppNavLink>
         </li>
         <li class="pt-2">
           <AppButton

@@ -10,6 +10,10 @@ export default defineContentConfig({
       },
       schema: z.object({
         intro: z.string().optional(),
+        heroTitle: z.string().optional(),
+        heroTitleAccent: z.string().optional(),
+        heroBackgroundImage: z.string().optional(),
+        heroBackgroundImageAlt: z.string().optional(),
       }),
     }),
     team: defineCollection({
