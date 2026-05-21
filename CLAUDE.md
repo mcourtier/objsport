@@ -30,6 +30,7 @@ All code should remain easy to refactor and easy to reason about.
 - Always use TypeScript
 - Always use Composition API
 - Always use `<script setup lang="ts">`
+- Always use a **single root element** per component template (any semantic tag — not necessarily a `<div>`). Required for Nuxt page transitions on **pages**; add a wrapper only when the template would otherwise have multiple roots (e.g. `v-if` / `v-else` siblings)
 - Prefer explicit code over magic abstractions
 - Prefer readability over cleverness
 - Avoid duplicated logic
@@ -80,8 +81,6 @@ Templates must stay clean and readable.
 - sub-components
 - composables
 - semantic HTML
-
----
 
 ## Script Rules
 

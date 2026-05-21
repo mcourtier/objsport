@@ -1,0 +1,39 @@
+/*
+ * Page route transitions (client-side navigation only).
+ * Parent <main> is position:relative so leaving pages can stack during crossfade.
+ */
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.page-leave-active {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition-duration: 0.01ms;
+  }
+
+  .page-leave-active {
+    position: static;
+  }
+
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 1;
+    transform: none;
+  }
+}
