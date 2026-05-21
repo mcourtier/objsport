@@ -58,6 +58,8 @@ export default defineNuxtConfig({
     description:
       'Coaching bien-être et performance sur site en entreprise ou à domicile. Programmes pour entreprises, clubs sportifs et sportifs.',
     defaultLocale: 'fr',
+    // Temporary: block search engines while the site is under construction
+    indexable: false,
   },
 
   runtimeConfig: {
