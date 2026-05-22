@@ -19,13 +19,6 @@
         <p class="mt-2 font-display text-sm font-semibold uppercase tracking-button text-brand-red">
           {{ profile.role }}
         </p>
-
-        <p
-          v-if="summary"
-          class="mt-4 flex-1 text-text-secondary"
-        >
-          {{ summary }}
-        </p>
       </div>
     </Card>
   </NuxtLink>
@@ -34,9 +27,7 @@
 <script setup lang="ts">
 import type { TeamProfilePage } from '~/types/team'
 
-const props = defineProps<{
+defineProps<{
   profile: TeamProfilePage
 }>()
-
-const summary = computed(() => props.profile.excerpt ?? props.profile.description)
 </script>

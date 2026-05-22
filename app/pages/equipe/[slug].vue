@@ -10,6 +10,12 @@
     <article v-if="profile" class="py-16 md:py-24">
       <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
         <div class="prose-team text-text-secondary">
+          <p
+            v-if="bioIntro"
+            class="mb-4 text-lg leading-relaxed"
+          >
+            {{ bioIntro }}
+          </p>
           <ContentRenderer :value="profile" />
         </div>
 
@@ -62,15 +68,19 @@ import type { TeamProfilePage } from '~/types/team'
 
 const route = useRoute()
 
+const slug = computed(() => route.params.slug as string)
+
 const { data: profile } = await useAsyncData(
-  () => route.params.slug as string,
+  () => `team-profile-${slug.value}`,
   async () => {
     const doc = await queryCollection('team')
-      .where('slug', '==', route.params.slug as string)
+      .where('slug', '==', slug.value)
       .first() as TeamProfilePage | null
     return doc
   },
 )
+
+const bioIntro = computed(() => profile.value?.excerpt ?? profile.value?.description)
 
 const hasContact = computed(() => Boolean(profile.value?.email || profile.value?.phone))
 

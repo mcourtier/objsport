@@ -25,13 +25,13 @@
       <template v-if="useStackedTitle">
         <h1
           id="hero-heading"
-          class="brand-headline mt-4 max-w-2xl text-2xl md:text-3xl lg:text-4xl"
+          class="brand-headline mt-4 max-w-2xl text-xl md:text-2xl lg:text-3xl"
         >
           {{ title }}
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline mt-2 max-w-2xl text-2xl text-brand-red md:text-3xl lg:text-4xl"
+          class="brand-headline mt-2 max-w-2xl text-xl text-brand-red md:text-2xl lg:text-3xl"
         >
           {{ titleAccent }}
         </p>
@@ -39,7 +39,7 @@
       <h1
         v-else
         id="hero-heading"
-        class="brand-headline mt-4 max-w-2xl text-2xl md:text-3xl lg:text-4xl"
+        class="brand-headline mt-4 max-w-2xl text-xl md:text-2xl lg:text-3xl"
       >
         {{ titleBefore }}
         <span
@@ -119,14 +119,14 @@
       <template v-if="useStackedTitle">
         <h1
           id="hero-heading"
-          class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+          class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
           :class="headlineTopMarginClass"
         >
           {{ title }}
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline mt-2 max-w-3xl text-4xl text-brand-red md:text-5xl lg:text-6xl"
+          class="brand-headline mt-2 max-w-3xl text-3xl text-brand-red md:text-4xl lg:text-5xl"
         >
           {{ titleAccent }}
         </p>
@@ -134,7 +134,7 @@
       <h1
         v-else
         id="hero-heading"
-        class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+        class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
         :class="headlineTopMarginClass"
       >
         {{ titleBefore }}
