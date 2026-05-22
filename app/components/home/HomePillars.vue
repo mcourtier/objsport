@@ -1,5 +1,79 @@
 <template>
+  <HomeDashboardCard
+    v-if="variant === 'embedded'"
+    class="p-6 md:p-8"
+    aria-labelledby="pillars-heading"
+  >
+    <header class="text-center">
+      <h2
+        id="pillars-heading"
+        class="font-display text-lg font-bold uppercase tracking-wide text-text-primary md:text-xl"
+      >
+        {{ heading }}
+      </h2>
+      <p
+        v-if="intro"
+        class="mx-auto mt-2 max-w-2xl text-sm text-text-secondary"
+      >
+        {{ intro }}
+      </p>
+    </header>
+
+    <ul class="mt-8 grid gap-6 sm:grid-cols-3">
+      <li
+        v-for="pillar in pillars"
+        :key="pillar.name"
+        class="text-center"
+      >
+        <div
+          class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
+          :class="pillarIconSurfaceClass(pillar.accent)"
+          aria-hidden="true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-8 w-8"
+            :class="pillarIconColorClass(pillar.accent)"
+          >
+            <path :d="pillarIconPath(pillar.accent)" />
+          </svg>
+        </div>
+        <p class="mt-4 font-display text-sm font-bold uppercase tracking-button text-brand-red">
+          {{ pillar.name }}
+        </p>
+        <p class="mt-2 text-sm text-text-muted">
+          {{ pillar.description }}
+        </p>
+      </li>
+    </ul>
+
+    <ul
+      v-if="trustItems.length"
+      class="mt-8 grid gap-4 border-t border-border-subtle pt-8 sm:grid-cols-3"
+    >
+      <li
+        v-for="item in trustItems"
+        :key="item.label"
+        class="flex items-center justify-center gap-2 text-center"
+      >
+        <Icon
+          name="mdi:shield-check-outline"
+          class="h-5 w-5 shrink-0 text-brand-red"
+          aria-hidden="true"
+        />
+        <span class="font-display text-xs font-bold uppercase tracking-button text-text-primary">
+          {{ item.label }}
+        </span>
+      </li>
+    </ul>
+  </HomeDashboardCard>
+
   <section
+    v-else
     class="border-t border-border-subtle bg-bg-elevated py-16 md:py-20"
     aria-labelledby="pillars-heading"
   >
@@ -56,17 +130,27 @@
 </template>
 
 <script setup lang="ts">
-import type { HomePillarsContent, PillarAccent } from '~/types/homepage'
+import type { HomePillarsContent, HomeTrustItem, PillarAccent } from '~/types/homepage'
 
-withDefaults(defineProps<HomePillarsContent & { heading?: string, intro?: string }>(), {
-  heading: 'La performance professionnelle',
-  intro: 'Trois espaces complémentaires pour prévenir, optimiser et performer.',
-  pillars: () => [
-    { name: 'Le Gym', description: 'Préparation physique et musculation', accent: 'gym' },
-    { name: 'Le Lab', description: 'Tests et analyse de performance', accent: 'lab' },
-    { name: 'Le Studio', description: 'Cours collectifs et coaching', accent: 'studio' },
-  ],
-})
+withDefaults(
+  defineProps<HomePillarsContent & {
+    heading?: string
+    intro?: string
+    trustItems?: HomeTrustItem[]
+    variant?: 'full' | 'embedded'
+  }>(),
+  {
+    heading: 'La performance professionnelle',
+    intro: 'Trois espaces complémentaires pour prévenir, optimiser et performer.',
+    pillars: () => [
+      { name: 'Le Gym', description: 'Préparation physique et musculation', accent: 'gym' },
+      { name: 'Le Lab', description: 'Tests et analyse de performance', accent: 'lab' },
+      { name: 'Le Studio', description: 'Cours collectifs et coaching', accent: 'studio' },
+    ],
+    trustItems: () => [],
+    variant: 'full',
+  },
+)
 
 function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {

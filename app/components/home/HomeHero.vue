@@ -1,5 +1,76 @@
 <template>
+  <HomeDashboardCard
+    v-if="variant === 'embedded'"
+    class="relative flex h-full min-h-[280px] flex-col"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      :style="heroBackgroundStyle"
+      role="img"
+      :aria-label="backgroundImageAlt"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-bg-base via-bg-base/85 to-bg-base/40"
+      aria-hidden="true"
+    />
+
+    <div class="relative flex flex-1 flex-col items-center justify-center px-6 py-10 text-center md:px-10">
+      <p
+        v-if="showEyebrow && eyebrow"
+        class="font-display text-xs font-semibold uppercase tracking-widest text-brand-red md:text-sm"
+      >
+        {{ eyebrow }}
+      </p>
+
+      <template v-if="useStackedTitle">
+        <h1
+          id="hero-heading"
+          class="brand-headline mt-4 max-w-2xl text-2xl md:text-3xl lg:text-4xl"
+        >
+          {{ title }}
+        </h1>
+        <p
+          v-if="titleAccent"
+          class="brand-headline mt-2 max-w-2xl text-2xl text-brand-red md:text-3xl lg:text-4xl"
+        >
+          {{ titleAccent }}
+        </p>
+      </template>
+      <h1
+        v-else
+        id="hero-heading"
+        class="brand-headline mt-4 max-w-2xl text-2xl md:text-3xl lg:text-4xl"
+      >
+        {{ titleBefore }}
+        <span
+          v-if="titleHighlight"
+          class="text-brand-red"
+        >{{ titleHighlight }}</span>
+        {{ titleAfter }}
+      </h1>
+
+      <div
+        v-if="showCtas"
+        class="mt-8 flex flex-wrap items-center justify-center gap-3"
+      >
+        <NuxtLink
+          :to="primaryCtaTo"
+          class="inline-flex items-center gap-2 rounded-full border border-brand-red/50 bg-bg-base/60 px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-button text-text-primary backdrop-blur-sm transition-colors hover:border-brand-red hover:bg-brand-red/20 md:text-sm"
+        >
+          {{ primaryCtaLabel }}
+        </NuxtLink>
+        <NuxtLink
+          :to="secondaryCtaTo"
+          class="inline-flex items-center gap-2 rounded-full border border-brand-red/50 bg-bg-base/60 px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-button text-text-primary backdrop-blur-sm transition-colors hover:border-brand-red hover:bg-brand-red/20 md:text-sm"
+        >
+          {{ secondaryCtaLabel }}
+        </NuxtLink>
+      </div>
+    </div>
+  </HomeDashboardCard>
+
   <section
+    v-else
     class="relative -mt-[4.5rem] flex min-h-[70vh] items-center overflow-hidden pt-[4.5rem] md:-mt-20 md:min-h-[85vh] md:pt-20"
     aria-labelledby="hero-heading"
   >
@@ -102,7 +173,7 @@
 <script setup lang="ts">
 import type { PageHeroContent } from '~/types/pageHero'
 
-const props = withDefaults(defineProps<PageHeroContent>(), {
+const props = withDefaults(defineProps<PageHeroContent & { variant?: 'full' | 'embedded' }>(), {
   tagline: 'Santé • Performance • Résultats',
   eyebrow: 'Sur site ou à domicile',
   titleBefore: 'Un objectif commun : votre',
@@ -120,6 +191,7 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
   showEyebrow: true,
   showDescription: true,
   showCtas: true,
+  variant: 'full',
 })
 
 const useStackedTitle = computed(() => Boolean(props.title))

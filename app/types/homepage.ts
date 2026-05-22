@@ -46,3 +46,32 @@ export interface HomeEztmContent {
   appStoreLabel: string
   playStoreLabel: string
 }
+
+export interface HomeTrustItem {
+  label: string
+}
+
+export interface HomeContactPanelContent {
+  heading: string
+  website: string
+  websiteUrl: string
+  email: string
+  phone?: string
+  ctaLabel: string
+  ctaTo: string
+}
+
+export interface HomeFeatureHighlightContent {
+  title: string
+  description: string
+}
+
+export interface HomeDashboardContent {
+  sidebarTagline: string
+  hero: HomeHeroContent
+  audience: HomeAudienceGridContent
+  pillars: HomePillarsContent & { heading: string, intro: string, trustItems: HomeTrustItem[] }
+  eztm: HomeEztmContent
+  highlight: HomeFeatureHighlightContent
+  contact: HomeContactPanelContent
+}
