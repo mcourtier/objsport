@@ -41,7 +41,7 @@ export interface HomeEztmContent {
   eyebrow: string
   titleBefore: string
   titleHighlight: string
-  titleAfter: string
+  titleAfter?: string
   description: string
   appStoreLabel: string
   playStoreLabel: string
