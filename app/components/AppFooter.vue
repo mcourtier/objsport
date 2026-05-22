@@ -1,17 +1,20 @@
 <template>
-  <footer class="border-t border-border-subtle bg-bg-elevated">
+  <footer class="border-border-subtle bg-bg-elevated border-t">
     <section class="bg-brand-red py-12 md:py-16">
       <div class="mx-auto max-w-7xl px-4 text-center md:px-6 lg:px-8">
-        <h2 class="brand-headline text-2xl not-italic text-brand-white md:text-3xl">
+        <h2
+          class="brand-headline text-brand-white text-2xl not-italic md:text-3xl"
+        >
           Chaque minute compte.
         </h2>
-        <p class="mx-auto mt-4 max-w-xl text-brand-white/90">
-          Contactez Objectif Sport pour un accompagnement sur mesure, sur site ou à domicile.
+        <p class="text-brand-white/90 mx-auto mt-4 max-w-xl">
+          Contactez Objectif Sport pour un accompagnement sur mesure, sur site
+          ou à domicile.
         </p>
         <AppButton
           to="/contact"
           variant="secondary"
-          class="mt-8 border-brand-white"
+          class="border-brand-white mt-8"
         >
           Nous contacter
         </AppButton>
@@ -27,24 +30,26 @@
           v-for="link in footerLegal"
           :key="link.to"
           :to="link.to"
-          class="text-sm text-text-muted transition-colors hover:text-text-primary"
+          class="text-text-muted hover:text-text-primary text-sm transition-colors"
         >
           {{ link.label }}
         </NuxtLink>
       </nav>
 
-      <p class="mt-6 text-center text-sm text-text-muted">
+      <p class="text-text-muted mt-6 text-center text-sm">
         © {{ copyrightYear }} Objectif Sport. Tous droits réservés.
       </p>
 
-      <p class="mt-2 text-center text-xs text-text-muted">
-        <button
+      <p class="text-text-muted mt-2 text-center text-xs">
+        <UButton
           type="button"
-          class="underline transition-colors hover:text-text-secondary"
+          variant="link"
+          color="neutral"
+          class="text-text-muted text-xs"
           @click="onCookiePreferences"
         >
           Gérer les cookies
-        </button>
+        </UButton>
       </p>
     </div>
   </footer>
@@ -52,7 +57,9 @@
 
 <script setup lang="ts">
 const { footerLegal } = useSiteNavigation()
-const { public: { copyrightYear } } = useRuntimeConfig()
+const {
+  public: { copyrightYear },
+} = useRuntimeConfig()
 
 function onCookiePreferences() {
   // Matomo consent UI — phase 4

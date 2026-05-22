@@ -1,25 +1,24 @@
 <template>
-  <Card class="flex h-full flex-col items-center justify-center p-6 text-center md:p-8">
+  <UCard class="flex h-full flex-col items-center justify-center text-center">
     <div
       class="relative flex h-28 w-28 items-center justify-center"
       aria-hidden="true"
     >
-      <div class="absolute inset-0 rounded-full border border-brand-red/40" />
-      <div class="absolute inset-3 rounded-full border border-brand-red/25" />
-      <div class="absolute inset-6 rounded-full border border-brand-red/15" />
-      <Icon
-        name="mdi:heart-pulse"
-        class="relative h-10 w-10 text-brand-red"
-      />
+      <div class="border-brand-red/40 absolute inset-0 rounded-full border" />
+      <div class="border-brand-red/25 absolute inset-3 rounded-full border" />
+      <div class="border-brand-red/15 absolute inset-6 rounded-full border" />
+      <Icon name="mdi:heart-pulse" class="text-brand-red relative h-10 w-10" />
     </div>
 
-    <h2 class="mt-6 font-display text-lg font-bold uppercase tracking-wide text-text-primary md:text-xl">
+    <h2
+      class="font-display text-text-primary mt-6 text-lg font-bold tracking-wide uppercase md:text-xl"
+    >
       {{ title }}
     </h2>
-    <p class="mt-3 max-w-xs text-sm text-text-secondary">
+    <p class="text-text-secondary mt-3 max-w-xs text-sm">
       {{ description }}
     </p>
-  </Card>
+  </UCard>
 </template>
 
 <script setup lang="ts">

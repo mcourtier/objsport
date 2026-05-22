@@ -11,22 +11,22 @@ export type ContactFormErrors = Partial<Record<ContactFormField, string>>
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-export function validateContactForm(fields: ContactFormFields): ContactFormErrors {
+export function validateContactForm(
+  fields: ContactFormFields,
+): ContactFormErrors {
   const errors: ContactFormErrors = {}
 
   const name = fields.name.trim()
   if (!name) {
     errors.name = 'Le nom est requis.'
-  }
-  else if (name.length < 2) {
+  } else if (name.length < 2) {
     errors.name = 'Le nom doit contenir au moins 2 caractères.'
   }
 
   const email = fields.email.trim()
   if (!email) {
     errors.email = 'L’adresse e-mail est requise.'
-  }
-  else if (!EMAIL_PATTERN.test(email)) {
+  } else if (!EMAIL_PATTERN.test(email)) {
     errors.email = 'L’adresse e-mail n’est pas valide.'
   }
 
@@ -38,8 +38,7 @@ export function validateContactForm(fields: ContactFormFields): ContactFormError
   const message = fields.message.trim()
   if (!message) {
     errors.message = 'Le message est requis.'
-  }
-  else if (message.length < 10) {
+  } else if (message.length < 10) {
     errors.message = 'Le message doit contenir au moins 10 caractères.'
   }
 

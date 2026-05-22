@@ -10,17 +10,17 @@
     <article v-if="profile" class="py-16 md:py-24">
       <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
         <div class="prose-team text-text-secondary">
-          <p
-            v-if="bioIntro"
-            class="mb-4 text-lg leading-relaxed"
-          >
+          <p v-if="bioIntro" class="mb-4 text-lg leading-relaxed">
             {{ bioIntro }}
           </p>
           <ContentRenderer :value="profile" />
         </div>
 
-        <div v-if="hasContact" class="mt-16 border-t border-border-subtle pt-12">
-          <h2 class="font-display text-2xl font-bold text-text-primary">
+        <div
+          v-if="hasContact"
+          class="border-border-subtle mt-16 border-t pt-12"
+        >
+          <h2 class="font-display text-text-primary text-2xl font-bold">
             Contact
           </h2>
           <ul class="mt-6 space-y-4">
@@ -46,7 +46,7 @@
         <div class="mt-12">
           <NuxtLink
             to="/equipe"
-            class="inline-flex items-center gap-2 text-brand-red underline-offset-4 transition-colors hover:underline"
+            class="text-brand-red inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
           >
             ← Retour à l'équipe
           </NuxtLink>
@@ -73,19 +73,23 @@ const slug = computed(() => route.params.slug as string)
 const { data: profile } = await useAsyncData(
   () => `team-profile-${slug.value}`,
   async () => {
-    const doc = await queryCollection('team')
+    const doc = (await queryCollection('team')
       .where('slug', '==', slug.value)
-      .first() as TeamProfilePage | null
+      .first()) as TeamProfilePage | null
     return doc
   },
 )
 
-const bioIntro = computed(() => profile.value?.excerpt ?? profile.value?.description)
+const bioIntro = computed(
+  () => profile.value?.excerpt ?? profile.value?.description,
+)
 
-const hasContact = computed(() => Boolean(profile.value?.email || profile.value?.phone))
+const hasContact = computed(() =>
+  Boolean(profile.value?.email || profile.value?.phone),
+)
 
-const normalizedPhone = computed(() =>
-  profile.value?.phone?.replace(/\s/g, '') ?? '',
+const normalizedPhone = computed(
+  () => profile.value?.phone?.replace(/\s/g, '') ?? '',
 )
 
 useSeoMeta({
@@ -97,23 +101,35 @@ useSeoMeta({
 
 <style scoped>
 .prose-team :deep(p) {
-  @apply mb-4 text-lg leading-relaxed last:mb-0;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+.prose-team :deep(p:last-child) {
+  margin-bottom: 0;
 }
 
 .prose-team :deep(p + p) {
-  @apply mt-0;
+  margin-top: 0;
 }
 
 .prose-team :deep(strong) {
-  @apply font-semibold text-text-primary;
+  font-weight: 600;
+  color: var(--color-text-primary);
 }
 
 .prose-team :deep(ul),
 .prose-team :deep(ol) {
-  @apply my-4 ml-4 space-y-2;
+  margin-block: 1rem;
+  margin-left: 1rem;
 }
 
-.prose-team :deep(li) {
-  @apply list-disc;
+.prose-team :deep(ul) {
+  list-style-type: disc;
+}
+
+.prose-team :deep(li + li) {
+  margin-top: 0.5rem;
 }
 </style>

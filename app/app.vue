@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <UApp>
     <NuxtRouteAnnouncer />
     <NuxtLayout>
       <NuxtPage :page-key="pageKey" />
     </NuxtLayout>
-  </div>
+  </UApp>
 </template>
 
 <script setup lang="ts">

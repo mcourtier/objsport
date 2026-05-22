@@ -1,40 +1,29 @@
 <template>
-  <div>
-    <label
-      :for="id"
-      class="font-display text-xs font-semibold uppercase tracking-button text-text-muted"
-    >
-      {{ label }}
-      <span
-        v-if="required"
-        class="text-brand-red"
-        aria-hidden="true"
-      >*</span>
-    </label>
-    <component
-      :is="multiline ? 'textarea' : 'input'"
+  <UFormField :label="label" :name="name" :required="required" :error="error">
+    <UTextarea
+      v-if="multiline"
       :id="id"
       :name="name"
-      :type="multiline ? undefined : type"
-      :value="modelValue"
+      :model-value="modelValue"
       :required="required"
-      :rows="multiline ? rows : undefined"
+      :rows="rows"
+      :autocomplete="autocomplete"
+      class="w-full"
+      @update:model-value="emit('update:modelValue', $event)"
+    />
+    <UInput
+      v-else
+      :id="id"
+      :name="name"
+      :type="type"
+      :model-value="modelValue"
+      :required="required"
       :autocomplete="autocomplete"
       :inputmode="inputmode"
-      :aria-invalid="Boolean(error)"
-      :aria-describedby="error ? `${id}-error` : undefined"
-      class="mt-2 w-full border border-border-subtle bg-bg-base px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-brand-red focus:outline-none"
-      @input="onInput"
+      class="w-full"
+      @update:model-value="emit('update:modelValue', $event)"
     />
-    <p
-      v-if="error"
-      :id="`${id}-error`"
-      class="mt-2 text-sm text-brand-red"
-      role="alert"
-    >
-      {{ error }}
-    </p>
-  </div>
+  </UFormField>
 </template>
 
 <script setup lang="ts">
@@ -63,9 +52,4 @@ withDefaults(
 const emit = defineEmits<{
   'update:modelValue': [value: string]
 }>()
-
-function onInput(event: Event) {
-  const target = event.target as HTMLInputElement | HTMLTextAreaElement
-  emit('update:modelValue', target.value)
-}
 </script>

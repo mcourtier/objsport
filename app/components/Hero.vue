@@ -1,5 +1,5 @@
 <template>
-  <Card
+  <UCard
     v-if="variant === 'embedded'"
     class="relative flex h-full min-h-[280px] flex-col"
   >
@@ -10,14 +10,16 @@
       :aria-label="backgroundImageAlt"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-t from-bg-base via-bg-base/85 to-bg-base/40"
+      class="from-bg-base via-bg-base/85 to-bg-base/40 absolute inset-0 bg-gradient-to-t"
       aria-hidden="true"
     />
 
-    <div class="relative flex flex-1 flex-col items-center justify-center px-6 py-10 text-center md:px-10">
+    <div
+      class="relative flex flex-1 flex-col items-center justify-center px-6 py-10 text-center md:px-10"
+    >
       <p
         v-if="showEyebrow && eyebrow"
-        class="font-display text-xs font-semibold uppercase tracking-widest text-brand-red md:text-sm"
+        class="font-display text-brand-red text-xs font-semibold tracking-widest uppercase md:text-sm"
       >
         {{ eyebrow }}
       </p>
@@ -31,7 +33,7 @@
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline mt-2 max-w-2xl text-xl text-brand-red md:text-2xl lg:text-3xl"
+          class="brand-headline text-brand-red mt-2 max-w-2xl text-xl md:text-2xl lg:text-3xl"
         >
           {{ titleAccent }}
         </p>
@@ -42,10 +44,9 @@
         class="brand-headline mt-4 max-w-2xl text-xl md:text-2xl lg:text-3xl"
       >
         {{ titleBefore }}
-        <span
-          v-if="titleHighlight"
-          class="text-brand-red"
-        >{{ titleHighlight }}</span>
+        <span v-if="titleHighlight" class="text-brand-red">{{
+          titleHighlight
+        }}</span>
         {{ titleAfter }}
       </h1>
 
@@ -55,19 +56,19 @@
       >
         <NuxtLink
           :to="primaryCtaTo"
-          class="inline-flex items-center gap-2 rounded-full border border-brand-red/50 bg-bg-base/60 px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-button text-text-primary backdrop-blur-sm transition-colors hover:border-brand-red hover:bg-brand-red/20 md:text-sm"
+          class="border-brand-red/50 bg-bg-base/60 font-display tracking-button text-text-primary hover:border-brand-red hover:bg-brand-red/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
         >
           {{ primaryCtaLabel }}
         </NuxtLink>
         <NuxtLink
           :to="secondaryCtaTo"
-          class="inline-flex items-center gap-2 rounded-full border border-brand-red/50 bg-bg-base/60 px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-button text-text-primary backdrop-blur-sm transition-colors hover:border-brand-red hover:bg-brand-red/20 md:text-sm"
+          class="border-brand-red/50 bg-bg-base/60 font-display tracking-button text-text-primary hover:border-brand-red hover:bg-brand-red/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
         >
           {{ secondaryCtaLabel }}
         </NuxtLink>
       </div>
     </div>
-  </Card>
+  </UCard>
 
   <section
     v-else
@@ -82,7 +83,7 @@
       :aria-label="backgroundImageAlt"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-r from-bg-base via-bg-base/80 to-transparent"
+      class="from-bg-base via-bg-base/80 absolute inset-0 bg-gradient-to-r to-transparent"
       aria-hidden="true"
     />
 
@@ -90,14 +91,8 @@
       class="relative mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8"
       :class="fullHeroContentPaddingClass"
     >
-      <p
-        v-if="showTagline && taglineSegments.length"
-        class="brand-tagline"
-      >
-        <template
-          v-for="(segment, index) in taglineSegments"
-          :key="segment"
-        >
+      <p v-if="showTagline && taglineSegments.length" class="brand-tagline">
+        <template v-for="(segment, index) in taglineSegments" :key="segment">
           <span
             v-if="index > 0"
             class="brand-tagline-bullet"
@@ -110,7 +105,7 @@
       </p>
       <p
         v-if="showEyebrow && eyebrow"
-        class="mt-3 font-display text-sm font-semibold uppercase tracking-widest text-brand-red"
+        class="font-display text-brand-red mt-3 text-sm font-semibold tracking-widest uppercase"
         :class="{ 'mt-3': showTagline && taglineSegments.length }"
       >
         {{ eyebrow }}
@@ -126,7 +121,7 @@
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline mt-2 max-w-3xl text-3xl text-brand-red md:text-4xl lg:text-5xl"
+          class="brand-headline text-brand-red mt-2 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
         >
           {{ titleAccent }}
         </p>
@@ -138,10 +133,9 @@
         :class="headlineTopMarginClass"
       >
         {{ titleBefore }}
-        <span
-          v-if="titleHighlight"
-          class="text-brand-red"
-        >{{ titleHighlight }}</span>
+        <span v-if="titleHighlight" class="text-brand-red">{{
+          titleHighlight
+        }}</span>
         {{ titleAfter }}
       </h1>
 
@@ -152,21 +146,15 @@
       />
       <p
         v-if="showDescription && description"
-        class="mt-6 max-w-xl text-lg text-text-secondary md:text-xl"
+        class="text-text-secondary mt-6 max-w-xl text-lg md:text-xl"
       >
         {{ description }}
       </p>
-      <div
-        v-if="showCtas"
-        class="mt-10 flex flex-wrap gap-4"
-      >
+      <div v-if="showCtas" class="mt-10 flex flex-wrap gap-4">
         <AppButton :to="primaryCtaTo">
           {{ primaryCtaLabel }}
         </AppButton>
-        <AppButton
-          :to="secondaryCtaTo"
-          variant="secondary"
-        >
+        <AppButton :to="secondaryCtaTo" variant="secondary">
           {{ secondaryCtaLabel }}
         </AppButton>
       </div>
@@ -177,29 +165,35 @@
 <script setup lang="ts">
 import type { PageHeroContent } from '~/types/pageHero'
 
-const props = withDefaults(defineProps<PageHeroContent & { variant?: 'full' | 'page' | 'embedded' }>(), {
-  tagline: 'Santé • Performance • Résultats',
-  eyebrow: 'Sur site ou à domicile',
-  titleBefore: 'Un objectif commun : votre',
-  titleHighlight: 'performance',
-  titleAfter: '',
-  description:
-    'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
-  primaryCtaLabel: 'Entreprise',
-  primaryCtaTo: '/entreprise',
-  secondaryCtaLabel: 'Demander un audit',
-  secondaryCtaTo: '/audit',
-  backgroundImage: '/images/brand/hero-cover.jpg',
-  backgroundImageAlt: 'Athlète en sprint — coaching performance Objectif Sport',
-  showTagline: true,
-  showEyebrow: true,
-  showDescription: true,
-  showCtas: true,
-  variant: 'full',
-})
+const props = withDefaults(
+  defineProps<PageHeroContent & { variant?: 'full' | 'page' | 'embedded' }>(),
+  {
+    tagline: 'Santé • Performance • Résultats',
+    eyebrow: 'Sur site ou à domicile',
+    titleBefore: 'Un objectif commun : votre',
+    titleHighlight: 'performance',
+    titleAfter: '',
+    description:
+      'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
+    primaryCtaLabel: 'Entreprise',
+    primaryCtaTo: '/entreprise',
+    secondaryCtaLabel: 'Demander un audit',
+    secondaryCtaTo: '/audit',
+    backgroundImage: '/images/brand/hero-cover.jpg',
+    backgroundImageAlt:
+      'Athlète en sprint — coaching performance Objectif Sport',
+    showTagline: true,
+    showEyebrow: true,
+    showDescription: true,
+    showCtas: true,
+    variant: 'full',
+  },
+)
 
 const fullHeroMinHeightClass = computed(() =>
-  props.variant === 'page' ? 'min-h-[35vh] md:min-h-[42.5vh]' : 'min-h-[70vh] md:min-h-[85vh]',
+  props.variant === 'page'
+    ? 'min-h-[35vh] md:min-h-[42.5vh]'
+    : 'min-h-[70vh] md:min-h-[85vh]',
 )
 
 const fullHeroContentPaddingClass = computed(() =>
@@ -209,7 +203,10 @@ const fullHeroContentPaddingClass = computed(() =>
 const useStackedTitle = computed(() => Boolean(props.title))
 
 const taglineSegments = computed(() =>
-  (props.tagline ?? '').split(/\s*•\s*/).map((s) => s.trim()).filter(Boolean),
+  (props.tagline ?? '')
+    .split(/\s*•\s*/)
+    .map((s) => s.trim())
+    .filter(Boolean),
 )
 
 const headlineTopMarginClass = computed(() => {

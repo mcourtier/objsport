@@ -1,6 +1,8 @@
 <template>
-  <Card class="flex h-full min-h-[240px] flex-col p-6 md:min-h-[280px] md:p-8">
-    <p class="font-display text-sm font-semibold uppercase tracking-widest text-brand-red">
+  <UCard class="flex h-full min-h-[240px] flex-col md:min-h-[280px]">
+    <p
+      class="font-display text-brand-red text-sm font-semibold tracking-widest uppercase"
+    >
       {{ eyebrow }}
     </p>
     <h2 class="brand-headline mt-2 text-xl md:text-2xl">
@@ -8,21 +10,23 @@
       <span class="text-brand-red">{{ titleHighlight }}</span>
       {{ titleAfter }}
     </h2>
-    <p class="mt-1 font-display text-xs font-semibold uppercase tracking-wider text-text-muted">
+    <p
+      class="font-display text-text-muted mt-1 text-xs font-semibold tracking-wider uppercase"
+    >
       EasyTeam Cockpit Santé de Performance
     </p>
 
     <div
-      class="relative mt-6 flex flex-1 min-h-[160px] items-stretch overflow-hidden rounded-xl border border-border-subtle bg-bg-elevated"
+      class="border-border-subtle bg-bg-elevated relative mt-6 flex min-h-[160px] flex-1 items-stretch overflow-hidden rounded-xl border"
       aria-hidden="true"
     >
-      <div class="w-1/4 border-r border-border-subtle bg-bg-base/80 p-3">
+      <div class="border-border-subtle bg-bg-base/80 w-1/4 border-r p-3">
         <div class="space-y-2">
           <div
             v-for="i in 4"
             :key="i"
-            class="h-2 rounded bg-border-subtle"
-            :class="i === 1 ? 'w-full bg-brand-red/60' : 'w-3/4'"
+            class="bg-border-subtle h-2 rounded"
+            :class="i === 1 ? 'bg-brand-red/60 w-full' : 'w-3/4'"
           />
         </div>
       </div>
@@ -31,21 +35,23 @@
           <div
             v-for="i in 3"
             :key="i"
-            class="h-12 flex-1 rounded-lg border border-border-subtle bg-bg-card"
+            class="border-border-subtle bg-bg-card h-12 flex-1 rounded-lg border"
           />
         </div>
-        <div class="mt-3 flex-1 rounded-lg border border-border-subtle bg-bg-card" />
+        <div
+          class="border-border-subtle bg-bg-card mt-3 flex-1 rounded-lg border"
+        />
         <div class="mt-3 grid grid-cols-2 gap-2">
-          <div class="h-16 rounded-lg border border-border-subtle bg-bg-card" />
-          <div class="h-16 rounded-lg border border-border-subtle bg-bg-card" />
+          <div class="border-border-subtle bg-bg-card h-16 rounded-lg border" />
+          <div class="border-border-subtle bg-bg-card h-16 rounded-lg border" />
         </div>
       </div>
     </div>
 
-    <p class="mt-4 text-sm text-text-secondary">
+    <p class="text-text-secondary mt-4 text-sm">
       {{ description }}
     </p>
-  </Card>
+  </UCard>
 </template>
 
 <script setup lang="ts">

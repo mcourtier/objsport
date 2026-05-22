@@ -18,12 +18,12 @@ Design system for the Objectif Sport website. **Primary source:** [`docs/design/
 
 **Source files:** `docs/design/logo.svg` · `public/logo.svg` · `public/images/brand/logo-banner.png`
 
-| Element | Role |
-|--------|------|
-| Red ribbon banner | « OBJECTIF » wordmark container; concave top/bottom edges |
-| Charcoal oval | « SPORT » secondary lockup below the banner |
+| Element                | Role                                                                     |
+| ---------------------- | ------------------------------------------------------------------------ |
+| Red ribbon banner      | « OBJECTIF » wordmark container; concave top/bottom edges                |
+| Charcoal oval          | « SPORT » secondary lockup below the banner                              |
 | Red ribbon mark (icon) | Standalone mark; athlete badge, favicon, decorative « O » in backgrounds |
-| White wordmark paths | Letterforms on dark or photographic heroes |
+| White wordmark paths   | Letterforms on dark or photographic heroes                               |
 
 ### Clear space
 
@@ -46,45 +46,45 @@ Keep padding around the logo equal to the height of the red mark (≈ 1× mark h
 
 ### Core (from logo SVG)
 
-| Token | Hex | RGB | Usage |
-|-------|-----|-----|--------|
-| `brand-red` | `#DE241B` | `222, 36, 27` | CTAs, accent words, logo banner, dividers, icon circles |
-| `brand-red-hover` | `#C41F17` | — | Button hover (darken ~8%) |
-| `brand-charcoal` | `#222527` | `34, 37, 39` | Logo oval, elevated surfaces, cards |
-| `brand-white` | `#FFFFFF` | `255, 255, 255` | Headlines on dark, logo wordmark, button labels |
+| Token             | Hex       | RGB             | Usage                                                   |
+| ----------------- | --------- | --------------- | ------------------------------------------------------- |
+| `brand-red`       | `#DE241B` | `222, 36, 27`   | CTAs, accent words, logo banner, dividers, icon circles |
+| `brand-red-hover` | `#C41F17` | —               | Button hover (darken ~8%)                               |
+| `brand-charcoal`  | `#222527` | `34, 37, 39`    | Logo oval, elevated surfaces, cards                     |
+| `brand-white`     | `#FFFFFF` | `255, 255, 255` | Headlines on dark, logo wordmark, button labels         |
 
 ### Backgrounds (from brochure)
 
-| Token | Hex | Usage |
-|-------|-----|--------|
-| `bg-base` | `#000000` | Page background — pure black per PDF |
-| `bg-elevated` | `#141414` | Cards, header/footer bands, form panels |
-| `bg-card` | `#222527` | Primary cards, panels (`brand-charcoal`) |
-| `bg-overlay` | `rgba(0, 0, 0, 0.75)` | Hero image scrims |
+| Token         | Hex                   | Usage                                    |
+| ------------- | --------------------- | ---------------------------------------- |
+| `bg-base`     | `#000000`             | Page background — pure black per PDF     |
+| `bg-elevated` | `#141414`             | Cards, header/footer bands, form panels  |
+| `bg-card`     | `#222527`             | Primary cards, panels (`brand-charcoal`) |
+| `bg-overlay`  | `rgba(0, 0, 0, 0.75)` | Hero image scrims                        |
 
 ### Text
 
-| Token | Hex | Usage |
-|-------|-----|--------|
-| `text-primary` | `#FFFFFF` | Headlines, navigation |
-| `text-secondary` | `#E0E0E0` | Body on dark |
-| `text-muted` | `#9CA3AF` | Captions, legal, meta |
-| `border-subtle` | `#2E3236` | Dividers, card borders |
+| Token            | Hex       | Usage                  |
+| ---------------- | --------- | ---------------------- |
+| `text-primary`   | `#FFFFFF` | Headlines, navigation  |
+| `text-secondary` | `#E0E0E0` | Body on dark           |
+| `text-muted`     | `#9CA3AF` | Captions, legal, meta  |
+| `border-subtle`  | `#2E3236` | Dividers, card borders |
 
 ### Service categories (brochure p.2 — Consulting / Soins / Coaching)
 
-| Token | Hex | Usage |
-|-------|-----|--------|
-| `accent-consulting` | `#FCEE21` | Entreprise, audit, consulting blobs |
-| `accent-care` | `#B0B0B0` | Soins, maintenance, neutral services |
-| `accent-coaching` | `#00AEEF` | Coaching, sportif parcours |
+| Token               | Hex       | Usage                                |
+| ------------------- | --------- | ------------------------------------ |
+| `accent-consulting` | `#FCEE21` | Entreprise, audit, consulting blobs  |
+| `accent-care`       | `#B0B0B0` | Soins, maintenance, neutral services |
+| `accent-coaching`   | `#00AEEF` | Coaching, sportif parcours           |
 
 ### Pillars — Le Gym / Le Lab / Le Studio (brochure p.4)
 
-| Token | Hex | Usage |
-|-------|-----|--------|
-| `pillar-gym` | `#4CAF50` | Le Gym borders, icons, highlights |
-| `pillar-lab` | `#FFC107` | Le Lab borders, icons, highlights |
+| Token           | Hex       | Usage                                |
+| --------------- | --------- | ------------------------------------ |
+| `pillar-gym`    | `#4CAF50` | Le Gym borders, icons, highlights    |
+| `pillar-lab`    | `#FFC107` | Le Lab borders, icons, highlights    |
 | `pillar-studio` | `#2196F3` | Le Studio borders, icons, highlights |
 
 ### Light mode (deferred — PRD v1 is dark only)
@@ -125,24 +125,24 @@ The brochure uses **heavy condensed italic** for hero headlines and **bold caps*
 
 ### Recommended pairing (web)
 
-| Role | Font | Weight / style | Notes |
-|------|------|----------------|--------|
-| Display / H1–H2 | [Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed) | 700–800 **italic** | Matches « UN OBJECTIF COMMUN : VOTRE PERFORMANCE » |
-| Headings / nav | Barlow Condensed | 600–700, caps | Section titles, nav, buttons |
-| Body | [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) | 400–500 | Long-form, cards on white (entreprise pages) |
-| Tagline | Barlow Condensed | 600, caps | « Santé • Performance • Résultats » with red bullets |
+| Role            | Font                                                                   | Weight / style     | Notes                                                |
+| --------------- | ---------------------------------------------------------------------- | ------------------ | ---------------------------------------------------- |
+| Display / H1–H2 | [Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed) | 700–800 **italic** | Matches « UN OBJECTIF COMMUN : VOTRE PERFORMANCE »   |
+| Headings / nav  | Barlow Condensed                                                       | 600–700, caps      | Section titles, nav, buttons                         |
+| Body            | [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)       | 400–500            | Long-form, cards on white (entreprise pages)         |
+| Tagline         | Barlow Condensed                                                       | 600, caps          | « Santé • Performance • Résultats » with red bullets |
 
 **Alternates:** Oswald or Bebas Neue (display italic) + Inter (body).
 
 ### Scale
 
-| Token | Size | Line height | Use |
-|-------|------|-------------|-----|
-| `text-display` | `clamp(2.5rem, 5vw, 4rem)` | 1.05 | Hero headline |
-| `text-h2` | `2rem` / 32px | 1.15 | Section titles |
-| `text-h3` | `1.5rem` / 24px | 1.25 | Card titles |
-| `text-body` | `1rem` / 16px | 1.6 | Paragraphs |
-| `text-small` | `0.875rem` / 14px | 1.5 | Captions, footer |
+| Token          | Size                       | Line height | Use              |
+| -------------- | -------------------------- | ----------- | ---------------- |
+| `text-display` | `clamp(2.5rem, 5vw, 4rem)` | 1.05        | Hero headline    |
+| `text-h2`      | `2rem` / 32px              | 1.15        | Section titles   |
+| `text-h3`      | `1.5rem` / 24px            | 1.25        | Card titles      |
+| `text-body`    | `1rem` / 16px              | 1.6         | Paragraphs       |
+| `text-small`   | `0.875rem` / 14px          | 1.5         | Captions, footer |
 
 ### Typographic rules
 
@@ -167,11 +167,11 @@ families: {
 
 ### Buttons
 
-| Variant | Background | Text | Radius |
-|---------|------------|------|--------|
-| Primary CTA | `brand-red` | `brand-white` | `0` (sharp) |
-| Secondary | transparent | `brand-white` | `0`, `border` white |
-| On light card | `brand-red` | `brand-white` | `0` |
+| Variant       | Background  | Text          | Radius              |
+| ------------- | ----------- | ------------- | ------------------- |
+| Primary CTA   | `brand-red` | `brand-white` | `0` (sharp)         |
+| Secondary     | transparent | `brand-white` | `0`, `border` white |
+| On light card | `brand-red` | `brand-white` | `0`                 |
 
 - Label: ALL CAPS, Barlow Condensed 600, `tracking-button` (`0.04em`).
 - Padding: `0.875rem 1.75rem`.
@@ -226,11 +226,11 @@ families: {
 
 ## Imagery
 
-| Asset | Path | Use |
-|-------|------|-----|
-| Hero composite | `public/images/brand/hero-cover.jpg` | Homepage hero background |
-| Logo banner | `public/images/brand/logo-banner.png` | Reference / OG fallback |
-| Category icons | `public/images/brand/icon-*.png` | Consulting, Soins, Coaching blobs |
+| Asset          | Path                                  | Use                               |
+| -------------- | ------------------------------------- | --------------------------------- |
+| Hero composite | `public/images/brand/hero-cover.jpg`  | Homepage hero background          |
+| Logo banner    | `public/images/brand/logo-banner.png` | Reference / OG fallback           |
+| Category icons | `public/images/brand/icon-*.png`      | Consulting, Soins, Coaching blobs |
 
 ### Photography style (from PDF)
 
@@ -261,16 +261,16 @@ families: {
 
 ### Brochure content map (for future pages)
 
-| PDF page | Topic | Web route |
-|----------|-------|-----------|
-| 1 | Brand hero — performance | `/` |
-| 2 | Consulting / Soins / Coaching | `/sportif`, services |
-| 3 | Teams & organisation | `/equipe` |
-| 4 | Gym / Lab / Studio | `/sportif/*` |
-| 5 | Entreprise B2B | `/entreprise` |
-| 6 | Club staffing & pricing | `/club` |
-| 7 | E-Crew currency | TBD |
-| 8 | EZTM digital platform | Homepage block |
+| PDF page | Topic                         | Web route            |
+| -------- | ----------------------------- | -------------------- |
+| 1        | Brand hero — performance      | `/`                  |
+| 2        | Consulting / Soins / Coaching | `/sportif`, services |
+| 3        | Teams & organisation          | `/equipe`            |
+| 4        | Gym / Lab / Studio            | `/sportif/*`         |
+| 5        | Entreprise B2B                | `/entreprise`        |
+| 6        | Club staffing & pricing       | `/club`              |
+| 7        | E-Crew currency               | TBD                  |
+| 8        | EZTM digital platform         | Homepage block       |
 
 ---
 
@@ -285,16 +285,16 @@ families: {
 
 ## Assets
 
-| File | Purpose |
-|------|---------|
-| `docs/design/objectif-sport.pdf` | Master brand brochure |
-| `docs/design/logo.svg` | Master logo vectors |
-| `docs/design/inspiration.png` | Web layout mood (dark coaching template) |
-| `public/images/brand/hero-cover.jpg` | Homepage hero |
-| `public/images/brand/icon-consulting.png` | Consulting category |
-| `public/images/brand/icon-soins.png` | Soins category |
-| `public/images/brand/icon-coaching.png` | Coaching category |
-| `public/logo.svg` | Site header / footer |
+| File                                      | Purpose                                  |
+| ----------------------------------------- | ---------------------------------------- |
+| `docs/design/objectif-sport.pdf`          | Master brand brochure                    |
+| `docs/design/logo.svg`                    | Master logo vectors                      |
+| `docs/design/inspiration.png`             | Web layout mood (dark coaching template) |
+| `public/images/brand/hero-cover.jpg`      | Homepage hero                            |
+| `public/images/brand/icon-consulting.png` | Consulting category                      |
+| `public/images/brand/icon-soins.png`      | Soins category                           |
+| `public/images/brand/icon-coaching.png`   | Coaching category                        |
+| `public/logo.svg`                         | Site header / footer                     |
 
 ---
 

@@ -1,8 +1,10 @@
 <template>
   <div class="flex h-full flex-col gap-4">
-    <HomeDashboardCard class="flex flex-1 flex-col p-5 md:p-6">
+    <UCard class="flex flex-1 flex-col">
       <AppLogo />
-      <p class="mt-3 font-display text-xs font-semibold uppercase tracking-widest text-text-muted">
+      <p
+        class="font-display text-text-muted mt-3 text-xs font-semibold tracking-widest uppercase"
+      >
         {{ tagline }}
       </p>
 
@@ -12,15 +14,15 @@
       >
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors"
-          :class="isHomeActive ? 'bg-brand-red text-brand-white' : 'text-text-primary hover:text-brand-red'"
+          class="font-display tracking-button inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
+          :class="
+            isHomeActive
+              ? 'bg-brand-red text-brand-white'
+              : 'text-text-primary hover:text-brand-red'
+          "
           :aria-current="isHomeActive ? 'page' : undefined"
         >
-          <Icon
-            name="mdi:home"
-            class="h-5 w-5 shrink-0"
-            aria-hidden="true"
-          />
+          <Icon name="mdi:home" class="h-5 w-5 shrink-0" aria-hidden="true" />
           Accueil
         </NuxtLink>
 
@@ -28,39 +30,40 @@
           v-for="link in sidebarNav"
           :key="link.to"
           :to="link.to"
-          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors hover:text-brand-red"
+          class="font-display tracking-button hover:text-brand-red inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
           :class="navLinkClass(link.to)"
           :aria-current="isNavActive(link.to) ? 'page' : undefined"
         >
-          <Icon
-            :name="link.icon"
-            class="h-5 w-5 shrink-0"
-            aria-hidden="true"
-          />
+          <Icon :name="link.icon" class="h-5 w-5 shrink-0" aria-hidden="true" />
           {{ link.label }}
         </NuxtLink>
       </nav>
-    </HomeDashboardCard>
+    </UCard>
 
-    <HomeDashboardCard class="p-5 md:p-6">
+    <UCard>
       <div
-        class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-brand-red/15 ring-2 ring-brand-red"
+        class="bg-brand-red/15 ring-brand-red mx-auto flex h-14 w-14 items-center justify-center rounded-xl ring-2"
         aria-hidden="true"
       >
-        <span class="font-display text-lg font-extrabold uppercase text-brand-red">EZ</span>
+        <span
+          class="font-display text-brand-red text-lg font-extrabold uppercase"
+          >EZ</span
+        >
       </div>
-      <h2 class="mt-4 text-center font-display text-sm font-bold uppercase tracking-button text-text-primary">
+      <h2
+        class="font-display tracking-button text-text-primary mt-4 text-center text-sm font-bold uppercase"
+      >
         {{ promoTitle }}
       </h2>
-      <p class="mt-2 text-center text-sm text-text-muted">
+      <p class="text-text-muted mt-2 text-center text-sm">
         {{ promoDescription }}
       </p>
-    </HomeDashboardCard>
+    </UCard>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   tagline: string
   promoTitle: string
   promoDescription: string

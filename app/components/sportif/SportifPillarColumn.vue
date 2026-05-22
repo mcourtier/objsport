@@ -15,33 +15,27 @@
         />
       </div>
       <h2
-        class="mt-4 font-display text-2xl font-bold uppercase tracking-button"
+        class="font-display tracking-button mt-4 text-2xl font-bold uppercase"
         :class="pillarTextClass(pillar.accent)"
       >
         {{ pillar.name }}
       </h2>
-      <p class="mt-1 font-display text-sm font-semibold uppercase tracking-button text-text-primary">
+      <p
+        class="font-display tracking-button text-text-primary mt-1 text-sm font-semibold uppercase"
+      >
         {{ pillar.subtitle }}
       </p>
     </header>
 
-    <div
-      v-for="section in pillar.sections"
-      :key="section.title"
-      class="mt-8"
-    >
+    <div v-for="section in pillar.sections" :key="section.title" class="mt-8">
       <h3
-        class="font-display text-sm font-bold uppercase tracking-button"
+        class="font-display tracking-button text-sm font-bold uppercase"
         :class="pillarTextClass(pillar.accent)"
       >
         {{ section.title }}
       </h3>
       <ul class="mt-4 space-y-4">
-        <li
-          v-for="item in section.items"
-          :key="item.title"
-          class="flex gap-3"
-        >
+        <li v-for="item in section.items" :key="item.title" class="flex gap-3">
           <span
             class="mt-0.5"
             :class="pillarTextClass(pillar.accent)"
@@ -50,10 +44,12 @@
             <SportifServiceIcon :name="item.icon" />
           </span>
           <div>
-            <p class="font-display text-sm font-semibold uppercase leading-snug text-text-primary">
+            <p
+              class="font-display text-text-primary text-sm leading-snug font-semibold uppercase"
+            >
               {{ item.title }}
             </p>
-            <p class="mt-0.5 text-sm text-text-muted">
+            <p class="text-text-muted mt-0.5 text-sm">
               {{ item.description }}
             </p>
           </div>
@@ -68,13 +64,17 @@
       width="310"
       height="200"
       loading="lazy"
-    >
+    />
   </article>
 </template>
 
 <script setup lang="ts">
 import type { SportifPillar } from '~/types/sportif'
-import { pillarBorderClass, pillarIconCircleClass, pillarTextClass } from '~/utils/pillarTheme'
+import {
+  pillarBorderClass,
+  pillarIconCircleClass,
+  pillarTextClass,
+} from '~/utils/pillarTheme'
 import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 
 defineProps<{

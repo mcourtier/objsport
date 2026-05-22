@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex shrink-0 items-center justify-center rounded-full bg-brand-red"
+    class="bg-brand-red flex shrink-0 items-center justify-center rounded-full"
     :class="sizeClass"
     aria-hidden="true"
   >
@@ -9,24 +9,9 @@
       class="h-[55%] w-[55%]"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x="10"
-        y="10"
-        width="28"
-        height="28"
-        fill="#ffffff"
-        rx="2"
-      />
-      <path
-        d="M24 14 L30 24 L24 34 L18 24 Z"
-        fill="#de241b"
-      />
-      <circle
-        cx="24"
-        cy="24"
-        r="3"
-        fill="#de241b"
-      />
+      <rect x="10" y="10" width="28" height="28" fill="#ffffff" rx="2" />
+      <path d="M24 14 L30 24 L24 34 L18 24 Z" fill="#de241b" />
+      <circle cx="24" cy="24" r="3" fill="#de241b" />
     </svg>
   </div>
 </template>

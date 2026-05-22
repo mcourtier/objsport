@@ -10,23 +10,13 @@
 
     <section class="py-16 md:py-24">
       <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <ul
-          v-if="profiles?.length"
-          class="grid gap-6 md:grid-cols-3 md:gap-8"
-        >
-          <li
-            v-for="profile in profiles"
-            :key="profile.slug"
-            class="min-w-0"
-          >
+        <ul v-if="profiles?.length" class="grid gap-6 md:grid-cols-3 md:gap-8">
+          <li v-for="profile in profiles" :key="profile.slug" class="min-w-0">
             <CardProfile :profile="profile" />
           </li>
         </ul>
 
-        <p
-          v-else
-          class="mt-12 text-text-muted"
-        >
+        <p v-else class="text-text-muted mt-12">
           Aucun profil disponible pour le moment.
         </p>
       </div>
@@ -58,17 +48,19 @@ const heroTitle = computed(() => pageContent.value?.heroTitle ?? 'L’équipe')
 const heroTitleAccent = computed(() => pageContent.value?.heroTitleAccent)
 
 const intro = computed(
-  () => pageContent.value?.intro ?? 'Rencontrez les professionnels Objectif Sport.',
+  () =>
+    pageContent.value?.intro ?? 'Rencontrez les professionnels Objectif Sport.',
 )
 
 const heroBackgroundImage = computed(
-  () => pageContent.value?.heroBackgroundImage ?? '/images/brand/hero-cover.jpg',
+  () =>
+    pageContent.value?.heroBackgroundImage ?? '/images/brand/hero-cover.jpg',
 )
 
 const heroBackgroundImageAlt = computed(
   () =>
-    pageContent.value?.heroBackgroundImageAlt
-    ?? 'Équipe Objectif Sport — coaching bien-être et performance',
+    pageContent.value?.heroBackgroundImageAlt ??
+    'Équipe Objectif Sport — coaching bien-être et performance',
 )
 
 useSeoMeta({

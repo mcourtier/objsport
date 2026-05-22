@@ -1,9 +1,6 @@
 <template>
   <div v-if="pageMeta">
-    <PageHero
-      :title="pageMeta.title"
-      :description="pageMeta.description"
-    />
+    <PageHero :title="pageMeta.title" :description="pageMeta.description" />
     <LayoutPageStub />
   </div>
 </template>

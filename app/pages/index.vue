@@ -1,8 +1,5 @@
 <template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
+  <ContentRenderer v-if="page" :value="page" />
 </template>
 
 <script setup lang="ts">

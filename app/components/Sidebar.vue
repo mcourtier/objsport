@@ -1,48 +1,50 @@
 <template>
   <div class="flex flex-col">
-    <Card
-      class="flex flex-col p-5 md:p-6"
-    >
-      <AppLogo />
-      <p class="mt-3 font-display text-xs font-semibold uppercase tracking-widest text-text-muted text-center">
-        {{ tagline }}
-      </p>
-
-      <nav
-        class="mt-8 flex flex-1 flex-col gap-1"
-        aria-label="Navigation principale"
-      >
-        <NuxtLink
-          to="/"
-          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors"
-          :class="isHomeActive ? 'bg-brand-red text-brand-white' : 'text-text-primary hover:text-brand-red'"
-          :aria-current="isHomeActive ? 'page' : undefined"
+    <UCard>
+      <div class="flex flex-col p-5 md:p-6">
+        <AppLogo />
+        <p
+          class="font-display text-text-muted mt-3 text-center text-xs font-semibold tracking-widest uppercase"
         >
-          <Icon
-            name="mdi:home"
-            class="h-5 w-5 shrink-0"
-            aria-hidden="true"
-          />
-          Accueil
-        </NuxtLink>
+          {{ tagline }}
+        </p>
 
-        <NuxtLink
-          v-for="link in sidebarNav"
-          :key="link.to"
-          :to="link.to"
-          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors"
-          :class="navLinkClass(link.to)"
-          :aria-current="isNavActive(link.to) ? 'page' : undefined"
+        <nav
+          class="mt-8 flex flex-1 flex-col gap-1"
+          aria-label="Navigation principale"
         >
-          <Icon
-            :name="link.icon"
-            class="h-5 w-5 shrink-0"
-            aria-hidden="true"
-          />
-          {{ link.label }}
-        </NuxtLink>
-      </nav>
-    </Card>
+          <NuxtLink
+            to="/"
+            class="font-display tracking-button inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
+            :class="
+              isHomeActive
+                ? 'bg-brand-red text-brand-white'
+                : 'text-text-primary hover:text-brand-red'
+            "
+            :aria-current="isHomeActive ? 'page' : undefined"
+          >
+            <Icon name="mdi:home" class="h-5 w-5 shrink-0" aria-hidden="true" />
+            Accueil
+          </NuxtLink>
+
+          <NuxtLink
+            v-for="link in sidebarNav"
+            :key="link.to"
+            :to="link.to"
+            class="font-display tracking-button inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
+            :class="navLinkClass(link.to)"
+            :aria-current="isNavActive(link.to) ? 'page' : undefined"
+          >
+            <Icon
+              :name="link.icon"
+              class="h-5 w-5 shrink-0"
+              aria-hidden="true"
+            />
+            {{ link.label }}
+          </NuxtLink>
+        </nav>
+      </div>
+    </UCard>
   </div>
 </template>
 

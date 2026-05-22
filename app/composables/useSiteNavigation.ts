@@ -10,7 +10,11 @@ export const useSiteNavigation = () => {
   ]
 
   const sidebarNav: SidebarNavLink[] = [
-    { label: 'Entreprise', to: '/entreprise', icon: 'mdi:office-building-outline' },
+    {
+      label: 'Entreprise',
+      to: '/entreprise',
+      icon: 'mdi:office-building-outline',
+    },
     { label: 'Club', to: '/club', icon: 'mdi:soccer' },
     { label: 'Sportif', to: '/sportif', icon: 'mdi:dumbbell' },
     { label: 'Équipe', to: '/equipe', icon: 'mdi:account-group-outline' },

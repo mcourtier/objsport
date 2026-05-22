@@ -1,38 +1,29 @@
 <template>
-  <section
-    class="py-16 md:py-24"
-    aria-labelledby="contact-form-heading"
-  >
+  <section class="py-16 md:py-24" aria-labelledby="contact-form-heading">
     <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
       <h2
         id="contact-form-heading"
-        class="font-display text-4xl font-bold uppercase tracking-wide text-text-primary md:text-5xl"
+        class="font-display text-text-primary text-4xl font-bold tracking-wide uppercase md:text-5xl"
       >
         {{ heading }}
       </h2>
-      <p
-        v-if="intro"
-        class="mt-6 max-w-prose text-lg text-text-secondary"
-      >
+      <p v-if="intro" class="text-text-secondary mt-6 max-w-prose text-lg">
         {{ intro }}
       </p>
 
-      <div
+      <UAlert
         v-if="status === 'success'"
-        class="mt-10 border border-border-subtle bg-bg-elevated p-8 md:p-10"
+        class="mt-10"
+        color="success"
+        variant="subtle"
+        title="Message envoyé"
+        :description="successMessage"
         role="status"
-      >
-        <p class="font-display text-xl font-bold uppercase tracking-wide text-text-primary">
-          Message envoyé
-        </p>
-        <p class="mt-4 text-lg text-text-secondary">
-          {{ successMessage }}
-        </p>
-      </div>
+      />
 
       <form
         v-else
-        class="mt-10 space-y-6 border border-border-subtle bg-bg-elevated p-8 md:p-10"
+        class="border-border-subtle bg-bg-elevated mt-10 space-y-6 border p-8 md:p-10"
         novalidate
         @submit.prevent="onSubmit"
       >
@@ -84,17 +75,18 @@
           @update:model-value="clearError('message')"
         />
 
-        <p
+        <UAlert
           v-if="status === 'error'"
-          class="text-sm text-brand-red"
+          color="error"
+          variant="subtle"
+          :description="errorMessage"
           role="alert"
-        >
-          {{ errorMessage }}
-        </p>
+        />
 
         <AppButton
           type="submit"
-          :class="{ 'pointer-events-none opacity-60': isSubmitting }"
+          :loading="isSubmitting"
+          :disabled="isSubmitting"
         >
           {{ isSubmitting ? 'Envoi en cours…' : submitLabel }}
         </AppButton>
@@ -122,8 +114,10 @@ withDefaults(
   {
     heading: 'Contactez-nous',
     submitLabel: 'Envoyer le message',
-    successMessage: 'Merci ! Votre message a bien été envoyé. Nous vous répondrons sous peu.',
-    errorMessage: 'Une erreur est survenue lors de l’envoi. Veuillez réessayer.',
+    successMessage:
+      'Merci ! Votre message a bien été envoyé. Nous vous répondrons sous peu.',
+    errorMessage:
+      'Une erreur est survenue lors de l’envoi. Veuillez réessayer.',
   },
 )
 
@@ -169,8 +163,7 @@ async function onSubmit() {
       },
     })
     status.value = 'success'
-  }
-  catch {
+  } catch {
     status.value = 'error'
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <article
-    class="group flex flex-col border border-border-subtle border-t-4 bg-bg-card p-8 transition-colors hover:border-brand-red/30 md:p-10"
+    class="group border-border-subtle bg-bg-card hover:border-brand-red/30 flex flex-col border border-t-4 p-8 transition-colors md:p-10"
     :class="accentBorderClass"
   >
     <img
@@ -11,16 +11,18 @@
       width="64"
       height="64"
       aria-hidden="true"
+    />
+    <h2
+      class="font-display text-text-primary text-2xl font-bold tracking-wide uppercase"
     >
-    <h2 class="font-display text-2xl font-bold uppercase tracking-wide text-text-primary">
       {{ block.title }}
     </h2>
-    <p class="mt-4 flex-1 text-text-secondary">
+    <p class="text-text-secondary mt-4 flex-1">
       {{ block.description }}
     </p>
     <NuxtLink
       :to="block.to"
-      class="mt-8 inline-flex items-center gap-2 font-display text-sm font-semibold uppercase tracking-button text-brand-red transition-colors hover:text-brand-red-hover"
+      class="font-display tracking-button text-brand-red hover:text-brand-red-hover mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase transition-colors"
     >
       {{ block.cta }}
       <span aria-hidden="true">→</span>

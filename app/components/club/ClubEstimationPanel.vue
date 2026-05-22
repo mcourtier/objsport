@@ -1,11 +1,11 @@
 <template>
   <article
-    class="flex h-full min-h-[280px] flex-col rounded-2xl bg-brand-white p-5 text-bg-base md:p-6"
+    class="bg-brand-white text-bg-base flex h-full min-h-[280px] flex-col rounded-2xl p-5 md:p-6"
     aria-labelledby="club-estimation-heading"
   >
     <h2
       id="club-estimation-heading"
-      class="font-display text-sm font-bold uppercase tracking-button md:text-base"
+      class="font-display tracking-button text-sm font-bold uppercase md:text-base"
     >
       {{ title }}
     </h2>
@@ -17,7 +17,7 @@
       <div
         v-for="line in lineCount"
         :key="line"
-        class="h-5 border-b border-dotted border-text-muted/40"
+        class="border-text-muted/40 h-5 border-b border-dotted"
       />
     </div>
   </article>

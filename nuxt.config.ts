@@ -13,7 +13,17 @@ const prerenderedPaths = [
 export default defineNuxtConfig({
   ssr: true,
 
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/seo', '@nuxtjs/google-fonts', '@nuxt/icon'],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', '@nuxtjs/google-fonts'],
+
+  ui: {
+    fonts: false,
+  },
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: '',
+  },
 
   icon: {
     serverBundle: {
@@ -25,11 +35,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
 
   css: ['~/assets/css/main.css'],
-
-  tailwindcss: {
-    cssPath: '~/assets/css/main.css',
-    configPath: 'tailwind.config.ts',
-  },
 
   googleFonts: {
     families: {
@@ -47,6 +52,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr',
+        class: 'dark',
       },
       bodyAttrs: {
         class: 'min-h-screen',

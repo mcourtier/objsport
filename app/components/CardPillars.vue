@@ -1,94 +1,89 @@
 <template>
-  <Card
-    v-if="variant === 'embedded'"
-    class="p-6 md:p-8"
-    aria-labelledby="pillars-heading"
-  >
-    <header class="text-center">
-      <h2
-        id="pillars-heading"
-        class="font-display text-lg font-bold uppercase tracking-wide text-text-primary md:text-xl"
-      >
-        {{ heading }}
-      </h2>
-      <p
-        v-if="intro"
-        class="mx-auto mt-2 max-w-2xl text-sm text-text-secondary"
-      >
-        {{ intro }}
-      </p>
-    </header>
-
-    <ul class="mt-8 grid gap-6 sm:grid-cols-3">
-      <li
-        v-for="pillar in pillars"
-        :key="pillar.name"
-        class="text-center"
-      >
-        <div
-          class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
-          :class="pillarIconSurfaceClass(pillar.accent)"
-          aria-hidden="true"
+  <UCard v-if="variant === 'embedded'" aria-labelledby="pillars-heading">
+    <div class="p-6 md:p-8">
+      <header class="text-center">
+        <h2
+          id="pillars-heading"
+          class="font-display text-text-primary text-lg font-bold tracking-wide uppercase md:text-xl"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            class="h-8 w-8"
-            :class="pillarIconColorClass(pillar.accent)"
-          >
-            <path :d="pillarIconPath(pillar.accent)" />
-          </svg>
-        </div>
-        <p class="mt-4 font-display text-sm font-bold uppercase tracking-button text-brand-red">
-          {{ pillar.name }}
+          {{ heading }}
+        </h2>
+        <p
+          v-if="intro"
+          class="text-text-secondary mx-auto mt-2 max-w-2xl text-sm"
+        >
+          {{ intro }}
         </p>
-        <p class="mt-2 text-sm text-text-muted">
-          {{ pillar.description }}
-        </p>
-      </li>
-    </ul>
+      </header>
 
-    <ul
-      v-if="trustItems.length"
-      class="mt-8 grid gap-4 border-t border-border-subtle pt-8 sm:grid-cols-3"
-    >
-      <li
-        v-for="item in trustItems"
-        :key="item.label"
-        class="flex items-center justify-center gap-2 text-center"
+      <ul class="mt-8 grid gap-6 sm:grid-cols-3">
+        <li v-for="pillar in pillars" :key="pillar.name" class="text-center">
+          <div
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
+            :class="pillarIconSurfaceClass(pillar.accent)"
+            aria-hidden="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="h-8 w-8"
+              :class="pillarIconColorClass(pillar.accent)"
+            >
+              <path :d="pillarIconPath(pillar.accent)" />
+            </svg>
+          </div>
+          <p
+            class="font-display tracking-button text-brand-red mt-4 text-sm font-bold uppercase"
+          >
+            {{ pillar.name }}
+          </p>
+          <p class="text-text-muted mt-2 text-sm">
+            {{ pillar.description }}
+          </p>
+        </li>
+      </ul>
+
+      <ul
+        v-if="trustItems.length"
+        class="border-border-subtle mt-8 grid gap-4 border-t pt-8 sm:grid-cols-3"
       >
-        <Icon
-          name="mdi:shield-check-outline"
-          class="h-5 w-5 shrink-0 text-brand-red"
-          aria-hidden="true"
-        />
-        <span class="font-display text-xs font-bold uppercase tracking-button text-text-primary">
-          {{ item.label }}
-        </span>
-      </li>
-    </ul>
-  </Card>
+        <li
+          v-for="item in trustItems"
+          :key="item.label"
+          class="flex items-center justify-center gap-2 text-center"
+        >
+          <Icon
+            name="mdi:shield-check-outline"
+            class="text-brand-red h-5 w-5 shrink-0"
+            aria-hidden="true"
+          />
+          <span
+            class="font-display tracking-button text-text-primary text-xs font-bold uppercase"
+          >
+            {{ item.label }}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </UCard>
 
   <section
     v-else
-    class="border-t border-border-subtle bg-bg-elevated py-16 md:py-20"
+    class="border-border-subtle bg-bg-elevated border-t py-16 md:py-20"
     aria-labelledby="pillars-heading"
   >
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
       <header class="text-center">
         <h2
           id="pillars-heading"
-          class="font-display text-2xl font-bold uppercase tracking-wide text-text-primary md:text-3xl"
+          class="font-display text-text-primary text-2xl font-bold tracking-wide uppercase md:text-3xl"
         >
           {{ heading }}
         </h2>
-        <p
-          v-if="intro"
-          class="mx-auto mt-3 max-w-2xl text-text-secondary"
-        >
+        <p v-if="intro" class="text-text-secondary mx-auto mt-3 max-w-2xl">
           {{ intro }}
         </p>
       </header>
@@ -97,7 +92,7 @@
         <li
           v-for="pillar in pillars"
           :key="pillar.name"
-          class="flex flex-col border-t-4 bg-bg-card p-6 text-center"
+          class="bg-bg-card flex flex-col border-t-4 p-6 text-center"
           :class="pillarBorderClass(pillar.accent)"
         >
           <div
@@ -117,10 +112,12 @@
               <path :d="pillarIconPath(pillar.accent)" />
             </svg>
           </div>
-          <p class="mt-5 font-display text-lg font-bold uppercase tracking-button text-text-primary">
+          <p
+            class="font-display tracking-button text-text-primary mt-5 text-lg font-bold uppercase"
+          >
             {{ pillar.name }}
           </p>
-          <p class="mt-2 flex-1 text-sm text-text-muted">
+          <p class="text-text-muted mt-2 flex-1 text-sm">
             {{ pillar.description }}
           </p>
         </li>
@@ -130,22 +127,41 @@
 </template>
 
 <script setup lang="ts">
-import type { HomePillarsContent, HomeTrustItem, PillarAccent } from '~/types/homepage'
+import type {
+  HomePillarsContent,
+  HomeTrustItem,
+  PillarAccent,
+} from '~/types/homepage'
 
 withDefaults(
-  defineProps<HomePillarsContent & {
-    heading?: string
-    intro?: string
-    trustItems?: HomeTrustItem[]
-    variant?: 'full' | 'embedded'
-  }>(),
+  defineProps<
+    HomePillarsContent & {
+      heading?: string
+      intro?: string
+      trustItems?: HomeTrustItem[]
+      variant?: 'full' | 'embedded'
+    }
+  >(),
   {
     heading: 'La performance professionnelle',
-    intro: 'Trois espaces complémentaires pour prévenir, optimiser et performer.',
+    intro:
+      'Trois espaces complémentaires pour prévenir, optimiser et performer.',
     pillars: () => [
-      { name: 'Le Gym', description: 'Préparation physique et musculation', accent: 'gym' },
-      { name: 'Le Lab', description: 'Tests et analyse de performance', accent: 'lab' },
-      { name: 'Le Studio', description: 'Cours collectifs et coaching', accent: 'studio' },
+      {
+        name: 'Le Gym',
+        description: 'Préparation physique et musculation',
+        accent: 'gym',
+      },
+      {
+        name: 'Le Lab',
+        description: 'Tests et analyse de performance',
+        accent: 'lab',
+      },
+      {
+        name: 'Le Studio',
+        description: 'Cours collectifs et coaching',
+        accent: 'studio',
+      },
     ],
     trustItems: () => [],
     variant: 'full',

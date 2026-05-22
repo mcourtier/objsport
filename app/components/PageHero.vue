@@ -1,8 +1,5 @@
 <template>
-  <Hero
-    v-bind="props"
-    variant="page"
-  />
+  <Hero v-bind="props" variant="page" />
 </template>
 
 <script setup lang="ts">

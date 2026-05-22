@@ -3,7 +3,8 @@ import type { StubRouteMeta } from '~/types/navigation'
 export const stubRoutes: Record<string, StubRouteMeta> = {
   '/entreprise': {
     title: 'Entreprise',
-    description: 'Services B2B pour la performance et le bien-être en entreprise.',
+    description:
+      'Services B2B pour la performance et le bien-être en entreprise.',
   },
   '/entreprise/audit': {
     title: 'Audit',
@@ -60,8 +61,7 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
 }
 
 export function resolveStubRoute(path: string): StubRouteMeta | undefined {
-  const normalized = path.endsWith('/') && path.length > 1
-    ? path.slice(0, -1)
-    : path
+  const normalized =
+    path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path
   return stubRoutes[normalized]
 }

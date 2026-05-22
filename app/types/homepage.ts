@@ -74,7 +74,11 @@ export interface HomeEztmPromoContent {
 export interface HomeDashboardContent {
   hero: HomeHeroContent
   audience: HomeAudienceGridContent
-  pillars: HomePillarsContent & { heading: string, intro: string, trustItems: HomeTrustItem[] }
+  pillars: HomePillarsContent & {
+    heading: string
+    intro: string
+    trustItems: HomeTrustItem[]
+  }
   eztm: HomeEztmContent
   highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent

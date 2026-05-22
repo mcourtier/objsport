@@ -1,37 +1,41 @@
 <template>
   <article class="flex h-full flex-col">
-    <div class="rounded-t-2xl bg-brand-white px-5 pb-10 pt-6 text-center text-bg-base">
+    <div
+      class="bg-brand-white text-bg-base rounded-t-2xl px-5 pt-6 pb-10 text-center"
+    >
       <Icon
         :name="clubPricingIcon(tier.icon)"
-        class="mx-auto h-10 w-10 text-brand-red"
+        class="text-brand-red mx-auto h-10 w-10"
         aria-hidden="true"
       />
-      <p class="mt-3 font-display text-sm font-bold uppercase tracking-button">
+      <p class="font-display tracking-button mt-3 text-sm font-bold uppercase">
         {{ tier.label }}
       </p>
-      <p class="mt-2 font-display text-4xl font-extrabold leading-none md:text-5xl">
+      <p
+        class="font-display mt-2 text-4xl leading-none font-extrabold md:text-5xl"
+      >
         {{ tier.price }}
       </p>
     </div>
 
     <p
-      class="relative z-10 -mt-5 mx-auto max-w-[92%] rounded-full bg-brand-red px-4 py-2 text-center font-display text-[0.65rem] font-bold uppercase leading-snug tracking-wide text-brand-white sm:text-xs"
+      class="bg-brand-red font-display text-brand-white relative z-10 mx-auto -mt-5 max-w-[92%] rounded-full px-4 py-2 text-center text-[0.65rem] leading-snug font-bold tracking-wide uppercase sm:text-xs"
     >
       {{ tier.model }}
     </p>
 
     <div
-      class="mt-0 flex flex-1 flex-col rounded-b-2xl bg-bg-card px-5 pb-6 pt-10"
+      class="bg-bg-card mt-0 flex flex-1 flex-col rounded-b-2xl px-5 pt-10 pb-6"
     >
       <ul class="space-y-3">
         <li
           v-for="(note, index) in tier.footnotes"
           :key="`${tier.label}-${index}`"
-          class="flex gap-2 text-sm leading-relaxed text-text-secondary"
+          class="text-text-secondary flex gap-2 text-sm leading-relaxed"
         >
           <Icon
             name="mdi:check-circle"
-            class="mt-0.5 h-5 w-5 shrink-0 text-accent-consulting"
+            class="text-accent-consulting mt-0.5 h-5 w-5 shrink-0"
             aria-hidden="true"
           />
           <span>{{ note }}</span>

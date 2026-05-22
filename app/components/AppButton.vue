@@ -1,32 +1,19 @@
 <template>
-  <div>
-    <NuxtLink
-      v-if="to"
-      :to="to"
-      :class="resolvedButtonClasses"
-      v-bind="delegatedAttrs"
-    >
-      <slot />
-    </NuxtLink>
-    <a
-      v-else-if="href"
-      :href="href"
-      :class="resolvedButtonClasses"
-      :target="external ? '_blank' : undefined"
-      :rel="external ? 'noopener noreferrer' : undefined"
-      v-bind="delegatedAttrs"
-    >
-      <slot />
-    </a>
-    <button
-      v-else
-      :type="type"
-      :class="resolvedButtonClasses"
-      v-bind="delegatedAttrs"
-    >
-      <slot />
-    </button>
-  </div>
+  <UButton
+    :to="to"
+    :href="href"
+    :type="type"
+    :external="external"
+    :block="block"
+    :loading="loading"
+    :disabled="disabled"
+    :color="props.variant === 'secondary' ? 'neutral' : 'primary'"
+    :variant="props.variant === 'secondary' ? 'outline' : 'solid'"
+    :class="attrs.class"
+    v-bind="delegatedAttrs"
+  >
+    <slot />
+  </UButton>
 </template>
 
 <script setup lang="ts">
@@ -41,6 +28,9 @@ const props = withDefaults(
     href?: string
     type?: 'button' | 'submit' | 'reset'
     external?: boolean
+    block?: boolean
+    loading?: boolean
+    disabled?: boolean
   }>(),
   {
     variant: 'primary',
@@ -55,23 +45,4 @@ const delegatedAttrs = computed(() => {
   const { class: _class, ...rest } = attrs
   return rest
 })
-
-const buttonClasses = computed(() => {
-  const base =
-    'inline-flex items-center justify-center px-7 py-3.5 font-display text-sm font-semibold uppercase tracking-button transition-colors'
-
-  if (props.variant === 'secondary') {
-    return [
-      base,
-      'border border-brand-white text-brand-white hover:bg-brand-white hover:text-bg-base',
-    ]
-  }
-
-  return [
-    base,
-    'bg-brand-red text-brand-white hover:bg-brand-red-hover',
-  ]
-})
-
-const resolvedButtonClasses = computed(() => [buttonClasses.value, attrs.class])
 </script>

@@ -1,7 +1,11 @@
 <template>
-  <NuxtLink :to="`/equipe/${profile.slug}`" class="block h-full group">
-    <Card class="flex h-full flex-col bg-bg-elevated transition-all duration-200 group-hover:border-brand-red group-hover:shadow-lg">
-      <div class="relative aspect-square w-full shrink-0 overflow-hidden bg-bg-base">
+  <NuxtLink :to="`/equipe/${profile.slug}`" class="group block h-full">
+    <UCard
+      class="bg-bg-elevated group-hover:border-brand-red flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
+    >
+      <div
+        class="bg-bg-base relative aspect-square w-full shrink-0 overflow-hidden"
+      >
         <img
           :src="profile.photo"
           :alt="`Portrait de ${profile.name}`"
@@ -9,18 +13,22 @@
           width="480"
           height="480"
           loading="lazy"
-        >
+        />
       </div>
 
       <div class="flex flex-1 flex-col p-6 md:p-8">
-        <h2 class="font-display text-2xl font-bold uppercase tracking-wide text-text-primary">
+        <h2
+          class="font-display text-text-primary text-2xl font-bold tracking-wide uppercase"
+        >
           {{ profile.name }}
         </h2>
-        <p class="mt-2 font-display text-sm font-semibold uppercase tracking-button text-brand-red">
+        <p
+          class="font-display tracking-button text-brand-red mt-2 text-sm font-semibold uppercase"
+        >
           {{ profile.role }}
         </p>
       </div>
-    </Card>
+    </UCard>
   </NuxtLink>
 </template>
 

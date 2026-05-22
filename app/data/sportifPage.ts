@@ -16,7 +16,8 @@ export const sportifPageContent: SportifPageContent = {
       subtitle: 'Coaching 1-3 personnes',
       headerIcon: 'gym',
       imageSrc: '/images/sportif/gym.jpg',
-      imageAlt: 'Coach accompagnant un sportif en séance de renforcement au sol',
+      imageAlt:
+        'Coach accompagnant un sportif en séance de renforcement au sol',
       sections: [
         {
           title: 'Préhab (dès 45 min)',
@@ -91,7 +92,8 @@ export const sportifPageContent: SportifPageContent = {
       subtitle: 'Sessions individuelles',
       headerIcon: 'lab',
       imageSrc: '/images/sportif/lab.jpg',
-      imageAlt: 'Membres inférieurs avec électrostimulation en séance de récupération',
+      imageAlt:
+        'Membres inférieurs avec électrostimulation en séance de récupération',
       sections: [
         {
           title: 'Soins (dès 45 min)',

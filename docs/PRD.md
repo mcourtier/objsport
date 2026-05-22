@@ -26,14 +26,14 @@ A professional, performance-driven digital presence that reflects Objectif Sport
 
 ### 2.2 Business goals
 
-| Goal | Description |
-|------|-------------|
-| **Trust** | Communicate expertise, service pillars (Gym, Lab, Studio), delivery model (sur site / à domicile), and B2B/B2B2C offerings clearly. |
-| **Discovery** | Help Sportif and Club visitors understand what Objectif Sport offers. |
-| **Lead capture (light)** | Entreprise visitors can submit a **dedicated audit request**; all visitors can use a **general contact form**. |
-| **Compliance** | Meet French legal and GDPR expectations (legal pages, cookie consent, Matomo). |
-| **Service clarity** | Communicate that coaching is delivered **sur site (entreprise) ou à domicile**; no fixed-location or city-specific positioning. |
-| **Discoverability** | Support SEO for brand name, wellness/coaching terms, and B2B audit keywords (not geo-local). |
+| Goal                     | Description                                                                                                                         |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Trust**                | Communicate expertise, service pillars (Gym, Lab, Studio), delivery model (sur site / à domicile), and B2B/B2B2C offerings clearly. |
+| **Discovery**            | Help Sportif and Club visitors understand what Objectif Sport offers.                                                               |
+| **Lead capture (light)** | Entreprise visitors can submit a **dedicated audit request**; all visitors can use a **general contact form**.                      |
+| **Compliance**           | Meet French legal and GDPR expectations (legal pages, cookie consent, Matomo).                                                      |
+| **Service clarity**      | Communicate that coaching is delivered **sur site (entreprise) ou à domicile**; no fixed-location or city-specific positioning.     |
+| **Discoverability**      | Support SEO for brand name, wellness/coaching terms, and B2B audit keywords (not geo-local).                                        |
 
 ### 2.3 Non-goals (v1)
 
@@ -49,12 +49,12 @@ A professional, performance-driven digital presence that reflects Objectif Sport
 
 ## 3. Target audiences
 
-| Audience | Primary intent on site | Primary CTA |
-|----------|------------------------|-------------|
-| **L’entreprise** | Understand B2B services; evaluate Objectif Sport for corporate wellness | **Request an audit** (dedicated form) |
-| **Le club** | Discover Monitoring, Événementiel, Staffing | None specific—browse then **Contact** if interested |
-| **Le sportif** | Discover Le Gym, Le Lab, Le Studio | Explore service pages; optional **Contact** |
-| **General** | Team credibility, legal info, reach Objectif Sport | **Contact** |
+| Audience         | Primary intent on site                                                  | Primary CTA                                         |
+| ---------------- | ----------------------------------------------------------------------- | --------------------------------------------------- |
+| **L’entreprise** | Understand B2B services; evaluate Objectif Sport for corporate wellness | **Request an audit** (dedicated form)               |
+| **Le club**      | Discover Monitoring, Événementiel, Staffing                             | None specific—browse then **Contact** if interested |
+| **Le sportif**   | Discover Le Gym, Le Lab, Le Studio                                      | Explore service pages; optional **Contact**         |
+| **General**      | Team credibility, legal info, reach Objectif Sport                      | **Contact**                                         |
 
 All three audiences are **equal entry points** on the homepage (three parallel blocks).
 
@@ -133,86 +133,86 @@ Hub pages (`/entreprise`, `/club`, `/sportif`) may be simple index pages linking
 
 ### 6.1 Homepage
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| H-1 | Three equal-prominence blocks: Entreprise, Club, Sportif—each with headline, short copy, link to audience hub or key page | P0 |
-| H-2 | Hero aligned with [brand design](brand-design.md): dark theme, photography, red accent keyword in headline | P0 |
-| H-3 | EZTM block: “download the app” placeholder; links TBD, non-blocking for launch | P2 |
-| H-4 | Sticky header with logo, nav, primary CTA | P0 |
-| H-5 | Footer with legal links and Matomo-ready cookie consent entry point | P0 |
+| ID  | Requirement                                                                                                               | Priority |
+| --- | ------------------------------------------------------------------------------------------------------------------------- | -------- |
+| H-1 | Three equal-prominence blocks: Entreprise, Club, Sportif—each with headline, short copy, link to audience hub or key page | P0       |
+| H-2 | Hero aligned with [brand design](brand-design.md): dark theme, photography, red accent keyword in headline                | P0       |
+| H-3 | EZTM block: “download the app” placeholder; links TBD, non-blocking for launch                                            | P2       |
+| H-4 | Sticky header with logo, nav, primary CTA                                                                                 | P0       |
+| H-5 | Footer with legal links and Matomo-ready cookie consent entry point                                                       | P0       |
 
 **Content note:** Brochure material under `/samedi-06-12` is **inspiration only**, not embedded PDFs.
 
 ### 6.2 Service pages (9 total)
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| S-1 | One dedicated page per service (see §5.1) | P0 |
-| S-2 | Consistent template: hero/title, body sections, optional imagery, related links | P0 |
-| S-3 | Entreprise service pages include CTA to **audit request** where relevant | P0 |
-| S-4 | Content via Nuxt Content (Markdown + frontmatter) for maintainability by owner + Pierre | P0 |
-| S-5 | Placeholder copy and imagery acceptable until final assets delivered | P0 |
+| ID  | Requirement                                                                             | Priority |
+| --- | --------------------------------------------------------------------------------------- | -------- |
+| S-1 | One dedicated page per service (see §5.1)                                               | P0       |
+| S-2 | Consistent template: hero/title, body sections, optional imagery, related links         | P0       |
+| S-3 | Entreprise service pages include CTA to **audit request** where relevant                | P0       |
+| S-4 | Content via Nuxt Content (Markdown + frontmatter) for maintainability by owner + Pierre | P0       |
+| S-5 | Placeholder copy and imagery acceptable until final assets delivered                    | P0       |
 
 **Formation:** UI and URLs use **Formation**; legacy name “Opération” may appear once in copy if needed for recognition.
 
 ### 6.3 Team (`/equipe`)
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| T-1 | v1: profile for **Pierre Vespignani** | P0 |
-| T-2 | Profile fields: **photo**, **role**, **bio**, **contact** (email and/or phone as provided) | P0 |
-| T-3 | Architecture supports **additional profiles** without structural rework (content-driven) | P1 |
+| ID  | Requirement                                                                                | Priority |
+| --- | ------------------------------------------------------------------------------------------ | -------- |
+| T-1 | v1: profile for **Pierre Vespignani**                                                      | P0       |
+| T-2 | Profile fields: **photo**, **role**, **bio**, **contact** (email and/or phone as provided) | P0       |
+| T-3 | Architecture supports **additional profiles** without structural rework (content-driven)   | P1       |
 
 ### 6.4 Contact form (`/contact`)
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| C-1 | Fields: **name**, **email**, **phone**, **message** | P0 |
-| C-2 | Client-side validation; accessible labels and error messages | P0 |
-| C-3 | Submit via **server/API route** (e.g. Resend, Nodemailer) on static deploy—use Vercel serverless function or Nuxt server route compatible with `nuxt generate` + server handlers as per Nuxt/Vercel docs | P0 |
-| C-4 | Success and error states; no silent failures | P0 |
-| C-5 | Map / embedded location: **out of scope v1** | — |
+| ID  | Requirement                                                                                                                                                                                              | Priority |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| C-1 | Fields: **name**, **email**, **phone**, **message**                                                                                                                                                      | P0       |
+| C-2 | Client-side validation; accessible labels and error messages                                                                                                                                             | P0       |
+| C-3 | Submit via **server/API route** (e.g. Resend, Nodemailer) on static deploy—use Vercel serverless function or Nuxt server route compatible with `nuxt generate` + server handlers as per Nuxt/Vercel docs | P0       |
+| C-4 | Success and error states; no silent failures                                                                                                                                                             | P0       |
+| C-5 | Map / embedded location: **out of scope v1**                                                                                                                                                             | —        |
 
 ### 6.5 Audit request form (dedicated)
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| A-1 | Separate from general contact; linked from Entreprise CTAs | P0 |
-| A-2 | **Minimal fields for v1** (e.g. name, email, phone, company/organization, message); extensible later | P0 |
-| A-3 | Same delivery mechanism as contact (email API) | P0 |
-| A-4 | Distinct confirmation copy (“demande d’audit reçue”) | P1 |
+| ID  | Requirement                                                                                          | Priority |
+| --- | ---------------------------------------------------------------------------------------------------- | -------- |
+| A-1 | Separate from general contact; linked from Entreprise CTAs                                           | P0       |
+| A-2 | **Minimal fields for v1** (e.g. name, email, phone, company/organization, message); extensible later | P0       |
+| A-3 | Same delivery mechanism as contact (email API)                                                       | P0       |
+| A-4 | Distinct confirmation copy (“demande d’audit reçue”)                                                 | P1       |
 
 ### 6.6 Legal & privacy
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| L-1 | **Mentions légales** | P0 |
-| L-2 | **CGU** | P0 |
-| L-3 | **Politique de confidentialité** | P0 |
-| L-4 | **Cookies** policy + consent UI aligned with Matomo | P0 |
-| L-5 | Legal content editable via Content or static Markdown | P0 |
+| ID  | Requirement                                           | Priority |
+| --- | ----------------------------------------------------- | -------- |
+| L-1 | **Mentions légales**                                  | P0       |
+| L-2 | **CGU**                                               | P0       |
+| L-3 | **Politique de confidentialité**                      | P0       |
+| L-4 | **Cookies** policy + consent UI aligned with Matomo   | P0       |
+| L-5 | Legal content editable via Content or static Markdown | P0       |
 
 ### 6.7 Analytics (Matomo)
 
-| ID | Requirement | Priority |
-|----|-------------|----------|
-| M-1 | Matomo integration with **opt-in consent** before tracking (GDPR) | P0 |
-| M-2 | Document Matomo site ID / URL in environment config (not committed as secrets) | P0 |
-| M-3 | Cookie banner blocks tracking until accepted | P0 |
+| ID  | Requirement                                                                    | Priority |
+| --- | ------------------------------------------------------------------------------ | -------- |
+| M-1 | Matomo integration with **opt-in consent** before tracking (GDPR)              | P0       |
+| M-2 | Document Matomo site ID / URL in environment config (not committed as secrets) | P0       |
+| M-3 | Cookie banner blocks tracking until accepted                                   | P0       |
 
 ---
 
 ## 7. Content strategy
 
-| Topic | Decision |
-|-------|----------|
-| **Language** | French UI; brand name **Objectif Sport** in Latin characters |
-| **Tone** | Professional, intense, performance-driven ([brand design](brand-design.md)) |
-| **Ownership** | Product owner + Pierre maintain content post-launch |
-| **v1 assets** | **Placeholders** acceptable; structure and templates ship first |
-| **Source material** | Brochure inspiration only; no PDF downloads on site |
+| Topic                | Decision                                                                                                 |
+| -------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Language**         | French UI; brand name **Objectif Sport** in Latin characters                                             |
+| **Tone**             | Professional, intense, performance-driven ([brand design](brand-design.md))                              |
+| **Ownership**        | Product owner + Pierre maintain content post-launch                                                      |
+| **v1 assets**        | **Placeholders** acceptable; structure and templates ship first                                          |
+| **Source material**  | Brochure inspiration only; no PDF downloads on site                                                      |
 | **Service delivery** | Copy must state **sur site (entreprise) ou à domicile** where relevant; avoid city or fixed-venue claims |
-| **SEO copy** | Brand + wellness/coaching + B2B audit keywords on relevant pages (no geo-local SEO in v1) |
+| **SEO copy**         | Brand + wellness/coaching + B2B audit keywords on relevant pages (no geo-local SEO in v1)                |
 
 ---
 
@@ -227,17 +227,17 @@ Hub pages (`/entreprise`, `/club`, `/sportif`) may be simple index pages linking
 
 ## 9. Technical requirements
 
-| Area | Requirement |
-|------|-------------|
-| **Framework** | Nuxt 4, Vue 3 Composition API, TypeScript |
-| **Content** | Nuxt Content for pages and team profiles |
-| **Styling** | Tailwind CSS v4 per project setup |
-| **SEO** | `@nuxtjs/seo` — meta, sitemap, OG images as configured |
-| **Build** | `nuxt generate` (static output) |
-| **Hosting** | Vercel |
-| **Forms** | API route / serverless email delivery (provider TBD: Resend, Nodemailer, etc.) |
-| **Analytics** | Matomo with consent gating |
-| **i18n** | None in v1 |
+| Area          | Requirement                                                                    |
+| ------------- | ------------------------------------------------------------------------------ |
+| **Framework** | Nuxt 4, Vue 3 Composition API, TypeScript                                      |
+| **Content**   | Nuxt Content for pages and team profiles                                       |
+| **Styling**   | Tailwind CSS v4 per project setup                                              |
+| **SEO**       | `@nuxtjs/seo` — meta, sitemap, OG images as configured                         |
+| **Build**     | `nuxt generate` (static output)                                                |
+| **Hosting**   | Vercel                                                                         |
+| **Forms**     | API route / serverless email delivery (provider TBD: Resend, Nodemailer, etc.) |
+| **Analytics** | Matomo with consent gating                                                     |
+| **i18n**      | None in v1                                                                     |
 
 ### 9.1 Environment & secrets
 
@@ -253,11 +253,11 @@ Hub pages (`/entreprise`, `/club`, `/sportif`) may be simple index pages linking
 
 ## 10. SEO requirements
 
-| Priority | Keywords / intent |
-|----------|-----------------|
-| P0 | **Objectif Sport** (brand) |
-| P0 | Wellness coaching, performance, **sur site / à domicile** (service model, not city) |
-| P1 | B2B: audit entreprise, corporate wellness (Entreprise pages) |
+| Priority | Keywords / intent                                                                   |
+| -------- | ----------------------------------------------------------------------------------- |
+| P0       | **Objectif Sport** (brand)                                                          |
+| P0       | Wellness coaching, performance, **sur site / à domicile** (service model, not city) |
+| P1       | B2B: audit entreprise, corporate wellness (Entreprise pages)                        |
 
 - Unique `<title>` and meta description per page.
 - Semantic heading hierarchy (one H1 per page).
@@ -269,13 +269,13 @@ Hub pages (`/entreprise`, `/club`, `/sportif`) may be simple index pages linking
 
 Brochure-site KPIs (qualitative until analytics baseline exists):
 
-| Metric | Tool / signal |
-|--------|----------------|
-| Site live on production domain | Deployment |
-| All P0 pages reachable, no broken nav | QA checklist |
-| Forms deliver to inbox | Manual test + monitoring |
-| Matomo tracks only after consent | QA + Matomo dashboard |
-| Lighthouse accessibility score ≥ 90 on key templates | CI or manual audit |
+| Metric                                               | Tool / signal            |
+| ---------------------------------------------------- | ------------------------ |
+| Site live on production domain                       | Deployment               |
+| All P0 pages reachable, no broken nav                | QA checklist             |
+| Forms deliver to inbox                               | Manual test + monitoring |
+| Matomo tracks only after consent                     | QA + Matomo dashboard    |
+| Lighthouse accessibility score ≥ 90 on key templates | CI or manual audit       |
 
 No hard traffic or conversion targets for v1.
 
@@ -283,29 +283,29 @@ No hard traffic or conversion targets for v1.
 
 ## 12. Release phasing (suggested, no deadline)
 
-| Phase | Deliverable |
-|-------|-------------|
-| **1 — Foundation** | Layout, header/footer, dark theme tokens, homepage shell, legal page shells |
-| **2 — Content structure** | All service page templates + Nuxt Content collections; placeholder copy |
-| **3 — Forms** | Contact + audit API routes, email delivery, confirmations |
-| **4 — Team & polish** | Pierre profile, imagery, SEO meta, Matomo + cookie consent |
-| **5 — Launch** | Final copy swap, EZTM URLs when available, optional map on Contact |
+| Phase                     | Deliverable                                                                 |
+| ------------------------- | --------------------------------------------------------------------------- |
+| **1 — Foundation**        | Layout, header/footer, dark theme tokens, homepage shell, legal page shells |
+| **2 — Content structure** | All service page templates + Nuxt Content collections; placeholder copy     |
+| **3 — Forms**             | Contact + audit API routes, email delivery, confirmations                   |
+| **4 — Team & polish**     | Pierre profile, imagery, SEO meta, Matomo + cookie consent                  |
+| **5 — Launch**            | Final copy swap, EZTM URLs when available, optional map on Contact          |
 
 ---
 
 ## 13. Open items & TBD
 
-| Item | Owner | Notes |
-|------|-------|-------|
-| EZTM App Store / Play Store URLs | Product owner | Homepage block ships as placeholder |
-| Email provider & recipient addresses | Product owner + dev | For contact and audit forms |
-| Matomo instance URL & site ID | Product owner | Env config |
-| Final legal copy | Product owner / legal | Templates in v1 |
-| Photography & final service copy | Pierre + product owner | Replace placeholders |
-| Social network URLs | Product owner | Footer icons if used |
-| Contact page map | Deferred post-v1 | OpenStreetMap or Google Maps |
-| Light mode toggle | Post-v1 | Per brand design roadmap |
-| Additional team profiles | Pierre + product owner | Content model ready in v1 |
+| Item                                 | Owner                  | Notes                               |
+| ------------------------------------ | ---------------------- | ----------------------------------- |
+| EZTM App Store / Play Store URLs     | Product owner          | Homepage block ships as placeholder |
+| Email provider & recipient addresses | Product owner + dev    | For contact and audit forms         |
+| Matomo instance URL & site ID        | Product owner          | Env config                          |
+| Final legal copy                     | Product owner / legal  | Templates in v1                     |
+| Photography & final service copy     | Pierre + product owner | Replace placeholders                |
+| Social network URLs                  | Product owner          | Footer icons if used                |
+| Contact page map                     | Deferred post-v1       | OpenStreetMap or Google Maps        |
+| Light mode toggle                    | Post-v1                | Per brand design roadmap            |
+| Additional team profiles             | Pierre + product owner | Content model ready in v1           |
 
 ---
 
@@ -326,19 +326,19 @@ No hard traffic or conversion targets for v1.
 
 ## 15. Glossary
 
-| Term | Meaning |
-|------|---------|
-| **EZTM** | Mobile app; download promoted on homepage (URLs later) |
-| **Formation** | Entreprise service (formerly “Opération”) |
-| **Audit** | B2B offering; primary Entreprise conversion action |
+| Term                            | Meaning                                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------------------- |
+| **EZTM**                        | Mobile app; download promoted on homepage (URLs later)                                    |
+| **Formation**                   | Entreprise service (formerly “Opération”)                                                 |
+| **Audit**                       | B2B offering; primary Entreprise conversion action                                        |
 | **Le Gym / Le Lab / Le Studio** | Sportif service pillars (coaching delivered on site or at home, not a public gym address) |
-| **Sur site / à domicile** | Default service delivery: at the client’s company premises or at home |
+| **Sur site / à domicile**       | Default service delivery: at the client’s company premises or at home                     |
 
 ---
 
 ## Revision history
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | 2026-05-17 | Initial PRD from stakeholder Q&A |
-| 1.1 | 2026-05-18 | Location-less positioning: sur site (entreprise) ou à domicile; remove Marseille/local SEO |
+| Version | Date       | Changes                                                                                    |
+| ------- | ---------- | ------------------------------------------------------------------------------------------ |
+| 1.0     | 2026-05-17 | Initial PRD from stakeholder Q&A                                                           |
+| 1.1     | 2026-05-18 | Location-less positioning: sur site (entreprise) ou à domicile; remove Marseille/local SEO |

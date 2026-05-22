@@ -1,9 +1,5 @@
 <template>
-  <Icon
-    :name="iconName"
-    class="h-7 w-7 shrink-0"
-    aria-hidden="true"
-  />
+  <Icon :name="iconName" class="h-7 w-7 shrink-0" aria-hidden="true" />
 </template>
 
 <script setup lang="ts">

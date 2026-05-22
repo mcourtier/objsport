@@ -23,53 +23,29 @@
           </AppNavLink>
         </nav>
 
-        <button
+        <UButton
           type="button"
-          class="inline-flex h-11 w-11 items-center justify-center border border-border-subtle text-text-primary lg:hidden"
+          color="neutral"
+          variant="outline"
+          square
+          class="lg:hidden"
+          :icon="mobileOpen ? 'i-mdi-close' : 'i-mdi-menu'"
           :aria-expanded="mobileOpen"
           aria-controls="mobile-nav"
+          :aria-label="mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
           @click="mobileOpen = !mobileOpen"
-        >
-          <span class="sr-only">{{ mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu' }}</span>
-          <svg
-            v-if="!mobileOpen"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="h-6 w-6"
-            aria-hidden="true"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="h-6 w-6"
-            aria-hidden="true"
-          >
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
+        />
       </div>
     </div>
 
     <nav
       v-show="mobileOpen"
       id="mobile-nav"
-      class="border-t border-border-subtle bg-bg-elevated px-4 py-4 lg:hidden"
+      class="border-border-subtle bg-bg-elevated border-t px-4 py-4 lg:hidden"
       aria-label="Navigation mobile"
     >
       <ul class="flex flex-col gap-1">
-        <li
-          v-for="link in mainNav"
-          :key="link.to"
-        >
+        <li v-for="link in mainNav" :key="link.to">
           <AppNavLink
             :to="link.to"
             class="block py-3 text-lg"
@@ -79,11 +55,7 @@
           </AppNavLink>
         </li>
         <li class="pt-2">
-          <AppButton
-            to="/contact"
-            class="w-full"
-            @click="mobileOpen = false"
-          >
+          <AppButton to="/contact" block @click="mobileOpen = false">
             Contact
           </AppButton>
         </li>
@@ -105,7 +77,10 @@ const headerSurfaceClass = computed(() => {
   return 'border-border-subtle bg-bg-elevated/95 backdrop-blur-sm'
 })
 
-watch(() => useRoute().path, () => {
-  mobileOpen.value = false
-})
+watch(
+  () => useRoute().path,
+  () => {
+    mobileOpen.value = false
+  },
+)
 </script>
