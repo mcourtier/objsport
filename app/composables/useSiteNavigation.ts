@@ -1,4 +1,4 @@
-import type { NavLink } from '~/types/navigation'
+import type { NavLink, SidebarNavLink } from '~/types/navigation'
 
 export const useSiteNavigation = () => {
   const mainNav: NavLink[] = [
@@ -7,6 +7,14 @@ export const useSiteNavigation = () => {
     { label: 'Sportif', to: '/sportif' },
     { label: 'Équipe', to: '/equipe' },
     { label: 'Contact', to: '/contact' },
+  ]
+
+  const sidebarNav: SidebarNavLink[] = [
+    { label: 'Entreprise', to: '/entreprise', icon: 'mdi:office-building-outline' },
+    { label: 'Club', to: '/club', icon: 'mdi:soccer' },
+    { label: 'Sportif', to: '/sportif', icon: 'mdi:dumbbell' },
+    { label: 'Équipe', to: '/equipe', icon: 'mdi:account-group-outline' },
+    { label: 'Contact', to: '/contact', icon: 'mdi:email-outline' },
   ]
 
   const footerLegal: NavLink[] = [
@@ -18,6 +26,7 @@ export const useSiteNavigation = () => {
 
   return {
     mainNav,
+    sidebarNav,
     footerLegal,
   }
 }

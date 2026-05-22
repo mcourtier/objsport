@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard class="flex h-full flex-col justify-center bg-gradient-to-br from-brand-red/25 via-bg-card to-bg-card p-6 md:p-8">
+  <Card class="flex h-full flex-col justify-center bg-gradient-to-br from-brand-red/25 via-bg-card to-bg-card p-6 md:p-8">
     <h2
       id="audiences-heading"
       class="font-display text-lg font-bold uppercase leading-snug tracking-wide text-text-primary md:text-xl"
@@ -29,7 +29,7 @@
         </div>
       </li>
     </ul>
-  </HomeDashboardCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

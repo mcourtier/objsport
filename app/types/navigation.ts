@@ -3,6 +3,10 @@ export interface NavLink {
   to: string
 }
 
+export interface SidebarNavLink extends NavLink {
+  icon: string
+}
+
 export interface AudienceBlock {
   id: string
   title: string

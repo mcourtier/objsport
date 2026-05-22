@@ -59,7 +59,7 @@ Keep padding around the logo equal to the height of the red mark (≈ 1× mark h
 |-------|-----|--------|
 | `bg-base` | `#000000` | Page background — pure black per PDF |
 | `bg-elevated` | `#141414` | Cards, header/footer bands, form panels |
-| `bg-card` | `#1A1A1A` | Nested cards, feature grids (page 3–5) |
+| `bg-card` | `#222527` | Primary cards, panels (`brand-charcoal`) |
 | `bg-overlay` | `rgba(0, 0, 0, 0.75)` | Hero image scrims |
 
 ### Text
@@ -102,7 +102,7 @@ Accent color stays **`#DE241B`** in both themes when light mode ships.
 
   --color-bg-base: #000000;
   --color-bg-elevated: #141414;
-  --color-bg-card: #1a1a1a;
+  --color-bg-card: #222527;
   --color-text-primary: #ffffff;
   --color-text-secondary: #e0e0e0;
   --color-text-muted: #9ca3af;

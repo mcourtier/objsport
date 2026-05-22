@@ -66,12 +66,17 @@ export interface HomeFeatureHighlightContent {
   description: string
 }
 
+export interface HomeEztmPromoContent {
+  title: string
+  description: string
+}
+
 export interface HomeDashboardContent {
-  sidebarTagline: string
   hero: HomeHeroContent
   audience: HomeAudienceGridContent
   pillars: HomePillarsContent & { heading: string, intro: string, trustItems: HomeTrustItem[] }
   eztm: HomeEztmContent
   highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent
+  promo: HomeEztmPromoContent
 }

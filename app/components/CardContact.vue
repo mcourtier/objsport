@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard class="flex h-full flex-col p-6 md:p-8">
+  <Card class="flex h-full flex-col p-6 md:p-8">
     <h2 class="font-display text-xl font-bold uppercase tracking-wide text-text-primary md:text-2xl">
       {{ heading }}
     </h2>
@@ -66,7 +66,7 @@
     >
       {{ ctaLabel }}
     </AppButton>
-  </HomeDashboardCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

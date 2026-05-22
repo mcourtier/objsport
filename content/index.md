@@ -3,9 +3,8 @@ title: Objectif Sport — Coaching bien-être & performance
 description: Objectif Sport accompagne entreprises, clubs sportifs et sportifs. Interventions sur site en entreprise ou à domicile — Gym, Lab, Studio et services B2B.
 ---
 
-::home-dashboard
+::dashboard
 ---
-sidebarTagline: Santé • Performance • Résultats
 hero:
   tagline: Santé • Performance • Résultats
   eyebrow: Sur site ou à domicile
@@ -70,5 +69,8 @@ contact:
   email: contact@objectifsport.fr
   ctaLabel: Nous contacter
   ctaTo: /contact
+promo:
+  title: Découvrez EZTM
+  description: L'application EZTM arrive bientôt sur l'App Store et Google Play. Pilotez la santé et la performance de vos équipes avec Objectif Sport.
 ---
 ::

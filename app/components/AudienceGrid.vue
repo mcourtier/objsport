@@ -22,7 +22,7 @@
       </header>
 
       <div class="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
-        <HomeAudienceCard
+        <AudienceCard
           v-for="block in blocks"
           :key="block.id"
           :block="block"

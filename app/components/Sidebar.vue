@@ -1,8 +1,10 @@
 <template>
-  <div class="flex h-full flex-col gap-4">
-    <HomeDashboardCard class="flex flex-1 flex-col p-5 md:p-6">
+  <div class="flex flex-col">
+    <Card
+      class="flex flex-col p-5 md:p-6"
+    >
       <AppLogo />
-      <p class="mt-3 font-display text-xs font-semibold uppercase tracking-widest text-text-muted">
+      <p class="mt-3 font-display text-xs font-semibold uppercase tracking-widest text-text-muted text-center">
         {{ tagline }}
       </p>
 
@@ -28,7 +30,7 @@
           v-for="link in sidebarNav"
           :key="link.to"
           :to="link.to"
-          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors hover:text-brand-red"
+          class="inline-flex items-center gap-3 rounded-xl px-4 py-3 font-display text-sm font-semibold uppercase tracking-button transition-colors"
           :class="navLinkClass(link.to)"
           :aria-current="isNavActive(link.to) ? 'page' : undefined"
         >
@@ -40,42 +42,31 @@
           {{ link.label }}
         </NuxtLink>
       </nav>
-    </HomeDashboardCard>
-
-    <HomeDashboardCard class="p-5 md:p-6">
-      <div
-        class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-brand-red/15 ring-2 ring-brand-red"
-        aria-hidden="true"
-      >
-        <span class="font-display text-lg font-extrabold uppercase text-brand-red">EZ</span>
-      </div>
-      <h2 class="mt-4 text-center font-display text-sm font-bold uppercase tracking-button text-text-primary">
-        {{ promoTitle }}
-      </h2>
-      <p class="mt-2 text-center text-sm text-text-muted">
-        {{ promoDescription }}
-      </p>
-    </HomeDashboardCard>
+    </Card>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   tagline: string
-  promoTitle: string
-  promoDescription: string
 }>()
 
 const route = useRoute()
 const { sidebarNav } = useSiteNavigation()
 
-const isHomeActive = computed(() => route.path === '/')
+const isHomeActive = useNavLinkActive('/')
 
 function isNavActive(to: string) {
+  if (to === '/') {
+    return route.path === '/'
+  }
+
   return route.path === to || route.path.startsWith(`${to}/`)
 }
 
 function navLinkClass(to: string) {
-  return isNavActive(to) ? 'text-brand-red' : 'text-text-primary'
+  return isNavActive(to)
+    ? 'bg-brand-red text-brand-white'
+    : 'text-text-primary hover:text-brand-red'
 }
 </script>

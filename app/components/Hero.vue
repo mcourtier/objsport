@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard
+  <Card
     v-if="variant === 'embedded'"
     class="relative flex h-full min-h-[280px] flex-col"
   >
@@ -67,11 +67,12 @@
         </NuxtLink>
       </div>
     </div>
-  </HomeDashboardCard>
+  </Card>
 
   <section
     v-else
-    class="relative -mt-[4.5rem] flex min-h-[70vh] items-center overflow-hidden pt-[4.5rem] md:-mt-20 md:min-h-[85vh] md:pt-20"
+    class="relative -mt-[4.5rem] flex items-center overflow-hidden pt-[4.5rem] md:-mt-20 md:pt-20"
+    :class="fullHeroMinHeightClass"
     aria-labelledby="hero-heading"
   >
     <div
@@ -85,7 +86,10 @@
       aria-hidden="true"
     />
 
-    <div class="relative mx-auto w-full max-w-7xl px-4 py-20 md:px-6 lg:px-8">
+    <div
+      class="relative mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8"
+      :class="fullHeroContentPaddingClass"
+    >
       <p
         v-if="showTagline && taglineSegments.length"
         class="brand-tagline"
@@ -173,7 +177,7 @@
 <script setup lang="ts">
 import type { PageHeroContent } from '~/types/pageHero'
 
-const props = withDefaults(defineProps<PageHeroContent & { variant?: 'full' | 'embedded' }>(), {
+const props = withDefaults(defineProps<PageHeroContent & { variant?: 'full' | 'page' | 'embedded' }>(), {
   tagline: 'Santé • Performance • Résultats',
   eyebrow: 'Sur site ou à domicile',
   titleBefore: 'Un objectif commun : votre',
@@ -193,6 +197,14 @@ const props = withDefaults(defineProps<PageHeroContent & { variant?: 'full' | 'e
   showCtas: true,
   variant: 'full',
 })
+
+const fullHeroMinHeightClass = computed(() =>
+  props.variant === 'page' ? 'min-h-[35vh] md:min-h-[42.5vh]' : 'min-h-[70vh] md:min-h-[85vh]',
+)
+
+const fullHeroContentPaddingClass = computed(() =>
+  props.variant === 'page' ? 'py-10' : 'py-20',
+)
 
 const useStackedTitle = computed(() => Boolean(props.title))
 

@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard
+  <Card
     v-if="variant === 'embedded'"
     class="p-6 md:p-8"
     aria-labelledby="pillars-heading"
@@ -70,7 +70,7 @@
         </span>
       </li>
     </ul>
-  </HomeDashboardCard>
+  </Card>
 
   <section
     v-else

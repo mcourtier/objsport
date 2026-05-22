@@ -43,6 +43,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    pageTransition: { name: 'page' },
     head: {
       htmlAttrs: {
         lang: 'fr',

@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard class="flex h-full flex-col items-center justify-center p-6 text-center md:p-8">
+  <Card class="flex h-full flex-col items-center justify-center p-6 text-center md:p-8">
     <div
       class="relative flex h-28 w-28 items-center justify-center"
       aria-hidden="true"
@@ -19,7 +19,7 @@
     <p class="mt-3 max-w-xs text-sm text-text-secondary">
       {{ description }}
     </p>
-  </HomeDashboardCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

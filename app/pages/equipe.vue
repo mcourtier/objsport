@@ -9,22 +9,23 @@
     />
 
     <section class="py-16 md:py-24">
-      <div class="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <ul
           v-if="profiles?.length"
-          class="space-y-12"
+          class="grid gap-6 md:grid-cols-3 md:gap-8"
         >
           <li
             v-for="profile in profiles"
             :key="profile.slug"
+            class="min-w-0"
           >
-            <TeamMemberProfile :profile="profile" />
+            <CardProfile :profile="profile" />
           </li>
         </ul>
 
         <p
           v-else
-          class="text-text-muted"
+          class="mt-12 text-text-muted"
         >
           Aucun profil disponible pour le moment.
         </p>

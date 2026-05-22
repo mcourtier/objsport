@@ -1,5 +1,5 @@
 <template>
-  <HomeDashboardCard class="flex h-full min-h-[240px] flex-col p-6 md:min-h-[280px] md:p-8">
+  <Card class="flex h-full min-h-[240px] flex-col p-6 md:min-h-[280px] md:p-8">
     <p class="font-display text-sm font-semibold uppercase tracking-widest text-brand-red">
       {{ eyebrow }}
     </p>
@@ -45,7 +45,7 @@
     <p class="mt-4 text-sm text-text-secondary">
       {{ description }}
     </p>
-  </HomeDashboardCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

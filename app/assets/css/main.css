@@ -12,7 +12,7 @@
     --color-brand-white: #ffffff;
     --color-bg-base: #000000;
     --color-bg-elevated: #141414;
-    --color-bg-card: #1a1a1a;
+    --color-bg-card: #101214;
     --color-text-primary: #ffffff;
     --color-text-secondary: #e0e0e0;
     --color-text-muted: #9ca3af;
@@ -31,8 +31,17 @@
 
   body {
     @apply min-h-screen bg-bg-base font-body text-text-secondary;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image: theme(backgroundImage.brand-grain);
     background-size: 180px 180px;
+    opacity: 0.05;
   }
 
   :focus-visible {

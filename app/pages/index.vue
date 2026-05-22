@@ -6,10 +6,6 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: 'home',
-})
-
 const { data: page } = await useAsyncData('homepage', () =>
   queryCollection('content').path('/').first(),
 )
