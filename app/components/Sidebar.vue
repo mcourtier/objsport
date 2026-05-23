@@ -3,34 +3,20 @@
     <div class="flex flex-col">
       <AppLogo />
       <p
-        class="font-display text-text-muted mt-3 text-center text-xs font-semibold tracking-widest uppercase"
+        class="font-display text-neutral-400 mt-3 text-center text-xs font-semibold tracking-widest uppercase"
       >
         {{ tagline }}
       </p>
 
       <nav
-        class="mt-8 flex flex-1 flex-col gap-1"
+        class="mt-8 grid flex-1 grid-cols-3 gap-1 lg:flex lg:flex-col"
         aria-label="Navigation principale"
       >
-        <NuxtLink
-          to="/"
-          class="font-display tracking-button inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
-          :class="
-            isHomeActive
-              ? 'bg-brand-red text-brand-white'
-              : 'text-text-primary hover:text-brand-red'
-          "
-          :aria-current="isHomeActive ? 'page' : undefined"
-        >
-          <Icon name="mdi:home" class="h-5 w-5 shrink-0" aria-hidden="true" />
-          Accueil
-        </NuxtLink>
-
         <NuxtLink
           v-for="link in sidebarNav"
           :key="link.to"
           :to="link.to"
-          class="font-display tracking-button inline-flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
+          class="font-display tracking-button inline-flex flex-row items-center gap-3 rounded-xl px-2 py-3 text-xs font-semibold uppercase transition-colors lg:px-4 lg:text-sm"
           :class="navLinkClass(link.to)"
           :aria-current="isNavActive(link.to) ? 'page' : undefined"
         >
@@ -50,8 +36,6 @@ defineProps<{
 const route = useRoute()
 const { sidebarNav } = useSiteNavigation()
 
-const isHomeActive = useNavLinkActive('/')
-
 function isNavActive(to: string) {
   if (to === '/') {
     return route.path === '/'
@@ -62,7 +46,7 @@ function isNavActive(to: string) {
 
 function navLinkClass(to: string) {
   return isNavActive(to)
-    ? 'bg-brand-red text-brand-white'
-    : 'text-text-primary hover:text-brand-red'
+    ? 'bg-brand text-neutral-100'
+    : 'text-neutral-100 hover:text-brand'
 }
 </script>

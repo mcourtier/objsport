@@ -16,7 +16,7 @@
           </li>
         </ul>
 
-        <p v-else class="text-text-muted mt-12">
+        <p v-else class="text-neutral-400 mt-12">
           Aucun profil disponible pour le moment.
         </p>
       </div>

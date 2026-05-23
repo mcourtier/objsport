@@ -1,5 +1,5 @@
 <template>
-  <Hero v-bind="props" variant="page" />
+  <CardHero v-bind="props" variant="page" />
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 <template>
   <article
-    class="bg-brand-white text-bg-base flex h-full min-h-[280px] flex-col rounded-2xl p-5 md:p-6"
+    class="bg-white text-neutral-900 flex h-full min-h-70 flex-col rounded-2xl p-5 md:p-6"
     aria-labelledby="club-estimation-heading"
   >
     <h2
@@ -17,7 +17,7 @@
       <div
         v-for="line in lineCount"
         :key="line"
-        class="border-text-muted/40 h-5 border-b border-dotted"
+        class="border-neutral-400/40 h-5 border-b border-dotted"
       />
     </div>
   </article>

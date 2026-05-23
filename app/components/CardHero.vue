@@ -1,7 +1,7 @@
 <template>
   <UCard
     v-if="variant === 'embedded'"
-    class="relative flex h-full min-h-[280px] flex-col"
+    class="relative flex h-full min-h-70 flex-col"
   >
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -10,7 +10,7 @@
       :aria-label="backgroundImageAlt"
     />
     <div
-      class="from-bg-base via-bg-base/85 to-bg-base/40 absolute inset-0 bg-gradient-to-t"
+      class="from-neutral-900 via-neutral-900/85 to-neutral-900/40 absolute inset-0 bg-gradient-to-t"
       aria-hidden="true"
     />
 
@@ -19,7 +19,7 @@
     >
       <p
         v-if="showEyebrow && eyebrow"
-        class="font-display text-brand-red text-xs font-semibold tracking-widest uppercase md:text-sm"
+        class="font-display text-brand text-xs font-semibold tracking-widest uppercase md:text-sm"
       >
         {{ eyebrow }}
       </p>
@@ -33,7 +33,7 @@
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline text-brand-red mt-2 max-w-2xl text-xl md:text-2xl lg:text-3xl"
+          class="brand-headline text-brand mt-2 max-w-2xl text-xl md:text-2xl lg:text-3xl"
         >
           {{ titleAccent }}
         </p>
@@ -44,7 +44,7 @@
         class="brand-headline mt-4 max-w-2xl text-xl md:text-2xl lg:text-3xl"
       >
         {{ titleBefore }}
-        <span v-if="titleHighlight" class="text-brand-red">{{
+        <span v-if="titleHighlight" class="text-brand">{{
           titleHighlight
         }}</span>
         {{ titleAfter }}
@@ -56,13 +56,13 @@
       >
         <NuxtLink
           :to="primaryCtaTo"
-          class="border-brand-red/50 bg-bg-base/60 font-display tracking-button text-text-primary hover:border-brand-red hover:bg-brand-red/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
+          class="border-brand/50 bg-neutral-900/60 font-display tracking-button text-neutral-100 hover:border-brand hover:bg-brand/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
         >
           {{ primaryCtaLabel }}
         </NuxtLink>
         <NuxtLink
           :to="secondaryCtaTo"
-          class="border-brand-red/50 bg-bg-base/60 font-display tracking-button text-text-primary hover:border-brand-red hover:bg-brand-red/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
+          class="border-brand/50 bg-neutral-900/60 font-display tracking-button text-neutral-100 hover:border-brand hover:bg-brand/20 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase backdrop-blur-sm transition-colors md:text-sm"
         >
           {{ secondaryCtaLabel }}
         </NuxtLink>
@@ -72,7 +72,7 @@
 
   <section
     v-else
-    class="relative -mt-[4.5rem] flex items-center overflow-hidden pt-[4.5rem] md:-mt-20 md:pt-20"
+    class="relative flex items-center overflow-hidden pt-18 md:-mt-20 md:pt-20"
     :class="fullHeroMinHeightClass"
     aria-labelledby="hero-heading"
   >
@@ -83,7 +83,7 @@
       :aria-label="backgroundImageAlt"
     />
     <div
-      class="from-bg-base via-bg-base/80 absolute inset-0 bg-gradient-to-r to-transparent"
+      class="from-neutral-900 via-neutral-900/80 absolute inset-0 bg-gradient-to-r to-transparent"
       aria-hidden="true"
     />
 
@@ -105,7 +105,7 @@
       </p>
       <p
         v-if="showEyebrow && eyebrow"
-        class="font-display text-brand-red mt-3 text-sm font-semibold tracking-widest uppercase"
+        class="font-display text-brand mt-3 text-sm font-semibold tracking-widest uppercase"
         :class="{ 'mt-3': showTagline && taglineSegments.length }"
       >
         {{ eyebrow }}
@@ -121,7 +121,7 @@
         </h1>
         <p
           v-if="titleAccent"
-          class="brand-headline text-brand-red mt-2 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
+          class="brand-headline text-brand mt-2 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
         >
           {{ titleAccent }}
         </p>
@@ -133,7 +133,7 @@
         :class="headlineTopMarginClass"
       >
         {{ titleBefore }}
-        <span v-if="titleHighlight" class="text-brand-red">{{
+        <span v-if="titleHighlight" class="text-brand">{{
           titleHighlight
         }}</span>
         {{ titleAfter }}
@@ -146,7 +146,7 @@
       />
       <p
         v-if="showDescription && description"
-        class="text-text-secondary mt-6 max-w-xl text-lg md:text-xl"
+        class="text-neutral-300 mt-6 max-w-xl text-lg md:text-xl"
       >
         {{ description }}
       </p>
@@ -192,8 +192,8 @@ const props = withDefaults(
 
 const fullHeroMinHeightClass = computed(() =>
   props.variant === 'page'
-    ? 'min-h-[35vh] md:min-h-[42.5vh]'
-    : 'min-h-[70vh] md:min-h-[85vh]',
+    ? 'min-h-96 md:min-h-112'
+    : 'min-h-160 md:min-h-192',
 )
 
 const fullHeroContentPaddingClass = computed(() =>

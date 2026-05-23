@@ -8,61 +8,27 @@
 
   --tracking-button: 0.04em;
 
-  --color-brand-red: #de241b;
-  --color-brand-red-hover: #c41f17;
-  --color-brand-charcoal: #222527;
-  --color-brand-white: #ffffff;
-  --color-bg-base: #000000;
-  --color-bg-elevated: #141414;
-  --color-bg-card: #101214;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e0e0e0;
-  --color-text-muted: #9ca3af;
-  --color-border-subtle: #2e3236;
-  --color-accent-consulting: #fcee21;
-  --color-accent-coaching: #00aeef;
-  --color-pillar-gym: #4caf50;
-  --color-pillar-lab: #ffc107;
-  --color-pillar-studio: #2196f3;
+  --color-brand: #de241b;
 
-  --color-brand-50: #fef2f2;
-  --color-brand-100: #fee2e2;
-  --color-brand-200: #fecaca;
-  --color-brand-300: #fca5a5;
-  --color-brand-400: #f87171;
-  --color-brand-500: #de241b;
-  --color-brand-600: #c41f17;
-  --color-brand-700: #a81a14;
-  --color-brand-800: #8b1611;
-  --color-brand-900: #6f120e;
-  --color-brand-950: #450a08;
-
-  --color-neutral-50: #f9fafb;
   --color-neutral-100: #f3f4f6;
-  --color-neutral-200: #e5e7eb;
   --color-neutral-300: #d1d5db;
   --color-neutral-400: #9ca3af;
-  --color-neutral-500: #6b7280;
-  --color-neutral-600: #4b5563;
-  --color-neutral-700: #374151;
-  --color-neutral-800: #2e3236;
-  --color-neutral-900: #141414;
-  --color-neutral-950: #101214;
-
-  --background-image-brand-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --color-neutral-700: #3a3f44;
+  --color-neutral-800: #2a2e31;
+  --color-neutral-900: #222527;
 }
 
 @layer base {
   .dark {
-    --ui-bg: var(--color-bg-base);
-    --ui-bg-muted: var(--color-bg-elevated);
-    --ui-bg-elevated: var(--color-bg-card);
-    --ui-bg-accented: var(--color-border-subtle);
-    --ui-border: var(--color-border-subtle);
-    --ui-border-muted: var(--color-border-subtle);
-    --ui-text: var(--color-text-secondary);
-    --ui-text-muted: var(--color-text-muted);
-    --ui-text-highlighted: var(--color-text-primary);
+    --ui-bg: var(--color-neutral-900);
+    --ui-bg-muted: var(--color-neutral-800);
+    --ui-bg-elevated: var(--color-neutral-800);
+    --ui-bg-accented: var(--color-neutral-700);
+    --ui-border: var(--color-neutral-700);
+    --ui-border-muted: var(--color-neutral-700);
+    --ui-text: var(--color-neutral-100);
+    --ui-text-muted: var(--color-neutral-400);
+    --ui-text-highlighted: var(--color-neutral-100);
   }
 
   html {
@@ -70,18 +36,7 @@
   }
 
   body {
-    @apply bg-bg-base font-body text-text-secondary min-h-screen;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image: var(--background-image-brand-grain);
-    background-size: 180px 180px;
-    opacity: 0.05;
+    @apply bg-neutral-900 font-body text-neutral-300 min-h-screen;
   }
 
   button:not(:disabled),
@@ -90,7 +45,7 @@
   }
 
   :focus-visible {
-    @apply outline-brand-white outline-2 outline-offset-2;
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-neutral-900;
   }
 }
 
@@ -100,22 +55,22 @@
   }
 
   .brand-tagline {
-    @apply font-display text-text-primary text-sm font-semibold tracking-widest uppercase;
+    @apply font-display text-neutral-100 text-sm font-semibold tracking-widest uppercase;
   }
 
   .brand-tagline-bullet {
-    @apply text-brand-red;
+    @apply text-brand;
   }
 
   .brand-headline {
-    @apply font-display text-text-primary leading-tight font-extrabold uppercase italic;
+    @apply font-display text-neutral-100 leading-tight font-extrabold uppercase italic;
   }
 
   .brand-section-rule {
-    @apply bg-brand-red h-px w-full;
+    @apply bg-brand h-px w-full;
   }
 
   .brand-headline-accent {
-    @apply after:bg-brand-red relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
+    @apply after:bg-brand relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
   }
 }

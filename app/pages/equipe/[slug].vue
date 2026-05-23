@@ -9,7 +9,7 @@
 
     <article v-if="profile" class="py-16 md:py-24">
       <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
-        <div class="prose-team text-text-secondary">
+        <div class="prose-team text-neutral-300">
           <p v-if="bioIntro" class="mb-4 text-lg leading-relaxed">
             {{ bioIntro }}
           </p>
@@ -18,16 +18,16 @@
 
         <div
           v-if="hasContact"
-          class="border-border-subtle mt-16 border-t pt-12"
+          class="border-neutral-700 mt-16 border-t pt-12"
         >
-          <h2 class="font-display text-text-primary text-2xl font-bold">
+          <h2 class="font-display text-neutral-100 text-2xl font-bold">
             Contact
           </h2>
           <ul class="mt-6 space-y-4">
             <li v-if="profile.email">
               <a
                 :href="`mailto:${profile.email}`"
-                class="text-brand-red underline-offset-4 transition-colors hover:underline"
+                class="text-brand underline-offset-4 transition-colors hover:underline"
               >
                 {{ profile.email }}
               </a>
@@ -35,7 +35,7 @@
             <li v-if="profile.phone">
               <a
                 :href="`tel:${normalizedPhone}`"
-                class="text-brand-red underline-offset-4 transition-colors hover:underline"
+                class="text-brand underline-offset-4 transition-colors hover:underline"
               >
                 {{ profile.phone }}
               </a>
@@ -46,7 +46,7 @@
         <div class="mt-12">
           <NuxtLink
             to="/equipe"
-            class="text-brand-red inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
+            class="text-brand inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
           >
             ← Retour à l'équipe
           </NuxtLink>
@@ -56,7 +56,7 @@
 
     <div v-else class="py-16 md:py-24">
       <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
-        <p class="text-text-muted">Profil non trouvé.</p>
+        <p class="text-neutral-400">Profil non trouvé.</p>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ useSeoMeta({
 
 .prose-team :deep(strong) {
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: var(--color-neutral-100);
 }
 
 .prose-team :deep(ul),

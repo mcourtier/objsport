@@ -10,15 +10,15 @@ export default defineAppConfig({
       },
       variants: {
         variant: {
-          solid: 'bg-brand-red text-brand-white hover:bg-brand-red-hover',
+          solid: 'bg-brand text-neutral-100 hover:bg-brand/90',
           outline:
-            'border border-brand-white text-brand-white hover:bg-brand-white hover:text-bg-base',
+            'border border-neutral-100 text-neutral-100 hover:bg-neutral-100 hover:text-neutral-900',
         },
       },
     },
     card: {
       slots: {
-        root: 'overflow-hidden rounded-2xl border border-border-subtle bg-transparent',
+        root: 'overflow-hidden rounded-2xl border border-neutral-700 bg-transparent',
         header: 'p-0',
         body: 'p-0',
         footer: 'p-0',
@@ -27,17 +27,17 @@ export default defineAppConfig({
     formField: {
       slots: {
         label:
-          'font-display text-xs font-semibold uppercase tracking-button text-text-muted',
+          'font-display text-xs font-semibold uppercase tracking-button text-neutral-400',
       },
     },
     input: {
       slots: {
-        base: 'border-border-subtle bg-bg-base text-text-primary placeholder:text-text-muted focus:border-brand-red',
+        base: 'border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-400 focus:border-brand',
       },
     },
     textarea: {
       slots: {
-        base: 'border-border-subtle bg-bg-base text-text-primary placeholder:text-text-muted focus:border-brand-red',
+        base: 'border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-400 focus:border-brand',
       },
     },
   },

@@ -1,24 +1,29 @@
 import type { NavLink, SidebarNavLink } from '~/types/navigation'
 
 export const useSiteNavigation = () => {
-  const mainNav: NavLink[] = [
-    { label: 'Entreprise', to: '/entreprise' },
-    { label: 'Club', to: '/club' },
-    { label: 'Sportif', to: '/sportif' },
-    { label: 'Équipe', to: '/equipe' },
-    { label: 'Contact', to: '/contact' },
-  ]
-
   const sidebarNav: SidebarNavLink[] = [
+    {
+      label: 'Accueil',
+      to: '/',
+      icon: 'material-symbols:home-outline',
+    },
     {
       label: 'Entreprise',
       to: '/entreprise',
-      icon: 'mdi:office-building-outline',
+      icon: 'material-symbols:corporate-fare',
     },
-    { label: 'Club', to: '/club', icon: 'mdi:soccer' },
-    { label: 'Sportif', to: '/sportif', icon: 'mdi:dumbbell' },
-    { label: 'Équipe', to: '/equipe', icon: 'mdi:account-group-outline' },
-    { label: 'Contact', to: '/contact', icon: 'mdi:email-outline' },
+    { label: 'Club', to: '/club', icon: 'material-symbols:sports-soccer' },
+    {
+      label: 'Sportif',
+      to: '/sportif',
+      icon: 'material-symbols:fitness-center',
+    },
+    {
+      label: 'Équipe',
+      to: '/equipe',
+      icon: 'material-symbols:groups-outline',
+    },
+    { label: 'Contact', to: '/contact', icon: 'material-symbols:mail-outline' },
   ]
 
   const footerLegal: NavLink[] = [
@@ -29,7 +34,6 @@ export const useSiteNavigation = () => {
   ]
 
   return {
-    mainNav,
     sidebarNav,
     footerLegal,
   }

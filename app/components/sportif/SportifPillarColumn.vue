@@ -21,7 +21,7 @@
         {{ pillar.name }}
       </h2>
       <p
-        class="font-display tracking-button text-text-primary mt-1 text-sm font-semibold uppercase"
+        class="font-display tracking-button text-neutral-100 mt-1 text-sm font-semibold uppercase"
       >
         {{ pillar.subtitle }}
       </p>
@@ -45,11 +45,11 @@
           </span>
           <div>
             <p
-              class="font-display text-text-primary text-sm leading-snug font-semibold uppercase"
+              class="font-display text-neutral-100 text-sm leading-snug font-semibold uppercase"
             >
               {{ item.title }}
             </p>
-            <p class="text-text-muted mt-0.5 text-sm">
+            <p class="text-neutral-400 mt-0.5 text-sm">
               {{ item.description }}
             </p>
           </div>
@@ -60,7 +60,7 @@
     <img
       :src="pillar.imageSrc"
       :alt="pillar.imageAlt"
-      class="mt-8 aspect-[31/20] w-full rounded-xl object-cover"
+      class="mt-8 aspect-3/2 w-full rounded-xl object-cover"
       width="310"
       height="200"
       loading="lazy"

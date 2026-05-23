@@ -1,15 +1,15 @@
 import type { ClubApproachIcon, ClubPricingIcon } from '~/types/club'
 
 export const clubApproachIcons: Record<ClubApproachIcon, string> = {
-  context: 'mdi:magnify',
-  need: 'mdi:account-group',
-  mission: 'mdi:bullseye-arrow',
+  context: 'material-symbols:search',
+  need: 'material-symbols:groups-outline',
+  mission: 'material-symbols:track-changes',
 }
 
 export const clubPricingIcons: Record<ClubPricingIcon, string> = {
-  'half-day': 'mdi:white-balance-sunny',
-  day: 'mdi:calendar',
-  week: 'mdi:calendar-week',
+  'half-day': 'material-symbols:wb-sunny-outline',
+  day: 'material-symbols:calendar-today-outline',
+  week: 'material-symbols:calendar-view-week-outline',
 }
 
 export function clubApproachIcon(name: ClubApproachIcon): string {

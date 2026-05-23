@@ -1,11 +1,11 @@
 <template>
   <article class="flex h-full flex-col">
     <div
-      class="bg-brand-white text-bg-base rounded-t-2xl px-5 pt-6 pb-10 text-center"
+      class="bg-white text-neutral-900 rounded-t-2xl px-5 pt-6 pb-10 text-center"
     >
       <Icon
         :name="clubPricingIcon(tier.icon)"
-        class="text-brand-red mx-auto h-10 w-10"
+        class="text-brand mx-auto h-10 w-10"
         aria-hidden="true"
       />
       <p class="font-display tracking-button mt-3 text-sm font-bold uppercase">
@@ -19,23 +19,23 @@
     </div>
 
     <p
-      class="bg-brand-red font-display text-brand-white relative z-10 mx-auto -mt-5 max-w-[92%] rounded-full px-4 py-2 text-center text-[0.65rem] leading-snug font-bold tracking-wide uppercase sm:text-xs"
+      class="bg-brand font-display text-neutral-100 relative z-10 mx-auto -mt-5 max-w-11/12 rounded-full px-4 py-2 text-center text-xs leading-snug font-bold tracking-wide uppercase"
     >
       {{ tier.model }}
     </p>
 
     <div
-      class="bg-bg-card mt-0 flex flex-1 flex-col rounded-b-2xl px-5 pt-10 pb-6"
+      class="bg-neutral-800 mt-0 flex flex-1 flex-col rounded-b-2xl px-5 pt-10 pb-6"
     >
       <ul class="space-y-3">
         <li
           v-for="(note, index) in tier.footnotes"
           :key="`${tier.label}-${index}`"
-          class="text-text-secondary flex gap-2 text-sm leading-relaxed"
+          class="text-neutral-300 flex gap-2 text-sm leading-relaxed"
         >
           <Icon
-            name="mdi:check-circle"
-            class="text-accent-consulting mt-0.5 h-5 w-5 shrink-0"
+            name="material-symbols:check-circle-outline"
+            class="text-yellow-400 mt-0.5 h-5 w-5 shrink-0"
             aria-hidden="true"
           />
           <span>{{ note }}</span>

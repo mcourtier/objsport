@@ -15,13 +15,13 @@
         aria-label="Notre approche et illustration terrain"
       >
         <ClubPitchIllustration
-          class="aspect-[10/7] w-full lg:sticky lg:top-28"
+          class="aspect-3/2 w-full lg:sticky lg:top-28"
         />
         <ClubApproach :approach="content.approach" />
       </section>
 
       <section
-        class="border-border-subtle mt-14 border-t pt-14 md:mt-16 md:pt-16"
+        class="border-neutral-700 mt-14 border-t pt-14 md:mt-16 md:pt-16"
         aria-label="Tarification et estimation"
       >
         <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">

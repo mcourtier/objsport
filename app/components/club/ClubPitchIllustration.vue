@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-border-subtle bg-bg-card relative overflow-hidden rounded-2xl border"
+    class="border-neutral-700 bg-neutral-800 relative overflow-hidden rounded-2xl border"
     aria-hidden="true"
   >
     <svg

@@ -18,7 +18,7 @@ export type HomeHeroContent = Required<
 > &
   Pick<PageHeroContent, 'titleAfter'>
 
-export interface HomeAudienceGridContent {
+export interface HomeFeaturesContent {
   heading: string
   headingHighlight: string
   intro: string
@@ -71,9 +71,12 @@ export interface HomeEztmPromoContent {
   description: string
 }
 
-export interface HomeDashboardContent {
+export interface HomeIntroContent {
   hero: HomeHeroContent
-  audience: HomeAudienceGridContent
+}
+
+export interface HomeDashboardContent {
+  features: HomeFeaturesContent
   pillars: HomePillarsContent & {
     heading: string
     intro: string

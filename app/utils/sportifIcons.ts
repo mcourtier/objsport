@@ -1,45 +1,45 @@
 import type { PillarAccent } from '~/types/homepage'
 import type { SportifBenefit, SportifServiceIcon } from '~/types/sportif'
 
-/** Material Design Icons (Iconify `mdi` prefix) for the sportif page. */
+/** Material Symbols Outlined (Iconify `material-symbols` prefix) for the sportif page. */
 export const sportifPillarHeaderIcons: Record<PillarAccent, string> = {
-  gym: 'mdi:kettlebell',
-  lab: 'mdi:flask-outline',
-  studio: 'mdi:account-group',
+  gym: 'material-symbols:exercise-outline',
+  lab: 'material-symbols:science-outline',
+  studio: 'material-symbols:groups-outline',
 }
 
 export const sportifServiceIcons: Record<SportifServiceIcon, string> = {
-  run: 'mdi:run',
-  stopwatch: 'mdi:timer-outline',
-  recovery: 'mdi:heart-pulse',
-  rehab: 'mdi:medical-bag',
-  sprint: 'mdi:run-fast',
-  hiit: 'mdi:fire',
-  massage: 'mdi:spa-outline',
-  stretch: 'mdi:human-handsup',
-  therapy: 'mdi:stethoscope',
-  aesthetic: 'mdi:sparkles',
-  weights: 'mdi:dumbbell',
-  posture: 'mdi:human-male-height',
-  brain: 'mdi:brain',
-  body: 'mdi:human',
-  pilates: 'mdi:yoga',
-  yoga: 'mdi:meditation',
-  movement: 'mdi:walk',
-  target: 'mdi:target',
-  burst: 'mdi:lightning-bolt',
-  warmup: 'mdi:weather-sunny',
-  reach: 'mdi:arm-flex',
-  shield: 'mdi:shield-check',
-  rest: 'mdi:sleep',
-  concussion: 'mdi:head-alert-outline',
+  run: 'material-symbols:directions-run',
+  stopwatch: 'material-symbols:timer-outline',
+  recovery: 'material-symbols:monitor-heart-outline',
+  rehab: 'material-symbols:medical-services-outline',
+  sprint: 'material-symbols:sprint',
+  hiit: 'material-symbols:local-fire-department-outline',
+  massage: 'material-symbols:spa-outline',
+  stretch: 'material-symbols:accessibility-new',
+  therapy: 'material-symbols:stethoscope-outline',
+  aesthetic: 'material-symbols:auto-awesome-outline',
+  weights: 'material-symbols:fitness-center',
+  posture: 'material-symbols:straighten-outline',
+  brain: 'material-symbols:psychology-outline',
+  body: 'material-symbols:person-outline',
+  pilates: 'material-symbols:self-improvement',
+  yoga: 'material-symbols:self-improvement',
+  movement: 'material-symbols:directions-walk',
+  target: 'material-symbols:track-changes',
+  burst: 'material-symbols:bolt-outline',
+  warmup: 'material-symbols:wb-sunny-outline',
+  reach: 'material-symbols:sports-martial-arts',
+  shield: 'material-symbols:verified-outline',
+  rest: 'material-symbols:bedtime-outline',
+  concussion: 'material-symbols:personal-injury-outline',
 }
 
 export const sportifBenefitIcons: Record<SportifBenefit['icon'], string> = {
-  expertise: 'mdi:shield-check',
-  coaching: 'mdi:account-supervisor',
-  performance: 'mdi:chart-line',
-  availability: 'mdi:clock-outline',
+  expertise: 'material-symbols:verified-outline',
+  coaching: 'material-symbols:supervisor-account-outline',
+  performance: 'material-symbols:insert-chart-outline',
+  availability: 'material-symbols:schedule-outline',
 }
 
 export function sportifPillarHeaderIcon(accent: PillarAccent) {

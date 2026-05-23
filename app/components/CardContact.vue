@@ -1,7 +1,7 @@
 <template>
   <UCard class="flex h-full flex-col">
     <h2
-      class="font-display text-text-primary text-xl font-bold tracking-wide uppercase md:text-2xl"
+      class="font-display text-neutral-100 text-xl font-bold tracking-wide uppercase md:text-2xl"
     >
       {{ heading }}
     </h2>
@@ -10,15 +10,15 @@
       <li>
         <a
           :href="websiteUrl"
-          class="group text-text-secondary hover:text-text-primary flex items-center gap-4 transition-colors"
+          class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span
-            class="border-border-subtle bg-bg-elevated flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
+            class="border-neutral-700 bg-neutral-800 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Icon name="mdi:web" class="text-brand-red h-5 w-5" />
+            <Icon name="material-symbols:language" class="text-brand h-5 w-5" />
           </span>
           <span class="text-sm md:text-base">{{ website }}</span>
         </a>
@@ -26,13 +26,16 @@
       <li>
         <a
           :href="`mailto:${email}`"
-          class="group text-text-secondary hover:text-text-primary flex items-center gap-4 transition-colors"
+          class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
         >
           <span
-            class="border-border-subtle bg-bg-elevated flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
+            class="border-neutral-700 bg-neutral-800 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Icon name="mdi:email-outline" class="text-brand-red h-5 w-5" />
+            <Icon
+              name="material-symbols:mail-outline"
+              class="text-brand h-5 w-5"
+            />
           </span>
           <span class="text-sm md:text-base">{{ email }}</span>
         </a>
@@ -40,13 +43,13 @@
       <li v-if="phone">
         <a
           :href="`tel:${normalizedPhone}`"
-          class="group text-text-secondary hover:text-text-primary flex items-center gap-4 transition-colors"
+          class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
         >
           <span
-            class="border-border-subtle bg-bg-elevated flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
+            class="border-neutral-700 bg-neutral-800 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Icon name="mdi:phone-outline" class="text-brand-red h-5 w-5" />
+            <Icon name="material-symbols:call-outline" class="text-brand h-5 w-5" />
           </span>
           <span class="text-sm md:text-base">{{ phone }}</span>
         </a>

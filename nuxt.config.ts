@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   icon: {
     serverBundle: {
-      collections: ['mdi'],
+      collections: ['material-symbols'],
     },
   },
 

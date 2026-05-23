@@ -1,5 +1,7 @@
 <template>
-  <ContentRenderer v-if="page" :value="page" />
+  <div v-if="page" class="flex flex-col gap-4 lg:gap-5">
+    <ContentRenderer :value="page" />
+  </div>
 </template>
 
 <script setup lang="ts">

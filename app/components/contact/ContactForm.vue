@@ -3,11 +3,11 @@
     <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
       <h2
         id="contact-form-heading"
-        class="font-display text-text-primary text-4xl font-bold tracking-wide uppercase md:text-5xl"
+        class="font-display text-neutral-100 text-4xl font-bold tracking-wide uppercase md:text-5xl"
       >
         {{ heading }}
       </h2>
-      <p v-if="intro" class="text-text-secondary mt-6 max-w-prose text-lg">
+      <p v-if="intro" class="text-neutral-300 mt-6 max-w-prose text-lg">
         {{ intro }}
       </p>
 
@@ -23,7 +23,7 @@
 
       <form
         v-else
-        class="border-border-subtle bg-bg-elevated mt-10 space-y-6 border p-8 md:p-10"
+        class="border-neutral-700 bg-neutral-800 mt-10 space-y-6 border p-8 md:p-10"
         novalidate
         @submit.prevent="onSubmit"
       >

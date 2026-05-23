@@ -1,24 +1,24 @@
 <template>
   <section
-    class="border-border-subtle border-t py-12 md:py-16"
+    class="border-neutral-700 border-t py-12 md:py-16"
     aria-labelledby="sportif-benefits-heading"
   >
     <h2 id="sportif-benefits-heading" class="sr-only">Nos engagements</h2>
     <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <li v-for="benefit in benefits" :key="benefit.title" class="flex gap-4">
         <span
-          class="text-brand-red flex h-12 w-12 shrink-0 items-center justify-center"
+          class="text-brand flex h-12 w-12 shrink-0 items-center justify-center"
           aria-hidden="true"
         >
           <Icon :name="sportifBenefitIcon(benefit.icon)" class="h-10 w-10" />
         </span>
         <div>
           <p
-            class="font-display tracking-button text-text-primary text-sm leading-snug font-bold uppercase"
+            class="font-display tracking-button text-neutral-100 text-sm leading-snug font-bold uppercase"
           >
             {{ benefit.title }}
           </p>
-          <p class="text-text-muted mt-1 text-sm">
+          <p class="text-neutral-400 mt-1 text-sm">
             {{ benefit.description }}
           </p>
         </div>

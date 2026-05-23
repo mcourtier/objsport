@@ -4,13 +4,13 @@
       <header class="text-center">
         <h2
           id="pillars-heading"
-          class="font-display text-text-primary text-lg font-bold tracking-wide uppercase md:text-xl"
+          class="font-display text-neutral-100 text-lg font-bold tracking-wide uppercase md:text-xl"
         >
           {{ heading }}
         </h2>
         <p
           v-if="intro"
-          class="text-text-secondary mx-auto mt-2 max-w-2xl text-sm"
+          class="text-neutral-300 mx-auto mt-2 max-w-2xl text-sm"
         >
           {{ intro }}
         </p>
@@ -36,11 +36,11 @@
             </svg>
           </div>
           <p
-            class="font-display tracking-button text-brand-red mt-4 text-sm font-bold uppercase"
+            class="font-display tracking-button text-brand mt-4 text-sm font-bold uppercase"
           >
             {{ pillar.name }}
           </p>
-          <p class="text-text-muted mt-2 text-sm">
+          <p class="text-neutral-400 mt-2 text-sm">
             {{ pillar.description }}
           </p>
         </li>
@@ -48,7 +48,7 @@
 
       <ul
         v-if="trustItems.length"
-        class="border-border-subtle mt-8 grid gap-4 border-t pt-8 sm:grid-cols-3"
+        class="border-neutral-700 mt-8 grid gap-4 border-t pt-8 sm:grid-cols-3"
       >
         <li
           v-for="item in trustItems"
@@ -56,12 +56,12 @@
           class="flex items-center justify-center gap-2 text-center"
         >
           <Icon
-            name="mdi:shield-check-outline"
-            class="text-brand-red h-5 w-5 shrink-0"
+            name="material-symbols:verified-outline"
+            class="text-brand h-5 w-5 shrink-0"
             aria-hidden="true"
           />
           <span
-            class="font-display tracking-button text-text-primary text-xs font-bold uppercase"
+            class="font-display tracking-button text-neutral-100 text-xs font-bold uppercase"
           >
             {{ item.label }}
           </span>
@@ -72,18 +72,18 @@
 
   <section
     v-else
-    class="border-border-subtle bg-bg-elevated border-t py-16 md:py-20"
+    class="border-neutral-700 bg-neutral-800 border-t py-16 md:py-20"
     aria-labelledby="pillars-heading"
   >
     <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
       <header class="text-center">
         <h2
           id="pillars-heading"
-          class="font-display text-text-primary text-2xl font-bold tracking-wide uppercase md:text-3xl"
+          class="font-display text-neutral-100 text-2xl font-bold tracking-wide uppercase md:text-3xl"
         >
           {{ heading }}
         </h2>
-        <p v-if="intro" class="text-text-secondary mx-auto mt-3 max-w-2xl">
+        <p v-if="intro" class="text-neutral-300 mx-auto mt-3 max-w-2xl">
           {{ intro }}
         </p>
       </header>
@@ -92,7 +92,7 @@
         <li
           v-for="pillar in pillars"
           :key="pillar.name"
-          class="bg-bg-card flex flex-col border-t-4 p-6 text-center"
+          class="bg-neutral-800 flex flex-col border-t-4 p-6 text-center"
           :class="pillarBorderClass(pillar.accent)"
         >
           <div
@@ -113,11 +113,11 @@
             </svg>
           </div>
           <p
-            class="font-display tracking-button text-text-primary mt-5 text-lg font-bold uppercase"
+            class="font-display tracking-button text-neutral-100 mt-5 text-lg font-bold uppercase"
           >
             {{ pillar.name }}
           </p>
-          <p class="text-text-muted mt-2 flex-1 text-sm">
+          <p class="text-neutral-400 mt-2 flex-1 text-sm">
             {{ pillar.description }}
           </p>
         </li>
@@ -170,27 +170,27 @@ withDefaults(
 
 function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'border-pillar-gym',
-    lab: 'border-pillar-lab',
-    studio: 'border-pillar-studio',
+    gym: 'border-green-500',
+    lab: 'border-amber-400',
+    studio: 'border-blue-500',
   }
   return map[accent]
 }
 
 function pillarIconSurfaceClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'bg-pillar-gym/15 ring-2 ring-pillar-gym',
-    lab: 'bg-pillar-lab/15 ring-2 ring-pillar-lab',
-    studio: 'bg-pillar-studio/15 ring-2 ring-pillar-studio',
+    gym: 'bg-green-500/15 ring-2 ring-green-500',
+    lab: 'bg-amber-400/15 ring-2 ring-amber-400',
+    studio: 'bg-blue-500/15 ring-2 ring-blue-500',
   }
   return map[accent]
 }
 
 function pillarIconColorClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'text-pillar-gym',
-    lab: 'text-pillar-lab',
-    studio: 'text-pillar-studio',
+    gym: 'text-green-500',
+    lab: 'text-amber-400',
+    studio: 'text-blue-500',
   }
   return map[accent]
 }
