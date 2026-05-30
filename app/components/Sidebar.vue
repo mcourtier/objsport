@@ -2,11 +2,6 @@
   <UCard>
     <div class="flex flex-col">
       <AppLogo />
-      <p
-        class="font-display text-neutral-400 mt-3 text-center text-xs font-semibold tracking-widest uppercase"
-      >
-        {{ tagline }}
-      </p>
 
       <nav
         class="mt-8 grid flex-1 grid-cols-3 gap-1 lg:flex lg:flex-col"
@@ -29,10 +24,6 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  tagline: string
-}>()
-
 const route = useRoute()
 const { sidebarNav } = useSiteNavigation()
 
@@ -46,7 +37,7 @@ function isNavActive(to: string) {
 
 function navLinkClass(to: string) {
   return isNavActive(to)
-    ? 'bg-brand text-neutral-100'
-    : 'text-neutral-100 hover:text-brand'
+    ? 'bg-primary text-neutral-100'
+    : 'text-neutral-100 hover:text-primary'
 }
 </script>

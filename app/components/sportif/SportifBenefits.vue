@@ -7,7 +7,7 @@
     <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <li v-for="benefit in benefits" :key="benefit.title" class="flex gap-4">
         <span
-          class="text-brand flex h-12 w-12 shrink-0 items-center justify-center"
+          class="text-primary flex h-12 w-12 shrink-0 items-center justify-center"
           aria-hidden="true"
         >
           <Icon :name="sportifBenefitIcon(benefit.icon)" class="h-10 w-10" />

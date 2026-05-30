@@ -1,7 +1,8 @@
 <template>
   <NuxtLink :to="`/equipe/${profile.slug}`" class="group block h-full">
+    <!-- CardProfile -->
     <UCard
-      class="bg-neutral-800 group-hover:border-brand flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
+      class="bg-neutral-800 group-hover:border-primary flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
     >
       <div
         class="bg-neutral-900 relative aspect-square w-full shrink-0 overflow-hidden"
@@ -23,7 +24,7 @@
           {{ profile.name }}
         </h2>
         <p
-          class="font-display tracking-button text-brand mt-2 text-sm font-semibold uppercase"
+          class="font-display tracking-button text-primary mt-2 text-sm font-semibold uppercase"
         >
           {{ profile.role }}
         </p>

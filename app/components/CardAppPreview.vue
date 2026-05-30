@@ -1,13 +1,14 @@
 <template>
+  <!-- CardAppPreview -->
   <UCard class="flex h-full min-h-60 flex-col md:min-h-70">
     <p
-      class="font-display text-brand text-sm font-semibold tracking-widest uppercase"
+      class="font-display text-primary text-sm font-semibold tracking-widest uppercase"
     >
       {{ eyebrow }}
     </p>
     <h2 class="brand-headline mt-2 text-xl md:text-2xl">
       {{ titleBefore }}
-      <span class="text-brand">{{ titleHighlight }}</span>
+      <span class="text-primary">{{ titleHighlight }}</span>
       {{ titleAfter }}
     </h2>
     <p
@@ -26,7 +27,7 @@
             v-for="i in 4"
             :key="i"
             class="bg-neutral-700 h-2 rounded"
-            :class="i === 1 ? 'bg-brand/60 w-full' : 'w-3/4'"
+            :class="i === 1 ? 'bg-primary/60 w-full' : 'w-3/4'"
           />
         </div>
       </div>

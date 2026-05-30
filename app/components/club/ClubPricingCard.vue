@@ -5,7 +5,7 @@
     >
       <Icon
         :name="clubPricingIcon(tier.icon)"
-        class="text-brand mx-auto h-10 w-10"
+        class="text-primary mx-auto h-10 w-10"
         aria-hidden="true"
       />
       <p class="font-display tracking-button mt-3 text-sm font-bold uppercase">
@@ -19,7 +19,7 @@
     </div>
 
     <p
-      class="bg-brand font-display text-neutral-100 relative z-10 mx-auto -mt-5 max-w-11/12 rounded-full px-4 py-2 text-center text-xs leading-snug font-bold tracking-wide uppercase"
+      class="bg-primary font-display text-neutral-100 relative z-10 mx-auto -mt-5 max-w-11/12 rounded-full px-4 py-2 text-center text-xs leading-snug font-bold tracking-wide uppercase"
     >
       {{ tier.model }}
     </p>

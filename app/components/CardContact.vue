@@ -1,4 +1,5 @@
 <template>
+  <!-- CardContact -->
   <UCard class="flex h-full flex-col">
     <h2
       class="font-display text-neutral-100 text-xl font-bold tracking-wide uppercase md:text-2xl"
@@ -18,7 +19,7 @@
             class="border-neutral-700 bg-neutral-800 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Icon name="material-symbols:language" class="text-brand h-5 w-5" />
+            <Icon name="material-symbols:language" class="text-primary h-5 w-5" />
           </span>
           <span class="text-sm md:text-base">{{ website }}</span>
         </a>
@@ -34,7 +35,7 @@
           >
             <Icon
               name="material-symbols:mail-outline"
-              class="text-brand h-5 w-5"
+              class="text-primary h-5 w-5"
             />
           </span>
           <span class="text-sm md:text-base">{{ email }}</span>
@@ -49,16 +50,16 @@
             class="border-neutral-700 bg-neutral-800 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Icon name="material-symbols:call-outline" class="text-brand h-5 w-5" />
+            <Icon name="material-symbols:call-outline" class="text-primary h-5 w-5" />
           </span>
           <span class="text-sm md:text-base">{{ phone }}</span>
         </a>
       </li>
     </ul>
 
-    <AppButton :to="ctaTo" block class="mt-6">
+    <UButton :to="ctaTo" block class="mt-6">
       {{ ctaLabel }}
-    </AppButton>
+    </UButton>
   </UCard>
 </template>
 

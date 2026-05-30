@@ -1,3 +1,5 @@
+export type SectionAccent = 'consulting' | 'coaching' | 'care'
+
 export interface NavLink {
   label: string
   to: string
@@ -10,6 +12,8 @@ export interface SidebarNavLink extends NavLink {
 export interface AudienceBlock {
   id: string
   title: string
+  label: string
+  accent: SectionAccent
   description: string
   to: string
   cta: string

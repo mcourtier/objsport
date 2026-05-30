@@ -27,7 +27,7 @@
             <li v-if="profile.email">
               <a
                 :href="`mailto:${profile.email}`"
-                class="text-brand underline-offset-4 transition-colors hover:underline"
+                class="text-primary underline-offset-4 transition-colors hover:underline"
               >
                 {{ profile.email }}
               </a>
@@ -35,7 +35,7 @@
             <li v-if="profile.phone">
               <a
                 :href="`tel:${normalizedPhone}`"
-                class="text-brand underline-offset-4 transition-colors hover:underline"
+                class="text-primary underline-offset-4 transition-colors hover:underline"
               >
                 {{ profile.phone }}
               </a>
@@ -46,7 +46,7 @@
         <div class="mt-12">
           <NuxtLink
             to="/equipe"
-            class="text-brand inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
+            class="text-primary inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
           >
             ← Retour à l'équipe
           </NuxtLink>
@@ -74,7 +74,7 @@ const { data: profile } = await useAsyncData(
   () => `team-profile-${slug.value}`,
   async () => {
     const doc = (await queryCollection('team')
-      .where('slug', '==', slug.value)
+      .where('slug', '=', slug.value)
       .first()) as TeamProfilePage | null
     return doc
   },

@@ -7,7 +7,12 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "postinstall": "node scripts/build-color-palette-dep.mjs",
+    "palette": "node scripts/generate-tailwind-palette.mjs",
+    "typecheck": "nuxt typecheck",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
     "@nuxt/content": "^3.13.0",
@@ -20,12 +25,15 @@
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@iconify-json/material-symbols": "^1.2.74",
+    "@smit-io/color-palette": "github:smit-io/color-palette",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@smit-io/color-palette",
       "better-sqlite3"
     ]
   }

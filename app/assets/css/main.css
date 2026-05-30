@@ -5,38 +5,68 @@
 @theme {
   --font-display: Raleway, ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+}
 
-  --tracking-button: 0.04em;
+/* Static so Nuxt UI primary always has 50–950 shades in the bundle */
+@theme static {
+  --color-primary: #de241b;
+  --color-primary-50: #fff2f1;
+  --color-primary-100: #ffe2e1;
+  --color-primary-200: #ffcbc8;
+  --color-primary-300: #ffa5a1;
+  --color-primary-400: #fe726b;
+  --color-primary-500: #f6463d;
+  --color-primary-600: #de241b;
+  --color-primary-700: #c01d15;
+  --color-primary-800: #9e1c16;
+  --color-primary-900: #831e19;
+  --color-primary-950: #470b08;
 
-  --color-brand: #de241b;
+  --color-neutral: #222527;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f5f5;
+  --color-neutral-200: #e3e6e8;
+  --color-neutral-300: #d2d7da;
+  --color-neutral-400: #9da7ae;
+  --color-neutral-500: #6d777e;
+  --color-neutral-600: #4e585f;
+  --color-neutral-700: #3c4449;
+  --color-neutral-800: #222527;
+  --color-neutral-900: #171a1c;
+  --color-neutral-950: #080a0c;
 
-  --color-neutral-100: #f3f4f6;
-  --color-neutral-300: #d1d5db;
-  --color-neutral-400: #9ca3af;
-  --color-neutral-700: #3a3f44;
-  --color-neutral-800: #2a2e31;
-  --color-neutral-900: #222527;
+  --color-consulting: #f8ef04;
+  --color-coaching: #0183db;
+  --color-care: #b3b4b3;
+}
+
+:root,
+.dark {
+  /* --ui-primary: var(--color-primary-600); */
+  --ui-bg: var(--color-neutral-800);
+}
+
+:root {
+  /* --ui-bg: var(--color-neutral-900);
+  --ui-bg-muted: var(--color-neutral-800);
+  --ui-bg-elevated: var(--color-neutral-800);
+  --ui-bg-accented: var(--color-neutral-700); */
+
+  /* --ui-border: var(--color-neutral-700);
+  --ui-border-muted: var(--color-neutral-700); */
+
+  --ui-text: var(--color-neutral-100);
+  --ui-text-muted: var(--color-neutral-400);
+  --ui-text-highlighted: var(--color-neutral-100);
 }
 
 @layer base {
-  .dark {
-    --ui-bg: var(--color-neutral-900);
-    --ui-bg-muted: var(--color-neutral-800);
-    --ui-bg-elevated: var(--color-neutral-800);
-    --ui-bg-accented: var(--color-neutral-700);
-    --ui-border: var(--color-neutral-700);
-    --ui-border-muted: var(--color-neutral-700);
-    --ui-text: var(--color-neutral-100);
-    --ui-text-muted: var(--color-neutral-400);
-    --ui-text-highlighted: var(--color-neutral-100);
-  }
-
   html {
     @apply scroll-smooth antialiased;
   }
 
   body {
-    @apply bg-neutral-900 font-body text-neutral-300 min-h-screen;
+    @apply font-body min-h-screen bg-black text-neutral-300;
   }
 
   button:not(:disabled),
@@ -45,7 +75,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-neutral-900;
+    @apply ring-primary ring-2 ring-offset-2 ring-offset-neutral-900 outline-none;
   }
 }
 
@@ -55,22 +85,22 @@
   }
 
   .brand-tagline {
-    @apply font-display text-neutral-100 text-sm font-semibold tracking-widest uppercase;
+    @apply font-display text-sm font-semibold tracking-widest text-neutral-100 uppercase;
   }
 
   .brand-tagline-bullet {
-    @apply text-brand;
+    @apply text-primary;
   }
 
   .brand-headline {
-    @apply font-display text-neutral-100 leading-tight font-extrabold uppercase italic;
+    @apply font-display leading-tight font-extrabold text-neutral-100 uppercase italic;
   }
 
   .brand-section-rule {
-    @apply bg-brand h-px w-full;
+    @apply bg-primary h-px w-full;
   }
 
   .brand-headline-accent {
-    @apply after:bg-brand relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
+    @apply after:bg-primary relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
   }
 }

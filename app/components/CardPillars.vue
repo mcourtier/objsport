@@ -1,4 +1,5 @@
 <template>
+  <!-- CardPillars -->
   <UCard v-if="variant === 'embedded'" aria-labelledby="pillars-heading">
     <div class="p-6 md:p-8">
       <header class="text-center">
@@ -36,7 +37,7 @@
             </svg>
           </div>
           <p
-            class="font-display tracking-button text-brand mt-4 text-sm font-bold uppercase"
+            class="font-display tracking-button text-primary mt-4 text-sm font-bold uppercase"
           >
             {{ pillar.name }}
           </p>
@@ -57,7 +58,7 @@
         >
           <Icon
             name="material-symbols:verified-outline"
-            class="text-brand h-5 w-5 shrink-0"
+            class="text-primary h-5 w-5 shrink-0"
             aria-hidden="true"
           />
           <span
@@ -168,32 +169,11 @@ withDefaults(
   },
 )
 
-function pillarBorderClass(accent: PillarAccent) {
-  const map: Record<PillarAccent, string> = {
-    gym: 'border-green-500',
-    lab: 'border-amber-400',
-    studio: 'border-blue-500',
-  }
-  return map[accent]
-}
-
-function pillarIconSurfaceClass(accent: PillarAccent) {
-  const map: Record<PillarAccent, string> = {
-    gym: 'bg-green-500/15 ring-2 ring-green-500',
-    lab: 'bg-amber-400/15 ring-2 ring-amber-400',
-    studio: 'bg-blue-500/15 ring-2 ring-blue-500',
-  }
-  return map[accent]
-}
-
-function pillarIconColorClass(accent: PillarAccent) {
-  const map: Record<PillarAccent, string> = {
-    gym: 'text-green-500',
-    lab: 'text-amber-400',
-    studio: 'text-blue-500',
-  }
-  return map[accent]
-}
+import {
+  pillarBorderClass,
+  pillarIconColorClass,
+  pillarIconSurfaceClass,
+} from '~/utils/pillarTheme'
 
 function pillarIconPath(accent: PillarAccent) {
   const paths: Record<PillarAccent, string> = {

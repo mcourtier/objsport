@@ -1,22 +1,17 @@
 import type { AudienceBlock } from '~/types/navigation'
-import type { PageHeroContent } from '~/types/pageHero'
 
-/** @deprecated Use `PageHeroContent` — kept for content block typings. */
-export type HomeHeroContent = Required<
-  Pick<
-    PageHeroContent,
-    | 'tagline'
-    | 'eyebrow'
-    | 'titleBefore'
-    | 'titleHighlight'
-    | 'description'
-    | 'primaryCtaLabel'
-    | 'primaryCtaTo'
-    | 'secondaryCtaLabel'
-    | 'secondaryCtaTo'
-  >
-> &
-  Pick<PageHeroContent, 'titleAfter'>
+/** Homepage hero block fields from `content/index.md` (mapped to `PageHeroContent` in `HomeIntro`). */
+export interface HomeHeroContent {
+  tagline: string
+  titleBefore: string
+  titleHighlight: string
+  titleAfter?: string
+  description: string
+  primaryCtaLabel: string
+  primaryCtaTo: string
+  secondaryCtaLabel: string
+  secondaryCtaTo: string
+}
 
 export interface HomeFeaturesContent {
   heading: string

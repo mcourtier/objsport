@@ -1,13 +1,12 @@
+/** String or MDC inline nodes from Nuxt Content component props. */
+export type HighlightedTextProp = string | Record<string, unknown> | unknown[]
+
 export interface PageHeroContent {
   tagline?: string
-  eyebrow?: string
-  titleBefore?: string
-  titleHighlight?: string
-  titleAfter?: string
-  /** Full-width first headline line (stacked layout). */
-  title?: string
-  /** Second headline line, shown in brand red below `title`. */
-  titleAccent?: string
+  /** Main title. Quote YAML when the text contains `:`. Use `<strong>` for red highlights. */
+  title?: HighlightedTextProp
+  /** Second headline line, shown in primary red below `title`. */
+  titleAccent?: HighlightedTextProp
   description?: string
   primaryCtaLabel?: string
   primaryCtaTo?: string
@@ -16,7 +15,6 @@ export interface PageHeroContent {
   backgroundImage?: string
   backgroundImageAlt?: string
   showTagline?: boolean
-  showEyebrow?: boolean
   showDescription?: boolean
   showCtas?: boolean
 }

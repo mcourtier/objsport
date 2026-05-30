@@ -1,11 +1,6 @@
-import type { StubRouteMeta } from '~/types/navigation'
+import type { StubRouteMeta } from '../types/navigation'
 
 export const stubRoutes: Record<string, StubRouteMeta> = {
-  '/entreprise': {
-    title: 'Entreprise',
-    description:
-      'Services B2B pour la performance et le bien-être en entreprise.',
-  },
   '/entreprise/audit': {
     title: 'Audit',
     description: 'Évaluation de vos besoins en bien-être et performance.',

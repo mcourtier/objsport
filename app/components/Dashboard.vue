@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-col gap-4 lg:gap-5">
+  <div class="mt-5 flex flex-col gap-4 lg:gap-5">
     <div class="grid gap-4 lg:min-h-85 lg:grid-cols-12 lg:gap-5">
       <div class="lg:col-span-8">
-        <CardAppPreview v-bind="eztm" />
+        <CardFeatures v-bind="features" />
       </div>
       <div class="lg:col-span-4">
-        <CardFeatures v-bind="features" />
+        <CardAppPreview v-bind="eztm" />
       </div>
     </div>
 

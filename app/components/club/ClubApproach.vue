@@ -10,7 +10,7 @@
     <ul class="mt-8 space-y-6">
       <li v-for="item in approach.items" :key="item.title" class="flex gap-4">
         <span
-          class="bg-brand text-neutral-100 flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
+          class="bg-primary text-neutral-100 flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
           aria-hidden="true"
         >
           <Icon :name="clubApproachIcon(item.icon)" class="h-6 w-6" />

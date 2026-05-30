@@ -83,13 +83,13 @@
           role="alert"
         />
 
-        <AppButton
+        <UButton
           type="submit"
           :loading="isSubmitting"
           :disabled="isSubmitting"
         >
           {{ isSubmitting ? 'Envoi en cours…' : submitLabel }}
-        </AppButton>
+        </UButton>
       </form>
     </div>
   </section>

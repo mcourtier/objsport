@@ -6,10 +6,8 @@ description: Objectif Sport accompagne entreprises, clubs sportifs et sportifs. 
 ::home-intro
 ---
 hero:
-  tagline: Santé • Performance • Résultats
-  eyebrow: Sur site ou à domicile
-  titleBefore: 'Un objectif commun : votre'
-  titleHighlight: performance
+  tagline: Objectif Sport / Support de performances
+  title: 'Un objectif <strong>commun</strong> : votre <strong>performance</strong>'
   description: Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.
   primaryCtaLabel: Entreprise
   primaryCtaTo: /entreprise
@@ -25,21 +23,27 @@ features:
   headingHighlight: une expertise
   intro: Que vous soyez une entreprise, un club ou un sportif, Objectif Sport vous accompagne avec des solutions adaptées à vos objectifs.
   blocks:
-    - id: entreprise
-      title: L'entreprise
+    - id: consulting
+      title: Stratégie & Audit
+      label: Consulting
+      accent: consulting
       description: Audit, formation et conception de programmes bien-être pour vos équipes. Interventions sur site en entreprise ou à domicile.
       to: /entreprise
       cta: Découvrir nos services
-    - id: club
-      title: Le club
-      description: Monitoring, événementiel et staffing pour les clubs sportifs. Interventions sur site ou à domicile.
-      to: /club
-      cta: Explorer le club
-    - id: sportif
-      title: Le sportif
+    - id: soins
+      title: Bien-être & Santé
+      label: Soins
+      accent: care
       description: Le Gym, Le Lab et Le Studio — coaching et programmes sur site ou à domicile, pour votre progression.
       to: /sportif
       cta: Voir les espaces
+    - id: coaching
+      title: Performance & Énergie
+      label: Coaching
+      accent: coaching
+      description: Monitoring, événementiel et staffing pour les clubs sportifs. Interventions sur site ou à domicile.
+      to: /club
+      cta: Explorer le club
 pillars:
   heading: La performance professionnelle
   intro: Trois espaces complémentaires pour prévenir, optimiser et performer.

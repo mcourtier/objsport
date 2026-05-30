@@ -1,3 +1,9 @@
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/docs/
+
 # Nuxt dev/build outputs
 .output
 .data
