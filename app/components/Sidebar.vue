@@ -24,20 +24,5 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const { sidebarNav } = useSiteNavigation()
-
-function isNavActive(to: string) {
-  if (to === '/') {
-    return route.path === '/'
-  }
-
-  return route.path === to || route.path.startsWith(`${to}/`)
-}
-
-function navLinkClass(to: string) {
-  return isNavActive(to)
-    ? 'bg-primary text-neutral-100'
-    : 'text-neutral-100 hover:text-primary'
-}
+const { sidebarNav, isNavActive, navLinkClass } = useSiteNavigation()
 </script>

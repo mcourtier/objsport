@@ -3,9 +3,7 @@
     <div
       class="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 p-4 md:p-5 lg:flex-row lg:gap-5 lg:p-6"
     >
-      <aside class="shrink-0 lg:sticky lg:top-6 lg:w-64 lg:self-start xl:w-72">
-        <Sidebar />
-      </aside>
+      <AppNav />
 
       <main class="relative min-w-0 flex-1">
         <slot />

@@ -1,6 +1,8 @@
 import type { NavLink, SidebarNavLink } from '~/types/navigation'
 
 export const useSiteNavigation = () => {
+  const route = useRoute()
+
   const sidebarNav: SidebarNavLink[] = [
     {
       label: 'Accueil',
@@ -33,8 +35,24 @@ export const useSiteNavigation = () => {
     { label: 'Cookies', to: '/cookies' },
   ]
 
+  function isNavActive(to: string) {
+    if (to === '/') {
+      return route.path === '/'
+    }
+
+    return route.path === to || route.path.startsWith(`${to}/`)
+  }
+
+  function navLinkClass(to: string) {
+    return isNavActive(to)
+      ? 'bg-primary text-neutral-100'
+      : 'text-neutral-100 hover:text-primary'
+  }
+
   return {
     sidebarNav,
     footerLegal,
+    isNavActive,
+    navLinkClass,
   }
 }
