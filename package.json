@@ -8,7 +8,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "node scripts/build-color-palette-dep.mjs",
     "palette": "node scripts/generate-tailwind-palette.mjs",
     "typecheck": "nuxt typecheck",
     "test:e2e": "playwright test",
@@ -33,7 +32,6 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@smit-io/color-palette",
       "better-sqlite3"
     ]
   }

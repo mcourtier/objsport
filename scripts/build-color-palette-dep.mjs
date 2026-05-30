@@ -2,7 +2,9 @@
 
 /**
  * @smit-io/color-palette is installed from GitHub but only publishes `dist/`,
- * which is not in the repo. Build it once into node_modules after install.
+ * which is not in the repo. Run manually before using the palette generator:
+ *
+ *   node scripts/build-color-palette-dep.mjs
  */
 
 import { execSync } from 'node:child_process'
