@@ -1,10 +1,11 @@
 <template>
+  <!-- EntrepriseServiceCard -->
   <article
     class="flex h-full flex-col rounded-2xl bg-white p-6 text-neutral-900 md:p-7"
   >
     <header class="text-center">
       <span
-        class="bg-primary text-neutral-100 mx-auto flex h-14 w-14 items-center justify-center rounded-full"
+        class="bg-primary mx-auto flex h-14 w-14 items-center justify-center rounded-full text-neutral-100"
         aria-hidden="true"
       >
         <Icon :name="entrepriseServiceIcon(service.icon)" class="h-7 w-7" />
@@ -12,10 +13,7 @@
       <h3
         class="font-display tracking-button mt-4 text-base font-bold uppercase md:text-lg"
       >
-        <NuxtLink
-          :to="service.to"
-          class="hover:text-primary transition-colors"
-        >
+        <NuxtLink :to="service.to" class="hover:text-primary transition-colors">
           {{ service.title }}
         </NuxtLink>
       </h3>

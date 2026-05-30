@@ -19,15 +19,6 @@ export function sectionTextClass(accent: SectionAccent) {
   return map[accent]
 }
 
-export function sectionIconName(accent: SectionAccent) {
-  const map: Record<SectionAccent, string> = {
-    consulting: 'material-symbols:monitoring',
-    coaching: 'material-symbols:bolt',
-    care: 'material-symbols:handyman-outline',
-  }
-  return map[accent]
-}
-
 export function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
     gym: 'border-coaching',

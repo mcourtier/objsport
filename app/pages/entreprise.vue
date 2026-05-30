@@ -19,6 +19,7 @@
               :to="category.to"
               :label="category.label"
               :accent="category.accent"
+              :icon="category.icon"
               :title="category.title"
               :description="category.description"
             />

@@ -27,6 +27,7 @@ features:
       title: Stratégie & Audit
       label: Consulting
       accent: consulting
+      icon: material-symbols:monitoring
       description: Audit, formation et conception de programmes bien-être pour vos équipes. Interventions sur site en entreprise ou à domicile.
       to: /entreprise
       cta: Découvrir nos services
@@ -34,6 +35,7 @@ features:
       title: Bien-être & Santé
       label: Soins
       accent: care
+      icon: material-symbols:handyman-outline
       description: Le Gym, Le Lab et Le Studio — coaching et programmes sur site ou à domicile, pour votre progression.
       to: /sportif
       cta: Voir les espaces
@@ -41,6 +43,7 @@ features:
       title: Performance & Énergie
       label: Coaching
       accent: coaching
+      icon: material-symbols:bolt
       description: Monitoring, événementiel et staffing pour les clubs sportifs. Interventions sur site ou à domicile.
       to: /club
       cta: Explorer le club

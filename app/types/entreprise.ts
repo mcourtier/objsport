@@ -3,6 +3,7 @@ import type { SectionAccent } from '~/types/navigation'
 export interface EntrepriseCategory {
   label: string
   accent: SectionAccent
+  icon: string
   title: string
   description: string
   to: string

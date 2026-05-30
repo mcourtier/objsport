@@ -11,6 +11,7 @@ export const entreprisePageContent: EntreprisePageContent = {
     {
       label: 'Consulting',
       accent: 'consulting',
+      icon: 'material-symbols:monitoring',
       title: 'Stratégie & Audit',
       description: 'Analyse, diagnostic et stratégie RH',
       to: '/entreprise/audit',
@@ -18,6 +19,7 @@ export const entreprisePageContent: EntreprisePageContent = {
     {
       label: 'Soins',
       accent: 'care',
+      icon: 'material-symbols:handyman-outline',
       title: 'Bien-être & Santé',
       description: 'Soins et prévention en entreprise',
       to: '/entreprise/formation',
@@ -25,6 +27,7 @@ export const entreprisePageContent: EntreprisePageContent = {
     {
       label: 'Coaching',
       accent: 'coaching',
+      icon: 'material-symbols:bolt',
       title: 'Performance & Énergie',
       description: 'Coaching et programmes terrain',
       to: '/entreprise/conception',

@@ -17,6 +17,7 @@
           :to="block.to"
           :label="block.label"
           :accent="block.accent"
+          :icon="block.icon"
           :title="block.title"
           :description="block.description"
         />
