@@ -14,6 +14,7 @@ export interface AudienceBlock {
   title: string
   label: string
   accent: SectionAccent
+  icon: string
   description: string
   to: string
   cta: string

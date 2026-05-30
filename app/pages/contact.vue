@@ -1,22 +1,28 @@
 <template>
-  <ContentRenderer v-if="page" :value="page" />
+  <div>
+    <PageHero
+      :title="content.hero.title"
+      :title-accent="content.hero.titleAccent"
+      :description="content.hero.description"
+    />
+
+    <ContactForm
+      :heading="content.form.heading"
+      :intro="content.form.intro"
+      :submit-label="content.form.submitLabel"
+      :success-message="content.form.successMessage"
+      :error-message="content.form.errorMessage"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-const { data: page } = await useAsyncData('contact', () =>
-  queryCollection('content').path('/contact').first(),
-)
+import { contactPageContent } from '~/data/contactPage'
 
-if (!page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page introuvable',
-    fatal: true,
-  })
-}
+const content = contactPageContent
 
 useSeoMeta({
-  title: () => page.value?.title,
-  description: () => page.value?.description,
+  title: () => `${content.title} — Objectif Sport`,
+  description: () => content.description,
 })
 </script>
