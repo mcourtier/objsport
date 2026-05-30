@@ -4,7 +4,7 @@
     :aria-label="`${title} — ${description}`"
     class="group flex flex-col items-center text-center transition-opacity hover:opacity-90"
   >
-    <div class="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32">
+    <div class="relative h-20 w-20 shrink-0 sm:h-32 sm:w-32">
       <PillarShape :accent="accent" class="size-full" />
       <div
         class="absolute inset-0 flex flex-col items-center justify-center gap-1 px-2 pt-3 pb-2"
@@ -15,7 +15,7 @@
           aria-hidden="true"
         />
         <span
-          class="font-display text-[0.5rem] leading-none font-bold tracking-wide text-neutral-900 uppercase sm:text-[0.5625rem]"
+          class="font-display text-[10px] leading-none font-bold tracking-wide text-neutral-900 uppercase sm:text-xs"
         >
           {{ label }}
         </span>

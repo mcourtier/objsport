@@ -5,14 +5,14 @@ import type {
 } from '~/types/entreprise'
 
 export const entrepriseServiceIcons: Record<EntrepriseServiceIcon, string> = {
-  audit: 'material-symbols:person-outline',
+  audit: 'material-symbols:person-apron-outline',
   programs: 'material-symbols:groups-outline',
-  conception: 'material-symbols:desktop-windows-outline',
+  conception: 'material-symbols:frame-inspect',
 }
 
 export const entrepriseBenefitIcons: Record<EntrepriseBenefitIcon, string> = {
-  health: 'material-symbols:health-and-safety-outline',
-  performance: 'material-symbols:trending-up',
+  health: 'material-symbols:verified-user-outline',
+  performance: 'material-symbols:monitoring',
   tms: 'material-symbols:personal-injury-outline',
   productivity: 'material-symbols:settings-outline',
   teams: 'material-symbols:groups-outline',

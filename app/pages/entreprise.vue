@@ -9,42 +9,33 @@
     />
 
     <div class="mx-auto max-w-7xl px-4 pb-12 md:px-6 md:pb-16 lg:px-8">
-      <section
-        aria-label="Consulting, Soins et Coaching"
-        class="mt-5 pb-10 md:pb-14"
-      >
-        <ul class="grid justify-items-center gap-8 sm:grid-cols-3 sm:gap-6">
-          <li v-for="category in content.categories" :key="category.accent">
-            <Pictogram
-              :to="category.to"
-              :label="category.label"
-              :accent="category.accent"
-              :icon="category.icon"
-              :title="category.title"
-              :description="category.description"
-            />
-          </li>
-        </ul>
-      </section>
+      <EntrepriseCategories :categories="content.categories" />
 
-      <section aria-labelledby="entreprise-services-heading" class="space-y-8">
+      <section
+        aria-labelledby="entreprise-services-heading"
+        class="space-y-10 pt-4 md:space-y-12 md:pt-6"
+      >
         <EntrepriseSectionHeading
           :title="content.servicesTitle"
           heading-id="entreprise-services-heading"
         />
-        <ul class="grid gap-6 lg:grid-cols-3 lg:gap-8">
+        <ul class="grid gap-8 pt-6 sm:gap-10 lg:grid-cols-3 lg:gap-6 lg:pt-8">
           <li v-for="service in content.services" :key="service.title">
             <EntrepriseServiceCard :service="service" />
           </li>
         </ul>
       </section>
 
-      <EntrepriseBenefitsBar :benefits="content.benefits" />
+      <EntrepriseBenefitsBar
+        :benefits="content.benefits"
+        class="mt-10 md:mt-14"
+      />
 
       <EntrepriseWhyChoose
         :title="content.reasonsTitle"
         :title-highlight="content.reasonsTitleHighlight"
         :reasons="content.reasons"
+        class="mt-10 md:mt-14"
       />
     </div>
   </div>

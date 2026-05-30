@@ -1,17 +1,17 @@
 <template>
   <!-- CardFeatures -->
   <UCard
-    class="from-primary/25 via-neutral-800 to-neutral-800 flex h-full flex-col justify-center bg-gradient-to-br"
+    class="from-primary/25 flex h-full flex-col justify-center bg-gradient-to-br via-neutral-800 to-neutral-800"
   >
     <h2
       id="features-heading"
-      class="font-display text-neutral-100 text-lg leading-snug font-bold tracking-wide uppercase md:text-xl"
+      class="font-display text-lg leading-snug font-bold tracking-wide text-neutral-100 uppercase md:text-xl"
     >
       {{ heading }}
       <span class="text-primary">{{ headingHighlight }}</span>
     </h2>
 
-    <ul class="mt-6 grid justify-items-center gap-8 sm:grid-cols-3 sm:gap-6">
+    <ul class="mt-6 grid grid-cols-3 justify-items-center gap-3 sm:gap-8">
       <li v-for="block in blocks" :key="block.id">
         <Pictogram
           :to="block.to"

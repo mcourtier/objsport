@@ -1,6 +1,6 @@
 <template>
   <section
-    class="border-neutral-700 border-t py-12 md:py-16"
+    class="py-10 md:py-14"
     aria-labelledby="entreprise-why-heading"
   >
     <h2
@@ -12,26 +12,33 @@
       ?
     </h2>
 
-    <ul
-      class="divide-neutral-700 mt-10 grid gap-8 sm:grid-cols-2 sm:divide-x lg:mt-12 lg:grid-cols-4 lg:gap-0"
-    >
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2 md:mt-12 lg:grid-cols-4 lg:gap-5">
       <li
         v-for="reason in reasons"
         :key="reason.title"
-        class="flex flex-col items-center px-4 text-center lg:px-6"
+        class="rounded-xl border border-neutral-700 bg-neutral-900 p-5 md:p-6"
       >
-        <span
-          class="bg-primary text-neutral-100 flex h-12 w-12 items-center justify-center rounded-full"
-          aria-hidden="true"
-        >
-          <Icon :name="entrepriseReasonIcon(reason.icon)" class="h-6 w-6" />
-        </span>
-        <p
-          class="font-display tracking-button text-neutral-100 mt-4 text-sm font-bold uppercase"
-        >
-          {{ reason.title }}
-        </p>
-        <p class="text-neutral-400 mt-2 text-sm">
+        <div class="flex items-center gap-3">
+          <span
+            v-if="reason.icon !== 'results'"
+            class="bg-primary text-neutral-100 flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
+            aria-hidden="true"
+          >
+            <Icon :name="entrepriseReasonIcon(reason.icon)" class="h-5 w-5" />
+          </span>
+          <Icon
+            v-else
+            :name="entrepriseReasonIcon(reason.icon)"
+            class="text-primary h-11 w-11 shrink-0"
+            aria-hidden="true"
+          />
+          <p
+            class="font-display tracking-button text-neutral-100 min-w-0 flex-1 text-sm font-bold uppercase leading-snug"
+          >
+            {{ reason.title }}
+          </p>
+        </div>
+        <p class="text-neutral-300 mt-3 pl-14 text-sm leading-relaxed">
           {{ reason.description }}
         </p>
       </li>
