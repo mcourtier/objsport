@@ -24,5 +24,5 @@
 </template>
 
 <script setup lang="ts">
-const { sidebarNav, isNavActive, navLinkClass } = useSiteNavigation()
+const { sidebarNav, isNavActive, navLinkClass } = await useSiteNavigation()
 </script>

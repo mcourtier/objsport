@@ -1,0 +1,31 @@
+tagline: support de performance
+
+sidebar:
+  - label: Accueil
+    to: /
+    icon: material-symbols:home-outline
+  - label: Entreprise
+    to: /entreprise
+    icon: material-symbols:corporate-fare
+  - label: Club
+    to: /club
+    icon: material-symbols:sports-soccer
+  - label: Sportif
+    to: /sportif
+    icon: material-symbols:fitness-center
+  - label: Équipe
+    to: /equipe
+    icon: material-symbols:groups-outline
+  - label: Contact
+    to: /contact
+    icon: material-symbols:mail-outline
+
+footerLegal:
+  - label: Mentions légales
+    to: /mentions-legales
+  - label: CGU
+    to: /cgu
+  - label: Confidentialité
+    to: /politique-de-confidentialite
+  - label: Cookies
+    to: /cookies

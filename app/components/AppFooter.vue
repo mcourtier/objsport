@@ -23,5 +23,5 @@
 </template>
 
 <script setup lang="ts">
-const { footerLegal } = useSiteNavigation()
+const { footerLegal } = await useSiteNavigation()
 </script>

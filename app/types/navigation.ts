@@ -9,6 +9,12 @@ export interface SidebarNavLink extends NavLink {
   icon: string
 }
 
+export interface SiteNavigationContent {
+  tagline: string
+  sidebar: SidebarNavLink[]
+  footerLegal: NavLink[]
+}
+
 export interface AudienceBlock {
   id: string
   title: string

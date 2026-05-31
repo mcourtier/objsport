@@ -1,39 +1,21 @@
 import type { NavLink, SidebarNavLink } from '~/types/navigation'
 
-export const useSiteNavigation = () => {
+export async function useSiteNavigation() {
   const route = useRoute()
 
-  const sidebarNav: SidebarNavLink[] = [
-    {
-      label: 'Accueil',
-      to: '/',
-      icon: 'material-symbols:home-outline',
-    },
-    {
-      label: 'Entreprise',
-      to: '/entreprise',
-      icon: 'material-symbols:corporate-fare',
-    },
-    { label: 'Club', to: '/club', icon: 'material-symbols:sports-soccer' },
-    {
-      label: 'Sportif',
-      to: '/sportif',
-      icon: 'material-symbols:fitness-center',
-    },
-    {
-      label: 'Équipe',
-      to: '/equipe',
-      icon: 'material-symbols:groups-outline',
-    },
-    { label: 'Contact', to: '/contact', icon: 'material-symbols:mail-outline' },
-  ]
+  const { data: navigation } = await useAsyncData('site-navigation', () =>
+    queryCollection('navigation').first(),
+  )
 
-  const footerLegal: NavLink[] = [
-    { label: 'Mentions légales', to: '/mentions-legales' },
-    { label: 'CGU', to: '/cgu' },
-    { label: 'Confidentialité', to: '/politique-de-confidentialite' },
-    { label: 'Cookies', to: '/cookies' },
-  ]
+  const sidebarNav = computed(
+    () => (navigation.value?.sidebar ?? []) as SidebarNavLink[],
+  )
+
+  const footerLegal = computed(
+    () => (navigation.value?.footerLegal ?? []) as NavLink[],
+  )
+
+  const tagline = computed(() => navigation.value?.tagline ?? '')
 
   function isNavActive(to: string) {
     if (to === '/') {
@@ -50,6 +32,7 @@ export const useSiteNavigation = () => {
   }
 
   return {
+    tagline,
     sidebarNav,
     footerLegal,
     isNavActive,
