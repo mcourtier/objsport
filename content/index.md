@@ -24,24 +24,24 @@ features:
   intro: Que vous soyez une entreprise, un club ou un sportif, Objectif Sport vous accompagne avec des solutions adaptées à vos objectifs.
   blocks:
     - id: consulting
-      title: Stratégie & Audit
-      label: Consulting
+      title: Demander un audit
+      label: Entreprise
       accent: consulting
       icon: material-symbols:monitoring
       description: Audit, formation et conception de programmes bien-être pour vos équipes. Interventions sur site en entreprise ou à domicile.
       to: /entreprise
       cta: Découvrir nos services
     - id: soins
-      title: Bien-être & Santé
-      label: Soins
+      title: Consulter la carte
+      label: Sportif
       accent: care
       icon: material-symbols:handyman-outline
       description: Le Gym, Le Lab et Le Studio — coaching et programmes sur site ou à domicile, pour votre progression.
       to: /sportif
       cta: Voir les espaces
     - id: coaching
-      title: Performance & Énergie
-      label: Coaching
+      title: Solliciter un consulting
+      label: Club
       accent: coaching
       icon: material-symbols:bolt
       description: Monitoring, événementiel et staffing pour les clubs sportifs. Interventions sur site ou à domicile.
