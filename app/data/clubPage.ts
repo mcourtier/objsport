@@ -38,39 +38,4 @@ export const clubPageContent: ClubPageContent = {
         'Un contrôle digital optimal générant des rapports en temps réel qui assure une coordination et une communication sans failles.',
     },
   },
-  pricing: [
-    {
-      icon: 'half-day',
-      label: 'Par demi-jour',
-      price: '480€',
-      model: 'Modèle : 6 heures consécutives',
-      footnotes: [
-        'Frais déplacement : Aucun frais dans un rayon de 30 km autour de Marseille.',
-      ],
-    },
-    {
-      icon: 'day',
-      label: 'Par jour',
-      price: '900€',
-      model: 'Modèle : 12 heures consécutives à partir de 2 jours',
-      footnotes: [
-        'Frais déplacement :',
-        '< 30 km : 0',
-        '> 30 km : 1€/km',
-        '> 200 km : Gîte / Voyages (selon mission)',
-      ],
-    },
-    {
-      icon: 'week',
-      label: 'Par semaine',
-      price: '4500€',
-      model: 'Modèle : 6 jours sur 7',
-      footnotes: [
-        'Suivi & reporting inclus',
-        'Coordination optimisée',
-        'Rapports en temps réel',
-      ],
-    },
-  ],
-  estimationTitle: 'Estimation / Observations',
 }

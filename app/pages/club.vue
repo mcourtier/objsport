@@ -19,20 +19,6 @@
         />
         <ClubApproach :approach="content.approach" />
       </section>
-
-      <section
-        class="border-neutral-700 mt-14 border-t pt-14 md:mt-16 md:pt-16"
-        aria-label="Tarification et estimation"
-      >
-        <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          <li v-for="tier in content.pricing" :key="tier.label">
-            <ClubPricingCard :tier="tier" />
-          </li>
-          <li class="sm:col-span-2 xl:col-span-1">
-            <ClubEstimationPanel :title="content.estimationTitle" />
-          </li>
-        </ul>
-      </section>
     </div>
   </div>
 </template>

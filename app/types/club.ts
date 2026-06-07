@@ -1,7 +1,5 @@
 export type ClubApproachIcon = 'context' | 'need' | 'mission'
 
-export type ClubPricingIcon = 'half-day' | 'day' | 'week'
-
 export interface ClubApproachItem {
   icon: ClubApproachIcon
   title: string
@@ -11,14 +9,6 @@ export interface ClubApproachItem {
 export interface ClubHighlight {
   title: string
   description: string
-}
-
-export interface ClubPricingTier {
-  icon: ClubPricingIcon
-  label: string
-  price: string
-  model: string
-  footnotes: string[]
 }
 
 export interface ClubApproachContent {
@@ -36,6 +26,4 @@ export interface ClubPageContent {
   heroBackgroundImage?: string
   heroBackgroundImageAlt?: string
   approach: ClubApproachContent
-  pricing: ClubPricingTier[]
-  estimationTitle: string
 }
