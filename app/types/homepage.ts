@@ -32,16 +32,6 @@ export interface HomePillarsContent {
   pillars: HomePillar[]
 }
 
-export interface HomeEztmContent {
-  eyebrow: string
-  titleBefore: string
-  titleHighlight: string
-  titleAfter?: string
-  description: string
-  appStoreLabel: string
-  playStoreLabel: string
-}
-
 export interface HomeTrustItem {
   label: string
 }
@@ -77,7 +67,6 @@ export interface HomeDashboardContent {
     intro: string
     trustItems: HomeTrustItem[]
   }
-  eztm: HomeEztmContent
   highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent
   promo: HomeEztmPromoContent

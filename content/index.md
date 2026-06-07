@@ -64,13 +64,6 @@ pillars:
     - label: Sur site en entreprise
     - label: Interventions à domicile
     - label: Gym, Lab & Studio
-eztm:
-  eyebrow: Plateforme digitale
-  titleBefore: Découvrez
-  titleHighlight: EZTM
-  description: L'application EZTM arrive bientôt sur l'App Store et Google Play. Pilotez la santé et la performance de vos équipes avec Objectif Sport.
-  appStoreLabel: App Store — bientôt
-  playStoreLabel: Google Play — bientôt
 highlight:
   title: Cockpit santé performance
   description: Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.
