@@ -11,7 +11,7 @@
       >
         <Icon
           :name="icon"
-          class="h-8 w-8 shrink-0 text-neutral-900 sm:h-10 sm:w-10"
+          class="h-10 w-10 shrink-0 text-neutral-900 sm:h-16 sm:w-16"
           aria-hidden="true"
         />
         <span
@@ -29,7 +29,7 @@
       >
         {{ label }}
       </p>
-      <p class="font-body text-sm leading-snug font-normal text-neutral-100">
+      <p class="font-body leading-snug font-normal text-neutral-100">
         {{ title }}
       </p>
     </div>
