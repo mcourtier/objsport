@@ -24,26 +24,9 @@
       </div>
       <UCollapsible v-model:open="menuOpen" :unmount-on-hide="false">
         <template #content>
-          <nav
-            aria-label="Navigation principale"
+          <AppNavLinks
             class="border-default mt-4 flex flex-col gap-1 px-4 py-4 md:px-5 lg:mt-8 lg:border-t-0 lg:px-0 lg:py-0"
-          >
-            <NuxtLink
-              v-for="link in sidebarNav"
-              :key="link.to"
-              :to="link.to"
-              class="font-display tracking-button inline-flex flex-row items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase transition-colors"
-              :class="navLinkClass(link.to)"
-              :aria-current="isNavActive(link.to) ? 'page' : undefined"
-            >
-              <Icon
-                :name="link.icon"
-                class="h-5 w-5 shrink-0"
-                aria-hidden="true"
-              />
-              {{ link.label }}
-            </NuxtLink>
-          </nav>
+          />
         </template>
       </UCollapsible>
     </UCard>
@@ -52,31 +35,35 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const { sidebarNav, isNavActive, navLinkClass } = await useSiteNavigation()
+const menuOpen = ref(true)
 
-const menuOpen = ref(false)
+const desktopMediaQuery = '(min-width: 1024px)'
 
-function syncDesktopNavOpen() {
-  menuOpen.value = window.matchMedia('(min-width: 1024px)').matches
+function isDesktopViewport() {
+  return window.matchMedia(desktopMediaQuery).matches
+}
+
+function syncMenuOpen() {
+  menuOpen.value = isDesktopViewport()
 }
 
 onMounted(() => {
-  syncDesktopNavOpen()
+  syncMenuOpen()
   window
-    .matchMedia('(min-width: 1024px)')
-    .addEventListener('change', syncDesktopNavOpen)
+    .matchMedia(desktopMediaQuery)
+    .addEventListener('change', syncMenuOpen)
 })
 
 onUnmounted(() => {
   window
-    .matchMedia('(min-width: 1024px)')
-    .removeEventListener('change', syncDesktopNavOpen)
+    .matchMedia(desktopMediaQuery)
+    .removeEventListener('change', syncMenuOpen)
 })
 
 watch(
   () => route.fullPath,
   () => {
-    if (!window.matchMedia('(min-width: 1024px)').matches) {
+    if (!isDesktopViewport()) {
       menuOpen.value = false
     }
   },
