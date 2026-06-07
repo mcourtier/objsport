@@ -9,8 +9,7 @@
       <div
         class="flex min-h-(--ui-header-height) items-center justify-between gap-3 lg:block lg:min-h-0"
       >
-        <AppLogo compact class="lg:hidden" />
-        <AppLogo class="hidden lg:block" />
+        <AppLogo />
         <AppNavBurger v-model="menuOpen" />
       </div>
       <UCollapsible v-model:open="menuOpen" :unmount-on-hide="false">

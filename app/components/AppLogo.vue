@@ -1,24 +1,19 @@
 <template>
-  <div :class="compact ? '' : 'text-center'">
+  <div class="lg:text-center">
     <NuxtLink
       to="/"
-      :class="
-        compact
-          ? 'block focus-visible:outline-offset-4'
-          : 'mx-auto block w-full max-w-xs focus-visible:outline-offset-4 sm:max-w-sm'
-      "
+      class="block focus-visible:outline-offset-4 lg:mx-auto lg:w-full lg:max-w-sm"
       aria-label="Objectif Sport — Accueil"
     >
       <img
         src="/logo.svg"
-        :alt="compact ? '' : 'Objectif Sport'"
-        :class="compact ? 'h-12 w-auto' : 'mx-auto h-auto sm:w-64'"
+        alt=""
+        class="h-12 w-auto lg:mx-auto lg:h-auto lg:w-64"
       />
     </NuxtLink>
     <p
       v-if="tagline"
-      class="brand-tagline"
-      :class="compact ? 'mt-1 text-[10px] tracking-wider' : 'mt-2'"
+      class="brand-tagline mt-1 text-[10px] tracking-wider lg:mt-2 lg:text-sm lg:tracking-widest"
     >
       {{ tagline }}
     </p>
@@ -26,14 +21,5 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    compact?: boolean
-  }>(),
-  {
-    compact: false,
-  },
-)
-
 const { tagline } = await useSiteNavigation()
 </script>
