@@ -44,6 +44,8 @@
 .dark {
   /* --ui-primary: var(--color-primary-600); */
   --ui-bg: var(--color-neutral-800);
+  /* Primary solid buttons use text-inverted; DESIGN.md primary button text #FAFAFA */
+  --ui-text-inverted: var(--color-neutral-50);
 }
 
 :root {
