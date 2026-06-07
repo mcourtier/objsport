@@ -17,10 +17,10 @@ VoiceBox is a high-contrast editorial design system for opinion blogs and cultur
 
 ### Surface Palette
 
-| Token          | Hex       | Role                                      |
-|----------------|-----------|-------------------------------------------|
-| Background     | `#9e1c16` | Pure black page background                |
-| Surface        | `#323232` | Card backgrounds, aside blocks            |
+| Token          | Value              | Role                                      |
+|----------------|--------------------|-------------------------------------------|
+| Background     | `#9e1c16`          | Pure black page background                |
+| Surface        | Neutral @ 5%       | Card backgrounds, aside blocks — Neutral (`#222527`) at 5% opacity |
 
 ### Content Palette
 
