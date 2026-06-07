@@ -23,14 +23,21 @@ export default defineAppConfig({
       //   },
       // },
     },
-    // card: {
-    //   slots: {
-    //     root: 'overflow-hidden rounded-2xl border border-neutral-700 bg-transparent',
-    //     header: 'p-0',
-    //     body: 'p-0',
-    //     footer: 'p-0',
-    //   },
-    // },
+    card: {
+      variants: {
+        variant: {
+          outline: {
+            root: 'bg-default ring ring-default divide-y-0',
+          },
+          soft: {
+            root: 'bg-elevated/50 divide-y-0',
+          },
+          subtle: {
+            root: 'bg-elevated/50 ring ring-default divide-y-0',
+          },
+        },
+      },
+    },
     // formField: {
     //   slots: {
     //     label:
