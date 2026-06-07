@@ -4,16 +4,12 @@
     class="relative overflow-hidden bg-black"
     aria-labelledby="hero-heading"
   >
-    <div class="absolute top-0 right-0 bottom-0 h-full">
+    <div class="absolute inset-y-0 right-0">
       <img
-        class="hero-athlete-bg h-full w-auto"
+        class="hero-athlete-bg h-full w-auto max-w-none"
         src="/images/athlete.png"
         :alt="backgroundImageAlt"
         loading="lazy"
-      />
-      <div
-        class="hero-athlete-fade from-ui-bg absolute top-0 bottom-0 left-0 w-48"
-        aria-hidden="true"
       />
     </div>
 
@@ -118,18 +114,45 @@ const parsedTitleAccent = computed(() =>
 
 <style scoped>
 .hero-athlete-bg {
-  /* background-image: url('/images/athlete.png');
-  background-position: right center;
-  background-repeat: no-repeat;
-  height: 100%; */
+  display: block;
+  object-fit: cover;
+  object-position: right center;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.06) 8%,
+    rgb(0 0 0 / 0.28) 20%,
+    rgb(0 0 0 / 0.58) 34%,
+    rgb(0 0 0 / 0.84) 46%,
+    black 56%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0 0 0 / 0.06) 8%,
+    rgb(0 0 0 / 0.28) 20%,
+    rgb(0 0 0 / 0.58) 34%,
+    rgb(0 0 0 / 0.84) 46%,
+    black 56%
+  );
 }
 
-.hero-athlete-fade {
-  background: linear-gradient(
-    90deg,
-    black 0%,
-    color-mix(in srgb, black 90%, transparent) 28%,
-    transparent 58%
-  );
+@media (max-width: 767px) {
+  .hero-athlete-bg {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 0.22) 16%,
+      rgb(0 0 0 / 0.65) 34%,
+      black 48%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 0.22) 16%,
+      rgb(0 0 0 / 0.65) 34%,
+      black 48%
+    );
+  }
 }
 </style>
