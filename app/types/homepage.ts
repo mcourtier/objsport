@@ -22,20 +22,6 @@ export interface HomeFeaturesContent {
 
 export type PillarAccent = 'gym' | 'lab' | 'studio'
 
-export interface HomePillar {
-  name: string
-  description: string
-  accent: PillarAccent
-}
-
-export interface HomePillarsContent {
-  pillars: HomePillar[]
-}
-
-export interface HomeTrustItem {
-  label: string
-}
-
 export interface HomeContactPanelContent {
   heading: string
   website: string
@@ -62,11 +48,6 @@ export interface HomeIntroContent {
 
 export interface HomeDashboardContent {
   features: HomeFeaturesContent
-  pillars: HomePillarsContent & {
-    heading: string
-    intro: string
-    trustItems: HomeTrustItem[]
-  }
   highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent
   promo: HomeEztmPromoContent

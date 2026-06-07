@@ -47,23 +47,6 @@ features:
       description: Monitoring, événementiel et staffing pour les clubs sportifs. Interventions sur site ou à domicile.
       to: /club
       cta: Explorer le club
-pillars:
-  heading: La performance professionnelle
-  intro: Trois espaces complémentaires pour prévenir, optimiser et performer.
-  pillars:
-    - name: Le Gym
-      description: Préparation physique et musculation
-      accent: gym
-    - name: Le Lab
-      description: Tests et analyse de performance
-      accent: lab
-    - name: Le Studio
-      description: Cours collectifs et coaching
-      accent: studio
-  trustItems:
-    - label: Sur site en entreprise
-    - label: Interventions à domicile
-    - label: Gym, Lab & Studio
 highlight:
   title: Cockpit santé performance
   description: Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.

@@ -4,14 +4,7 @@
       <CardFeatures v-bind="features" />
     </div>
 
-    <div class="grid gap-4 lg:grid-cols-12 lg:gap-5">
-      <div class="lg:col-span-8">
-        <CardPillars v-bind="pillars" variant="embedded" />
-      </div>
-      <div class="lg:col-span-4">
-        <CardContact v-bind="contact" />
-      </div>
-    </div>
+    <CardContact v-bind="contact" />
 
     <div class="grid gap-4 lg:grid-cols-12 lg:gap-5">
       <div class="lg:col-span-4">
