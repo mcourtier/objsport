@@ -19,6 +19,15 @@ export function sectionTextClass(accent: SectionAccent) {
   return map[accent]
 }
 
+export function sectionIconSurfaceClass(accent: SectionAccent) {
+  const map: Record<SectionAccent, string> = {
+    consulting: 'bg-consulting/15 ring-2 ring-consulting',
+    coaching: 'bg-coaching/15 ring-2 ring-coaching',
+    care: 'bg-care/15 ring-2 ring-care',
+  }
+  return map[accent]
+}
+
 export function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
     gym: 'border-coaching',

@@ -2,6 +2,7 @@
   <div class="flex flex-col gap-4 lg:gap-5">
     <CardHero v-bind="heroProps" />
     <CardMission v-bind="mission" />
+    <CardMissionOutcomes />
   </div>
 </template>
 

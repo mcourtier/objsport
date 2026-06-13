@@ -51,7 +51,7 @@
 :root {
   --ui-bg: transparent;
   --ui-bg-muted: var(--color-neutral-50);
-  --ui-bg-elevated: var(--color-neutral-50/5);
+  --ui-bg-elevated: color-mix(in srgb, var(--color-neutral-50) 5%, transparent);
   /* --ui-bg-accented: var(--color-neutral-700); */
 
   /* --ui-border: var(--color-neutral-700);
