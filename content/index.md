@@ -13,6 +13,17 @@ hero:
   primaryCtaTo: /entreprise
   secondaryCtaLabel: Demander un audit
   secondaryCtaTo: /audit
+mission:
+  titleLines:
+    - CHAQUE MINUTE COMPTE,
+    - CHAQUE MINUTE
+    - TE RAPPROCHE DE
+  titleAccent: LA VICTOIRE.
+  paragraphs:
+    - 'Chez <strong>OBJECTIF SPORT</strong>, la santé et la performance sont indissociables.'
+    - C’est pourquoi nous avons conçu un écosystème connecté qui propose des soins, du coaching et du consulting sur mesure.
+    - 'Accessible à partir de <strong>1€/min</strong>, grâce à notre système d’e-crew, chaque sportif, du débutant au professionnel, peut choisir le volume et le rythme, en toute liberté.'
+    - Nous apportons notre expertise et méthodologie, issues du sport professionnel, pour prévenir les blessures, accompagner l’effort, et optimiser la récupération.
 ---
 ::
 
@@ -52,7 +63,7 @@ highlight:
   description: Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.
 contact:
   heading: Contact Objectif Sport
-  website: objectifsport.fr
+  website: objsport.fr
   websiteUrl: https://objsport.fr
   email: contact@objsport.fr
   ctaLabel: Nous contacter

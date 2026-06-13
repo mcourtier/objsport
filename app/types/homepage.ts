@@ -42,8 +42,15 @@ export interface HomeEztmPromoContent {
   description: string
 }
 
+export interface HomeMissionContent {
+  titleLines: [string, string, string]
+  titleAccent: string
+  paragraphs: string[]
+}
+
 export interface HomeIntroContent {
   hero: HomeHeroContent
+  mission: HomeMissionContent
 }
 
 export interface HomeDashboardContent {

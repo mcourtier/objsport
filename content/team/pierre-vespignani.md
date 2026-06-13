@@ -3,7 +3,7 @@ name: Pierre Vespignani
 slug: pierre-vespignani
 role: Kinésithérapeute du sport — Fondateur, Objectif Sport
 photo: /images/team/pierre-vespignani.jpg
-email: contact@objectifsport.fr
+email: contact@objsport.fr
 order: 1
 title: Pierre Vespignani — Objectif Sport
 description: Kinésithérapeute du sport et fondateur d’Objectif Sport, Pierre accompagne clubs et sportifs en milieu de performance, de la prévention à la récupération.

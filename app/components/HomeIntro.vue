@@ -1,18 +1,23 @@
 <template>
-  <CardHero v-bind="heroProps" />
+  <div class="flex flex-col gap-4 lg:gap-5">
+    <CardHero v-bind="heroProps" />
+    <CardMission v-bind="mission" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import type { HomeHeroContent } from '~/types/homepage'
+import type { HomeIntroContent } from '~/types/homepage'
 import type { PageHeroContent } from '~/types/pageHero'
 
-const props = defineProps<{
-  hero: HomeHeroContent & {
-    title?: PageHeroContent['title']
-    titleBefore?: string
-    titleHighlight?: string
+const props = defineProps<
+  HomeIntroContent & {
+    hero: HomeIntroContent['hero'] & {
+      title?: PageHeroContent['title']
+      titleBefore?: string
+      titleHighlight?: string
+    }
   }
-}>()
+>()
 
 const heroProps = computed((): PageHeroContent => {
   const { hero } = props
