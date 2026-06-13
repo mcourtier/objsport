@@ -1,14 +1,15 @@
 <template>
   <!-- CardContact -->
-  <UCard class="flex h-full flex-col">
+  <UCard class="flex h-full flex-col" data-reveal-section>
     <h2
       class="font-display text-neutral-100 text-xl font-bold tracking-wide uppercase md:text-2xl"
+      data-reveal
     >
       {{ heading }}
     </h2>
 
     <ul class="mt-8 flex flex-1 flex-col gap-5">
-      <li>
+      <li data-reveal>
         <a
           :href="websiteUrl"
           class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
@@ -24,7 +25,7 @@
           <span class="text-sm md:text-base">{{ website }}</span>
         </a>
       </li>
-      <li>
+      <li data-reveal>
         <a
           :href="`mailto:${email}`"
           class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
@@ -41,7 +42,7 @@
           <span class="text-sm md:text-base">{{ email }}</span>
         </a>
       </li>
-      <li v-if="phone">
+      <li v-if="phone" data-reveal>
         <a
           :href="`tel:${normalizedPhone}`"
           class="group text-neutral-300 hover:text-neutral-100 flex items-center gap-4 transition-colors"
@@ -57,7 +58,7 @@
       </li>
     </ul>
 
-    <UButton :to="ctaTo" block class="mt-6">
+    <UButton :to="ctaTo" block class="mt-6" data-reveal>
       {{ ctaLabel }}
     </UButton>
   </UCard>

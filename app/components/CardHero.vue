@@ -7,6 +7,7 @@
     <div class="absolute inset-y-0 right-0">
       <img
         class="hero-athlete-bg h-full w-auto max-w-none"
+        :data-reveal-hero-img="animate || undefined"
         src="/images/athlete.png"
         :alt="backgroundImageAlt"
         loading="lazy"
@@ -14,7 +15,11 @@
     </div>
 
     <div class="relative p-6 md:p-8">
-      <p v-if="showTagline && taglineSegments.length" class="brand-tagline">
+      <p
+        v-if="showTagline && taglineSegments.length"
+        class="brand-tagline"
+        :data-reveal-immediate="animate || undefined"
+      >
         <template v-for="(segment, index) in taglineSegments" :key="segment">
           <span
             v-if="index > 0"
@@ -35,16 +40,19 @@
       >
         <span
           class="brand-headline hero-title-line block text-3xl md:text-4xl lg:text-5xl"
+          :data-reveal-immediate="animate || undefined"
         >
           {{ stackedTitle.line1 }}
         </span>
         <span
           class="brand-headline hero-title-line hero-title-line--accent text-primary block text-4xl md:text-5xl lg:text-6xl"
+          :data-reveal-immediate="animate || undefined"
         >
           {{ stackedTitle.line2 }}
         </span>
         <svg
           class="hero-title-rule text-primary"
+          :data-reveal-immediate="animate || undefined"
           viewBox="0 0 300 26"
           preserveAspectRatio="xMinYMid meet"
           aria-hidden="true"
@@ -79,6 +87,7 @@
         </svg>
         <span
           class="brand-headline hero-title-line hero-title-line--closing block text-2xl md:text-3xl lg:text-4xl"
+          :data-reveal-immediate="animate || undefined"
         >
           {{ stackedTitle.line3
           }}<span class="hero-title-stop" aria-hidden="true" />
@@ -119,19 +128,30 @@
       <div
         v-if="showDescription && description"
         class="brand-section-rule mt-6 max-w-md"
+        :data-reveal-immediate="animate || undefined"
         aria-hidden="true"
       />
       <p
         v-if="showDescription && description"
         class="mt-6 max-w-xl text-lg text-neutral-300 md:text-xl"
+        :data-reveal-immediate="animate || undefined"
       >
         {{ description }}
       </p>
       <div v-if="showCtas" class="mt-10 flex flex-wrap gap-4">
-        <UButton :to="primaryCtaTo" size="xl">
+        <UButton
+          :to="primaryCtaTo"
+          size="xl"
+          :data-reveal-immediate="animate || undefined"
+        >
           {{ primaryCtaLabel }}
         </UButton>
-        <UButton :to="secondaryCtaTo" color="primary" size="xl">
+        <UButton
+          :to="secondaryCtaTo"
+          color="primary"
+          size="xl"
+          :data-reveal-immediate="animate || undefined"
+        >
           {{ secondaryCtaLabel }}
         </UButton>
       </div>
@@ -143,7 +163,14 @@
 import type { PageHeroContent } from '~/types/pageHero'
 import { parseHighlightedText } from '~/utils/parseHighlightedText'
 
-const props = withDefaults(defineProps<PageHeroContent>(), {
+const props = withDefaults(
+  defineProps<
+    PageHeroContent & {
+      animate?: boolean
+    }
+  >(),
+  {
+  animate: false,
   tagline: 'Objectif Sport / Support de performances',
   title: '',
   description:
@@ -156,7 +183,8 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
   showTagline: true,
   showDescription: true,
   showCtas: true,
-})
+  },
+)
 
 const taglineSegments = computed(() =>
   (props.tagline ?? '')

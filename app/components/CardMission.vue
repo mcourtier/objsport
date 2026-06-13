@@ -3,6 +3,7 @@
   <UCard
     class="relative overflow-hidden bg-black"
     aria-labelledby="mission-heading"
+    data-reveal-section
   >
     <div class="relative p-6 md:p-8">
       <div
@@ -14,11 +15,13 @@
               v-for="(line, index) in titleLines"
               :key="`${line}-${index}`"
               class="brand-headline mission-title-line block text-2xl md:text-3xl lg:text-4xl"
+              data-reveal
             >
               {{ line }}
             </span>
             <span
               class="brand-headline mission-title-line text-primary block text-2xl md:text-3xl lg:text-4xl"
+              data-reveal
             >
               {{ titleAccent }}
             </span>
@@ -26,6 +29,7 @@
 
           <div
             class="bg-primary mt-5 h-1 max-w-24"
+            data-reveal-scale-x
             aria-hidden="true"
           />
 
@@ -34,6 +38,7 @@
               v-for="(paragraph, index) in parsedParagraphs"
               :key="index"
               class="text-base text-neutral-300 md:text-lg"
+              data-reveal
             >
               <template
                 v-for="part in paragraph"
@@ -56,6 +61,7 @@
             v-for="pictogram in missionPictograms"
             :key="pictogram.label"
             class="flex items-center gap-3 sm:gap-4"
+            data-reveal-from-x
           >
             <div class="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
               <PillarShape :accent="pictogram.accent" class="size-full" />

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-4 lg:gap-5">
-    <CardHero v-bind="heroProps" />
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
+    <CardHero v-bind="heroProps" animate />
     <CardMission v-bind="mission" />
     <CardMissionOutcomes />
   </div>
@@ -19,6 +19,9 @@ const props = defineProps<
     }
   }
 >()
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 
 const heroProps = computed((): PageHeroContent => {
   const { hero } = props

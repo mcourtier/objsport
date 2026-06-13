@@ -1,6 +1,6 @@
 <template>
   <!-- CardMissionOutcomes -->
-  <UCard class="relative overflow-hidden bg-black">
+  <UCard class="relative overflow-hidden bg-black" data-reveal-section>
     <ul
       class="flex flex-col divide-y divide-neutral-700 md:flex-row md:divide-x md:divide-y-0"
       aria-label="Nos piliers de performance"
@@ -9,6 +9,7 @@
         v-for="outcome in outcomes"
         :key="outcome.title"
         class="flex flex-1 items-center gap-4 p-6 md:gap-5 md:p-8"
+        data-reveal
       >
         <div
           class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full sm:h-16 sm:w-16"

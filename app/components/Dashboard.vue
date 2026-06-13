@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 flex flex-col gap-4 lg:gap-5">
+  <div ref="root" class="mt-5 flex flex-col gap-4 lg:gap-5">
     <CardContact v-bind="contact" />
 
     <div class="grid gap-4 lg:grid-cols-12 lg:gap-5">
@@ -17,4 +17,7 @@
 import type { HomeDashboardContent } from '~/types/homepage'
 
 defineProps<HomeDashboardContent>()
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>
