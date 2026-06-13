@@ -1,9 +1,5 @@
 <template>
   <div class="mt-5 flex flex-col gap-4 lg:gap-5">
-    <div class="lg:min-h-85">
-      <CardFeatures v-bind="features" />
-    </div>
-
     <CardContact v-bind="contact" />
 
     <div class="grid gap-4 lg:grid-cols-12 lg:gap-5">

@@ -128,10 +128,10 @@
         {{ description }}
       </p>
       <div v-if="showCtas" class="mt-10 flex flex-wrap gap-4">
-        <UButton :to="primaryCtaTo" size="lg">
+        <UButton :to="primaryCtaTo" size="xl">
           {{ primaryCtaLabel }}
         </UButton>
-        <UButton :to="secondaryCtaTo" color="primary" size="lg">
+        <UButton :to="secondaryCtaTo" color="primary" size="xl">
           {{ secondaryCtaLabel }}
         </UButton>
       </div>

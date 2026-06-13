@@ -1,5 +1,3 @@
-import type { AudienceBlock } from '~/types/navigation'
-
 /** Homepage hero block fields from `content/index.md` (mapped to `PageHeroContent` in `HomeIntro`). */
 export interface HomeHeroContent {
   tagline: string
@@ -11,13 +9,6 @@ export interface HomeHeroContent {
   primaryCtaTo: string
   secondaryCtaLabel: string
   secondaryCtaTo: string
-}
-
-export interface HomeFeaturesContent {
-  heading: string
-  headingHighlight: string
-  intro: string
-  blocks: AudienceBlock[]
 }
 
 export type PillarAccent = 'gym' | 'lab' | 'studio'
@@ -54,7 +45,6 @@ export interface HomeIntroContent {
 }
 
 export interface HomeDashboardContent {
-  features: HomeFeaturesContent
   highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent
   promo: HomeEztmPromoContent
