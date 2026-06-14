@@ -14,6 +14,11 @@ export default defineAppConfig({
             base: 'bg-primary text-neutral-100 hover:bg-primary/90',
           },
         },
+        size: {
+          xl: {
+            base: 'px-8 py-3.5 text-base gap-2',
+          },
+        },
       },
       // variants: {
       //   variant: {
