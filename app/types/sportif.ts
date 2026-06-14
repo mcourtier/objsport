@@ -1,4 +1,4 @@
-import type { PillarAccent } from '~/types/homepage'
+import type { PillarAccent } from './homepage'
 
 export type SportifServiceIcon =
   | 'run'
@@ -41,6 +41,9 @@ export interface SportifPillar {
   accent: PillarAccent
   name: string
   subtitle: string
+  headline: string
+  headlineAccent: string
+  description: string
   headerIcon: PillarAccent
   sections: SportifServiceSection[]
   imageSrc: string

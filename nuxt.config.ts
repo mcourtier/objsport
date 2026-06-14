@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { sportifPillarPaths } from './app/data/sportifPage'
 import { stubRoutes } from './app/utils/siteRoutes'
 
 const prerenderedPaths = [
@@ -6,6 +7,7 @@ const prerenderedPaths = [
   '/contact',
   '/equipe',
   '/sportif',
+  ...sportifPillarPaths,
   '/club',
   ...Object.keys(stubRoutes),
 ]

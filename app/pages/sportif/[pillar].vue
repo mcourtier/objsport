@@ -1,0 +1,40 @@
+<template>
+  <div v-if="pillar">
+    <PageHero
+      :title="pillar.headline"
+      :title-accent="pillar.headlineAccent"
+      :description="pillar.description"
+      :background-image="pillar.imageSrc"
+      :background-image-alt="pillar.imageAlt"
+    />
+
+    <div class="mx-auto max-w-7xl pt-12 pb-8 md:pt-16 md:pb-12">
+      <SportifPillarColumn
+        :pillar="pillar"
+        hide-header
+        hide-image
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { getSportifPillarBySlug } from '~/data/sportifPage'
+
+const route = useRoute()
+const slug = computed(() => route.params.pillar as string)
+const pillar = computed(() => getSportifPillarBySlug(slug.value))
+
+if (!pillar.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page introuvable',
+    fatal: true,
+  })
+}
+
+useSeoMeta({
+  title: () => `${pillar.value?.name} — Objectif Sport`,
+  description: () => pillar.value?.description,
+})
+</script>

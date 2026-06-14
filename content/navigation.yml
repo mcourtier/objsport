@@ -13,6 +13,13 @@ sidebar:
   - label: Sportif
     to: /sportif
     icon: material-symbols:fitness-center
+    children:
+      - label: Le Gym
+        to: /sportif/le-gym
+      - label: Le Lab
+        to: /sportif/le-lab
+      - label: Le Studio
+        to: /sportif/le-studio
   - label: Équipe
     to: /equipe
     icon: material-symbols:groups-outline
@@ -25,7 +32,3 @@ footerLegal:
     to: /mentions-legales
   - label: CGU
     to: /cgu
-  - label: Confidentialité
-    to: /politique-de-confidentialite
-  - label: Cookies
-    to: /cookies

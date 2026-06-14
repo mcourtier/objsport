@@ -7,6 +7,7 @@ export interface NavLink {
 
 export interface SidebarNavLink extends NavLink {
   icon: string
+  children?: NavLink[]
 }
 
 export interface SiteNavigationContent {

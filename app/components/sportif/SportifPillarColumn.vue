@@ -1,9 +1,12 @@
 <template>
   <article
     class="flex flex-col rounded-2xl border-2 p-5 md:p-6"
-    :class="pillarBorderClass(pillar.accent)"
+    :class="[
+      pillarBorderClass(pillar.accent),
+      { 'border-0 p-0': hideHeader && hideImage },
+    ]"
   >
-    <header class="text-center">
+    <header v-if="!hideHeader" class="text-center">
       <div
         class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
         :class="pillarIconCircleClass(pillar.accent)"
@@ -58,6 +61,7 @@
     </div>
 
     <img
+      v-if="!hideImage"
       :src="pillar.imageSrc"
       :alt="pillar.imageAlt"
       class="mt-8 aspect-3/2 w-full rounded-xl object-cover"
@@ -79,5 +83,7 @@ import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 
 defineProps<{
   pillar: SportifPillar
+  hideHeader?: boolean
+  hideImage?: boolean
 }>()
 </script>

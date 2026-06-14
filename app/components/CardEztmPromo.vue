@@ -1,6 +1,6 @@
 <template>
   <!-- CardEztmPromo -->
-  <UCard data-reveal-section>
+  <UCard class="flex h-full flex-col justify-center" data-reveal-section>
     <div class="p-5 md:p-6">
       <div
         class="bg-primary/15 ring-primary mx-auto flex h-14 w-14 items-center justify-center rounded-xl ring-2"

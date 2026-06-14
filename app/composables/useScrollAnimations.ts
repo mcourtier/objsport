@@ -15,6 +15,16 @@ function setVisible(targets: gsap.TweenTarget) {
   gsap.set(targets, { opacity: 1, y: 0, x: 0, scaleX: 1, force3D: true })
 }
 
+function parseScrollTriggerViewportRatio(start: string): number {
+  const match = start.match(/(\d+(?:\.\d+)?)%\s*$/)
+  return match ? Number(match[1]) / 100 : 0.85
+}
+
+function triggersOnLoad(section: Element): boolean {
+  const ratio = parseScrollTriggerViewportRatio(SCROLL_TRIGGER_DEFAULTS.start)
+  return section.getBoundingClientRect().top <= window.innerHeight * ratio
+}
+
 export function useScrollAnimations(root: Ref<HTMLElement | null>) {
   onMounted(async () => {
     if (!import.meta.client || !root.value) return
@@ -30,45 +40,61 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
         return
       }
 
+      let initialRevealDelay = 0
+
       const heroImg = el.querySelector('[data-reveal-hero-img]')
-      if (heroImg) {
-        gsap.from(heroImg, {
-          opacity: 0,
-          x: ANIMATION.distance.y * 2,
-          duration: ANIMATION.duration.emphasis,
-          ease: ANIMATION.ease.default,
-          force3D: true,
-        })
-      }
-
       const immediate = el.querySelectorAll('[data-reveal-immediate]')
-      if (immediate.length) {
-        const tl = gsap.timeline({ defaults: TWEEN_DEFAULTS })
 
-        tl.from(immediate, {
-          opacity: 0,
-          y: ANIMATION.distance.y,
-          duration: ANIMATION.duration.emphasis,
-          stagger: ANIMATION.stagger.default,
-        })
+      if (heroImg || immediate.length) {
+        const heroTl = gsap.timeline({ defaults: TWEEN_DEFAULTS })
+
+        if (heroImg) {
+          heroTl.from(heroImg, {
+            opacity: 0,
+            x: ANIMATION.distance.y * 2,
+            duration: ANIMATION.duration.emphasis,
+          }, 0)
+        }
+
+        if (immediate.length) {
+          heroTl.from(immediate, {
+            opacity: 0,
+            y: ANIMATION.distance.y,
+            duration: ANIMATION.duration.emphasis,
+            stagger: ANIMATION.stagger.default,
+          }, 0)
+        }
+
+        initialRevealDelay =
+          ANIMATION.duration.standard + ANIMATION.stagger.default * 2
       }
+
+      const scrollRevealDelay = (section: Element) =>
+        initialRevealDelay > 0 && triggersOnLoad(section) ? initialRevealDelay : 0
 
       el.querySelectorAll('[data-reveal-section]').forEach((section) => {
-        const items = section.querySelectorAll('[data-reveal]')
-        if (!items.length) return
-
-        gsap.from(items, {
-          opacity: 0,
-          y: ANIMATION.distance.y,
-          duration: ANIMATION.duration.standard,
-          ease: ANIMATION.ease.default,
-          force3D: true,
-          stagger: ANIMATION.stagger.default,
-          scrollTrigger: {
-            trigger: section,
-            ...SCROLL_TRIGGER_DEFAULTS,
+        const delay = scrollRevealDelay(section)
+        const scrollTrigger = {
+          trigger: section,
+          ...SCROLL_TRIGGER_DEFAULTS,
+          onLeaveBack: (self: ScrollTrigger) => {
+            self.animation?.delay(0)
           },
-        })
+        }
+
+        const items = section.querySelectorAll('[data-reveal]')
+        if (items.length) {
+          gsap.from(items, {
+            opacity: 0,
+            y: ANIMATION.distance.y,
+            duration: ANIMATION.duration.standard,
+            ease: ANIMATION.ease.default,
+            force3D: true,
+            stagger: ANIMATION.stagger.default,
+            delay,
+            scrollTrigger,
+          })
+        }
 
         const fromX = section.querySelectorAll('[data-reveal-from-x]')
         if (fromX.length) {
@@ -79,10 +105,8 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
             ease: ANIMATION.ease.default,
             force3D: true,
             stagger: ANIMATION.stagger.default,
-            scrollTrigger: {
-              trigger: section,
-              ...SCROLL_TRIGGER_DEFAULTS,
-            },
+            delay,
+            scrollTrigger,
           })
         }
 
@@ -94,10 +118,8 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
             ease: ANIMATION.ease.default,
             force3D: true,
             transformOrigin: 'left center',
-            scrollTrigger: {
-              trigger: section,
-              ...SCROLL_TRIGGER_DEFAULTS,
-            },
+            delay,
+            scrollTrigger,
           })
         }
       })

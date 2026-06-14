@@ -1,4 +1,30 @@
-import type { SportifPageContent } from '~/types/sportif'
+import type { PillarAccent } from '../types/homepage'
+import type { SportifPageContent, SportifPillar } from '../types/sportif'
+
+const sportifPillarSlugByAccent: Record<PillarAccent, string> = {
+  gym: 'le-gym',
+  lab: 'le-lab',
+  studio: 'le-studio',
+}
+
+const sportifAccentBySlug: Record<string, PillarAccent> = {
+  'le-gym': 'gym',
+  'le-lab': 'lab',
+  'le-studio': 'studio',
+}
+
+export const sportifPillarPaths = Object.values(sportifPillarSlugByAccent).map(
+  (slug) => `/sportif/${slug}`,
+)
+
+export function getSportifPillarBySlug(slug: string): SportifPillar | undefined {
+  const accent = sportifAccentBySlug[slug]
+  if (!accent) {
+    return undefined
+  }
+
+  return sportifPageContent.pillars.find((pillar) => pillar.accent === accent)
+}
 
 export const sportifPageContent: SportifPageContent = {
   title: 'Sportif',
@@ -14,6 +40,10 @@ export const sportifPageContent: SportifPageContent = {
       accent: 'gym',
       name: 'Le Gym',
       subtitle: 'Coaching 1-3 personnes',
+      headline: 'Coaching en petit groupe',
+      headlineAccent: 'Préhab, réhab & réathlé',
+      description:
+        'Sessions de 45 min en solo ou en trio pour activer, rééduquer et retrouver la performance — routines préventives, rééducation spécifique et retour à l’entraînement.',
       headerIcon: 'gym',
       imageSrc: '/images/sportif/gym.jpg',
       imageAlt:
@@ -90,6 +120,10 @@ export const sportifPageContent: SportifPageContent = {
       accent: 'lab',
       name: 'Le Lab',
       subtitle: 'Sessions individuelles',
+      headline: 'Soins & testing',
+      headlineAccent: 'En séance individuelle',
+      description:
+        'Massage, thérapie, mobilité et bilans complets — récupération, prévention et mesure de la performance au service du sportif.',
       headerIcon: 'lab',
       imageSrc: '/images/sportif/lab.jpg',
       imageAlt:
@@ -161,6 +195,10 @@ export const sportifPageContent: SportifPageContent = {
       accent: 'studio',
       name: 'Le Studio',
       subtitle: 'Cours small-groupe',
+      headline: 'Cours en small-groupe',
+      headlineAccent: 'Gymnastique & formations',
+      description:
+        'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
       headerIcon: 'studio',
       imageSrc: '/images/sportif/studio.jpg',
       imageAlt: 'Groupe en cours de yoga et étirements dans un studio lumineux',

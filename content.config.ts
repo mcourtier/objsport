@@ -7,6 +7,7 @@ const navLinkSchema = z.object({
 
 const sidebarNavLinkSchema = navLinkSchema.extend({
   icon: z.string(),
+  children: z.array(navLinkSchema).optional(),
 })
 
 export default defineContentConfig({

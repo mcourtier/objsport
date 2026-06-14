@@ -25,18 +25,6 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
     title: 'Staffing',
     description: 'Mise à disposition de professionnels qualifiés.',
   },
-  '/sportif/le-gym': {
-    title: 'Le Gym',
-    description: 'Espace d’entraînement et de préparation physique.',
-  },
-  '/sportif/le-lab': {
-    title: 'Le Lab',
-    description: 'Tests, analyses et optimisation de la performance.',
-  },
-  '/sportif/le-studio': {
-    title: 'Le Studio',
-    description: 'Cours collectifs et coaching en petit groupe.',
-  },
   '/audit': {
     title: 'Demande d’audit',
     description: 'Formulaire dédié aux demandes d’audit entreprise.',
@@ -46,12 +34,6 @@ export const stubRoutes: Record<string, StubRouteMeta> = {
   },
   '/cgu': {
     title: 'Conditions générales d’utilisation',
-  },
-  '/politique-de-confidentialite': {
-    title: 'Politique de confidentialité',
-  },
-  '/cookies': {
-    title: 'Politique cookies',
   },
 }
 
