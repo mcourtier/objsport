@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pillar">
+  <div v-if="pillar" ref="root">
     <PageHero
       :title="pillar.headline"
       :title-accent="pillar.headlineAccent"
@@ -37,4 +37,7 @@ useSeoMeta({
   title: () => `${pillar.value?.name} — Objectif Sport`,
   description: () => pillar.value?.description,
 })
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>

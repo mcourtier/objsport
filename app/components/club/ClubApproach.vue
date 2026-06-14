@@ -1,14 +1,20 @@
 <template>
-  <section aria-labelledby="club-approach-heading">
+  <section aria-labelledby="club-approach-heading" data-reveal-section>
     <h2
       id="club-approach-heading"
       class="brand-headline-accent font-display tracking-button text-neutral-100 text-xl font-bold uppercase md:text-2xl"
+      data-reveal
     >
       {{ approach.title }}
     </h2>
 
     <ul class="mt-8 space-y-6">
-      <li v-for="item in approach.items" :key="item.title" class="flex gap-4">
+      <li
+        v-for="item in approach.items"
+        :key="item.title"
+        class="flex gap-4"
+        data-reveal
+      >
         <span
           class="bg-primary text-neutral-100 flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
           aria-hidden="true"
@@ -33,6 +39,7 @@
     <aside
       class="border-yellow-400 mt-8 rounded-xl border-2 p-5 md:p-6"
       aria-labelledby="club-highlight-heading"
+      data-reveal
     >
       <div class="flex gap-4">
         <span

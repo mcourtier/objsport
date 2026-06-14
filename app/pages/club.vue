@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="root">
     <PageHero
       :title="content.headline"
       :title-accent="content.headlineAccent"
@@ -32,4 +32,7 @@ useSeoMeta({
   title: () => `${content.title} — Objectif Sport`,
   description: () => content.description,
 })
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>

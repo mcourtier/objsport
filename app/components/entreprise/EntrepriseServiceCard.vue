@@ -1,6 +1,7 @@
 <template>
   <article
     class="relative flex h-full flex-col rounded-[2rem] bg-white px-6 pb-8 pt-14 text-neutral-900 md:rounded-[2.5rem] md:px-8 md:pb-10 md:pt-16"
+    data-reveal
   >
     <span
       class="bg-primary absolute left-1/2 top-0 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-neutral-100"

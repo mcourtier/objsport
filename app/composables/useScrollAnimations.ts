@@ -36,16 +36,17 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
       const reduced = prefersReducedMotion()
 
       if (reduced) {
-        setVisible(el.querySelectorAll('[data-reveal], [data-reveal-immediate], [data-reveal-hero-img], [data-reveal-scale-x], [data-reveal-from-x]'))
+        setVisible(el.querySelectorAll('[data-reveal-hero-section], [data-reveal-section], [data-reveal], [data-reveal-immediate], [data-reveal-hero-img], [data-reveal-scale-x], [data-reveal-from-x]'))
         return
       }
 
       let initialRevealDelay = 0
 
+      const heroSection = el.querySelector('[data-reveal-hero-section]')
       const heroImg = el.querySelector('[data-reveal-hero-img]')
       const immediate = el.querySelectorAll('[data-reveal-immediate]')
 
-      if (heroImg || immediate.length) {
+      if (heroSection || heroImg || immediate.length) {
         const heroTl = gsap.timeline({ defaults: TWEEN_DEFAULTS })
 
         if (heroImg) {
@@ -65,8 +66,10 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
           }, 0)
         }
 
-        initialRevealDelay =
-          ANIMATION.duration.standard + ANIMATION.stagger.default * 2
+        initialRevealDelay = Math.max(
+          0,
+          heroTl.duration() - ANIMATION.duration.standard,
+        )
       }
 
       const scrollRevealDelay = (section: Element) =>
@@ -84,7 +87,7 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
 
         const items = section.querySelectorAll('[data-reveal]')
         if (items.length) {
-          gsap.from(items, {
+          gsap.from([section, ...items], {
             opacity: 0,
             y: ANIMATION.distance.y,
             duration: ANIMATION.duration.standard,

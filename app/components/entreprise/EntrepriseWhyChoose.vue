@@ -1,9 +1,14 @@
 <template>
   <!-- EntrepriseWhyChoose -->
-  <section class="py-10 md:py-14" aria-labelledby="entreprise-why-heading">
+  <section
+    class="py-10 md:py-14"
+    aria-labelledby="entreprise-why-heading"
+    data-reveal-section
+  >
     <h2
       id="entreprise-why-heading"
       class="font-display text-center text-lg font-bold tracking-wide text-neutral-100 uppercase md:text-xl"
+      data-reveal
     >
       {{ title }}
       <span class="text-primary">{{ titleHighlight }}</span>
@@ -17,6 +22,7 @@
         v-for="reason in reasons"
         :key="reason.title"
         class="@container rounded-xl border border-neutral-700 bg-neutral-900 p-5 md:p-6"
+        data-reveal
       >
         <div
           class="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 @sm:grid-cols-[auto_minmax(0,1fr)] @sm:gap-x-4 @sm:gap-y-3"

@@ -5,8 +5,9 @@
       pillarBorderClass(pillar.accent),
       { 'border-0 p-0': hideHeader && hideImage },
     ]"
+    data-reveal-section
   >
-    <header v-if="!hideHeader" class="text-center">
+    <header v-if="!hideHeader" class="text-center" data-reveal>
       <div
         class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
         :class="pillarIconCircleClass(pillar.accent)"
@@ -30,7 +31,12 @@
       </p>
     </header>
 
-    <div v-for="section in pillar.sections" :key="section.title" class="mt-8">
+    <div
+      v-for="section in pillar.sections"
+      :key="section.title"
+      class="mt-8"
+      data-reveal
+    >
       <h3
         class="font-display tracking-button text-sm font-bold uppercase"
         :class="pillarTextClass(pillar.accent)"
@@ -38,7 +44,12 @@
         {{ section.title }}
       </h3>
       <ul class="mt-4 space-y-4">
-        <li v-for="item in section.items" :key="item.title" class="flex gap-3">
+        <li
+          v-for="item in section.items"
+          :key="item.title"
+          class="flex gap-3"
+          data-reveal
+        >
           <span
             class="mt-0.5"
             :class="pillarTextClass(pillar.accent)"
@@ -65,6 +76,7 @@
       :src="pillar.imageSrc"
       :alt="pillar.imageAlt"
       class="mt-8 aspect-3/2 w-full rounded-xl object-cover"
+      data-reveal
       width="310"
       height="200"
       loading="lazy"

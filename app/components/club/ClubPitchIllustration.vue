@@ -1,8 +1,10 @@
 <template>
-  <div
-    class="border-neutral-700 bg-neutral-800 relative overflow-hidden rounded-2xl border"
-    aria-hidden="true"
-  >
+  <div data-reveal-section>
+    <div
+      class="border-neutral-700 bg-neutral-800 relative overflow-hidden rounded-2xl border"
+      aria-hidden="true"
+      data-reveal-from-x
+    >
     <svg
       viewBox="0 0 400 280"
       class="h-full w-full"
@@ -132,5 +134,6 @@
         <circle cx="160" cy="120" r="3" fill="#de241b" />
       </g>
     </svg>
+    </div>
   </div>
 </template>

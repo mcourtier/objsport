@@ -16,7 +16,7 @@ export const ANIMATION = {
     y: 48,
   },
   stagger: {
-    default: 0.08,
+    default: 0.04,
   },
 } as const
 

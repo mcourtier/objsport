@@ -3,6 +3,7 @@
     <!-- CardProfile -->
     <UCard
       class="bg-neutral-800 group-hover:border-primary flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
+      data-reveal
     >
       <div
         class="bg-neutral-900 relative aspect-square w-full shrink-0 overflow-hidden"

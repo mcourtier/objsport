@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="root">
     <PageHero
       :title="heroTitle"
       :title-accent="heroTitleAccent"
@@ -8,7 +8,7 @@
       :background-image-alt="heroBackgroundImageAlt"
     />
 
-    <section class="py-16 md:py-24">
+    <section class="py-16 md:py-24" data-reveal-section>
       <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <ul v-if="profiles?.length" class="grid gap-6 md:grid-cols-3 md:gap-8">
           <li v-for="profile in profiles" :key="profile.slug" class="min-w-0">
@@ -67,4 +67,7 @@ useSeoMeta({
   title: () => pageContent.value?.title ?? 'L’équipe — Objectif Sport',
   description: () => pageContent.value?.description,
 })
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>

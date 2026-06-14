@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="root">
     <PageHero
       :title="content.headline"
       :title-accent="content.headlineAccent"
@@ -14,6 +14,7 @@
       <section
         aria-labelledby="entreprise-services-heading"
         class="space-y-10 pt-4 md:space-y-12 md:pt-6"
+        data-reveal-section
       >
         <EntrepriseSectionHeading
           :title="content.servicesTitle"
@@ -50,4 +51,7 @@ useSeoMeta({
   title: () => `${content.title} — Objectif Sport`,
   description: () => content.description,
 })
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>

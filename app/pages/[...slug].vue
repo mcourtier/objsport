@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pageMeta">
+  <div v-if="pageMeta" ref="root">
     <PageHero :title="pageMeta.title" :description="pageMeta.description" />
     <LayoutPageStub />
   </div>
@@ -31,4 +31,7 @@ useSeoMeta({
   title: () => `${pageMeta.value?.title} — Objectif Sport`,
   description: () => pageMeta.value?.description,
 })
+
+const root = ref<HTMLElement | null>(null)
+useScrollAnimations(root)
 </script>

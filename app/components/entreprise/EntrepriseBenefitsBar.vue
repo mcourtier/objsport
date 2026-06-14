@@ -2,6 +2,7 @@
   <section
     class="py-10 md:py-14"
     aria-labelledby="entreprise-benefits-heading"
+    data-reveal-section
   >
     <h2 id="entreprise-benefits-heading" class="sr-only">Bénéfices</h2>
     <ul
@@ -11,6 +12,7 @@
         v-for="benefit in benefits"
         :key="benefit.title"
         class="flex flex-col items-center px-3 text-center sm:px-4 lg:flex-1 lg:px-5"
+        data-reveal
       >
         <span
           class="bg-primary text-neutral-100 flex h-14 w-14 items-center justify-center rounded-full"

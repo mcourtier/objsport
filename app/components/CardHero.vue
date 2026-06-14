@@ -3,6 +3,7 @@
   <UCard
     class="relative overflow-hidden bg-black"
     aria-labelledby="hero-heading"
+    :data-reveal-hero-section="animate || undefined"
   >
     <div class="absolute inset-y-0 right-0">
       <img
@@ -98,6 +99,7 @@
           id="hero-heading"
           class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
           :class="headlineTopMarginClass"
+          :data-reveal-immediate="animate || undefined"
         >
           <template
             v-for="part in parsedTitle"
@@ -112,6 +114,7 @@
         <p
           v-if="titleAccent"
           class="brand-headline text-primary mt-2 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
+          :data-reveal-immediate="animate || undefined"
         >
           <template
             v-for="part in parsedTitleAccent"
