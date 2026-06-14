@@ -1,6 +1,6 @@
 <template>
+  <!-- CardProfile -->
   <NuxtLink :to="`/equipe/${profile.slug}`" class="group block h-full">
-    <!-- CardProfile -->
     <UCard
       class="bg-neutral-800 group-hover:border-primary flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
       data-reveal

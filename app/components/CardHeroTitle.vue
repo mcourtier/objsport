@@ -1,4 +1,5 @@
 <template>
+  <!-- CardHeroTitle -->
   <h1
     v-if="stackedTitle"
     id="hero-heading"
@@ -7,13 +8,13 @@
   >
     <span
       v-if="stackedTitle.line1"
-      class="brand-headline hero-title-line block text-3xl md:text-4xl lg:text-5xl"
+      class="brand-headline hero-title-line block text-5xl md:text-6xl lg:text-7xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line1 }}
     </span>
     <span
-      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-4xl md:text-5xl lg:text-6xl"
+      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-6xl md:text-7xl lg:text-8xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line2 }}
@@ -36,7 +37,7 @@
   <template v-else>
     <h1
       id="hero-heading"
-      class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
+      class="brand-headline mt-4 max-w-3xl text-5xl md:text-6xl lg:text-7xl"
       :class="topMarginClass"
       data-reveal-immediate
     >
@@ -52,7 +53,7 @@
     </h1>
     <p
       v-if="titleAccent"
-      class="brand-headline text-primary mt-2 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
+      class="brand-headline text-primary mt-2 max-w-3xl text-6xl md:text-7xl lg:text-8xl"
       data-reveal-immediate
     >
       <template

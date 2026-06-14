@@ -1,34 +1,42 @@
 <template>
   <article
-    class="flex flex-col rounded-2xl border-2 p-5 md:p-6"
+    class="flex flex-col"
     :class="[
-      pillarBorderClass(pillar.accent),
-      { 'border-0 p-0': hideHeader && hideImage },
+      hideHeader && hideImage
+        ? 'border-0 p-0'
+        : [
+            'relative rounded-t-2xl border px-5 pt-14 pb-5 md:px-6 md:pt-16 md:pb-6',
+            pillarBorderClass(pillar.accent),
+          ],
     ]"
     data-reveal-section
   >
+    <span
+      v-if="!hideHeader"
+      class="absolute left-1/2 top-0 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full p-3.5"
+      :class="pillarIconCircleClass(pillar.accent)"
+      aria-hidden="true"
+    >
+      <SportifPillarHeaderIcon :accent="pillar.accent" />
+    </span>
+
     <header v-if="!hideHeader" class="text-center" data-reveal>
-      <div
-        class="mx-auto flex h-16 w-16 items-center justify-center rounded-full"
-        :class="pillarIconCircleClass(pillar.accent)"
-        aria-hidden="true"
-      >
-        <Icon
-          :name="sportifPillarHeaderIcon(pillar.headerIcon)"
-          class="h-10 w-10"
-        />
-      </div>
       <h2
-        class="font-display tracking-button mt-4 text-2xl font-bold uppercase"
+        class="font-display tracking-button text-2xl font-bold uppercase"
         :class="pillarTextClass(pillar.accent)"
       >
         {{ pillar.name }}
       </h2>
       <p
-        class="font-display tracking-button text-neutral-100 mt-1 text-sm font-semibold uppercase"
+        class="font-display tracking-button text-neutral-100 mt-2 text-xs font-semibold uppercase md:text-sm"
       >
         {{ pillar.subtitle }}
       </p>
+      <div
+        class="mx-auto mt-4 h-px w-full"
+        :class="pillarDividerClass(pillar.accent)"
+        aria-hidden="true"
+      />
     </header>
 
     <div :class="sectionsGridClass">
@@ -90,10 +98,10 @@
 import type { SportifPillar } from '~/types/sportif'
 import {
   pillarBorderClass,
+  pillarDividerClass,
   pillarIconCircleClass,
   pillarTextClass,
 } from '~/utils/pillarTheme'
-import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 
 const props = defineProps<{
   pillar: SportifPillar

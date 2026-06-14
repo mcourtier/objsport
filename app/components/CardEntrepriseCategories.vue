@@ -1,7 +1,8 @@
 <template>
-  <section
+  <!-- CardEntrepriseCategories -->
+  <UCard
     aria-label="Consulting, Soins et Coaching"
-    class="mt-5 pb-10 md:pb-14"
+    class="pb-6 md:pb-8"
     data-reveal-section
   >
     <ul class="grid grid-cols-3 justify-items-center gap-4 gap-6">
@@ -20,7 +21,7 @@
         />
       </li>
     </ul>
-  </section>
+  </UCard>
 </template>
 
 <script setup lang="ts">

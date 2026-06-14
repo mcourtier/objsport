@@ -55,6 +55,15 @@ export function pillarIconCircleClass(accent: PillarAccent) {
   return map[accent]
 }
 
+export function pillarDividerClass(accent: PillarAccent) {
+  const map: Record<PillarAccent, string> = {
+    gym: 'bg-gym',
+    lab: 'bg-lab',
+    studio: 'bg-studio',
+  }
+  return map[accent]
+}
+
 export function pillarIconSurfaceClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
     gym: 'bg-gym/15 ring-2 ring-gym',

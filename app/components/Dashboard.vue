@@ -1,16 +1,39 @@
 <template>
-  <div ref="root" class="mt-5 grid gap-4 lg:grid-cols-3 lg:gap-5">
-    <CardContact v-bind="contact" />
-    <CardFeatureHighlight v-bind="highlight" />
-    <CardEztmPromo v-bind="promo" />
+  <div
+    ref="root"
+    :class="[
+      'mt-5',
+      layout === 'grid'
+        ? 'grid gap-4 lg:grid-cols-3 lg:gap-5'
+        : 'flex flex-col gap-10 md:gap-14',
+    ]"
+  >
+    <slot>
+      <CardContact v-bind="contact!" />
+      <CardFeatureHighlight v-bind="highlight!" />
+      <CardEztmPromo v-bind="promo!" />
+    </slot>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { HomeDashboardContent } from '~/types/homepage'
 
-defineProps<HomeDashboardContent>()
+withDefaults(
+  defineProps<
+    Partial<HomeDashboardContent> & {
+      layout?: 'grid' | 'stack'
+    }
+  >(),
+  {
+    layout: 'grid',
+  },
+)
 
+const slots = useSlots()
 const root = ref<HTMLElement | null>(null)
-useScrollAnimations(root)
+
+if (!slots.default) {
+  useScrollAnimations(root)
+}
 </script>

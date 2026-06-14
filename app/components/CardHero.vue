@@ -15,7 +15,7 @@
       />
     </div>
 
-    <div class="relative p-6 md:p-8">
+    <div class="relative p-6 md:p-8 md:pt-0">
       <CardHeroTagLine v-if="showTagline" :tagline="tagline" />
 
       <CardHeroTitle

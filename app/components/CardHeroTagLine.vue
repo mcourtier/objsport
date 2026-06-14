@@ -1,4 +1,5 @@
 <template>
+  <!-- CardHeroTagLine -->
   <p
     v-if="taglineSegments.length"
     class="brand-tagline"

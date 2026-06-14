@@ -3,9 +3,9 @@ import type { SportifBenefit, SportifServiceIcon } from '~/types/sportif'
 
 /** Material Symbols Outlined (Iconify `material-symbols` prefix) for the sportif page. */
 export const sportifPillarHeaderIcons: Record<PillarAccent, string> = {
-  gym: 'material-symbols:exercise-outline',
-  lab: 'material-symbols:science-outline',
-  studio: 'material-symbols:groups-outline',
+  gym: 'material-symbols:fitness-center',
+  lab: 'material-symbols:science',
+  studio: 'material-symbols:groups',
 }
 
 export const sportifServiceIcons: Record<SportifServiceIcon, string> = {

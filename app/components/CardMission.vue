@@ -63,10 +63,10 @@
             class="flex items-center gap-3 sm:gap-4"
             data-reveal-from-x
           >
-            <div class="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
+            <div class="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24">
               <PillarShape :accent="pictogram.accent" class="size-full" />
               <div
-                class="absolute inset-0 flex flex-col items-center justify-center gap-0.5 px-1 pt-2 pb-1.5"
+                class="absolute inset-0 flex flex-col items-center justify-center gap-1 px-2 pt-2.5 pb-2.5"
               >
                 <Icon
                   :name="pictogram.icon"
@@ -80,7 +80,7 @@
               </div>
             </div>
             <p
-              class="font-display text-xl leading-none font-bold tracking-wide uppercase sm:text-2xl lg:text-3xl"
+              class="font-display text-lg leading-none font-bold tracking-wide uppercase sm:text-xl lg:text-2xl"
               :class="sectionTextClass(pictogram.accent)"
             >
               {{ pictogram.label }}

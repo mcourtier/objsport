@@ -41,7 +41,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'gym',
       name: 'Le Gym',
-      subtitle: 'Le Gym',
+      subtitle: 'Coaching 1-3 personnes',
       headline: 'Coaching en petit groupe',
       headlineAccent: 'Préhab, réhab & réathlé',
       description:
@@ -121,7 +121,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'lab',
       name: 'Le Lab',
-      subtitle: 'Le Lab',
+      subtitle: 'Sessions individuelles',
       headline: 'Soins & testing',
       headlineAccent: 'En séance individuelle',
       description:
@@ -196,7 +196,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'studio',
       name: 'Le Studio',
-      subtitle: 'Le Studio',
+      subtitle: 'Cours small-groupe',
       headline: 'Cours en small-groupe',
       headlineAccent: 'Gymnastique & formations',
       description:
