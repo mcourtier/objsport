@@ -27,10 +27,9 @@
             </span>
           </h2>
 
-          <div
-            class="bg-primary mt-5 h-1 max-w-24"
+          <BrandBrushLine
+            class="text-primary"
             data-reveal-scale-x
-            aria-hidden="true"
           />
 
           <div class="mt-6 space-y-4">

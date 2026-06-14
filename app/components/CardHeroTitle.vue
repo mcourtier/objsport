@@ -8,23 +8,22 @@
   >
     <span
       v-if="stackedTitle.line1"
-      class="brand-headline hero-title-line block text-5xl md:text-6xl lg:text-7xl"
+      class="brand-headline hero-title-line block text-4xl md:text-5xl lg:text-6xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line1 }}
     </span>
     <span
-      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-6xl md:text-7xl lg:text-8xl"
+      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-5xl md:text-6xl lg:text-7xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line2 }}
     </span>
-    <span
-      class="hero-title-rule text-primary"
+    <BrandBrushLine
+      class="text-primary"
       data-reveal-immediate
       data-reveal-draw-x
       data-reveal-delay="0.4"
-      aria-hidden="true"
     />
     <span
       v-if="stackedTitle.line3"
@@ -37,7 +36,7 @@
   <template v-else>
     <h1
       id="hero-heading"
-      class="brand-headline mt-4 max-w-3xl text-5xl md:text-6xl lg:text-7xl"
+      class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
       :class="topMarginClass"
       data-reveal-immediate
     >
@@ -53,7 +52,7 @@
     </h1>
     <p
       v-if="titleAccent"
-      class="brand-headline text-primary mt-2 max-w-3xl text-6xl md:text-7xl lg:text-8xl"
+      class="brand-headline text-primary mt-2 max-w-3xl text-5xl md:text-6xl lg:text-7xl"
       data-reveal-immediate
     >
       <template
@@ -180,24 +179,5 @@ const parsedTitleAccent = computed(() =>
 
 .hero-title-line--closing {
   margin-top: 0.25rem;
-}
-
-.hero-title-rule {
-  display: block;
-  width: min(100%, 17rem);
-  aspect-ratio: 475 / 46;
-  margin-block: 0.625rem 0.5rem;
-  flex-shrink: 0;
-  transform: scaleX(0);
-  transform-origin: left center;
-  background-color: currentColor;
-  mask-image: url('/images/brand/hero-brushline.png');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: left center;
-  -webkit-mask-image: url('/images/brand/hero-brushline.png');
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
 }
 </style>

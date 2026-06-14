@@ -13,7 +13,7 @@
   >
     <span
       v-if="!hideHeader"
-      class="absolute left-1/2 top-0 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full p-3.5"
+      class="absolute left-1/2 top-0 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
       :class="pillarIconCircleClass(pillar.accent)"
       aria-hidden="true"
     >
