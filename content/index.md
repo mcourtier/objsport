@@ -15,7 +15,6 @@ hero:
   secondaryCtaTo: /audit
 mission:
   titleLines:
-    - CHAQUE MINUTE COMPTE,
     - CHAQUE MINUTE
     - TE RAPPROCHE DE
   titleAccent: LA VICTOIRE.

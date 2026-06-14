@@ -1,8 +1,7 @@
 <template>
   <div v-if="pillar" ref="root">
     <PageHero
-      :title="pillar.headline"
-      :title-accent="pillar.headlineAccent"
+      :title-accent="pillar.subtitle"
       :description="pillar.description"
       :background-image="pillar.imageSrc"
       :background-image-alt="pillar.imageAlt"

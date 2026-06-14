@@ -17,7 +17,9 @@ export const sportifPillarPaths = Object.values(sportifPillarSlugByAccent).map(
   (slug) => `/sportif/${slug}`,
 )
 
-export function getSportifPillarBySlug(slug: string): SportifPillar | undefined {
+export function getSportifPillarBySlug(
+  slug: string,
+): SportifPillar | undefined {
   const accent = sportifAccentBySlug[slug]
   if (!accent) {
     return undefined
@@ -39,7 +41,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'gym',
       name: 'Le Gym',
-      subtitle: 'Coaching 1-3 personnes',
+      subtitle: 'Le Gym',
       headline: 'Coaching en petit groupe',
       headlineAccent: 'Préhab, réhab & réathlé',
       description:
@@ -119,7 +121,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'lab',
       name: 'Le Lab',
-      subtitle: 'Sessions individuelles',
+      subtitle: 'Le Lab',
       headline: 'Soins & testing',
       headlineAccent: 'En séance individuelle',
       description:
@@ -194,7 +196,7 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'studio',
       name: 'Le Studio',
-      subtitle: 'Cours small-groupe',
+      subtitle: 'Le Studio',
       headline: 'Cours en small-groupe',
       headlineAccent: 'Gymnastique & formations',
       description:

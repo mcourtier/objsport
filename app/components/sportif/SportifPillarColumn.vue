@@ -31,44 +31,46 @@
       </p>
     </header>
 
-    <div
-      v-for="section in pillar.sections"
-      :key="section.title"
-      class="mt-8"
-      data-reveal
-    >
-      <h3
-        class="font-display tracking-button text-sm font-bold uppercase"
-        :class="pillarTextClass(pillar.accent)"
+    <div :class="sectionsGridClass">
+      <div
+        v-for="section in pillar.sections"
+        :key="section.title"
+        :class="{ 'mt-8': !hideHeader || !hideImage }"
+        data-reveal
       >
-        {{ section.title }}
-      </h3>
-      <ul class="mt-4 space-y-4">
-        <li
-          v-for="item in section.items"
-          :key="item.title"
-          class="flex gap-3"
-          data-reveal
+        <h3
+          class="font-display tracking-button text-sm font-bold uppercase"
+          :class="pillarTextClass(pillar.accent)"
         >
-          <span
-            class="mt-0.5"
-            :class="pillarTextClass(pillar.accent)"
-            aria-hidden="true"
+          {{ section.title }}
+        </h3>
+        <ul class="mt-4 space-y-4">
+          <li
+            v-for="item in section.items"
+            :key="item.title"
+            class="flex gap-3"
+            data-reveal
           >
-            <SportifServiceIcon :name="item.icon" />
-          </span>
-          <div>
-            <p
-              class="font-display text-neutral-100 text-sm leading-snug font-semibold uppercase"
+            <span
+              class="mt-0.5"
+              :class="pillarTextClass(pillar.accent)"
+              aria-hidden="true"
             >
-              {{ item.title }}
-            </p>
-            <p class="text-neutral-400 mt-0.5 text-sm">
-              {{ item.description }}
-            </p>
-          </div>
-        </li>
-      </ul>
+              <SportifServiceIcon :name="item.icon" />
+            </span>
+            <div>
+              <p
+                class="font-display text-neutral-100 text-sm leading-snug font-semibold uppercase"
+              >
+                {{ item.title }}
+              </p>
+              <p class="text-neutral-400 mt-0.5 text-sm">
+                {{ item.description }}
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <img
@@ -93,9 +95,22 @@ import {
 } from '~/utils/pillarTheme'
 import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 
-defineProps<{
+const props = defineProps<{
   pillar: SportifPillar
   hideHeader?: boolean
   hideImage?: boolean
 }>()
+
+const sectionsGridClass = computed(() => {
+  if (!props.hideHeader || !props.hideImage) {
+    return undefined
+  }
+
+  const count = props.pillar.sections.length
+  if (count >= 3) {
+    return 'grid gap-6 md:grid-cols-2 lg:grid-cols-3'
+  }
+
+  return 'grid gap-6 md:grid-cols-2'
+})
 </script>

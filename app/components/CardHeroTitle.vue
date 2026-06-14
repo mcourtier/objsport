@@ -6,6 +6,7 @@
     :class="topMarginClass"
   >
     <span
+      v-if="stackedTitle.line1"
       class="brand-headline hero-title-line block text-3xl md:text-4xl lg:text-5xl"
       data-reveal-immediate
     >
@@ -17,31 +18,11 @@
     >
       {{ stackedTitle.line2 }}
     </span>
-    <svg
+    <span
       class="hero-title-rule text-primary"
       data-reveal-immediate
-      viewBox="0 0 300 26"
-      preserveAspectRatio="xMinYMid meet"
       aria-hidden="true"
-    >
-      <g fill="currentColor">
-        <path
-          d="M0,12.6h5.5v2.2H0z M1.8,15.2h8.5v1.8H1.8z M4.2,10.4h7.2v2H4.2z M6.8,17.4h5.8v1.4H6.8z"
-        />
-        <path
-          d="M12.8,8.6
-            L18.8,7.9 36,7.5 64,7.9 98,7.4 136,7.9 176,7.6 212,8 236,7.8
-            L237.8,9.4 238.2,17.2 236,18.6
-            L212,18.9 176,19.2 136,18.9 98,19.3 64,18.8 36,19.1 18.8,18.6 12.8,18.3
-            Z"
-        />
-        <path d="M238.5,9.2 L268,8.4 L269.2,9.8 L238.5,10.6 Z" />
-        <path d="M237.5,11.4 L300,9.6 L300,12.2 L237.5,14 Z" />
-        <path d="M238.8,14.6 L286,13.4 L287.2,15 L238.8,16.2 Z" />
-        <path d="M239.5,16.8 L272,16 L273,17.4 L239.5,18.2 Z" />
-        <path d="M240.2,8.2 L258,7.7 L258.6,8.8 L240.2,9.3 Z" />
-      </g>
-    </svg>
+    />
     <span
       v-if="stackedTitle.line3"
       class="brand-headline hero-title-line hero-title-line--closing block text-2xl md:text-3xl lg:text-4xl"
@@ -152,7 +133,8 @@ function parseStackedHeroTitleFromAccent(
 ): StackedHeroTitle | null {
   const line1 = joinHighlightedText(title)
   const line2 = joinHighlightedText(titleAccent)
-  if (!line1 || !line2) return null
+  if (!line2) return null
+  if (!line1) return { line1: '', line2, line3: '' }
   return { line1, line2, line3: '' }
 }
 
@@ -198,10 +180,18 @@ const parsedTitleAccent = computed(() =>
 .hero-title-rule {
   display: block;
   width: min(100%, 17rem);
-  height: auto;
-  aspect-ratio: 300 / 26;
+  aspect-ratio: 475 / 46;
   margin-block: 0.625rem 0.5rem;
   flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: url('/images/brand/hero-brushline.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  -webkit-mask-image: url('/images/brand/hero-brushline.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
 }
 
 .hero-title-stop {
