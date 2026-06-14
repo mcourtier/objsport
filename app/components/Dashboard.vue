@@ -1,18 +1,20 @@
 <template>
-  <div
-    ref="root"
-    :class="[
-      'mt-5',
-      layout === 'grid'
-        ? 'grid gap-4 lg:grid-cols-3 lg:gap-5'
-        : 'flex flex-col gap-10 md:gap-14',
-    ]"
-  >
-    <slot>
-      <CardContact v-bind="contact!" />
-      <CardFeatureHighlight v-bind="highlight!" />
-      <CardEztmPromo v-bind="promo!" />
-    </slot>
+  <div ref="root" class="mt-5 flex flex-col gap-4 lg:gap-5">
+    <CardStationSpaces v-if="!slots.default" />
+
+    <div
+      :class="
+        layout === 'grid'
+          ? 'grid gap-4 lg:grid-cols-3 lg:gap-5'
+          : 'flex flex-col gap-10 md:gap-14'
+      "
+    >
+      <slot>
+        <CardContact v-bind="contact!" />
+        <CardFeatureHighlight v-bind="highlight!" />
+        <CardEztmPromo v-bind="promo!" />
+      </slot>
+    </div>
   </div>
 </template>
 

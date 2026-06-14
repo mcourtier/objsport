@@ -1,4 +1,4 @@
-/** Homepage hero block fields from `content/index.md` (mapped to `PageHeroContent` in `HomeIntro`). */
+/** Homepage hero block fields (mapped to `PageHeroContent` in `pages/index.vue`). */
 export interface HomeHeroContent {
   tagline: string
   titleBefore: string
@@ -34,7 +34,7 @@ export interface HomeEztmPromoContent {
 }
 
 export interface HomeMissionContent {
-  titleLines: [string, string, string]
+  titleLines: string[]
   titleAccent: string
   paragraphs: string[]
 }

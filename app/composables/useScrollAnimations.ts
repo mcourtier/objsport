@@ -58,12 +58,21 @@ function triggersOnLoad(section: Element): boolean {
 }
 
 export function useScrollAnimations(root: Ref<HTMLElement | null>) {
+  let ctx: gsap.Context | null = null
+  let active = false
+
   onMounted(async () => {
-    if (!import.meta.client || !root.value) return
+    if (!import.meta.client) return
+    active = true
+
+    await nextTick()
+    if (!active || !root.value) return
 
     await registerScrollTrigger()
+    if (!active || !root.value) return
 
-    const ctx = gsap.context(() => {
+    ctx?.revert()
+    ctx = gsap.context(() => {
       const el = root.value!
       const reduced = prefersReducedMotion()
 
@@ -193,7 +202,11 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
         }
       })
     }, root)
+  })
 
-    onUnmounted(() => ctx.revert())
+  onUnmounted(() => {
+    active = false
+    ctx?.revert()
+    ctx = null
   })
 }

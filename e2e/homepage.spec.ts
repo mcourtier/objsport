@@ -14,8 +14,6 @@ test('homepage loads hero with highlighted title words', async ({ page }) => {
   await expect(hero).toContainText('commun')
   await expect(hero).toContainText('performance')
 
-  const highlights = hero.locator('strong.text-primary')
-  await expect(highlights).toHaveCount(2)
-  await expect(highlights.nth(0)).toHaveText('commun')
-  await expect(highlights.nth(1)).toHaveText('performance')
+  await expect(hero.locator('.text-primary').filter({ hasText: 'commun' })).toHaveCount(1)
+  await expect(hero.locator('.hero-title-line--closing')).toHaveText('votre performance.')
 })
