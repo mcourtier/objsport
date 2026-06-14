@@ -30,36 +30,36 @@ export function sectionIconSurfaceClass(accent: SectionAccent) {
 
 export function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'border-coaching',
-    lab: 'border-care',
-    studio: 'border-consulting',
+    gym: 'border-gym',
+    lab: 'border-lab',
+    studio: 'border-studio',
   }
   return map[accent]
 }
 
 export function pillarTextClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'text-coaching',
-    lab: 'text-care',
-    studio: 'text-consulting',
+    gym: 'text-gym',
+    lab: 'text-lab',
+    studio: 'text-studio',
   }
   return map[accent]
 }
 
 export function pillarIconCircleClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'bg-coaching text-neutral-100',
-    lab: 'bg-care text-neutral-900',
-    studio: 'bg-consulting text-neutral-900',
+    gym: 'bg-gym text-neutral-100',
+    lab: 'bg-lab text-neutral-100',
+    studio: 'bg-studio text-neutral-100',
   }
   return map[accent]
 }
 
 export function pillarIconSurfaceClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'bg-coaching/15 ring-2 ring-coaching',
-    lab: 'bg-care/15 ring-2 ring-care',
-    studio: 'bg-consulting/15 ring-2 ring-consulting',
+    gym: 'bg-gym/15 ring-2 ring-gym',
+    lab: 'bg-lab/15 ring-2 ring-lab',
+    studio: 'bg-studio/15 ring-2 ring-studio',
   }
   return map[accent]
 }

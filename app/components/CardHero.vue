@@ -16,10 +16,7 @@
     </div>
 
     <div class="relative p-6 md:p-8">
-      <CardHeroTagLine
-        v-if="showTagline"
-        :tagline="tagline"
-      />
+      <CardHeroTagLine v-if="showTagline" :tagline="tagline" />
 
       <CardHeroTitle
         :title="title"
@@ -27,18 +24,20 @@
         :compact-top="!hasVisibleTagline"
       />
 
-      <div
-        v-if="showDescription && description"
-        class="brand-section-rule mt-6 max-w-md"
-        data-reveal-immediate
-        aria-hidden="true"
-      />
       <p
         v-if="showDescription && description"
         class="mt-6 max-w-xl text-lg text-neutral-300 md:text-xl"
         data-reveal-immediate
       >
-        {{ description }}
+        <template
+          v-for="part in parsedDescription"
+          :key="`${part.text}-${part.isHighlight}`"
+        >
+          <strong v-if="part.isHighlight" class="text-primary">
+            {{ part.text }}
+          </strong>
+          <span v-else>{{ part.text }}</span>
+        </template>
       </p>
     </div>
   </UCard>
@@ -46,27 +45,30 @@
 
 <script setup lang="ts">
 import type { PageHeroContent } from '~/types/pageHero'
+import { parseHighlightedText } from '~/utils/parseHighlightedText'
 
-const props = withDefaults(
-  defineProps<PageHeroContent>(),
-  {
-    tagline: 'Objectif Sport / Support de performances',
-    title: '',
-    description:
-      'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
-    backgroundImageAlt: 'Athlète en sprint — coaching performance Objectif Sport',
-    showTagline: true,
-    showDescription: true,
-  },
+const props = withDefaults(defineProps<PageHeroContent>(), {
+  tagline: 'Objectif Sport / Support de performances',
+  title: '',
+  description:
+    'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
+  backgroundImageAlt: 'Athlète en sprint — coaching performance Objectif Sport',
+  showTagline: true,
+  showDescription: true,
+})
+
+const parsedDescription = computed(() =>
+  parseHighlightedText(props.description),
 )
 
 const hasVisibleTagline = computed(() => {
   if (!props.showTagline) return false
-  return (props.tagline ?? '')
-    .split(/\s*•\s*/)
-    .map((segment) => segment.trim())
-    .filter(Boolean)
-    .length > 0
+  return (
+    (props.tagline ?? '')
+      .split(/\s*•\s*/)
+      .map((segment) => segment.trim())
+      .filter(Boolean).length > 0
+  )
 })
 </script>
 

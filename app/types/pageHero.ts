@@ -7,7 +7,8 @@ export interface PageHeroContent {
   title?: HighlightedTextProp
   /** Second headline line, shown in primary red below `title`. */
   titleAccent?: HighlightedTextProp
-  description?: string
+  /** Hero body copy. Use `<strong>` for red highlights. */
+  description?: HighlightedTextProp
   primaryCtaLabel?: string
   primaryCtaTo?: string
   secondaryCtaLabel?: string

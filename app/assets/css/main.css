@@ -38,6 +38,10 @@
   --color-consulting: #f8ef04;
   --color-coaching: #0183db;
   --color-care: #b3b4b3;
+
+  --color-gym: #388828;
+  --color-lab: #e8a800;
+  --color-studio: #0848a0;
 }
 
 :root,
