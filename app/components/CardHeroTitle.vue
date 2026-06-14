@@ -21,6 +21,8 @@
     <span
       class="hero-title-rule text-primary"
       data-reveal-immediate
+      data-reveal-draw-x
+      data-reveal-delay="0.4"
       aria-hidden="true"
     />
     <span
@@ -28,8 +30,7 @@
       class="brand-headline hero-title-line hero-title-line--closing block text-2xl md:text-3xl lg:text-4xl"
       data-reveal-immediate
     >
-      {{ stackedTitle.line3
-      }}<span class="hero-title-stop" aria-hidden="true" />
+      {{ stackedTitle.line3 }}
     </span>
   </h1>
   <template v-else>
@@ -118,7 +119,10 @@ function parseStackedHeroTitle(input: unknown): StackedHeroTitle | null {
     .trim()
   const line2 = `${accentPart.text.trim()} :`
   const afterColonText = colonPart.text.split(':').slice(1).join(':')
-  const line3 = [afterColonText, ...parts.slice(accentIndex + 2).map((part) => part.text)]
+  const line3 = [
+    afterColonText,
+    ...parts.slice(accentIndex + 2).map((part) => part.text),
+  ]
     .join('')
     .replace(/\s+/g, ' ')
     .trim()
@@ -183,6 +187,8 @@ const parsedTitleAccent = computed(() =>
   aspect-ratio: 475 / 46;
   margin-block: 0.625rem 0.5rem;
   flex-shrink: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
   background-color: currentColor;
   mask-image: url('/images/brand/hero-brushline.png');
   mask-size: contain;
@@ -192,15 +198,5 @@ const parsedTitleAccent = computed(() =>
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;
-}
-
-.hero-title-stop {
-  display: inline-block;
-  width: 0.28em;
-  height: 0.28em;
-  margin-left: 0.08em;
-  background-color: var(--color-primary);
-  vertical-align: baseline;
-  transform: translateY(-0.08em);
 }
 </style>

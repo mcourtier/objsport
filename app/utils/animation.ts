@@ -16,13 +16,25 @@ export const ANIMATION = {
     y: 48,
   },
   stagger: {
-    default: 0.04,
+    default: 0.08,
   },
 } as const
 
 export function prefersReducedMotion(): boolean {
   if (import.meta.server) return false
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+export function parseRevealDelay(element: Element): number {
+  const value = element.getAttribute('data-reveal-delay')?.trim()
+  if (!value) return 0
+
+  if (value in ANIMATION.duration) {
+    return ANIMATION.duration[value as keyof typeof ANIMATION.duration]
+  }
+
+  const parsed = Number(value)
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0
 }
 
 let scrollTriggerRegistered = false
@@ -44,7 +56,13 @@ export function reveal(
   options: gsap.TweenVars = {},
 ): gsap.core.Tween | gsap.core.Timeline {
   if (prefersReducedMotion()) {
-    return gsap.set(targets, { opacity: 1, y: 0, x: 0, scaleX: 1, force3D: true })
+    return gsap.set(targets, {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scaleX: 1,
+      force3D: true,
+    })
   }
 
   return gsap.from(targets, {

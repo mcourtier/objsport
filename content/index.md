@@ -7,7 +7,7 @@ description: Objectif Sport accompagne entreprises, clubs sportifs et sportifs. 
 ---
 hero:
   tagline: Objectif Sport / Support de performances
-  title: 'Un objectif <strong>commun</strong> : votre performance'
+  title: 'Un objectif <strong>commun</strong> : votre performance.'
   description: Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.
   primaryCtaLabel: Entreprise
   primaryCtaTo: /entreprise
