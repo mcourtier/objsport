@@ -1,5 +1,19 @@
 export type ClubApproachIcon = 'context' | 'need' | 'mission'
 
+export type ClubObjectifPillarIcon = 'availability' | 'discretion' | 'rigor'
+
+export interface ClubObjectifPillar {
+  icon: ClubObjectifPillarIcon
+  label: string
+}
+
+export interface ClubObjectifsContent {
+  intro: string
+  goal: string
+  pillars: ClubObjectifPillar[]
+  tagline: string
+}
+
 export interface ClubApproachItem {
   icon: ClubApproachIcon
   title: string
@@ -26,4 +40,5 @@ export interface ClubPageContent {
   heroBackgroundImage?: string
   heroBackgroundImageAlt?: string
   approach: ClubApproachContent
+  objectifs: ClubObjectifsContent
 }

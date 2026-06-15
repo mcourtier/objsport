@@ -10,6 +10,18 @@ export const clubPageContent: ClubPageContent = {
   heroBackgroundImage: '/images/brand/hero-cover.jpg',
   heroBackgroundImageAlt:
     'Professionnels Objectif Sport sur le terrain — accompagnement des clubs sportifs',
+  objectifs: {
+    intro:
+      'Des professionnels santé du sport peuvent intervenir dans votre club ponctuellement pour vous accompagner à vous développer et optimiser.',
+    goal: 'Le but : atteindre vos objectifs.',
+    pillars: [
+      { icon: 'availability', label: 'Disponibilité' },
+      { icon: 'discretion', label: 'Discrétion' },
+      { icon: 'rigor', label: 'Rigueur' },
+    ],
+    tagline:
+      'Nous travaillons de façon <strong>innovante</strong> et avons tous de l\'expérience dans le sport de <strong>haut niveau</strong>.',
+  },
   approach: {
     title: 'Notre approche',
     items: [

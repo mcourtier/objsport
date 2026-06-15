@@ -14,9 +14,15 @@
         class="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12"
         aria-label="Notre approche et illustration terrain"
       >
-        <ClubPitchIllustration
-          class="aspect-3/2 w-full lg:sticky lg:top-28"
-        />
+        <div>
+          <ClubObjectifs
+            :objectifs="content.objectifs"
+            class="mb-8 lg:mb-10"
+          />
+          <ClubPitchIllustration
+            class="aspect-3/2 w-full lg:sticky lg:top-28"
+          />
+        </div>
         <ClubApproach :approach="content.approach" />
       </section>
     </div>
