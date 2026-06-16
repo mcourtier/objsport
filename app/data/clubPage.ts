@@ -4,12 +4,15 @@ export const clubPageContent: ClubPageContent = {
   title: 'Club',
   description:
     'Des pros de terrain au service des clubs — renfort logistique et opérationnel, expertise RH et contrôle digital en temps réel.',
-  headline: 'Des pros de terrain',
-  headlineAccent: 'Au service des clubs',
-  tagline: 'Expertise • Réactivité • Performance',
-  heroBackgroundImage: '/images/brand/hero-cover.jpg',
-  heroBackgroundImageAlt:
-    'Professionnels Objectif Sport sur le terrain — accompagnement des clubs sportifs',
+  hero: {
+    title: 'Des pros de terrain',
+    titleAccent: 'Au service des clubs',
+    tagline: 'Expertise • Réactivité • Performance',
+    showTagline: true,
+    backgroundImage: '/images/brand/hero-cover.jpg',
+    backgroundImageAlt:
+      'Professionnels Objectif Sport sur le terrain — accompagnement des clubs sportifs',
+  },
   objectifs: {
     intro:
       'Des professionnels santé du sport peuvent intervenir dans votre club ponctuellement pour vous accompagner à vous développer et optimiser.',

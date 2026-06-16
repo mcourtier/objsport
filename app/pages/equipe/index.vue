@@ -1,38 +1,28 @@
 <template>
   <div ref="root">
-    <PageHero
-      :title="heroTitle"
-      :title-accent="heroTitleAccent"
-      :description="intro"
-      :background-image="heroBackgroundImage"
-      :background-image-alt="heroBackgroundImageAlt"
-    />
+    <PageHero v-bind="hero" />
 
-    <section class="py-16 md:py-24" data-reveal-section>
-      <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <ul v-if="profiles?.length" class="grid gap-6 md:grid-cols-3 md:gap-8">
-          <li v-for="profile in profiles" :key="profile.slug" class="min-w-0">
-            <CardProfile :profile="profile" />
-          </li>
-        </ul>
-
-        <p v-else class="text-neutral-400 mt-12">
-          Aucun profil disponible pour le moment.
-        </p>
-      </div>
-    </section>
+    <div class="mt-8 grid grid-cols-1 gap-8">
+      <CardEquipeValues :values="equipeValues" />
+      <ul v-if="profiles?.length" class="grid gap-6 md:grid-cols-3 md:gap-8">
+        <li v-for="profile in profiles" :key="profile.slug" class="min-w-0">
+          <CardProfile :profile="profile" />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-interface EquipePageContent {
-  title?: string
-  description?: string
-  intro?: string
-  heroTitle?: string
-  heroTitleAccent?: string
-  heroBackgroundImage?: string
-  heroBackgroundImageAlt?: string
+import { equipeValues } from '~/data/equipeValues'
+import type { PageHeroContent, PageWithHero } from '~/types/pageHero'
+
+const defaultHero: PageHeroContent = {
+  title: 'L’équipe',
+  description: 'Rencontrez les professionnels Objectif Sport.',
+  backgroundImage: '/images/brand/hero-cover.jpg',
+  backgroundImageAlt:
+    'Équipe Objectif Sport — coaching bien-être et performance',
 }
 
 const { data: page } = await useAsyncData('equipe-page', () =>
@@ -41,27 +31,9 @@ const { data: page } = await useAsyncData('equipe-page', () =>
 
 const { data: profiles } = await useTeamProfiles()
 
-const pageContent = computed(() => page.value as EquipePageContent | null)
+const pageContent = computed(() => page.value as PageWithHero | null)
 
-const heroTitle = computed(() => pageContent.value?.heroTitle ?? 'L’équipe')
-
-const heroTitleAccent = computed(() => pageContent.value?.heroTitleAccent)
-
-const intro = computed(
-  () =>
-    pageContent.value?.intro ?? 'Rencontrez les professionnels Objectif Sport.',
-)
-
-const heroBackgroundImage = computed(
-  () =>
-    pageContent.value?.heroBackgroundImage ?? '/images/brand/hero-cover.jpg',
-)
-
-const heroBackgroundImageAlt = computed(
-  () =>
-    pageContent.value?.heroBackgroundImageAlt ??
-    'Équipe Objectif Sport — coaching bien-être et performance',
-)
+const hero = computed(() => pageContent.value?.hero ?? defaultHero)
 
 useSeoMeta({
   title: () => pageContent.value?.title ?? 'L’équipe — Objectif Sport',

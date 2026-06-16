@@ -32,11 +32,15 @@ export const sportifPageContent: SportifPageContent = {
   title: 'Sportif',
   description:
     'Le Gym, Le Lab et Le Studio — coaching, soins et cours pour sportifs. Performance professionnelle au service du sportif.',
-  headline: 'La performance professionnelle',
-  headlineAccent: 'Au service du sportif',
-  heroBackgroundImage: '/images/sportif/gym.jpg',
-  heroBackgroundImageAlt:
-    'Coach accompagnant un sportif en séance de renforcement — Objectif Sport',
+  hero: {
+    title: 'La performance professionnelle',
+    titleAccent: 'Au service du sportif',
+    description:
+      'Le Gym, Le Lab et Le Studio — coaching, soins et cours pour sportifs. Performance professionnelle au service du sportif.',
+    backgroundImage: '/images/sportif/gym.jpg',
+    backgroundImageAlt:
+      'Coach accompagnant un sportif en séance de renforcement — Objectif Sport',
+  },
   pillars: [
     {
       accent: 'gym',

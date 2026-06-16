@@ -1,9 +1,9 @@
 <template>
   <div v-if="page" class="flex flex-col gap-4 lg:gap-5">
     <div ref="introRoot" class="flex flex-col gap-4 lg:gap-5">
-      <CardHero v-bind="heroProps" />
-      <CardMission v-bind="mission" />
+      <PageHero v-bind="hero" />
       <CardMissionOutcomes />
+      <CardMission v-bind="mission" />
     </div>
     <ContentRenderer :value="page" />
   </div>
@@ -45,7 +45,7 @@ if (!pageContent.value.hero || !pageContent.value.mission) {
   })
 }
 
-const heroProps = computed(() => pageContent.value.hero!)
+const hero = computed(() => pageContent.value.hero!)
 const mission = computed(() => pageContent.value.mission!)
 
 useSeoMeta({

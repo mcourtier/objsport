@@ -1,9 +1,10 @@
 ---
 title: L’équipe — Objectif Sport
 description: Rencontrez les professionnels Objectif Sport — coaching bien-être et performance sur site ou à domicile.
-heroTitle: L’équipe
-heroTitleAccent: Objectif Sport
-heroBackgroundImage: /images/brand/hero-cover.jpg
-heroBackgroundImageAlt: Équipe Objectif Sport — coaching bien-être et performance
-intro: Rencontrez les professionnels qui accompagnent entreprises, clubs et sportifs vers leurs objectifs.
+hero:
+  title: Nos équipes
+  titleAccent: Nos forces sur le terrain
+  description: "Des experts coordonnés, un seul objectif commun: votre performance."
+  backgroundImage: /images/brand/hero-cover.jpg
+  backgroundImageAlt: Équipe Objectif Sport — coaching bien-être et performance
 ---

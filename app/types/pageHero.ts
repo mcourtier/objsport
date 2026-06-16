@@ -9,13 +9,14 @@ export interface PageHeroContent {
   titleAccent?: HighlightedTextProp
   /** Hero body copy. Use `<strong>` for red highlights. */
   description?: HighlightedTextProp
-  primaryCtaLabel?: string
-  primaryCtaTo?: string
-  secondaryCtaLabel?: string
-  secondaryCtaTo?: string
   backgroundImage?: string
   backgroundImageAlt?: string
   showTagline?: boolean
   showDescription?: boolean
-  showCtas?: boolean
+}
+
+export interface PageWithHero {
+  title?: string
+  description?: string
+  hero?: PageHeroContent
 }

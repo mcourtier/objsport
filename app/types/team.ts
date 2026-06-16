@@ -11,6 +11,22 @@ export interface TeamProfile {
   description?: string
 }
 
+export type EquipeValueIcon =
+  | 'professionals'
+  | 'adaptability'
+  | 'versatility'
+  | 'teamwork'
+  | 'results'
+
+export type EquipeValueIconAccent = 'primary' | 'light'
+
+export interface EquipeValue {
+  title: string
+  description: string
+  icon: EquipeValueIcon
+  iconAccent: EquipeValueIconAccent
+}
+
 export interface TeamProfilePage extends TeamProfile {
   id: string
   path: string

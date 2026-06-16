@@ -1,4 +1,5 @@
 import type { PillarAccent } from './homepage'
+import type { PageHeroContent } from './pageHero'
 
 export type SportifServiceIcon =
   | 'run'
@@ -59,10 +60,7 @@ export interface SportifBenefit {
 export interface SportifPageContent {
   title: string
   description: string
-  headline: string
-  headlineAccent: string
-  heroBackgroundImage?: string
-  heroBackgroundImageAlt?: string
+  hero: PageHeroContent
   pillars: SportifPillar[]
   benefits: SportifBenefit[]
 }

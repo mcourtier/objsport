@@ -15,14 +15,9 @@ const pageHeroSchema = z.object({
   title: z.string().optional(),
   titleAccent: z.string().optional(),
   description: z.string().optional(),
-  primaryCtaLabel: z.string().optional(),
-  primaryCtaTo: z.string().optional(),
-  secondaryCtaLabel: z.string().optional(),
-  secondaryCtaTo: z.string().optional(),
   backgroundImage: z.string().optional(),
   backgroundImageAlt: z.string().optional(),
   showDescription: z.boolean().optional(),
-  showCtas: z.boolean().optional(),
 })
 
 const homeMissionSchema = z.object({
@@ -40,11 +35,6 @@ export default defineContentConfig({
         exclude: ['team/**', 'navigation.yml'],
       },
       schema: z.object({
-        intro: z.string().optional(),
-        heroTitle: z.string().optional(),
-        heroTitleAccent: z.string().optional(),
-        heroBackgroundImage: z.string().optional(),
-        heroBackgroundImageAlt: z.string().optional(),
         hero: pageHeroSchema.optional(),
         mission: homeMissionSchema.optional(),
       }),

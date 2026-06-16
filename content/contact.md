@@ -1,15 +1,11 @@
 ---
 title: Contact — Objectif Sport
 description: Écrivez-nous pour toute question ou demande d’information sur nos services bien-être et performance.
+hero:
+  title: Contact
+  titleAccent: Objectif Sport
+  description: Écrivez-nous pour toute question ou demande d’information sur nos services bien-être et performance.
 ---
-
-::page-hero
----
-title: Contact
-titleAccent: Objectif Sport
-description: Écrivez-nous pour toute question ou demande d’information sur nos services bien-être et performance.
----
-::
 
 ::contact-form
 ---

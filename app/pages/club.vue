@@ -1,13 +1,6 @@
 <template>
   <div ref="root">
-    <PageHero
-      :title="content.headline"
-      :title-accent="content.headlineAccent"
-      :tagline="content.tagline"
-      :show-tagline="true"
-      :background-image="content.heroBackgroundImage"
-      :background-image-alt="content.heroBackgroundImageAlt"
-    />
+    <PageHero v-bind="content.hero" />
 
     <div class="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
       <section

@@ -1,16 +1,3 @@
-/** Homepage hero block fields (defined in `content/index.md`). */
-export interface HomeHeroContent {
-  tagline: string
-  titleBefore: string
-  titleHighlight: string
-  titleAfter?: string
-  description: string
-  primaryCtaLabel: string
-  primaryCtaTo: string
-  secondaryCtaLabel: string
-  secondaryCtaTo: string
-}
-
 export type PillarAccent = 'gym' | 'lab' | 'studio'
 
 export interface HomeContactPanelContent {
@@ -37,11 +24,6 @@ export interface HomeMissionContent {
   titleLines: string[]
   titleAccent: string
   paragraphs: string[]
-}
-
-export interface HomeIntroContent {
-  hero: HomeHeroContent
-  mission: HomeMissionContent
 }
 
 export interface HomeDashboardContent {

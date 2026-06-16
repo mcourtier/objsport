@@ -1,12 +1,6 @@
 <template>
   <div ref="root">
-    <PageHero
-      :title="content.headline"
-      :title-accent="content.headlineAccent"
-      :description="content.description"
-      :background-image="content.heroBackgroundImage"
-      :background-image-alt="content.heroBackgroundImageAlt"
-    />
+    <PageHero v-bind="content.hero" />
 
     <div class="mx-auto max-w-7xl pt-12 pb-8 md:pt-16 md:pb-12">
       <section

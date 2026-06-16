@@ -5,10 +5,6 @@ hero:
   showTagline: false
   title: 'Un objectif <strong>commun</strong> : votre performance.'
   description: "Nous mettons l'expertise du sport de haut niveau au service de <strong>chacun</strong>, à chaque étape de la vie."
-  primaryCtaLabel: Entreprise
-  primaryCtaTo: /entreprise
-  secondaryCtaLabel: Demander un audit
-  secondaryCtaTo: /audit
 mission:
   titleLines:
     - CHAQUE MINUTE

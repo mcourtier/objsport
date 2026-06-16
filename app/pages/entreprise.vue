@@ -1,12 +1,6 @@
 <template>
   <div ref="root">
-    <PageHero
-      :title="content.headline"
-      :title-accent="content.headlineAccent"
-      :tagline="content.tagline"
-      :show-tagline="true"
-      :show-description="false"
-    />
+    <PageHero v-bind="content.hero" />
 
     <Dashboard layout="stack">
       <CardEntrepriseCategories :categories="content.categories" />

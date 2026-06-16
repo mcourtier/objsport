@@ -1,10 +1,6 @@
 <template>
   <div ref="root">
-    <PageHero
-      :title="content.hero.title"
-      :title-accent="content.hero.titleAccent"
-      :description="content.hero.description"
-    />
+    <PageHero v-bind="content.hero" />
 
     <ContactForm
       :heading="content.form.heading"

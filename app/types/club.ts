@@ -1,3 +1,5 @@
+import type { PageHeroContent } from './pageHero'
+
 export type ClubApproachIcon = 'context' | 'need' | 'mission'
 
 export type ClubObjectifPillarIcon = 'availability' | 'discretion' | 'rigor'
@@ -34,11 +36,7 @@ export interface ClubApproachContent {
 export interface ClubPageContent {
   title: string
   description: string
-  headline: string
-  headlineAccent: string
-  tagline: string
-  heroBackgroundImage?: string
-  heroBackgroundImageAlt?: string
+  hero: PageHeroContent
   approach: ClubApproachContent
   objectifs: ClubObjectifsContent
 }

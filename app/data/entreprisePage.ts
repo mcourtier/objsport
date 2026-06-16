@@ -4,9 +4,13 @@ export const entreprisePageContent: EntreprisePageContent = {
   title: 'Entreprise',
   description:
     'Prévention haut niveau au service de votre entreprise — audit, programmes sur mesure et conception de solutions bien-être.',
-  headline: 'La prévention',
-  headlineAccent: 'Haut niveau',
-  tagline: 'Au service de votre entreprise',
+  hero: {
+    title: 'La prévention',
+    titleAccent: 'Haut niveau',
+    tagline: 'Au service de votre entreprise',
+    showTagline: true,
+    showDescription: false,
+  },
   categories: [
     {
       label: 'Consulting',

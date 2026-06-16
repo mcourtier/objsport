@@ -1,11 +1,9 @@
+import type { PageHeroContent } from '~/types/pageHero'
+
 export interface ContactPageContent {
   title: string
   description: string
-  hero: {
-    title: string
-    titleAccent: string
-    description: string
-  }
+  hero: PageHeroContent
   form: {
     heading: string
     intro: string

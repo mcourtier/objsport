@@ -1,11 +1,6 @@
 <template>
   <div v-if="pillar" ref="root">
-    <PageHero
-      :title-accent="pillar.subtitle"
-      :description="pillar.description"
-      :background-image="pillar.imageSrc"
-      :background-image-alt="pillar.imageAlt"
-    />
+    <PageHero v-bind="hero" />
 
     <div class="mx-auto max-w-7xl pt-12 pb-8 md:pt-16 md:pb-12">
       <SportifPillarColumn
@@ -23,6 +18,17 @@ import { getSportifPillarBySlug } from '~/data/sportifPage'
 const route = useRoute()
 const slug = computed(() => route.params.pillar as string)
 const pillar = computed(() => getSportifPillarBySlug(slug.value))
+
+const hero = computed(() => {
+  const current = pillar.value
+  if (!current) return {}
+  return {
+    titleAccent: current.subtitle,
+    description: current.description,
+    backgroundImage: current.imageSrc,
+    backgroundImageAlt: current.imageAlt,
+  }
+})
 
 if (!pillar.value) {
   throw createError({

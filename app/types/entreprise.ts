@@ -1,3 +1,4 @@
+import type { PageHeroContent } from './pageHero'
 import type { SectionAccent } from '~/types/navigation'
 
 export interface EntrepriseCategory {
@@ -45,9 +46,7 @@ export interface EntrepriseReason {
 export interface EntreprisePageContent {
   title: string
   description: string
-  headline: string
-  headlineAccent: string
-  tagline: string
+  hero: PageHeroContent
   categories: EntrepriseCategory[]
   servicesTitle: string
   services: EntrepriseService[]
