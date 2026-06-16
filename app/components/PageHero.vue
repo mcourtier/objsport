@@ -4,9 +4,9 @@
     aria-labelledby="hero-heading"
     data-reveal-hero-section
   >
-    <div class="absolute inset-y-0 right-0">
+    <div class="absolute inset-y-0 right-0 md:w-[60%]">
       <img
-        class="hero-athlete-bg h-full w-auto max-w-none"
+        class="hero-athlete-bg h-auto w-full"
         data-reveal-hero-img
         :src="backgroundImage"
         :alt="backgroundImageAlt"
