@@ -10,6 +10,27 @@ const sidebarNavLinkSchema = navLinkSchema.extend({
   children: z.array(navLinkSchema).optional(),
 })
 
+const pageHeroSchema = z.object({
+  showTagline: z.boolean().optional(),
+  title: z.string().optional(),
+  titleAccent: z.string().optional(),
+  description: z.string().optional(),
+  primaryCtaLabel: z.string().optional(),
+  primaryCtaTo: z.string().optional(),
+  secondaryCtaLabel: z.string().optional(),
+  secondaryCtaTo: z.string().optional(),
+  backgroundImage: z.string().optional(),
+  backgroundImageAlt: z.string().optional(),
+  showDescription: z.boolean().optional(),
+  showCtas: z.boolean().optional(),
+})
+
+const homeMissionSchema = z.object({
+  titleLines: z.array(z.string()),
+  titleAccent: z.string(),
+  paragraphs: z.array(z.string()),
+})
+
 export default defineContentConfig({
   collections: {
     content: defineCollection({
@@ -24,6 +45,8 @@ export default defineContentConfig({
         heroTitleAccent: z.string().optional(),
         heroBackgroundImage: z.string().optional(),
         heroBackgroundImageAlt: z.string().optional(),
+        hero: pageHeroSchema.optional(),
+        mission: homeMissionSchema.optional(),
       }),
     }),
     team: defineCollection({

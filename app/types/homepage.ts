@@ -1,4 +1,4 @@
-/** Homepage hero block fields (mapped to `PageHeroContent` in `pages/index.vue`). */
+/** Homepage hero block fields (defined in `content/index.md`). */
 export interface HomeHeroContent {
   tagline: string
   titleBefore: string
