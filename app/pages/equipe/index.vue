@@ -2,8 +2,11 @@
   <div ref="root">
     <PageHero v-bind="hero" />
 
-    <div class="mt-8 grid grid-cols-1 gap-8">
+    <div class="mt-8 grid grid-cols-1 gap-12 md:gap-16">
       <CardEquipeValues :values="equipeValues" />
+      <EquipeInterventionMode :steps="equipeInterventionSteps" />
+      <EquipeNosValeurs :values="equipeNosValeurs" />
+
       <ul v-if="profiles?.length" class="grid gap-6 md:grid-cols-3 md:gap-8">
         <li v-for="profile in profiles" :key="profile.slug" class="min-w-0">
           <CardProfile :profile="profile" />
@@ -14,6 +17,8 @@
 </template>
 
 <script setup lang="ts">
+import { equipeInterventionSteps } from '~/data/equipeIntervention'
+import { equipeNosValeurs } from '~/data/equipeNosValeurs'
 import { equipeValues } from '~/data/equipeValues'
 import type { PageHeroContent, PageWithHero } from '~/types/pageHero'
 

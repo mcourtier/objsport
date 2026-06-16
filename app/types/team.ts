@@ -27,6 +27,18 @@ export interface EquipeValue {
   iconAccent: EquipeValueIconAccent
 }
 
+export interface InterventionStep {
+  title: string
+  description: string
+  icon: string
+}
+
+export interface EquipeCoreValue {
+  title: string
+  description: string
+  icon: string
+}
+
 export interface TeamProfilePage extends TeamProfile {
   id: string
   path: string
