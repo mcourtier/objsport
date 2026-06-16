@@ -2,7 +2,7 @@
   <!-- CardHeroTagLine -->
   <p
     v-if="taglineSegments.length"
-    class="brand-tagline"
+    class="brand-tagline mb-4"
     data-reveal-immediate
   >
     <template v-for="(segment, index) in taglineSegments" :key="segment">

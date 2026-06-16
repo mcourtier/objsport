@@ -4,17 +4,16 @@
     v-if="stackedTitle"
     id="hero-heading"
     class="hero-stacked-title mt-4 max-w-3xl"
-    :class="topMarginClass"
   >
     <span
       v-if="stackedTitle.line1"
-      class="brand-headline hero-title-line block text-4xl md:text-5xl lg:text-6xl"
+      class="brand-headline hero-title-line block text-3xl md:text-4xl lg:text-5xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line1 }}
     </span>
     <span
-      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-5xl md:text-6xl lg:text-7xl"
+      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-4xl md:text-5xl lg:text-6xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line2 }}
@@ -27,7 +26,7 @@
     />
     <span
       v-if="stackedTitle.line3"
-      class="brand-headline hero-title-line hero-title-line--closing block text-2xl md:text-3xl lg:text-4xl"
+      class="brand-headline hero-title-line hero-title-line--closing block text-xl md:text-2xl lg:text-3xl"
       data-reveal-immediate
     >
       {{ stackedTitle.line3 }}
@@ -36,8 +35,7 @@
   <template v-else>
     <h1
       id="hero-heading"
-      class="brand-headline mt-4 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
-      :class="topMarginClass"
+      class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
       data-reveal-immediate
     >
       <template
@@ -52,7 +50,7 @@
     </h1>
     <p
       v-if="titleAccent"
-      class="brand-headline text-primary mt-2 max-w-3xl text-5xl md:text-6xl lg:text-7xl"
+      class="brand-headline text-primary mt-2 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
       data-reveal-immediate
     >
       <template
@@ -75,7 +73,6 @@ import { parseHighlightedText } from '~/utils/parseHighlightedText'
 const props = defineProps<{
   title?: HighlightedTextProp
   titleAccent?: HighlightedTextProp
-  compactTop?: boolean
 }>()
 
 interface StackedHeroTitle {
@@ -83,8 +80,6 @@ interface StackedHeroTitle {
   line2: string
   line3: string
 }
-
-const topMarginClass = computed(() => (props.compactTop ? 'mt-0' : ''))
 
 function joinHighlightedText(input: unknown): string {
   return parseHighlightedText(input)

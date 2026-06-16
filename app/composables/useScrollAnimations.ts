@@ -4,6 +4,7 @@ import {
   parseRevealDelay,
   prefersReducedMotion,
   registerScrollTrigger,
+  SCROLL_ANIMATIONS_ENABLED,
   SCROLL_TRIGGER_DEFAULTS,
 } from '~/utils/animation'
 
@@ -76,7 +77,7 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
       const el = root.value!
       const reduced = prefersReducedMotion()
 
-      if (reduced) {
+      if (reduced || !SCROLL_ANIMATIONS_ENABLED) {
         setVisible(el.querySelectorAll('[data-reveal-hero-section], [data-reveal-section], [data-reveal], [data-reveal-immediate], [data-reveal-draw-x], [data-reveal-hero-img], [data-reveal-scale-x], [data-reveal-from-x]'))
         return
       }

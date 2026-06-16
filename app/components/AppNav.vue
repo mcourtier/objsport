@@ -12,11 +12,25 @@
         <AppLogo />
         <AppNavBurger v-model="menuOpen" />
       </div>
-      <UCollapsible v-model:open="menuOpen" :unmount-on-hide="false">
+      <nav
+        aria-label="Navigation principale"
+        class="mt-8 hidden flex-col gap-1 lg:flex lg:px-0 lg:py-0"
+      >
+        <AppNavLink
+          v-for="link in sidebarNav"
+          :key="link.to"
+          :link="link"
+        />
+      </nav>
+      <UCollapsible
+        v-model:open="menuOpen"
+        class="lg:hidden"
+        :unmount-on-hide="false"
+      >
         <template #content>
           <nav
             aria-label="Navigation principale"
-            class="border-default mt-4 flex flex-col gap-1 px-4 py-4 md:px-5 lg:mt-8 lg:border-t-0 lg:px-0 lg:py-0"
+            class="border-default mt-4 flex flex-col gap-1 px-4 py-4 md:px-5"
           >
             <AppNavLink
               v-for="link in sidebarNav"
@@ -33,35 +47,12 @@
 <script setup lang="ts">
 const route = useRoute()
 const { sidebarNav } = await useSiteNavigation()
-const menuOpen = ref(true)
-
-const desktopMediaQuery = '(min-width: 1024px)'
-
-function isDesktopViewport() {
-  return window.matchMedia(desktopMediaQuery).matches
-}
-
-function syncMenuOpen() {
-  menuOpen.value = isDesktopViewport()
-}
-
-onMounted(() => {
-  syncMenuOpen()
-  window.matchMedia(desktopMediaQuery).addEventListener('change', syncMenuOpen)
-})
-
-onUnmounted(() => {
-  window
-    .matchMedia(desktopMediaQuery)
-    .removeEventListener('change', syncMenuOpen)
-})
+const menuOpen = ref(false)
 
 watch(
   () => route.fullPath,
   () => {
-    if (!isDesktopViewport()) {
-      menuOpen.value = false
-    }
+    menuOpen.value = false
   },
 )
 </script>

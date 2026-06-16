@@ -10,14 +10,12 @@ import {
 const PROD_URL = process.env.ANIMATION_BASELINE_URL ?? 'https://objsport.vercel.app'
 
 test.describe('hero reveal animations', () => {
-  test('immediate reveals animate in on load', async ({ page }) => {
+  test('immediate reveals are visible on load', async ({ page }) => {
     await page.goto('/', { waitUntil: 'commit' })
 
-    await expect(async () => {
-      const states = await getRevealStates(page)
-      expect(states.length).toBeGreaterThan(0)
-      expect(states.some(isAnimatingIn)).toBe(true)
-    }).toPass({ timeout: 3000 })
+    const states = await getRevealStates(page)
+    expect(states.length).toBeGreaterThan(0)
+    expect(states.every(isFullyRevealed)).toBe(true)
   })
 
   test('immediate reveals finish visible', async ({ page }) => {
@@ -29,20 +27,12 @@ test.describe('hero reveal animations', () => {
     expect(states.every(isFullyRevealed)).toBe(true)
   })
 
-  test('hero image slides in from the right', async ({ page }) => {
+  test('hero image is visible on load', async ({ page }) => {
     await page.goto('/', { waitUntil: 'commit' })
 
-    await expect(async () => {
-      const [state] = await getRevealStates(page, '[data-reveal-hero-img]')
-      expect(state).toBeDefined()
-      expect(isAnimatingIn(state!)).toBe(true)
-    }).toPass({ timeout: 3000 })
-
-    await page.waitForTimeout(1500)
-
-    const [finalState] = await getRevealStates(page, '[data-reveal-hero-img]')
-    expect(finalState).toBeDefined()
-    expect(isFullyRevealed(finalState!)).toBe(true)
+    const [state] = await getRevealStates(page, '[data-reveal-hero-img]')
+    expect(state).toBeDefined()
+    expect(isFullyRevealed(state!)).toBe(true)
   })
 })
 
@@ -100,6 +90,7 @@ test.describe('scroll reveal animations', () => {
 
 test.describe('prod parity', () => {
   test('hero midpoint matches production motion profile', async ({ browser }) => {
+    test.skip(true, 'Scroll animations disabled — re-enable SCROLL_ANIMATIONS_ENABLED to run parity checks')
     test.skip(!process.env.ANIMATION_BASELINE_URL, 'Set ANIMATION_BASELINE_URL to run parity checks')
 
     const localContext = await browser.newContext()

@@ -2,6 +2,9 @@ import gsap from 'gsap'
 
 gsap.config({ force3D: true })
 
+/** Set to true to re-enable scroll / reveal animations site-wide. */
+export const SCROLL_ANIMATIONS_ENABLED = false
+
 export const ANIMATION = {
   duration: {
     micro: 0.4,
@@ -79,6 +82,16 @@ export async function scrollReveal(
   targets: gsap.TweenTarget,
   options: gsap.TweenVars = {},
 ): Promise<gsap.core.Tween | gsap.core.Timeline> {
+  if (!SCROLL_ANIMATIONS_ENABLED) {
+    return gsap.set(targets, {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scaleX: 1,
+      force3D: true,
+    })
+  }
+
   await registerScrollTrigger()
 
   const { scrollTrigger: scrollTriggerOptions, ...tweenOptions } = options

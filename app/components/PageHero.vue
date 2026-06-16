@@ -4,7 +4,7 @@
     aria-labelledby="hero-heading"
     data-reveal-hero-section
   >
-    <div class="absolute inset-y-0 right-0 md:w-[60%]">
+    <div class="absolute inset-y-0 right-0 hidden md:block md:w-[60%]">
       <img
         class="hero-athlete-bg h-auto w-full"
         data-reveal-hero-img
@@ -14,14 +14,10 @@
       />
     </div>
 
-    <div class="relative p-6 md:p-8 md:pt-0">
+    <div class="relative">
       <CardHeroTagLine v-if="showTagline" :tagline="tagline" />
 
-      <CardHeroTitle
-        :title="title"
-        :title-accent="titleAccent"
-        :compact-top="!hasVisibleTagline"
-      />
+      <CardHeroTitle :title="title" :title-accent="titleAccent" />
 
       <p
         v-if="showDescription && description"
@@ -60,16 +56,6 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
 const parsedDescription = computed(() =>
   parseHighlightedText(props.description),
 )
-
-const hasVisibleTagline = computed(() => {
-  if (!props.showTagline) return false
-  return (
-    (props.tagline ?? '')
-      .split(/\s*•\s*/)
-      .map((segment) => segment.trim())
-      .filter(Boolean).length > 0
-  )
-})
 </script>
 
 <style scoped>
@@ -96,24 +82,5 @@ const hasVisibleTagline = computed(() => {
     rgb(0 0 0 / 0.84) 46%,
     black 56%
   );
-}
-
-@media (max-width: 767px) {
-  .hero-athlete-bg {
-    -webkit-mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgb(0 0 0 / 0.22) 16%,
-      rgb(0 0 0 / 0.65) 34%,
-      black 48%
-    );
-    mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgb(0 0 0 / 0.22) 16%,
-      rgb(0 0 0 / 0.65) 34%,
-      black 48%
-    );
-  }
 }
 </style>
