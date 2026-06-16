@@ -5,11 +5,7 @@
       class="block focus-visible:outline-offset-4 lg:mx-auto lg:w-full lg:max-w-sm"
       aria-label="Objectif Sport — Accueil"
     >
-      <img
-        src="/logo.svg"
-        alt=""
-        class="h-12 w-auto lg:mx-auto lg:h-auto lg:w-64"
-      />
+      <img src="/logo.svg" alt="" class="h-auto w-36 lg:mx-auto lg:w-64" />
     </NuxtLink>
     <p
       v-if="tagline"
