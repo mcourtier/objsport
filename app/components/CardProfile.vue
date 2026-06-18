@@ -2,11 +2,11 @@
   <!-- CardProfile -->
   <NuxtLink :to="`/equipe/${profile.slug}`" class="group block h-full">
     <UCard
-      class="bg-neutral-800 group-hover:border-primary flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
+      class="group-hover:border-primary flex h-full flex-col bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
       data-reveal
     >
       <div
-        class="bg-neutral-900 relative aspect-square w-full shrink-0 overflow-hidden"
+        class="relative aspect-square w-full shrink-0 overflow-hidden bg-neutral-900"
       >
         <img
           :src="profile.photo"
@@ -18,9 +18,9 @@
         />
       </div>
 
-      <div class="flex flex-1 flex-col p-6 md:p-8">
+      <div class="flex flex-1 flex-col py-6">
         <h2
-          class="font-display text-neutral-100 text-2xl font-bold tracking-wide uppercase"
+          class="font-display text-xl font-bold tracking-wide text-neutral-100 uppercase italic"
         >
           {{ profile.name }}
         </h2>

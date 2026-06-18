@@ -40,7 +40,7 @@ export const entreprisePageContent: EntreprisePageContent = {
   servicesTitle: 'Nos prestations en entreprise',
   services: [
     {
-      title: 'Audit & Consulting',
+      title: 'Audit',
       icon: 'audit',
       to: '/entreprise/audit',
       items: [
@@ -53,7 +53,7 @@ export const entreprisePageContent: EntreprisePageContent = {
       ],
     },
     {
-      title: 'Programmes sur mesure',
+      title: 'Programmation',
       icon: 'programs',
       to: '/entreprise/formation',
       items: [
@@ -67,7 +67,7 @@ export const entreprisePageContent: EntreprisePageContent = {
       ],
     },
     {
-      title: 'Conception & Intégration',
+      title: 'Intégration',
       icon: 'conception',
       to: '/entreprise/conception',
       items: [
