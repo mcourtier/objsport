@@ -6,10 +6,14 @@
     size="xl"
     :icon="open ? 'material-symbols:close' : 'material-symbols:menu'"
     :aria-label="open ? 'Fermer le menu' : 'Ouvrir le menu'"
-    @click="open = !open"
+    @click="toggleOpen"
   />
 </template>
 
 <script setup lang="ts">
 const open = defineModel<boolean>({ required: true })
+
+function toggleOpen() {
+  open.value = !open.value
+}
 </script>
