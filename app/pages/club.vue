@@ -2,12 +2,12 @@
   <div ref="root">
     <PageHero v-bind="content.hero" />
 
-    <div class="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
       <section
-        class="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12"
+        class="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12"
         aria-label="Notre approche et illustration terrain"
       >
-        <div>
+        <div class="order-2 lg:order-1">
           <ClubObjectifs
             :objectifs="content.objectifs"
             class="mb-8 lg:mb-10"
@@ -16,7 +16,7 @@
             class="aspect-3/2 w-full lg:sticky lg:top-28"
           />
         </div>
-        <ClubApproach :approach="content.approach" />
+        <ClubApproach :approach="content.approach" class="order-1 lg:order-2" />
       </section>
     </div>
   </div>

@@ -31,15 +31,17 @@ export function getSportifPillarBySlug(
 export const sportifPageContent: SportifPageContent = {
   title: 'Sportif',
   description:
-    'Le Gym, Le Lab et Le Studio — coaching, soins et cours pour sportifs. Performance professionnelle au service du sportif.',
+    'Service de réathlétisation — Le Gym, Le Lab et Le Studio pour sportifs amateurs, compétiteurs et professionnels.',
   hero: {
     title: 'La performance professionnelle',
     titleAccent: 'Au service du sportif',
+    tagline: 'Le Gym • Le Lab • Le Studio',
+    showTagline: true,
     description:
-      'Le Gym, Le Lab et Le Studio — coaching, soins et cours pour sportifs. Performance professionnelle au service du sportif.',
-    backgroundImage: '/images/sportif/gym.jpg',
+      'Coaching, soins et cours pour <strong>prévenir</strong>, <strong>rééduquer</strong> et <strong>réathlétiser</strong> — du premier pas au retour à la compétition.',
+    backgroundImage: '/images/hero/sportif.png',
     backgroundImageAlt:
-      'Coach accompagnant un sportif en séance de renforcement — Objectif Sport',
+      'Sportif en squat — coaching et réathlétisation Objectif Sport',
   },
   pillars: [
     {
@@ -51,9 +53,9 @@ export const sportifPageContent: SportifPageContent = {
       description:
         'Sessions de 45 min en solo ou en trio pour activer, rééduquer et retrouver la performance — routines préventives, rééducation spécifique et retour à l’entraînement.',
       headerIcon: 'gym',
-      imageSrc: '/images/sportif/gym.jpg',
+      imageSrc: '/images/hero/gym.png',
       imageAlt:
-        'Coach accompagnant un sportif en séance de renforcement au sol',
+        'Sportif en kettlebell swing — coaching Le Gym Objectif Sport',
       sections: [
         {
           title: 'Préhab (dès 45 min)',
@@ -131,9 +133,9 @@ export const sportifPageContent: SportifPageContent = {
       description:
         'Massage, thérapie, mobilité et bilans complets — récupération, prévention et mesure de la performance au service du sportif.',
       headerIcon: 'lab',
-      imageSrc: '/images/sportif/lab.jpg',
+      imageSrc: '/images/hero/lab.png',
       imageAlt:
-        'Membres inférieurs avec électrostimulation en séance de récupération',
+        'Sportif en récupération active au foam roller — Le Lab Objectif Sport',
       sections: [
         {
           title: 'Soins (dès 45 min)',
@@ -206,8 +208,9 @@ export const sportifPageContent: SportifPageContent = {
       description:
         'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
       headerIcon: 'studio',
-      imageSrc: '/images/sportif/studio.jpg',
-      imageAlt: 'Groupe en cours de yoga et étirements dans un studio lumineux',
+      imageSrc: '/images/hero/studio.png',
+      imageAlt:
+        'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
       sections: [
         {
           title: 'Gymnastique (45 min)',

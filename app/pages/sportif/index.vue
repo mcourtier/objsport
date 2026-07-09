@@ -2,7 +2,7 @@
   <div ref="root">
     <PageHero v-bind="content.hero" />
 
-    <div class="mx-auto max-w-7xl pt-12 pb-8 md:pt-16 md:pb-12">
+    <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
       <section
         aria-label="Le Gym, Le Lab et Le Studio"
         class="grid gap-6 lg:grid-cols-3 lg:gap-8"

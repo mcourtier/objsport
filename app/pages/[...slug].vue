@@ -1,6 +1,11 @@
 <template>
   <div v-if="pageMeta" ref="root">
-    <PageHero :title="pageMeta.title" :description="pageMeta.description" />
+    <PageHero
+      :title="pageMeta.title"
+      :description="pageMeta.description"
+      background-image="/images/athlete.png"
+      background-image-alt="Sportif en action — Objectif Sport"
+    />
     <LayoutPageStub />
   </div>
 </template>

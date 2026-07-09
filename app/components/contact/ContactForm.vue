@@ -1,13 +1,13 @@
 <template>
   <section
-    class="py-16 md:py-24"
+    class="py-8 md:py-16 lg:py-24"
     aria-labelledby="contact-form-heading"
     data-reveal-section
   >
-    <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
       <h2
         id="contact-form-heading"
-        class="font-display text-neutral-100 text-4xl font-bold tracking-wide uppercase md:text-5xl"
+        class="font-display text-neutral-100 text-3xl font-bold tracking-wide uppercase sm:text-4xl md:text-5xl"
         data-reveal
       >
         {{ heading }}
@@ -33,7 +33,7 @@
 
       <form
         v-else
-        class="border-neutral-700 bg-neutral-800 mt-10 space-y-6 border p-8 md:p-10"
+        class="border-neutral-700 bg-neutral-800 mt-8 space-y-5 border p-5 sm:mt-10 sm:space-y-6 sm:p-8 md:p-10"
         novalidate
         data-reveal
         @submit.prevent="onSubmit"

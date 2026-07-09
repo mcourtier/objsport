@@ -2,7 +2,7 @@
   <NuxtLink
     :to="to"
     :aria-label="`${title} — ${description}`"
-    class="group flex flex-col items-center text-center transition-opacity hover:opacity-90"
+    class="group flex flex-row items-center gap-4 text-left transition-opacity hover:opacity-90 sm:flex-col sm:items-center sm:gap-0 sm:text-center"
   >
     <div class="relative h-20 w-20 shrink-0 sm:h-32 sm:w-32">
       <PillarShape :accent="accent" class="size-full" />
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="mt-3 space-y-1">
+    <div class="min-w-0 flex-1 space-y-1 sm:mt-3 sm:flex-none">
       <p
         class="font-display text-base leading-none font-bold tracking-wide uppercase sm:text-lg"
         :class="sectionTextClass(accent)"

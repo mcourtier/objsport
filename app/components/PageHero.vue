@@ -3,25 +3,48 @@
     class="relative overflow-hidden bg-black"
     aria-labelledby="hero-heading"
     data-reveal-hero-section
+    :ui="{ body: 'p-0 sm:p-0' }"
   >
-    <div class="absolute inset-y-0 right-0 hidden md:block md:w-[60%]">
+    <div
+      class="relative aspect-[4/5] max-h-80 w-full overflow-hidden sm:max-h-96 md:hidden"
+      aria-hidden="true"
+    >
       <img
-        class="hero-athlete-bg h-auto w-full"
+        class="hero-athlete-mobile h-full w-full object-cover"
         data-reveal-hero-img
         :src="backgroundImage"
         :alt="backgroundImageAlt"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"
       />
     </div>
 
-    <div class="relative">
+    <div
+      class="absolute inset-y-0 right-0 hidden md:block md:w-[58%] lg:w-[55%]"
+      aria-hidden="true"
+    >
+      <img
+        class="hero-athlete-bg h-full w-full object-cover"
+        data-reveal-hero-img
+        :src="backgroundImage"
+        :alt="backgroundImageAlt"
+        loading="eager"
+      />
+    </div>
+
+    <div
+      class="relative z-10 p-5 sm:p-6 md:min-h-72 md:max-w-[52%] md:p-8 lg:min-h-80 lg:p-10"
+    >
       <CardHeroTagLine v-if="showTagline" :tagline="tagline" />
 
       <CardHeroTitle :title="title" :title-accent="titleAccent" />
 
       <p
         v-if="showDescription && description"
-        class="font-display mt-6 max-w-xl text-lg text-neutral-300 uppercase italic md:text-xl"
+        class="font-display mt-4 max-w-xl text-base text-neutral-300 uppercase italic sm:mt-6 sm:text-lg md:text-xl"
         data-reveal-immediate
       >
         <template
@@ -43,12 +66,12 @@ import type { PageHeroContent } from '~/types/pageHero'
 import { parseHighlightedText } from '~/utils/parseHighlightedText'
 
 const props = withDefaults(defineProps<PageHeroContent>(), {
-  tagline: 'Objectif Sport / Support de performances',
+  tagline: 'Santé • Performance • Résultats',
   title: '',
   description:
-    'Coaching bien-être et performance pour les entreprises, les clubs sportifs et les sportifs. Interventions en entreprise ou à domicile — Gym, Lab et Studio.',
-  backgroundImage: '/images/athlete.png',
-  backgroundImageAlt: 'Athlète en sprint — coaching performance Objectif Sport',
+    'Service de réathlétisation — Le Gym, Le Lab et Le Studio au service des entreprises, clubs et sportifs.',
+  backgroundImage: '/images/hero/home.png',
+  backgroundImageAlt: 'Sportif en action — réathlétisation Objectif Sport',
   showTagline: false,
   showDescription: true,
 })
@@ -59,11 +82,13 @@ const parsedDescription = computed(() =>
 </script>
 
 <style scoped>
+.hero-athlete-mobile,
+.hero-athlete-bg {
+  object-position: 72% 12%;
+}
+
 .hero-athlete-bg {
   display: block;
-  /* object-fit: cover; */
-  background-size: 300px auto;
-  object-position: right center;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,

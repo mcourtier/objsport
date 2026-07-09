@@ -23,11 +23,14 @@ import { equipeValues } from '~/data/equipeValues'
 import type { PageHeroContent, PageWithHero } from '~/types/pageHero'
 
 const defaultHero: PageHeroContent = {
-  title: 'L’équipe',
-  description: 'Rencontrez les professionnels Objectif Sport.',
-  backgroundImage: '/images/brand/hero-cover.jpg',
-  backgroundImageAlt:
-    'Équipe Objectif Sport — coaching bien-être et performance',
+  title: 'Nos équipes',
+  titleAccent: 'Nos forces sur le terrain',
+  tagline: 'Expertise • Coordination • Réactivité',
+  showTagline: true,
+  description:
+    'Des experts coordonnés, un objectif commun : <strong>votre performance</strong>.',
+  backgroundImage: '/images/hero/equipe.png',
+  backgroundImageAlt: 'Sportif en posture de coaching — équipe Objectif Sport',
 }
 
 const { data: page } = await useAsyncData('equipe-page', () =>

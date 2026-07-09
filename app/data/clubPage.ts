@@ -9,9 +9,11 @@ export const clubPageContent: ClubPageContent = {
     titleAccent: 'Au service des clubs',
     tagline: 'Expertise • Réactivité • Performance',
     showTagline: true,
-    backgroundImage: '/images/brand/hero-cover.jpg',
+    description:
+      'Renfort logistique, expertise RH et contrôle digital — des professionnels du sport de <strong>haut niveau</strong> au service de votre club.',
+    backgroundImage: '/images/hero/club.png',
     backgroundImageAlt:
-      'Professionnels Objectif Sport sur le terrain — accompagnement des clubs sportifs',
+      'Sportif en saut explosif — accompagnement des clubs par Objectif Sport',
   },
   objectifs: {
     intro:

@@ -9,7 +9,11 @@ export const entreprisePageContent: EntreprisePageContent = {
     titleAccent: 'Haut niveau',
     tagline: 'Au service de votre entreprise',
     showTagline: true,
-    showDescription: false,
+    description:
+      'Audit, programmes sur mesure et solutions bien-être — la prévention <strong>professionnelle</strong> adaptée à vos équipes et à votre organisation.',
+    backgroundImage: '/images/hero/entreprise.png',
+    backgroundImageAlt:
+      'Sportif en étirements dynamiques — prévention en entreprise Objectif Sport',
   },
   categories: [
     {

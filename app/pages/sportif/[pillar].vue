@@ -2,7 +2,7 @@
   <div v-if="pillar" ref="root">
     <PageHero v-bind="hero" />
 
-    <div class="mx-auto max-w-7xl pt-12 pb-8 md:pt-16 md:pb-12">
+    <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
       <SportifPillarColumn
         :pillar="pillar"
         hide-header
@@ -23,7 +23,10 @@ const hero = computed(() => {
   const current = pillar.value
   if (!current) return {}
   return {
-    titleAccent: current.subtitle,
+    title: current.name,
+    titleAccent: current.headline,
+    tagline: current.subtitle,
+    showTagline: true,
     description: current.description,
     backgroundImage: current.imageSrc,
     backgroundImageAlt: current.imageAlt,

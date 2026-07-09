@@ -20,8 +20,13 @@ export const contactPageContent: ContactPageContent = {
   hero: {
     title: 'Contact',
     titleAccent: 'Objectif Sport',
+    tagline: 'Entreprises • Clubs • Sportifs',
+    showTagline: true,
     description:
-      'Écrivez-nous pour toute question ou demande d’information sur nos services bien-être et performance.',
+      'Une question sur nos services de <strong>réathlétisation</strong> ? Écrivez-nous — Le Gym, Le Lab et Le Studio pour entreprises, clubs et sportifs.',
+    backgroundImage: '/images/hero/contact.png',
+    backgroundImageAlt:
+      'Sportif en posture d\'accueil — contactez Objectif Sport',
   },
   form: {
     heading: 'Contactez-nous',

@@ -5,7 +5,7 @@
     class="pb-6 md:pb-8"
     data-reveal-section
   >
-    <ul class="grid grid-cols-3 justify-items-center gap-4 gap-6">
+    <ul class="grid grid-cols-1 justify-items-stretch gap-8 sm:grid-cols-3 sm:justify-items-center sm:gap-6">
       <li
         v-for="category in categories"
         :key="category.accent"
