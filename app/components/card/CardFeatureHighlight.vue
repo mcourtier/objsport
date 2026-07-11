@@ -1,6 +1,6 @@
 <template>
   <!-- CardFeatureHighlight -->
-  <UCard class="card-feature-highlight" data-reveal-section>
+  <UCard class="card-surface card-feature-highlight" data-reveal-section>
     <div
       class="relative flex h-28 w-28 items-center justify-center"
       data-reveal

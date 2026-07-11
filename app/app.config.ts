@@ -29,16 +29,19 @@ export default defineAppConfig({
       // },
     },
     card: {
+      slots: {
+        root: 'rounded-2xl overflow-hidden ring-0 divide-y-0',
+      },
       variants: {
         variant: {
           outline: {
-            root: 'bg-default ring ring-default divide-y-0',
+            root: 'border border-neutral-700 bg-neutral-900/50',
           },
           soft: {
-            root: 'bg-elevated/50 divide-y-0',
+            root: 'border border-neutral-700 bg-neutral-900/50',
           },
           subtle: {
-            root: 'bg-elevated/50 ring ring-default divide-y-0',
+            root: 'border border-neutral-700 bg-neutral-900/50',
           },
         },
       },

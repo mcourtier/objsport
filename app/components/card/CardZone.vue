@@ -2,8 +2,7 @@
   <!-- CardZone -->
   <NuxtLink
     :to="to"
-    class="card-zone group"
-    :class="[pillarBorderClass(accent), hoverBgClass[accent]]"
+    class="card-surface card-zone group"
     data-reveal
   >
     <div class="flex items-center gap-4">
@@ -93,16 +92,11 @@ defineProps<{
   sectionLabels: string[]
 }>()
 
-const hoverBgClass: Record<PillarAccent, string> = {
-  gym: 'hover:bg-gym/5',
-  lab: 'hover:bg-lab/5',
-  studio: 'hover:bg-studio/5',
-}
 </script>
 
 <style scoped>
 @reference "~/assets/css/main.css";
 .card-zone {
-  @apply relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-colors duration-200 md:p-7;
+  @apply relative flex flex-col p-6 transition-colors duration-200 hover:border-neutral-600 hover:bg-neutral-900 md:p-7;
 }
 </style>

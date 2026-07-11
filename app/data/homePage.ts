@@ -66,6 +66,8 @@ export const homePageContent = {
 
   zonesHeading: 'Trois zones, une performance',
   zonesTagline: 'Le Gym • Le Lab • Le Studio',
+  zonesSubheading:
+    'Un service de réathlétisation complet — coaching, soins et cours réunis pour accompagner chaque sportif, du premier pas au retour à la compétition.',
 
   eztmPromo: {
     title: 'Découvrez EZTM',

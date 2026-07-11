@@ -1,7 +1,7 @@
 <template>
   <!-- CardMission -->
   <UCard
-    class="card-mission"
+    class="card-surface card-mission"
     aria-labelledby="mission-heading"
     data-reveal-section
   >
@@ -129,7 +129,7 @@ const missionPictograms: {
 <style scoped>
 @reference "~/assets/css/main.css";
 .card-mission {
-  @apply relative overflow-hidden bg-black;
+  @apply relative;
 }
 
 .mission-stacked-title {

@@ -1,6 +1,6 @@
 <template>
   <!-- CardContact -->
-  <UCard class="card-contact" data-reveal-section>
+  <UCard class="card-surface card-contact" data-reveal-section>
     <h2
       class="font-display text-neutral-100 text-xl font-bold tracking-wide uppercase md:text-2xl"
       data-reveal

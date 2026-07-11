@@ -109,4 +109,8 @@
   .brand-headline-accent {
     @apply after:bg-primary relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
   }
+
+  .card-surface {
+    @apply overflow-hidden rounded-2xl border border-neutral-700 !bg-neutral-900/50 ring-0 divide-y-0;
+  }
 }
