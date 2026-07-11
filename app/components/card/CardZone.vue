@@ -1,4 +1,5 @@
 <template>
+  <!-- CardZone -->
   <NuxtLink
     :to="to"
     class="card-zone group"

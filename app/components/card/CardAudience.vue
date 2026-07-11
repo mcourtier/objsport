@@ -1,4 +1,5 @@
 <template>
+  <!-- CardAudience -->
   <section
     class="card-audience"
     :aria-labelledby="headingId"
