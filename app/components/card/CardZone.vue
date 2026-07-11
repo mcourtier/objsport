@@ -35,17 +35,19 @@
       aria-hidden="true"
     />
 
-    <p
-      class="font-display mt-4 text-sm font-semibold uppercase italic text-neutral-100"
-    >
-      {{ headline }} —
-      <span :class="pillarTextClass(accent)">
-        {{ headlineAccent }}
-      </span>
-    </p>
-    <p class="mt-3 text-sm leading-snug text-neutral-400">
-      {{ description }}
-    </p>
+    <div class="mt-4 flex flex-1 flex-col">
+      <p
+        class="font-display text-sm font-semibold uppercase italic text-neutral-100"
+      >
+        {{ headline }} —
+        <span :class="pillarTextClass(accent)">
+          {{ headlineAccent }}
+        </span>
+      </p>
+      <p class="mt-3 text-sm leading-snug text-neutral-400">
+        {{ description }}
+      </p>
+    </div>
 
     <ul class="mt-5 flex flex-wrap gap-2">
       <li
@@ -97,6 +99,6 @@ defineProps<{
 <style scoped>
 @reference "~/assets/css/main.css";
 .card-zone {
-  @apply relative flex flex-col p-6 transition-colors duration-200 hover:border-neutral-600 hover:bg-neutral-900 md:p-7;
+  @apply relative flex h-full flex-col p-6 transition-colors duration-200 hover:border-neutral-600 hover:bg-neutral-900 md:p-7;
 }
 </style>

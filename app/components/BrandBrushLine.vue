@@ -19,8 +19,6 @@ defineOptions({
   aspect-ratio: 475 / 46;
   margin-block: 0.625rem 0.5rem;
   flex-shrink: 0;
-  transform: scaleX(0);
-  transform-origin: left center;
   background-color: currentColor;
   mask-image: url('/images/brand/hero-brushline.png');
   mask-size: contain;

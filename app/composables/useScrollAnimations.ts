@@ -107,6 +107,11 @@ export function useScrollAnimations(root: Ref<HTMLElement | null>) {
               index * ANIMATION.stagger.default + parseRevealDelay(target)
 
             if (isDrawReveal(target)) {
+              gsap.set(target, {
+                scaleX: 0,
+                transformOrigin: 'left center',
+                force3D: true,
+              })
               heroTl.fromTo(
                 target,
                 { scaleX: 0, transformOrigin: 'left center' },
