@@ -59,6 +59,12 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: 'min-h-screen',
       },
+      link: [
+        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', href: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' },
+      ],
     },
   },
 
