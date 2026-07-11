@@ -1,12 +1,17 @@
 <template>
   <span
     class="brand-brush-line"
+    :class="{ 'brand-brush-line--small': small }"
     aria-hidden="true"
     v-bind="$attrs"
   />
 </template>
 
 <script setup lang="ts">
+defineProps<{
+  small?: boolean
+}>()
+
 defineOptions({
   inheritAttrs: false,
 })
@@ -28,5 +33,11 @@ defineOptions({
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;
+}
+
+.brand-brush-line--small {
+  width: min(100%, 12rem);
+  aspect-ratio: 475 / 24;
+  margin-block: 0.375rem 0.25rem;
 }
 </style>

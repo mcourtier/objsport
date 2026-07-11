@@ -8,11 +8,6 @@ export interface HomeContactPanelContent {
   ctaTo: string
 }
 
-export interface HomeFeatureHighlightContent {
-  title: string
-  description: string
-}
-
 export interface HomeEztmPromoContent {
   title: string
   description: string
@@ -25,7 +20,6 @@ export interface HomeMissionContent {
 }
 
 export interface HomeDashboardContent {
-  highlight: HomeFeatureHighlightContent
   contact: HomeContactPanelContent
   promo: HomeEztmPromoContent
 }

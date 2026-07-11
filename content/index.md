@@ -19,9 +19,6 @@ mission:
 
 ::dashboard
 ---
-highlight:
-  title: Cockpit santé performance
-  description: Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.
 contact:
   heading: Contact Objectif Sport
   email: contact@objsport.fr

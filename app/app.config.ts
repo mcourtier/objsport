@@ -31,17 +31,20 @@ export default defineAppConfig({
     card: {
       slots: {
         root: 'rounded-2xl overflow-hidden ring-0 divide-y-0',
+        header: 'p-5 pb-0 md:px-6 md:pt-6',
+        title: '',
+        body: 'p-5 md:p-6',
       },
       variants: {
         variant: {
           outline: {
-            root: 'border border-neutral-700 bg-neutral-900/50',
+            root: 'border border-neutral-700 bg-neutral-900/50 divide-y-0',
           },
           soft: {
-            root: 'border border-neutral-700 bg-neutral-900/50',
+            root: 'border border-neutral-700 bg-neutral-900/50 divide-y-0',
           },
           subtle: {
-            root: 'border border-neutral-700 bg-neutral-900/50',
+            root: 'border border-neutral-700 bg-neutral-900/50 divide-y-0',
           },
         },
       },

@@ -11,8 +11,7 @@
     >
       <slot>
         <CardContact v-bind="contact!" />
-        <CardFeatureHighlight v-bind="highlight!" />
-        <CardEztmPromo v-bind="promo!" />
+        <CardEztm v-bind="promo!" />
       </slot>
     </div>
   </div>

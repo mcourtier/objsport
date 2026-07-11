@@ -1,5 +1,5 @@
 <template>
-  <!-- CardHeader -->
+  <!-- CardText -->
   <UCard
     class="card-surface card-header"
     :aria-labelledby="headingId"

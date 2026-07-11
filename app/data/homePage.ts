@@ -82,10 +82,4 @@ export const homePageContent = {
     ctaLabel: 'Nous contacter',
     ctaTo: '/contact',
   },
-
-  highlight: {
-    title: 'Cockpit santé performance',
-    description:
-      'Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.',
-  },
 }

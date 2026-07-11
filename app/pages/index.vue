@@ -2,9 +2,9 @@
   <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="content.hero" />
 
-    <div class="grid gap-4 md:grid-cols-3 lg:gap-5">
-      <CardHeader
-        class="md:col-span-3"
+    <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
+      <CardText
+        class="md:col-span-6"
         :tagline="content.zonesTagline"
         :subheading="content.zonesSubheading"
         heading-id="zones-heading"
@@ -12,32 +12,47 @@
         <template #heading>
           Trois zones, <span class="text-primary">une</span> performance
         </template>
-      </CardHeader>
+      </CardText>
 
-      <CardZone v-for="zone in zones" :key="zone.accent" v-bind="zone" />
+      <CardZone
+        v-for="zone in zones"
+        :key="zone.accent"
+        v-bind="zone"
+        class="md:col-span-2"
+      />
 
-      <CardHeader
-        class="md:col-span-3"
+      <CardText
+        class="md:col-span-6"
         :heading="content.audienceHeading"
         :subheading="content.audienceSubheading"
         heading-id="audience-heading"
       />
 
-      <CardAudience :audiences="content.audiences" />
+      <CardAudienceItem
+        v-for="audience in content.audiences"
+        :key="audience.id"
+        v-bind="audience"
+        class="md:col-span-2"
+      />
 
-      <CardMission class="md:col-span-3" v-bind="content.mission" />
+      <CardMission class="md:col-span-6" v-bind="content.mission" />
 
-      <CardMissionOutcomes />
+      <CardMissionOutcome
+        v-for="outcome in missionOutcomes"
+        :key="outcome.title"
+        v-bind="outcome"
+        class="md:col-span-2"
+      />
 
-      <CardFeatureHighlight v-bind="content.highlight" />
-      <CardEztmPromo v-bind="content.eztmPromo" />
-      <CardContact v-bind="content.contact" />
+      <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
+      <CardContact v-bind="content.contact" class="md:col-span-3" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { PillarAccent } from '~/types/homepage'
+import type { SectionAccent } from '~/types/navigation'
 import { homePageContent } from '~/data/homePage'
 import { sportifPageContent } from '~/data/sportifPage'
 
@@ -59,6 +74,32 @@ const zones = sportifPageContent.pillars.map((pillar) => ({
   description: pillar.description,
   sectionLabels: pillar.sections.map((section) => cleanLabel(section.title)),
 }))
+
+const missionOutcomes: {
+  title: string
+  subtitle: string
+  accent: SectionAccent
+  icon: string
+}[] = [
+  {
+    title: 'PRÉVENIR LES BLESSURES',
+    subtitle: 'Anticiper pour mieux performer',
+    accent: 'consulting',
+    icon: 'material-symbols:health-and-safety',
+  },
+  {
+    title: 'OPTIMISER TES PERFORMANCES',
+    subtitle: 'Méthodes et outils de haut niveau',
+    accent: 'care',
+    icon: 'material-symbols:monitoring',
+  },
+  {
+    title: 'ACCÉLÉRER TA RÉCUPÉRATION',
+    subtitle: 'Récupérer mieux pour repartir plus fort',
+    accent: 'coaching',
+    icon: 'material-symbols:ecg-heart',
+  },
+]
 
 useSeoMeta({
   title: 'Objectif Sport — Réathlétisation Le Gym, Le Lab & Le Studio',
