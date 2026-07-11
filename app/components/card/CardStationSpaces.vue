@@ -1,7 +1,7 @@
 <template>
   <!-- CardStationSpaces -->
   <UCard
-    class="relative overflow-hidden bg-black"
+    class="card-station-spaces"
     aria-labelledby="station-spaces-heading"
     data-reveal-section
   >
@@ -143,3 +143,10 @@ const stationSpaces = [
 const leftSpaces = stationSpaces.filter((space) => space.side === 'left')
 const rightSpaces = stationSpaces.filter((space) => space.side === 'right')
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-station-spaces {
+  @apply relative overflow-hidden bg-black;
+}
+</style>

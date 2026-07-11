@@ -1,6 +1,7 @@
 <template>
   <!-- CardEntrepriseWhy -->
   <UCard
+    class="card-entreprise-why"
     aria-label="Bénéfices et pourquoi choisir Objectif Sport"
     data-reveal-section
   >

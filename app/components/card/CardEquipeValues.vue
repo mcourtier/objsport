@@ -1,6 +1,7 @@
 <template>
   <!-- CardEquipeValues -->
   <section
+    class="card-equipe-values"
     aria-label="Les atouts de l'équipe Objectif Sport"
     data-reveal-section
   >

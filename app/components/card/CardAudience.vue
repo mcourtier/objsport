@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden bg-black"
+    class="card-audience"
     :aria-labelledby="headingId"
     data-reveal-section
   >
@@ -87,3 +87,11 @@ withDefaults(
   },
 )
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+
+.card-audience {
+  @apply relative overflow-hidden bg-black;
+}
+</style>

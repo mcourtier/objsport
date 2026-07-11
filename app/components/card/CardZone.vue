@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="to"
-    class="group relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-colors duration-200 md:p-7"
+    class="card-zone group"
     :class="[pillarBorderClass(accent), hoverBgClass[accent]]"
     data-reveal
   >
@@ -98,3 +98,10 @@ const hoverBgClass: Record<PillarAccent, string> = {
   studio: 'hover:bg-studio/5',
 }
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-zone {
+  @apply relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-colors duration-200 md:p-7;
+}
+</style>

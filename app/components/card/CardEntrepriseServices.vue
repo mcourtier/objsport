@@ -1,8 +1,8 @@
 <template>
   <!-- CardEntrepriseServices -->
   <UCard
+    class="card-entreprise-services"
     aria-labelledby="entreprise-services-heading"
-    class="space-y-10 md:space-y-12"
     data-reveal-section
   >
     <EntrepriseSectionHeading
@@ -25,3 +25,10 @@ defineProps<{
   services: EntrepriseService[]
 }>()
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-entreprise-services {
+  @apply space-y-10 md:space-y-12;
+}
+</style>

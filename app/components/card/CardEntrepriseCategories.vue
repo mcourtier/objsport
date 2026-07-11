@@ -1,8 +1,8 @@
 <template>
   <!-- CardEntrepriseCategories -->
   <UCard
+    class="card-entreprise-categories"
     aria-label="Consulting, Soins et Coaching"
-    class="pb-6 md:pb-8"
     data-reveal-section
   >
     <ul class="grid grid-cols-1 justify-items-stretch gap-8 sm:grid-cols-3 sm:justify-items-center sm:gap-6">
@@ -31,3 +31,10 @@ defineProps<{
   categories: EntrepriseCategory[]
 }>()
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-entreprise-categories {
+  @apply pb-6 md:pb-8;
+}
+</style>

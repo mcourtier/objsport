@@ -1,6 +1,6 @@
 <template>
   <!-- CardProfile -->
-  <NuxtLink :to="`/equipe/${profile.slug}`" class="group block h-full">
+  <NuxtLink :to="`/equipe/${profile.slug}`" class="card-profile group">
     <UCard
       class="group-hover:border-primary flex h-full flex-col bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
       data-reveal
@@ -41,3 +41,10 @@ defineProps<{
   profile: TeamProfilePage
 }>()
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-profile {
+  @apply block h-full;
+}
+</style>

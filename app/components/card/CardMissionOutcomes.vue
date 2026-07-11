@@ -1,6 +1,6 @@
 <template>
   <!-- CardMissionOutcomes -->
-  <UCard class="relative overflow-hidden bg-black" data-reveal-section>
+  <UCard class="card-mission-outcomes" data-reveal-section>
     <ul
       class="flex flex-col divide-y divide-neutral-700 md:flex-row md:divide-x md:divide-y-0"
       aria-label="Nos piliers de performance"
@@ -68,3 +68,10 @@ const outcomes: {
   },
 ]
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-mission-outcomes {
+  @apply relative overflow-hidden bg-black;
+}
+</style>

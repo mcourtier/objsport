@@ -1,6 +1,6 @@
 <template>
   <!-- CardContact -->
-  <UCard class="flex h-full flex-col" data-reveal-section>
+  <UCard class="card-contact" data-reveal-section>
     <h2
       class="font-display text-neutral-100 text-xl font-bold tracking-wide uppercase md:text-2xl"
       data-reveal
@@ -71,3 +71,10 @@ const props = defineProps<HomeContactPanelContent>()
 
 const normalizedPhone = computed(() => props.phone?.replace(/\s/g, '') ?? '')
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-contact {
+  @apply flex h-full flex-col;
+}
+</style>

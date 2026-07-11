@@ -3,7 +3,7 @@
   <h1
     v-if="stackedTitle"
     id="hero-heading"
-    class="hero-stacked-title mt-4 max-w-3xl"
+    class="card-hero-title hero-stacked-title"
   >
     <span
       v-if="stackedTitle.line1"
@@ -35,7 +35,7 @@
   <template v-else>
     <h1
       id="hero-heading"
-      class="brand-headline mt-4 max-w-3xl text-3xl md:text-4xl lg:text-5xl"
+      class="card-hero-title brand-headline text-3xl md:text-4xl lg:text-5xl"
       data-reveal-immediate
     >
       <template
@@ -156,23 +156,24 @@ const parsedTitleAccent = computed(() =>
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
+.card-hero-title {
+  @apply mt-4 max-w-3xl;
+}
+
 .hero-stacked-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.125rem;
+  @apply flex flex-col items-start gap-0.5;
 }
 
 .hero-title-line {
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  @apply leading-[0.95] tracking-[-0.02em];
 }
 
 .hero-title-line--accent {
-  font-weight: 900;
+  @apply font-black;
 }
 
 .hero-title-line--closing {
-  margin-top: 0.25rem;
+  @apply mt-1;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <!-- CardMission -->
   <UCard
-    class="relative overflow-hidden bg-black"
+    class="card-mission"
     aria-labelledby="mission-heading"
     data-reveal-section
   >
@@ -127,15 +127,16 @@ const missionPictograms: {
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
+.card-mission {
+  @apply relative overflow-hidden bg-black;
+}
+
 .mission-stacked-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.125rem;
+  @apply flex flex-col items-start gap-0.5;
 }
 
 .mission-title-line {
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  @apply leading-[0.95] tracking-[-0.02em];
 }
 </style>

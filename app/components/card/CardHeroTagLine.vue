@@ -2,7 +2,7 @@
   <!-- CardHeroTagLine -->
   <p
     v-if="taglineSegments.length"
-    class="brand-tagline mb-4"
+    class="card-hero-tag-line brand-tagline"
     data-reveal-immediate
   >
     <template v-for="(segment, index) in taglineSegments" :key="segment">
@@ -30,3 +30,10 @@ const taglineSegments = computed(() =>
     .filter(Boolean),
 )
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-hero-tag-line {
+  @apply mb-4;
+}
+</style>

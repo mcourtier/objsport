@@ -1,6 +1,6 @@
 <template>
   <!-- CardFeatureHighlight -->
-  <UCard class="flex h-full flex-col items-center justify-center text-center" data-reveal-section>
+  <UCard class="card-feature-highlight" data-reveal-section>
     <div
       class="relative flex h-28 w-28 items-center justify-center"
       data-reveal
@@ -32,3 +32,10 @@ import type { HomeFeatureHighlightContent } from '~/types/homepage'
 
 defineProps<HomeFeatureHighlightContent>()
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+.card-feature-highlight {
+  @apply flex h-full flex-col items-center justify-center text-center;
+}
+</style>
