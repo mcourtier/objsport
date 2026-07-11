@@ -36,15 +36,7 @@
     />
 
     <div class="mt-4 flex flex-1 flex-col">
-      <p
-        class="font-display text-sm font-semibold uppercase italic text-neutral-100"
-      >
-        {{ headline }} —
-        <span :class="pillarTextClass(accent)">
-          {{ headlineAccent }}
-        </span>
-      </p>
-      <p class="mt-3 text-sm leading-snug text-neutral-400">
+      <p class="text-sm leading-snug text-neutral-400">
         {{ description }}
       </p>
     </div>
@@ -88,8 +80,6 @@ defineProps<{
   to: string
   name: string
   subtitle: string
-  headline: string
-  headlineAccent: string
   description: string
   sectionLabels: string[]
 }>()

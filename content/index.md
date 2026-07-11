@@ -24,8 +24,6 @@ highlight:
   description: Pilotez la santé et la performance de vos équipes avec la plateforme EZTM — bientôt sur mobile.
 contact:
   heading: Contact Objectif Sport
-  website: objsport.fr
-  websiteUrl: https://objsport.fr
   email: contact@objsport.fr
   ctaLabel: Nous contacter
   ctaTo: /contact

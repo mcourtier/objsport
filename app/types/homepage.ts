@@ -2,8 +2,6 @@ export type PillarAccent = 'gym' | 'lab' | 'studio'
 
 export interface HomeContactPanelContent {
   heading: string
-  website: string
-  websiteUrl: string
   email: string
   phone?: string
   ctaLabel: string

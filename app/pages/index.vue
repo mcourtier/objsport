@@ -5,17 +5,6 @@
     <div class="grid gap-4 md:grid-cols-3 lg:gap-5">
       <CardHeader
         class="md:col-span-3"
-        :heading="content.audienceHeading"
-        :subheading="content.audienceSubheading"
-        heading-id="audience-heading"
-      />
-
-      <CardAudience :audiences="content.audiences" />
-
-      <CardMission class="md:col-span-3" v-bind="content.mission" />
-
-      <CardHeader
-        class="md:col-span-3"
         :tagline="content.zonesTagline"
         :subheading="content.zonesSubheading"
         heading-id="zones-heading"
@@ -25,17 +14,24 @@
         </template>
       </CardHeader>
 
-      <CardZone
-        v-for="zone in zones"
-        :key="zone.accent"
-        v-bind="zone"
+      <CardZone v-for="zone in zones" :key="zone.accent" v-bind="zone" />
+
+      <CardHeader
+        class="md:col-span-3"
+        :heading="content.audienceHeading"
+        :subheading="content.audienceSubheading"
+        heading-id="audience-heading"
       />
+
+      <CardAudience :audiences="content.audiences" />
+
+      <CardMission class="md:col-span-3" v-bind="content.mission" />
 
       <CardMissionOutcomes />
 
       <CardFeatureHighlight v-bind="content.highlight" />
-      <CardContact v-bind="content.contact" />
       <CardEztmPromo v-bind="content.eztmPromo" />
+      <CardContact v-bind="content.contact" />
     </div>
   </div>
 </template>
@@ -53,16 +49,13 @@ const zoneRoutes: Record<PillarAccent, string> = {
   studio: '/sportif/le-studio',
 }
 
-const cleanLabel = (title: string) =>
-  title.replace(/\s*\(.*?\)\s*/g, '').trim()
+const cleanLabel = (title: string) => title.replace(/\s*\(.*?\)\s*/g, '').trim()
 
 const zones = sportifPageContent.pillars.map((pillar) => ({
   accent: pillar.accent,
   to: zoneRoutes[pillar.accent],
   name: pillar.name,
   subtitle: pillar.subtitle,
-  headline: pillar.headline,
-  headlineAccent: pillar.headlineAccent,
   description: pillar.description,
   sectionLabels: pillar.sections.map((section) => cleanLabel(section.title)),
 }))

@@ -77,9 +77,7 @@ export const homePageContent = {
 
   contact: {
     heading: 'Contact Objectif Sport',
-    website: 'objsport.fr',
-    websiteUrl: 'https://objsport.fr',
-    email: 'pierrevespignani@objsport.fr',
+    email: 'contact@objsport.fr',
     phone: '06 81 34 05 55',
     ctaLabel: 'Nous contacter',
     ctaTo: '/contact',
