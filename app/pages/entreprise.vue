@@ -1,22 +1,61 @@
 <template>
-  <div ref="root">
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="content.hero" />
 
-    <Dashboard layout="stack">
-      <CardEntrepriseCategories :categories="content.categories" />
+    <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
+      <!-- <CardEntrepriseCategories
+        :categories="content.categories"
+        class="md:col-span-6"
+      /> -->
 
-      <CardEntrepriseServices
-        :title="content.servicesTitle"
-        :services="content.services"
-      />
-
-      <CardEntrepriseWhy
+      <CardEntrepriseBenefits
         :benefits="content.benefits"
-        :title="content.reasonsTitle"
-        :title-highlight="content.reasonsTitleHighlight"
-        :reasons="content.reasons"
+        class="md:col-span-6"
       />
-    </Dashboard>
+
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText heading-id="entreprise-why-heading">
+            <template #heading>
+              {{ content.reasonsTitle }}
+              <span class="text-primary">{{
+                content.reasonsTitleHighlight
+              }}</span>
+              ?
+            </template>
+          </CardText>
+        </template>
+
+        <template #children>
+          <EntrepriseReasonCard
+            v-for="reason in content.reasons"
+            :key="reason.title"
+            :reason="reason"
+          />
+        </template>
+      </CardTree>
+
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText
+            :subheading="content.servicesSubheading"
+            heading-id="entreprise-services-heading"
+          >
+            <template #heading>
+              Nos prestations <span class="text-primary">en entreprise</span>
+            </template>
+          </CardText>
+        </template>
+
+        <template #children>
+          <EntrepriseServiceCard
+            v-for="service in content.services"
+            :key="service.title"
+            :service="service"
+          />
+        </template>
+      </CardTree>
+    </div>
   </div>
 </template>
 

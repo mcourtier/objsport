@@ -7,10 +7,15 @@
 
     <div class="card-tree-branches" aria-hidden="true">
       <div class="card-tree-line card-tree-branches-trunk" />
-      <div class="card-tree-branches-row">
-        <span class="card-tree-branches-stem" />
-        <span class="card-tree-branches-stem" />
-        <span class="card-tree-branches-stem" />
+      <div
+        class="card-tree-branches-row"
+        :style="{ '--card-tree-count': childCount }"
+      >
+        <span
+          v-for="index in childCount"
+          :key="index"
+          class="card-tree-branches-stem"
+        />
       </div>
     </div>
 
@@ -43,6 +48,8 @@ const childVNodes = computed(() =>
     (vnode) => vnode.type !== Comment && vnode.type !== Text,
   ),
 )
+
+const childCount = computed(() => childVNodes.value.length)
 </script>
 
 <style scoped>
@@ -71,8 +78,14 @@ const childVNodes = computed(() =>
 .card-tree-branches-row::before {
   content: '';
   @apply absolute top-0 h-0 border-t border-dashed border-neutral-600/70;
-  left: calc((100% - 2 * var(--card-tree-gap)) / 6);
-  right: calc((100% - 2 * var(--card-tree-gap)) / 6);
+  left: calc(
+    (100% - (var(--card-tree-count) - 1) * var(--card-tree-gap)) /
+      (2 * var(--card-tree-count))
+  );
+  right: calc(
+    (100% - (var(--card-tree-count) - 1) * var(--card-tree-gap)) /
+      (2 * var(--card-tree-count))
+  );
 }
 
 .card-tree-branches-trunk {

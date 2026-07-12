@@ -41,48 +41,29 @@ export const entreprisePageContent: EntreprisePageContent = {
       to: '/entreprise/conception',
     },
   ],
-  servicesTitle: 'Nos prestations en entreprise',
+  servicesSubheading:
+    'Audit, programmation et intégration — trois prestations complémentaires pour prévenir, former et ancrer le bien-être dans votre organisation.',
   services: [
     {
       title: 'Audit',
       icon: 'audit',
-      to: '/entreprise/audit',
-      items: [
-        'Analyse des risques (TMS)',
-        'Analyse des postes de travail',
-        'Diagnostic des besoins',
-        'Stratégie RH Santé & Performance',
-        'Conseils & Modélisation',
-        'Feed-back & KPI',
-      ],
+      subtitle: 'Stratégie & diagnostic',
+      description:
+        'Analyse des risques TMS, diagnostic des postes et stratégie RH Santé & Performance — conseils, modélisation et suivi KPI pour votre organisation.',
     },
     {
       title: 'Programmation',
       icon: 'programs',
-      to: '/entreprise/formation',
-      items: [
-        'Formation « Zéro TMS »',
-        'Team Building & Cohésion',
-        'Workshops pratiques',
-        'Conférences & Sensibilisation',
-        'Monitoring digital (application)',
-        'Coaching & Training en entreprise',
-        'Soins à la carte',
-      ],
+      subtitle: 'Formation & coaching',
+      description:
+        'Formations Zéro TMS, workshops, conférences et coaching terrain — team building, monitoring digital et soins à la carte pour vos équipes.',
     },
     {
       title: 'Intégration',
       icon: 'conception',
-      to: '/entreprise/conception',
-      items: [
-        'Affichage & Supports visuels',
-        'Création de Corner Health',
-        'Corner Relax / Workout / Outdoor',
-        'Intégration de professionnels',
-        'Accompagnement au changement',
-        'Coordination & Pilotage',
-        'Suivi & Optimisation continue',
-      ],
+      subtitle: 'Espaces & accompagnement',
+      description:
+        'Création de Corner Health, Relax et Workout — affichage, intégration de professionnels et pilotage continu pour ancrer le bien-être.',
     },
   ],
   benefits: [

@@ -15,8 +15,8 @@ export type EntrepriseServiceIcon = 'audit' | 'programs' | 'conception'
 export interface EntrepriseService {
   title: string
   icon: EntrepriseServiceIcon
-  items: string[]
-  to: string
+  subtitle: string
+  description: string
 }
 
 export type EntrepriseBenefitIcon =
@@ -48,7 +48,7 @@ export interface EntreprisePageContent {
   description: string
   hero: PageHeroContent
   categories: EntrepriseCategory[]
-  servicesTitle: string
+  servicesSubheading: string
   services: EntrepriseService[]
   benefits: EntrepriseBenefit[]
   reasonsTitle: string
