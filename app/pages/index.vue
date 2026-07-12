@@ -3,37 +3,43 @@
     <PageHero v-bind="content.hero" />
 
     <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
-      <CardText
-        class="md:col-span-6"
-        :tagline="content.zonesTagline"
-        :subheading="content.zonesSubheading"
-        heading-id="zones-heading"
-      >
-        <template #heading>
-          Trois zones, <span class="text-primary">une</span> performance
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText
+            :subheading="content.zonesSubheading"
+            heading-id="zones-heading"
+          >
+            <template #heading>
+              Trois zones, <span class="text-primary">une</span> performance
+            </template>
+          </CardText>
         </template>
-      </CardText>
 
-      <CardZone
-        v-for="zone in zones"
-        :key="zone.accent"
-        v-bind="zone"
-        class="md:col-span-2"
-      />
+        <template #children>
+          <CardZone v-for="zone in zones" :key="zone.accent" v-bind="zone" />
+        </template>
+      </CardTree>
 
-      <CardText
-        class="md:col-span-6"
-        :heading="content.audienceHeading"
-        :subheading="content.audienceSubheading"
-        heading-id="audience-heading"
-      />
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText
+            :subheading="content.audienceSubheading"
+            heading-id="audience-heading"
+          >
+            <template #heading>
+              Performance pour <span class="text-primary">tous</span>
+            </template>
+          </CardText>
+        </template>
 
-      <CardAudienceItem
-        v-for="audience in content.audiences"
-        :key="audience.id"
-        v-bind="audience"
-        class="md:col-span-2"
-      />
+        <template #children>
+          <CardAudienceItem
+            v-for="audience in content.audiences"
+            :key="audience.id"
+            v-bind="audience"
+          />
+        </template>
+      </CardTree>
 
       <CardMission class="md:col-span-6" v-bind="content.mission" />
 

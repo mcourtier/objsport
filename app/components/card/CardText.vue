@@ -6,12 +6,9 @@
     data-reveal-section
   >
     <header class="text-center" data-reveal>
-      <p v-if="tagline" class="brand-tagline">
-        {{ tagline }}
-      </p>
       <h2
         :id="headingId"
-        class="brand-headline mx-auto mt-3 max-w-2xl text-2xl md:text-3xl lg:text-4xl"
+        class="brand-headline mx-auto max-w-2xl text-2xl md:text-3xl lg:text-4xl"
       >
         <slot name="heading">{{ heading }}</slot>
       </h2>
@@ -29,7 +26,6 @@
 defineProps<{
   heading?: string
   subheading?: string
-  tagline?: string
   headingId: string
 }>()
 </script>

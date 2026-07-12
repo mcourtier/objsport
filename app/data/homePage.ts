@@ -8,7 +8,7 @@ export const homePageContent = {
     showTagline: true,
     title: 'Un objectif <strong>commun</strong> : votre performance.',
     description:
-      'Nous mettons l\'expertise du sport de haut niveau au service de <strong>chacun</strong>, à chaque étape de la vie.',
+      "Nous mettons l'expertise du sport de haut niveau au service de <strong>chacun</strong>, à chaque étape de la vie.",
     backgroundImage: '/images/hero/home.png',
     backgroundImageAlt:
       'Sportif en sprint — réathlétisation et performance Objectif Sport',
@@ -20,13 +20,13 @@ export const homePageContent = {
     paragraphs: [
       'Chez <strong>OBJECTIF SPORT</strong>, la santé et la performance sont indissociables.',
       'Nous avons conçu un écosystème connecté qui propose des soins, du coaching et du consulting sur mesure — Le Gym, Le Lab et Le Studio.',
-      'Nous apportons notre expertise et méthodologie, issues du sport professionnel, pour prévenir les blessures, accompagner l\'effort et optimiser la récupération.',
+      "Nous apportons notre expertise et méthodologie, issues du sport professionnel, pour prévenir les blessures, accompagner l'effort et optimiser la récupération.",
     ],
   } satisfies HomeMissionContent,
 
   audienceHeading: 'Performance pour tous',
   audienceSubheading:
-    'L\'excellence du sport de haut niveau, adaptée à chaque univers.',
+    "L'excellence du sport de haut niveau, adaptée à chaque univers.",
 
   audiences: [
     {
@@ -65,7 +65,6 @@ export const homePageContent = {
   ] satisfies AudienceBlock[],
 
   zonesHeading: 'Trois zones, une performance',
-  zonesTagline: 'Le Gym • Le Lab • Le Studio',
   zonesSubheading:
     'Un service de réathlétisation complet — coaching, soins et cours réunis pour accompagner chaque sportif, du premier pas au retour à la compétition.',
 
