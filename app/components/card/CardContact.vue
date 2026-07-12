@@ -1,11 +1,11 @@
 <template>
   <!-- CardContact -->
-  <Card class="card-contact">
+  <Card class="card-contact" :ui="cardCtaUi">
     <template #title>
       <AppTitle>{{ heading }}</AppTitle>
     </template>
 
-    <div class="flex flex-1 flex-col gap-3">
+    <div class="flex flex-col gap-3">
       <div class="contact-channel" data-reveal>
         <span class="contact-label">
           <Icon
@@ -35,9 +35,13 @@
       </div>
     </div>
 
-    <UButton :to="ctaTo" block class="mt-6" data-reveal>
-      {{ ctaLabel }}
-    </UButton>
+    <template #footer>
+      <div class="flex justify-center">
+        <UButton :to="ctaTo" size="xl" data-reveal>
+          {{ ctaLabel }}
+        </UButton>
+      </div>
+    </template>
   </Card>
 </template>
 
@@ -47,6 +51,10 @@ import type { HomeContactPanelContent } from '~/types/homepage'
 const props = defineProps<HomeContactPanelContent>()
 
 const [emailLocal, emailDomain] = props.email.split('@')
+
+const cardCtaUi = {
+  body: 'p-5 pb-0 md:px-6 md:pt-6 md:pb-0 flex-1',
+}
 </script>
 
 <style scoped>
