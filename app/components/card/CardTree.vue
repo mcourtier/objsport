@@ -6,7 +6,7 @@
     </div>
 
     <div class="card-tree-branches" aria-hidden="true">
-      <div class="card-tree-branches-trunk" />
+      <div class="card-tree-line card-tree-branches-trunk" />
       <div class="card-tree-branches-row">
         <span class="card-tree-branches-stem" />
         <span class="card-tree-branches-stem" />
@@ -16,7 +16,7 @@
 
     <div class="card-tree-cards">
       <template v-for="(child, index) in childVNodes" :key="child.key ?? index">
-        <div class="card-tree-mobile-link" aria-hidden="true" />
+        <div class="card-tree-line card-tree-mobile-link" aria-hidden="true" />
         <component :is="child" />
       </template>
     </div>
@@ -63,8 +63,20 @@ const childVNodes = computed(() =>
   @apply flex flex-col items-center;
 }
 
+.card-tree-line,
+.card-tree-branches-stem::before {
+  @apply w-0 shrink-0 border-l border-dashed border-neutral-600/70;
+}
+
+.card-tree-branches-row::before {
+  content: '';
+  @apply absolute top-0 h-0 border-t border-dashed border-neutral-600/70;
+  left: calc((100% - 2 * var(--card-tree-gap)) / 6);
+  right: calc((100% - 2 * var(--card-tree-gap)) / 6);
+}
+
 .card-tree-branches-trunk {
-  @apply hidden w-px shrink-0 bg-neutral-600 md:block;
+  @apply hidden md:block;
   height: var(--card-tree-gap);
 }
 
@@ -73,20 +85,13 @@ const childVNodes = computed(() =>
   gap: var(--card-tree-gap);
 }
 
-.card-tree-branches-row::before {
-  content: '';
-  @apply absolute top-0 h-px bg-neutral-600;
-  left: calc((100% - 2 * var(--card-tree-gap)) / 6);
-  right: calc((100% - 2 * var(--card-tree-gap)) / 6);
-}
-
 .card-tree-branches-stem {
   @apply flex min-w-0 flex-1 justify-center;
 }
 
 .card-tree-branches-stem::before {
   content: '';
-  @apply h-full w-px bg-neutral-600;
+  @apply h-full;
 }
 
 .card-tree-cards {
@@ -100,7 +105,7 @@ const childVNodes = computed(() =>
 }
 
 .card-tree-mobile-link {
-  @apply mx-auto w-px shrink-0 bg-neutral-600 md:hidden;
+  @apply mx-auto md:hidden;
   height: var(--card-tree-gap);
 }
 
