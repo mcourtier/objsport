@@ -28,6 +28,33 @@ export function sectionIconSurfaceClass(accent: SectionAccent) {
   return map[accent]
 }
 
+export function sectionBorderClass(accent: SectionAccent) {
+  const map: Record<SectionAccent, string> = {
+    consulting: 'border-consulting',
+    coaching: 'border-coaching',
+    care: 'border-care',
+  }
+  return map[accent]
+}
+
+export function sectionIconCircleClass(accent: SectionAccent) {
+  const map: Record<SectionAccent, string> = {
+    consulting: 'bg-consulting text-neutral-100',
+    coaching: 'bg-coaching text-neutral-100',
+    care: 'bg-care text-neutral-100',
+  }
+  return map[accent]
+}
+
+export function sectionDividerClass(accent: SectionAccent) {
+  const map: Record<SectionAccent, string> = {
+    consulting: 'bg-consulting',
+    coaching: 'bg-coaching',
+    care: 'bg-care',
+  }
+  return map[accent]
+}
+
 export function pillarBorderClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
     gym: 'border-gym',
