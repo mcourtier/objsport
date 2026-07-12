@@ -30,10 +30,11 @@ export default defineAppConfig({
     },
     card: {
       slots: {
-        root: 'rounded-2xl overflow-hidden ring-0 divide-y-0',
+        root: 'rounded-2xl overflow-hidden ring-0 divide-y-0 flex flex-col',
         header: 'p-5 pb-0 md:px-6 md:pt-6',
         title: '',
-        body: 'p-5 md:p-6',
+        body: 'p-5 md:p-6 flex-1',
+        footer: 'px-5 pt-6 pb-3 md:px-6 md:pt-6 md:pb-4',
       },
       variants: {
         variant: {
