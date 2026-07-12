@@ -1,6 +1,6 @@
 <template>
   <!-- CardContact -->
-  <UCard class="card-surface card-contact" data-reveal-section>
+  <Card class="card-contact">
     <template #title>
       <AppTitle>{{ heading }}</AppTitle>
     </template>
@@ -38,7 +38,7 @@
     <UButton :to="ctaTo" block class="mt-6" data-reveal>
       {{ ctaLabel }}
     </UButton>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

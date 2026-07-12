@@ -1,9 +1,8 @@
 <template>
   <!-- CardEntrepriseServices -->
-  <UCard
+  <Card
     class="card-entreprise-services"
     aria-labelledby="entreprise-services-heading"
-    data-reveal-section
   >
     <EntrepriseSectionHeading
       :title="title"
@@ -14,7 +13,7 @@
         <EntrepriseServiceCard :service="service" />
       </li>
     </ul>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

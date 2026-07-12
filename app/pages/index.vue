@@ -50,8 +50,8 @@
         class="md:col-span-2"
       />
 
-      <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
       <CardContact v-bind="content.contact" class="md:col-span-3" />
+      <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
     </div>
   </div>
 </template>

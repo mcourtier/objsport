@@ -1,10 +1,7 @@
 <template>
   <!-- CardZone -->
-  <NuxtLink
-    :to="to"
-    class="card-surface card-zone group"
-    data-reveal
-  >
+  <NuxtLink :to="to" class="card-zone-link group">
+    <Card class="card-zone" data-reveal>
     <div class="flex items-center gap-4">
       <span
         class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full"
@@ -63,6 +60,7 @@
         aria-hidden="true"
       />
     </span>
+    </Card>
   </NuxtLink>
 </template>
 
@@ -88,6 +86,10 @@ defineProps<{
 
 <style scoped>
 @reference "~/assets/css/main.css";
+.card-zone-link {
+  @apply block h-full;
+}
+
 .card-zone {
   @apply relative flex h-full flex-col p-6 transition-colors duration-200 hover:border-neutral-600 hover:bg-neutral-900 md:p-7;
 }

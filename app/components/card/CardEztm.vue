@@ -1,6 +1,6 @@
 <template>
   <!-- CardEztm -->
-  <UCard class="card-surface card-eztm" data-reveal-section>
+  <Card class="card-eztm">
     <template #title>
       <AppTitle>Application EZTM</AppTitle>
     </template>
@@ -32,7 +32,7 @@
         </p>
       </div>
     </div>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

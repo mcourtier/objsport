@@ -1,9 +1,8 @@
 <template>
   <!-- CardEntrepriseWhy -->
-  <UCard
+  <Card
     class="card-entreprise-why"
     aria-label="Bénéfices et pourquoi choisir Objectif Sport"
-    data-reveal-section
   >
     <section aria-labelledby="entreprise-benefits-heading">
       <h2 id="entreprise-benefits-heading" class="sr-only">Bénéfices</h2>
@@ -90,7 +89,7 @@
         </li>
       </ul>
     </section>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,8 @@
 <template>
   <!-- CardProfile -->
   <NuxtLink :to="`/equipe/${profile.slug}`" class="card-profile group">
-    <UCard
+    <Card
+      :surface="false"
       class="group-hover:border-primary flex h-full flex-col bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
       data-reveal
     >
@@ -30,7 +31,7 @@
           {{ profile.role }}
         </p>
       </div>
-    </UCard>
+    </Card>
   </NuxtLink>
 </template>
 

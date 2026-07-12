@@ -1,10 +1,6 @@
 <template>
   <!-- CardMission -->
-  <UCard
-    class="card-surface card-mission"
-    aria-labelledby="mission-heading"
-    data-reveal-section
-  >
+  <Card class="card-mission" aria-labelledby="mission-heading">
     <div class="relative p-6 md:p-8">
       <div
         class="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between"
@@ -88,7 +84,7 @@
         </div>
       </div>
     </div>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">

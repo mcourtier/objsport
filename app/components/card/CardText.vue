@@ -1,10 +1,6 @@
 <template>
   <!-- CardText -->
-  <UCard
-    class="card-surface card-header"
-    :aria-labelledby="headingId"
-    data-reveal-section
-  >
+  <Card class="card-header" :aria-labelledby="headingId">
     <header class="text-center" data-reveal>
       <h2
         :id="headingId"
@@ -19,7 +15,7 @@
         {{ subheading }}
       </p>
     </header>
-  </UCard>
+  </Card>
 </template>
 
 <script setup lang="ts">
