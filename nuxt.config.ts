@@ -83,7 +83,10 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: Object.fromEntries(
-    prerenderedPaths.map((path) => [path, { prerender: true }]),
-  ),
+  routeRules: {
+    ...Object.fromEntries(
+      prerenderedPaths.map((path) => [path, { prerender: true }]),
+    ),
+    '/admin/**': { ssr: false },
+  },
 })
