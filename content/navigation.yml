@@ -23,6 +23,9 @@ sidebar:
   - label: Équipe
     to: /equipe
     icon: material-symbols:groups-outline
+  - label: Stations
+    to: /stations
+    icon: material-symbols:apartment
   - label: Contact
     to: /contact
     icon: material-symbols:mail-outline
