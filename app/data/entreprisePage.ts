@@ -42,7 +42,7 @@ export const entreprisePageContent: EntreprisePageContent = {
     },
   ],
   servicesSubheading:
-    'Audit, programmation et intégration — trois prestations complémentaires pour prévenir, former et ancrer le bien-être dans votre organisation.',
+    '3 prestations complémentaires pour prévenir, former et ancrer le bien-être dans votre organisation : mobilité, gestion du stress, cohésion et vitalité',
   services: [
     {
       title: 'Audit',
