@@ -15,6 +15,21 @@ export const stationsPageContent: StationsPageContent = {
     backgroundImageAlt:
       'Athlète en posture d’équilibre — stations Sport-Santé Objectif Sport',
   },
+  intro: {
+    title: 'Des',
+    titleAccent: 'professionnels',
+    titleSuffix: 'au cœur du concept',
+    features: [
+      {
+        title: 'Des dirigeants engagés',
+        body: 'Chaque Station est dirigée par des professionnels de santé et du sport, experts dans leur domaine. Ils portent le projet localement et garantissent la qualité, la cohérence et l’excellence des services proposés.',
+      },
+      {
+        title: 'Un réseau plus grand',
+        body: 'Toutes les Stations sont connectées au réseau Objectif Sport. Partage d’expertises, formations, outils communs, événements et standards de qualité. Une force collective au service de la santé et de la performance.',
+      },
+    ],
+  },
   stations: [
     {
       id: 'clinique-les-trois-tours',
