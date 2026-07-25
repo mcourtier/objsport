@@ -3,6 +3,8 @@
     <PageHero v-bind="content.hero" />
 
     <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
+      <CardStationService class="md:col-span-6" />
+
       <CardTree class="md:col-span-6">
         <template #root>
           <CardText
@@ -41,14 +43,27 @@
         </template>
       </CardTree>
 
-      <CardMission class="md:col-span-6" v-bind="content.mission" />
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText
+            subheading="Nous apportons notre expertise et méthodologie issue du sport professionnel"
+            heading-id="mission-heading"
+          >
+            <template #heading>
+              Chaque minute te rapproche de la
+              <span class="text-primary">victoire</span>
+            </template>
+          </CardText>
+        </template>
 
-      <CardMissionOutcome
-        v-for="outcome in missionOutcomes"
-        :key="outcome.title"
-        v-bind="outcome"
-        class="md:col-span-2"
-      />
+        <template #children>
+          <CardMissionOutcome
+            v-for="outcome in missionOutcomes"
+            :key="outcome.title"
+            v-bind="outcome"
+          />
+        </template>
+      </CardTree>
 
       <CardContact v-bind="content.contact" class="md:col-span-3" />
       <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
@@ -58,7 +73,6 @@
 
 <script setup lang="ts">
 import type { PillarAccent } from '~/types/homepage'
-import type { SectionAccent } from '~/types/navigation'
 import { homePageContent } from '~/data/homePage'
 import { sportifPageContent } from '~/data/sportifPage'
 
@@ -84,25 +98,21 @@ const zones = sportifPageContent.pillars.map((pillar) => ({
 const missionOutcomes: {
   title: string
   subtitle: string
-  accent: SectionAccent
   icon: string
 }[] = [
   {
     title: 'PRÉVENIR LES BLESSURES',
     subtitle: 'Anticiper pour mieux performer',
-    accent: 'consulting',
     icon: 'material-symbols:health-and-safety',
   },
   {
     title: 'OPTIMISER TES PERFORMANCES',
     subtitle: 'Méthodes et outils de haut niveau',
-    accent: 'care',
     icon: 'material-symbols:monitoring',
   },
   {
     title: 'ACCÉLÉRER TA RÉCUPÉRATION',
     subtitle: 'Récupérer mieux pour repartir plus fort',
-    accent: 'coaching',
     icon: 'material-symbols:ecg-heart',
   },
 ]

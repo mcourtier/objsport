@@ -7,21 +7,16 @@
   >
     <div class="flex items-start gap-4">
       <span
-        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
-        :class="sectionIconSurfaceClass(accent)"
+        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/15 ring-2 ring-primary"
         aria-hidden="true"
       >
         <Icon
           :name="icon"
-          class="h-6 w-6"
-          :class="sectionTextClass(accent)"
+          class="h-6 w-6 text-primary"
         />
       </span>
       <div class="min-w-0">
-        <h3
-          class="font-display text-lg font-bold uppercase italic"
-          :class="sectionTextClass(accent)"
-        >
+        <h3 class="font-display text-lg font-bold uppercase italic text-neutral-100">
           {{ title }}
         </h3>
         <p class="mt-2 text-sm leading-snug text-neutral-400">
@@ -31,8 +26,7 @@
     </div>
 
     <span
-      class="font-display mt-5 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide"
-      :class="sectionTextClass(accent)"
+      class="font-display mt-5 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-primary"
     >
       {{ cta }}
       <Icon
@@ -46,7 +40,6 @@
 
 <script setup lang="ts">
 import type { AudienceBlock } from '~/types/navigation'
-import { sectionIconSurfaceClass, sectionTextClass } from '~/utils/pillarTheme'
 
 defineProps<AudienceBlock>()
 </script>

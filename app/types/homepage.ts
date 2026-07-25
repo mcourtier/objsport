@@ -7,9 +7,3 @@ export interface HomeContactPanelContent {
   ctaLabel: string
   ctaTo: string
 }
-
-export interface HomeMissionContent {
-  titleLines: string[]
-  titleAccent: string
-  paragraphs: string[]
-}

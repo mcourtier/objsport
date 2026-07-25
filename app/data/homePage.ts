@@ -1,5 +1,4 @@
 import type { AudienceBlock } from '~/types/navigation'
-import type { HomeMissionContent } from '~/types/homepage'
 import type { PageHeroContent } from '~/types/pageHero'
 
 export const homePageContent = {
@@ -14,19 +13,9 @@ export const homePageContent = {
       'Sportif en sprint — réathlétisation et performance Objectif Sport',
   } satisfies PageHeroContent,
 
-  mission: {
-    titleLines: ['Chaque minute', 'te rapproche de'],
-    titleAccent: 'la victoire.',
-    paragraphs: [
-      'Chez <strong>OBJECTIF SPORT</strong>, la santé et la performance sont indissociables.',
-      'Nous avons conçu un écosystème connecté qui propose des soins, du coaching et du consulting sur mesure — Le Gym, Le Lab et Le Studio.',
-      "Nous apportons notre expertise et méthodologie, issues du sport professionnel, pour prévenir les blessures, accompagner l'effort et optimiser la récupération.",
-    ],
-  } satisfies HomeMissionContent,
-
   audienceHeading: 'Performance pour tous',
   audienceSubheading:
-    "L'excellence du sport de haut niveau, adaptée à chaque univers.",
+    "L'excellence du sport de haut niveau, adaptée à chaque univers et à tous les âges.",
 
   audiences: [
     {

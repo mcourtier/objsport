@@ -20,12 +20,6 @@ const pageHeroSchema = z.object({
   showDescription: z.boolean().optional(),
 })
 
-const homeMissionSchema = z.object({
-  titleLines: z.array(z.string()),
-  titleAccent: z.string(),
-  paragraphs: z.array(z.string()),
-})
-
 export default defineContentConfig({
   collections: {
     content: defineCollection({
@@ -36,7 +30,6 @@ export default defineContentConfig({
       },
       schema: z.object({
         hero: pageHeroSchema.optional(),
-        mission: homeMissionSchema.optional(),
       }),
     }),
     team: defineCollection({
