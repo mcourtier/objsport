@@ -1,6 +1,6 @@
 /*
  * Page route transitions (client-side navigation only).
- * Parent <main> is position:relative so leaving pages can stack during crossfade.
+ * mode: 'out-in' — leave finishes before enter, so pages never overlap.
  */
 .page-enter-active,
 .page-leave-active {
@@ -15,20 +15,10 @@
   transform: translateY(1rem);
 }
 
-.page-leave-active {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .page-enter-active,
   .page-leave-active {
     transition-duration: 0.01ms;
-  }
-
-  .page-leave-active {
-    position: static;
   }
 
   .page-enter-from,

@@ -5,7 +5,7 @@
     >
       <AppNav />
 
-      <main class="relative min-w-0 flex-1">
+      <main class="min-w-0 flex-1">
         <slot />
       </main>
     </div>
