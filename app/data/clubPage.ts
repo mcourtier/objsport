@@ -10,14 +10,14 @@ export const clubPageContent: ClubPageContent = {
     tagline: 'Expertise • Réactivité • Performance',
     showTagline: true,
     description:
-      'Renfort logistique, expertise RH et contrôle digital — des professionnels du sport de <strong>haut niveau</strong> au service de votre club.',
+      'Renfort logistique, expertise RH et contrôle digital : des professionnels santé du sport de <strong>haut niveau</strong> au service de votre club.',
     backgroundImage: '/images/hero/club.png',
     backgroundImageAlt:
       'Sportif en saut explosif — accompagnement des clubs par Objectif Sport',
   },
   objectifs: {
     intro:
-      'Des professionnels santé du sport peuvent intervenir dans votre club ponctuellement pour vous accompagner à vous développer et optimiser.',
+      'Nous intervenons ponctuellement pour vous accompagner à vous développer et optimiser vos performances.',
     goal: 'Le but : atteindre vos objectifs.',
     pillars: [
       { icon: 'availability', label: 'Disponibilité' },
@@ -25,7 +25,7 @@ export const clubPageContent: ClubPageContent = {
       { icon: 'rigor', label: 'Rigueur' },
     ],
     tagline:
-      'Nous travaillons de façon <strong>innovante</strong> et avons tous de l\'expérience dans le sport de <strong>haut niveau</strong>.',
+      "Nous travaillons de façon <strong>innovante</strong> et avons tous de l'expérience dans le sport de <strong>haut niveau</strong>.",
   },
   approach: {
     title: 'Notre approche',
