@@ -159,6 +159,10 @@ const isWideLayout = computed(() => childCount.value >= 4)
   @apply hidden;
 }
 
+.card-tree--mobile-carousel .card-tree-branches-trunk {
+  @apply block;
+}
+
 .card-tree--mobile-carousel {
   @apply min-w-0 max-w-full overflow-x-clip;
 }

@@ -68,6 +68,27 @@
         </template>
       </CardTree>
 
+      <CardTree class="md:col-span-6">
+        <template #root>
+          <CardText
+            subheading="La commotion cérébrale et la santé mentale dans le sport"
+            heading-id="must-have-heading"
+          >
+            <template #heading>
+              Notre <span class="text-primary">must have</span>
+            </template>
+          </CardText>
+        </template>
+
+        <template #children>
+          <CardMissionOutcome
+            v-for="item in mustHaveItems"
+            :key="item.title"
+            v-bind="item"
+          />
+        </template>
+      </CardTree>
+
       <CardContact v-bind="content.contact" class="md:col-span-3" />
       <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
     </div>
@@ -117,6 +138,24 @@ const missionOutcomes: {
     title: 'ACCÉLÉRER TA RÉCUPÉRATION',
     subtitle: 'Récupérer mieux pour repartir plus fort',
     icon: 'material-symbols:ecg-heart',
+  },
+]
+
+const mustHaveItems: {
+  title: string
+  icon: string
+}[] = [
+  {
+    title: 'Détection de la commotion : évaluations après choc crânien',
+    icon: 'material-symbols:neurology',
+  },
+  {
+    title: 'Suivi et accompagnement dans le parcours commotion',
+    icon: 'material-symbols:clinical-notes',
+  },
+  {
+    title: 'Surveillance et protection cognitive',
+    icon: 'material-symbols:psychology',
   },
 ]
 

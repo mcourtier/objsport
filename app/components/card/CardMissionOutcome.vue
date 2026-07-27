@@ -13,7 +13,10 @@
       >
         {{ title }}
       </p>
-      <p class="mt-1 text-sm leading-snug text-neutral-300">
+      <p
+        v-if="subtitle"
+        class="mt-1 text-sm leading-snug text-neutral-300"
+      >
         {{ subtitle }}
       </p>
     </div>
@@ -23,7 +26,7 @@
 <script setup lang="ts">
 defineProps<{
   title: string
-  subtitle: string
+  subtitle?: string
   icon: string
 }>()
 </script>
