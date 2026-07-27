@@ -13,6 +13,10 @@ export interface PageHeroContent {
   backgroundImageAlt?: string
   showTagline?: boolean
   showDescription?: boolean
+  /** Optional CTA label shown below the description. */
+  ctaLabel?: string
+  /** Target route for the optional CTA. */
+  ctaTo?: string
 }
 
 export interface PageWithHero {

@@ -57,6 +57,16 @@
           <span v-else>{{ part.text }}</span>
         </template>
       </p>
+
+      <UButton
+        v-if="ctaLabel && ctaTo"
+        :to="ctaTo"
+        size="sm"
+        class="mt-5 sm:mt-6"
+        data-reveal-immediate
+      >
+        {{ ctaLabel }}
+      </UButton>
     </div>
   </UCard>
 </template>
@@ -74,6 +84,8 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
   backgroundImageAlt: 'Sportif en action — réathlétisation Objectif Sport',
   showTagline: false,
   showDescription: true,
+  ctaLabel: undefined,
+  ctaTo: undefined,
 })
 
 const parsedDescription = computed(() =>

@@ -185,7 +185,7 @@ export const sportifPageContent: SportifPageContent = {
           title: 'Réathlé (dès 45 min)',
           items: [
             {
-              title: 'Return à la pratique',
+              title: 'Retour à la pratique',
               description: 'Encadrement reprise terrain',
               icon: 'run',
             },
@@ -271,7 +271,7 @@ export const sportifPageContent: SportifPageContent = {
             },
             {
               title: 'Commotion et sport',
-              description: 'Formation au commosport',
+              description: 'Formation Commosport',
               icon: 'concussion',
             },
           ],

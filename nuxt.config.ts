@@ -5,6 +5,7 @@ import { stubRoutes } from './app/utils/siteRoutes'
 const prerenderedPaths = [
   '/',
   '/contact',
+  '/rdv',
   '/equipe',
   '/sportif',
   ...sportifPillarPaths,

@@ -5,6 +5,8 @@
       :description="profile?.role"
       :background-image="profile?.photo"
       :background-image-alt="`Portrait de ${profile?.name}`"
+      cta-label="Prendre RDV"
+      :cta-to="rdvTo"
     />
 
     <article
@@ -80,6 +82,8 @@ import type { TeamProfilePage } from '~/types/team'
 const route = useRoute()
 
 const slug = computed(() => route.params.slug as string)
+
+const rdvTo = computed(() => `/rdv?membre=${slug.value}`)
 
 const { data: profile } = await useAsyncData(
   () => `team-profile-${slug.value}`,
