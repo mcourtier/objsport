@@ -5,219 +5,255 @@
       <AppTitle>Application EZTM</AppTitle>
     </template>
 
-    <div class="relative flex items-start gap-5">
-      <div
-        class="relative flex w-24 shrink-0 items-center justify-center"
-        data-reveal
-      >
-        <img
-          src="/images/logo-eztm.png"
-          alt="EZTM — Easyteam Cockpit Santé de Performance"
-          class="eztm-logo relative z-10 h-20 w-20 object-contain"
-          width="80"
-          height="80"
-        />
-      </div>
+    <div class="eztm-layout">
+      <div class="eztm-layout__content">
+        <div class="eztm-platform" data-reveal>
+          <p class="eztm-platform__title">
+            Une plateforme
+            <br />
+            4 expériences, une même interface.
+          </p>
 
-      <div class="min-w-0 flex-1">
-        <h2
-          class="font-display text-sm font-bold tracking-[0.12em] text-neutral-100 uppercase"
-          data-reveal
-        >
-          {{ title }}
-        </h2>
-
-        <p class="mt-2 text-sm leading-relaxed text-neutral-400" data-reveal>
-          {{ description }}
-        </p>
-      </div>
-    </div>
-
-    <UModal v-model:open="downloadOpen" :ui="downloadModalUi">
-      <template #content>
-        <div class="eztm-download-modal">
-          <UButton
-            icon="material-symbols:close"
-            color="neutral"
-            variant="ghost"
-            class="eztm-download-modal__close"
-            aria-label="Fermer"
-            @click="closeDownload"
-          />
-
-          <div class="eztm-download-modal__body">
-            <div class="flex items-start gap-4">
-              <img
-                src="/images/logo-eztm.png"
-                alt=""
-                class="h-12 w-12 shrink-0 object-contain"
-                width="48"
-                height="48"
-              />
-
-              <div class="min-w-0 flex-1 pe-8">
-                <AppTitle id="eztm-download-heading">Télécharger EZTM</AppTitle>
-                <p class="text-sm text-neutral-400">
-                  Choisissez l'application adaptée à votre usage.
-                </p>
-              </div>
-            </div>
-
-            <div class="eztm-download-grid mt-6">
-              <section
-                v-for="section in downloadSections"
-                :key="section.id"
-                class="eztm-download-block"
-              >
-                <h3
-                  class="font-display text-sm font-bold tracking-[0.12em] text-neutral-100 uppercase"
-                >
-                  {{ section.title }}
-                </h3>
-
-                <p class="mt-1 text-sm text-neutral-400">
-                  {{ section.description }}
-                </p>
-
-                <div class="mt-4" :class="section.linksClass">
-                  <a
-                    v-for="link in section.links"
-                    :key="`${section.id}-${link.alt}`"
-                    :href="link.href"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="eztm-badge-link"
-                    :class="{ 'eztm-badge-link--labeled': link.platform }"
-                  >
-                    <span class="eztm-badge-link__frame">
-                      <img
-                        :src="link.badge"
-                        :alt="link.alt"
-                        class="eztm-badge-link__image"
-                      />
-                    </span>
-                    <small v-if="link.platform" class="eztm-badge-link__label">
-                      {{ link.platform }}
-                    </small>
-                  </a>
-                </div>
-              </section>
-            </div>
+          <div
+            class="eztm-platform__list"
+            role="tablist"
+            aria-label="Fonctionnalités de l'application EZTM"
+          >
+            <button
+              v-for="(slide, index) in slides"
+              :id="`eztm-tab-${index}`"
+              :key="slide.label"
+              type="button"
+              role="tab"
+              class="eztm-platform__item"
+              :class="{ 'eztm-platform__item--active': activeIndex === index }"
+              :aria-selected="activeIndex === index"
+              :aria-controls="`eztm-panel-${index}`"
+              :tabindex="activeIndex === index ? 0 : -1"
+              @click="setActive(index)"
+              @keydown="onTabKeydown($event, index)"
+            >
+              {{ slide.label }}
+            </button>
           </div>
         </div>
-      </template>
-    </UModal>
 
-    <template #footer>
-      <div class="flex justify-center">
-        <UButton size="xl" data-reveal @click="openDownload">
-          Télécharger
+        <UButton
+          to="https://eztm.fr/"
+          target="_blank"
+          external
+          size="xl"
+          class="eztm-cta eztm-cta--desktop"
+          data-reveal
+        >
+          Voir le site
         </UButton>
       </div>
-    </template>
+
+      <div class="eztm-layout__media" data-reveal>
+        <p class="eztm-carousel__label" aria-live="polite">
+          {{ slides[activeIndex]!.label }}
+        </p>
+
+        <div class="eztm-carousel">
+          <button
+            type="button"
+            class="eztm-carousel__nav"
+            aria-label="Slide précédent"
+            @click="goPrev"
+          >
+            <Icon name="material-symbols:chevron-left" class="h-8 w-8" />
+          </button>
+
+          <div
+            ref="mediaRef"
+            class="eztm-slideshow"
+            role="tabpanel"
+            :id="`eztm-panel-${activeIndex}`"
+            :aria-labelledby="`eztm-tab-${activeIndex}`"
+          >
+            <img
+              v-for="(slide, index) in slides"
+              :key="slide.src"
+              :src="slide.src"
+              :alt="slide.alt"
+              class="eztm-phone"
+              :class="{ 'eztm-phone--active': activeIndex === index }"
+              width="192"
+              height="395"
+              :aria-hidden="activeIndex !== index"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="eztm-carousel__nav"
+            aria-label="Slide suivant"
+            @click="goNext"
+          >
+            <Icon name="material-symbols:chevron-right" class="h-8 w-8" />
+          </button>
+        </div>
+
+        <UButton
+          to="https://eztm.fr/"
+          target="_blank"
+          external
+          size="xl"
+          class="eztm-cta eztm-cta--mobile"
+        >
+          Voir le site
+        </UButton>
+      </div>
+    </div>
   </Card>
 </template>
 
 <script setup lang="ts">
+import gsap from 'gsap'
+import { ANIMATION, prefersReducedMotion } from '~/utils/animation'
+
 defineProps<{
   title: string
   description: string
 }>()
 
+const slides = [
+  {
+    label: 'Interface intuitive et personnalisable',
+    src: '/images/eztm/iphone-sessions.png',
+    alt: "Écran Mes sessions de l'application EZTM",
+  },
+  {
+    label: 'Communication simplifiée avec les professionnels',
+    src: '/images/eztm/iphone-journee.png',
+    alt: "Écran Ma journée de l'application EZTM",
+  },
+  {
+    label: 'Coordination fluide des interventions',
+    src: '/images/eztm/iphone-workout.png',
+    alt: "Écran Workout PREHAB de l'application EZTM",
+  },
+  {
+    label: 'Suivi en temps réel des objectifs et résultats',
+    src: '/images/eztm/iphone-evaluer.png',
+    alt: "Écran Évaluer le workout de l'application EZTM",
+  },
+  {
+    label: 'Accès sécurisé à vos données',
+    src: '/images/eztm/iphone-exercice.png',
+    alt: "Écran détail d'exercice de l'application EZTM",
+  },
+] as const
+
+const activeIndex = ref(0)
+const mediaRef = ref<HTMLElement | null>(null)
+let gsapCtx: gsap.Context | null = null
+
 const cardCtaUi = {
-  body: 'p-5 pb-0 md:px-6 md:pt-6 md:pb-0 flex-1',
+  body: 'p-5 md:p-6 flex-1',
 }
 
-const downloadOpen = ref(false)
-
-function openDownload() {
-  downloadOpen.value = true
+function setActive(index: number) {
+  if (index === activeIndex.value) return
+  activeIndex.value = index
 }
 
-function closeDownload() {
-  downloadOpen.value = false
+function goPrev() {
+  const last = slides.length - 1
+  setActive(activeIndex.value === 0 ? last : activeIndex.value - 1)
 }
 
-const downloadModalUi = {
-  content:
-    'card-surface max-w-4xl w-[calc(100vw-2rem)] divide-y-0 overflow-hidden ring-0',
-  overlay: 'bg-black/75 backdrop-blur-sm',
+function goNext() {
+  const last = slides.length - 1
+  setActive(activeIndex.value === last ? 0 : activeIndex.value + 1)
 }
 
-const storeBadges = {
-  appStore: '/images/eztm/bouton_appstore.svg',
-  macAppStore: '/images/eztm/bouton_mac_appstore.svg',
-  googlePlay: '/images/eztm/bouton_googleplay.png',
-  windows: '/images/eztm/bouton_windows.svg',
-} as const
+function onTabKeydown(event: KeyboardEvent, index: number) {
+  const last = slides.length - 1
+  let next = index
 
-interface DownloadLink {
-  href: string
-  alt: string
-  badge: string
-  platform?: string
+  if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+    next = index === last ? 0 : index + 1
+  } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+    next = index === 0 ? last : index - 1
+  } else if (event.key === 'Home') {
+    next = 0
+  } else if (event.key === 'End') {
+    next = last
+  } else {
+    return
+  }
+
+  event.preventDefault()
+  setActive(next)
+  document.getElementById(`eztm-tab-${next}`)?.focus()
 }
 
-interface DownloadSection {
-  id: string
-  title: string
-  description: string
-  linksClass: string
-  links: DownloadLink[]
+function slideDirection(from: number, to: number) {
+  const last = slides.length - 1
+  if (from === last && to === 0) return 1
+  if (from === 0 && to === last) return -1
+  return to > from ? 1 : -1
 }
 
-const downloadSections: DownloadSection[] = [
-  {
-    id: 'mobile',
-    title: 'Application mobile EZTM',
-    description: 'Pour les joueurs et les usages mobiles.',
-    linksClass: 'flex flex-wrap gap-3',
-    links: [
-      {
-        href: 'https://apps.apple.com/fr/app/eztm/id1599062296',
-        badge: storeBadges.appStore,
-        alt: "Télécharger pour iOS dans l'App Store",
+watch(activeIndex, (next, prev) => {
+  if (!mediaRef.value) return
+
+  const phones = mediaRef.value.querySelectorAll<HTMLElement>('.eztm-phone')
+  const outgoing = phones[prev]
+  const incoming = phones[next]
+  if (!outgoing || !incoming) return
+
+  if (prefersReducedMotion()) {
+    gsap.set(phones, { xPercent: 0, opacity: 0, zIndex: 0, force3D: true })
+    gsap.set(incoming, { opacity: 1, zIndex: 1, force3D: true })
+    return
+  }
+
+  const dir = slideDirection(prev, next)
+
+  gsapCtx?.add(() => {
+    gsap.killTweensOf(phones)
+    gsap.set(incoming, {
+      xPercent: 100 * dir,
+      opacity: 1,
+      zIndex: 2,
+      force3D: true,
+    })
+    gsap.set(outgoing, { zIndex: 1, force3D: true })
+    gsap.to(outgoing, {
+      xPercent: -100 * dir,
+      duration: ANIMATION.duration.micro,
+      ease: ANIMATION.ease.exit,
+      force3D: true,
+      onComplete: () => {
+        gsap.set(outgoing, { xPercent: 0, opacity: 0, zIndex: 0, force3D: true })
       },
-      {
-        href: 'https://play.google.com/store/apps/details?id=infojv.target',
-        badge: storeBadges.googlePlay,
-        alt: 'Télécharger pour Android sur Google Play',
-      },
-    ],
-  },
-  {
-    id: 'platform',
-    title: 'Plateforme EZTM',
-    description: 'Pour piloter les données, le staff et les workflows terrain.',
-    linksClass: 'grid grid-cols-2 gap-3',
-    links: [
-      {
-        href: 'https://apps.apple.com/fr/app/eztm/id1575903950',
-        badge: storeBadges.appStore,
-        alt: "Télécharger pour iOS dans l'App Store",
-        platform: 'iOS',
-      },
-      {
-        href: 'https://apps.apple.com/fr/app/eztm/id1575903950',
-        badge: storeBadges.macAppStore,
-        alt: "Télécharger pour macOS dans l'App Store",
-        platform: 'macOS',
-      },
-      {
-        href: 'https://play.google.com/store/apps/details?id=com.eztm.infojv.easyteam',
-        badge: storeBadges.googlePlay,
-        alt: 'Télécharger pour Android sur Google Play',
-        platform: 'Android',
-      },
-      {
-        href: 'https://www.infojv.fr/eztm/EZTM.zip',
-        badge: storeBadges.windows,
-        alt: 'Télécharger pour Windows',
-        platform: 'Windows',
-      },
-    ],
-  },
-]
+    })
+    gsap.to(incoming, {
+      xPercent: 0,
+      duration: ANIMATION.duration.micro,
+      ease: ANIMATION.ease.default,
+      force3D: true,
+    })
+  })
+})
+
+onMounted(() => {
+  if (!mediaRef.value) return
+
+  gsapCtx = gsap.context(() => {
+    const phones = mediaRef.value!.querySelectorAll<HTMLElement>('.eztm-phone')
+    gsap.set(phones, { xPercent: 0, opacity: 0, zIndex: 0, force3D: true })
+    gsap.set(phones[0]!, { opacity: 1, zIndex: 1, force3D: true })
+  }, mediaRef)
+})
+
+onUnmounted(() => {
+  gsapCtx?.revert()
+  gsapCtx = null
+})
 </script>
 
 <style scoped>
@@ -227,53 +263,85 @@ const downloadSections: DownloadSection[] = [
   @apply flex h-full flex-col;
 }
 
-.eztm-logo {
-  filter: drop-shadow(
-    0 0 12px color-mix(in srgb, var(--eztm-yellow) 45%, transparent)
-  );
+.eztm-layout {
+  @apply flex flex-col items-stretch gap-6 md:flex-row md:items-center md:gap-8;
 }
 
-.eztm-download-modal {
-  @apply relative;
+.eztm-layout__content {
+  @apply flex min-w-0 w-full flex-col items-start gap-6 self-stretch md:w-1/2;
 }
 
-.eztm-download-modal__close {
-  @apply absolute end-4 top-4 z-10;
+.eztm-layout__media {
+  @apply flex w-full flex-col items-center gap-4 md:w-1/2 md:gap-0;
 }
 
-.eztm-download-modal__body {
-  @apply p-5 md:p-6;
+.eztm-cta--desktop {
+  @apply hidden shrink-0 md:inline-flex;
 }
 
-.eztm-download-grid {
-  @apply flex flex-col gap-6 md:flex-row;
+.eztm-cta--mobile {
+  @apply mt-2 shrink-0 md:hidden;
 }
 
-.eztm-download-block {
-  @apply min-w-0 flex-1;
+.eztm-carousel__label {
+  @apply line-clamp-2 min-h-[2.75em] w-full max-w-sm text-center text-sm leading-snug text-neutral-100 md:hidden;
 }
 
-.eztm-download-block + .eztm-download-block {
-  @apply border-t border-neutral-700 pt-6 md:border-t-0 md:border-l md:ps-6 md:pt-0;
+.eztm-carousel {
+  @apply flex w-full items-center justify-center gap-2 md:gap-0;
 }
 
-.eztm-badge-link {
-  @apply inline-block;
+.eztm-carousel__nav {
+  @apply flex shrink-0 items-center justify-center rounded-full text-primary transition-colors duration-200 md:hidden;
 }
 
-.eztm-badge-link--labeled {
-  @apply flex flex-col items-center gap-1;
+.eztm-carousel__nav:hover {
+  @apply text-neutral-100;
 }
 
-.eztm-badge-link__frame {
-  @apply flex h-10 items-center;
+.eztm-carousel__nav:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-neutral-950;
 }
 
-.eztm-badge-link__image {
-  @apply block h-full w-auto object-contain;
+.eztm-slideshow {
+  @apply relative w-full max-w-[160px] overflow-hidden md:max-w-[200px];
+  aspect-ratio: 192 / 395;
 }
 
-.eztm-badge-link__label {
-  @apply font-display text-[10px] font-bold tracking-[0.14em] text-neutral-400 uppercase;
+.eztm-phone {
+  @apply pointer-events-none absolute inset-0 h-full w-full object-contain;
+  opacity: 0;
+}
+
+.eztm-phone--active {
+  opacity: 1;
+}
+
+.eztm-platform {
+  @apply relative flex min-w-0 flex-col gap-5 overflow-hidden;
+}
+
+.eztm-platform__title {
+  @apply text-center font-display text-base leading-snug font-extrabold tracking-wide text-white uppercase sm:text-lg md:text-left;
+}
+
+.eztm-platform__list {
+  @apply hidden flex-col gap-1.5 md:flex;
+}
+
+.eztm-platform__item {
+  @apply w-fit max-w-full cursor-pointer rounded-xl border border-transparent px-2.5 py-2 text-left text-sm leading-snug text-neutral-400 transition-[color,background-color,border-color] duration-200;
+}
+
+.eztm-platform__item:hover {
+  @apply text-neutral-100;
+}
+
+.eztm-platform__item:focus-visible {
+  @apply border-primary outline-none;
+}
+
+.eztm-platform__item--active {
+  @apply border-primary/40 bg-primary/10 text-neutral-100;
 }
 </style>

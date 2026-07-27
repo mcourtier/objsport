@@ -89,8 +89,8 @@
         </template>
       </CardTree>
 
-      <CardContact v-bind="content.contact" class="md:col-span-3" />
-      <CardEztm v-bind="content.eztmPromo" class="md:col-span-3" />
+      <CardEztm v-bind="content.eztmPromo" class="md:col-span-6" />
+      <CardContact v-bind="content.contact" class="md:col-span-6" />
     </div>
   </div>
 </template>
@@ -143,10 +143,12 @@ const missionOutcomes: {
 
 const mustHaveItems: {
   title: string
+  subtitle?: string
   icon: string
 }[] = [
   {
-    title: 'Détection de la commotion : évaluations après choc crânien',
+    title: 'Détection de la commotion',
+    subtitle: 'Évaluations après choc crânien',
     icon: 'material-symbols:neurology',
   },
   {
