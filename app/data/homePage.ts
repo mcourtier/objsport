@@ -36,7 +36,7 @@ export const homePageContent = {
       accent: 'consulting',
       icon: 'material-symbols:corporate-fare',
       description:
-        'Collaborateurs, dirigeants et équipes — prévention, bien-être et performance.',
+        'Collaborateurs, dirigeants et équipes: prévention, bien-être et performance.',
       to: '/entreprise',
       cta: 'Découvrir',
     },
@@ -47,18 +47,18 @@ export const homePageContent = {
       accent: 'care',
       icon: 'material-symbols:shield-outline',
       description:
-        'Clubs sportifs — renfort logistique, expertise RH et suivi digital.',
+        'Équipes, encadrants, jeunes talents: accompagnement , renfort logistique , expertise RH et suivi digital.',
       to: '/club',
       cta: 'Découvrir',
     },
     {
       id: 'sport-sante',
-      title: 'Sport Santé',
-      label: 'Sport Santé',
+      title: 'Parcours Santé',
+      label: 'Parcours Santé',
       accent: 'consulting',
       icon: 'material-symbols:apartment',
       description:
-        'Stations partenaires — soins, réadaptation et accompagnement au plus près du terrain.',
+        'Seniors, public APA, sport inclusif: conditionning, développement et autonomie active.',
       to: '/stations',
       cta: 'Découvrir',
     },
