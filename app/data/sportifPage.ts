@@ -47,8 +47,8 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'studio',
       name: 'Le Studio',
-      subtitle: 'Cours small-groupe',
-      headline: 'Cours en small-groupe',
+      subtitle: 'Cours en small-group',
+      headline: 'Cours en small-group',
       headlineAccent: 'Gymnastique & formations',
       description:
         'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
@@ -112,7 +112,7 @@ export const sportifPageContent: SportifPageContent = {
             },
             {
               title: 'Commotion et sport',
-              description: 'Les premiers gestes qui sauvent',
+              description: 'Formation au cmomosport',
               icon: 'concussion',
             },
           ],
@@ -204,8 +204,7 @@ export const sportifPageContent: SportifPageContent = {
         'Sessions de 45 min en solo ou en trio pour activer, rééduquer et retrouver la performance — routines préventives, rééducation spécifique et retour à l’entraînement.',
       headerIcon: 'gym',
       imageSrc: '/images/hero/gym.png',
-      imageAlt:
-        'Sportif en kettlebell swing — coaching Le Gym Objectif Sport',
+      imageAlt: 'Sportif en kettlebell swing — coaching Le Gym Objectif Sport',
       sections: [
         {
           title: 'Préhab (dès 45 min)',

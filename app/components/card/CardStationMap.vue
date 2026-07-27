@@ -19,7 +19,7 @@
         >
           <div class="station-map-callout__inner">
             <div class="station-map-callout__panel">
-              <div class="flex items-center gap-3">
+              <div class="flex items-center justify-center gap-3">
                 <span
                   class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full ring-2"
                   :class="[
