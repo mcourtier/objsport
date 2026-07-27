@@ -25,7 +25,7 @@
       </div>
 
       <div class="flex items-center justify-center gap-4">
-        Au delà de la station, nous vous proposonsune expertise mobile, en club
+        Au delà de la station, nous vous proposons une expertise mobile, en club
         et en entreprise.
       </div>
 
