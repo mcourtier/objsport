@@ -45,81 +45,6 @@ export const sportifPageContent: SportifPageContent = {
   },
   pillars: [
     {
-      accent: 'studio',
-      name: 'Le Studio',
-      subtitle: 'Cours en small-group',
-      headline: 'Cours en small-group',
-      headlineAccent: 'Gymnastiques & formations',
-      description:
-        'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
-      headerIcon: 'studio',
-      imageSrc: '/images/hero/studio.png',
-      imageAlt:
-        'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
-      sections: [
-        {
-          title: 'Gymnastiques (45 min)',
-          items: [
-            {
-              title: 'Pilates',
-              description: 'Force — Souplesse — Contrôle',
-              icon: 'pilates',
-            },
-            {
-              title: 'Yoga',
-              description: 'Harmonie — Confiance — Sérénité',
-              icon: 'yoga',
-            },
-            {
-              title: 'Fondamentale',
-              description: "Les clés du mouvement et de l'équilibre",
-              icon: 'movement',
-            },
-            {
-              title: 'SIIT',
-              description: 'Soft Intensity Interval Training',
-              icon: 'target',
-            },
-            {
-              title: 'HIIT',
-              description: 'High Intensity Interval Training',
-              icon: 'burst',
-            },
-          ],
-        },
-        {
-          title: 'Formations (2h)',
-          items: [
-            {
-              title: 'L’échauffement',
-              description: 'L’enseignement de la construction',
-              icon: 'warmup',
-            },
-            {
-              title: 'Les étirements',
-              description: 'Actifs — Passifs — Dynamiques',
-              icon: 'reach',
-            },
-            {
-              title: 'La prévention',
-              description: 'Prévenir c’est guérir',
-              icon: 'shield',
-            },
-            {
-              title: 'Le repos & la récup',
-              description: 'Et si c’était le secret de la perf ?',
-              icon: 'rest',
-            },
-            {
-              title: 'Commotion et sport',
-              description: 'Formation au commosport',
-              icon: 'concussion',
-            },
-          ],
-        },
-      ],
-    },
-    {
       accent: 'lab',
       name: 'Le Lab',
       subtitle: 'Sessions individuelles',
@@ -260,12 +185,12 @@ export const sportifPageContent: SportifPageContent = {
           title: 'Réathlé (dès 45 min)',
           items: [
             {
-              title: 'Return to train',
+              title: 'Return à la pratique',
               description: 'Encadrement reprise terrain',
               icon: 'run',
             },
             {
-              title: 'Return à la perf',
+              title: 'Retour à la perf',
               description: 'Encadrement reprise compétition',
               icon: 'sprint',
             },
@@ -273,6 +198,81 @@ export const sportifPageContent: SportifPageContent = {
               title: 'Recondionnement',
               description: 'Sessions actives spécifiques',
               icon: 'hiit',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      accent: 'studio',
+      name: 'Le Studio',
+      subtitle: 'Cours en small-group',
+      headline: 'Cours en small-group',
+      headlineAccent: 'Gymnastiques & formations',
+      description:
+        'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
+      headerIcon: 'studio',
+      imageSrc: '/images/hero/studio.png',
+      imageAlt:
+        'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
+      sections: [
+        {
+          title: 'Gymnastiques (45 min)',
+          items: [
+            {
+              title: 'Pilates',
+              description: 'Force — Souplesse — Contrôle',
+              icon: 'pilates',
+            },
+            {
+              title: 'Yoga',
+              description: 'Harmonie — Confiance — Sérénité',
+              icon: 'yoga',
+            },
+            {
+              title: 'Fondamentale',
+              description: "Les clés du mouvement et de l'équilibre",
+              icon: 'movement',
+            },
+            {
+              title: 'SIIT',
+              description: 'Soft Intensity Interval Training',
+              icon: 'target',
+            },
+            {
+              title: 'HIIT',
+              description: 'High Intensity Interval Training',
+              icon: 'burst',
+            },
+          ],
+        },
+        {
+          title: 'Formations (2h)',
+          items: [
+            {
+              title: 'L’échauffement',
+              description: 'L’enseignement de la construction',
+              icon: 'warmup',
+            },
+            {
+              title: 'Les étirements',
+              description: 'Actifs — Passifs — Dynamiques',
+              icon: 'reach',
+            },
+            {
+              title: 'La prévention',
+              description: 'Prévenir c’est guérir',
+              icon: 'shield',
+            },
+            {
+              title: 'Le repos & la récup',
+              description: 'Et si c’était le secret de la perf ?',
+              icon: 'rest',
+            },
+            {
+              title: 'Commotion et sport',
+              description: 'Formation au commosport',
+              icon: 'concussion',
             },
           ],
         },
