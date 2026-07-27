@@ -12,7 +12,8 @@
             heading-id="zones-heading"
           >
             <template #heading>
-              Trois zones, <span class="text-primary">une</span> performance
+              <span class="text-primary">1</span> station,
+              <span class="text-primary">3</span> zones de travail
             </template>
           </CardText>
         </template>
