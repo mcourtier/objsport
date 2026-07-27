@@ -6,7 +6,7 @@
         class="brand-headline text-xl md:text-2xl lg:text-3xl"
       >
         {{ title }}
-        <span class="brand-headline-accent text-primary">{{ titleAccent }}</span>
+        <span class="text-primary">{{ titleAccent }}</span>
         {{ titleSuffix }}
       </h2>
     </header>
