@@ -1,16 +1,17 @@
 <template>
   <!-- CardTree -->
-  <section class="card-tree">
+  <section
+    class="card-tree"
+    :class="{ 'card-tree--wide': isWideLayout }"
+    :style="{ '--card-tree-count': childCount }"
+  >
     <div class="card-tree-root">
       <slot name="root" />
     </div>
 
     <div class="card-tree-branches" aria-hidden="true">
       <div class="card-tree-line card-tree-branches-trunk" />
-      <div
-        class="card-tree-branches-row"
-        :style="{ '--card-tree-count': childCount }"
-      >
+      <div class="card-tree-branches-row">
         <span
           v-for="index in childCount"
           :key="index"
@@ -50,6 +51,8 @@ const childVNodes = computed(() =>
 )
 
 const childCount = computed(() => childVNodes.value.length)
+
+const isWideLayout = computed(() => childCount.value >= 4)
 </script>
 
 <style scoped>
@@ -124,5 +127,24 @@ const childCount = computed(() => childVNodes.value.length)
 
 .card-tree-cards > :deep(*:not(.card-tree-mobile-link)) {
   @apply min-w-0 flex-1;
+}
+
+/* 4+ children: 2×2 grid on tablet, single row with connectors on xl+ */
+.card-tree--wide .card-tree-branches-trunk,
+.card-tree--wide .card-tree-branches-row {
+  @apply hidden xl:block;
+}
+
+.card-tree--wide .card-tree-branches-row {
+  @apply xl:flex;
+}
+
+.card-tree--wide .card-tree-cards {
+  @apply flex flex-col gap-4 sm:grid sm:grid-cols-2 xl:flex xl:flex-row;
+  gap: var(--card-tree-gap);
+}
+
+.card-tree--wide .card-tree-mobile-link {
+  @apply sm:hidden;
 }
 </style>
