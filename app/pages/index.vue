@@ -23,6 +23,20 @@
         </template>
       </CardTree>
 
+      <Card
+        class="overflow-hidden bg-black md:col-span-6"
+        :surface="false"
+        :ui="{ body: '' }"
+        data-reveal
+      >
+        <img
+          src="/images/stations/objectif-sport-station.jpg"
+          alt="Station Sport Santé Objectif Sport — Lab, Gym et Studio"
+          class="w-full object-contain"
+          loading="lazy"
+        />
+      </Card>
+
       <CardTree class="md:col-span-6">
         <template #root>
           <CardText
