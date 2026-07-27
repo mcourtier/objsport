@@ -162,7 +162,7 @@ export const sportifPageContent: SportifPageContent = {
           items: [
             {
               title: 'Retour au sport',
-              description: 'Return to train — play — perf',
+              description: 'Retour à la pratique',
               icon: 'run',
             },
             {
@@ -172,7 +172,7 @@ export const sportifPageContent: SportifPageContent = {
             },
             {
               title: 'Fonctionnel',
-              description: 'FMS — KFS — K.Cart — Ankle.go — Rachis',
+              description: 'FMS — KFS — K.Start — Ankle.go — Rachis',
               icon: 'posture',
             },
             {
@@ -220,7 +220,7 @@ export const sportifPageContent: SportifPageContent = {
               icon: 'stopwatch',
             },
             {
-              title: 'Circuit recovery',
+              title: 'Circuit récuperation',
               description: 'Récup active — Décrassage',
               icon: 'recovery',
             },
@@ -260,12 +260,12 @@ export const sportifPageContent: SportifPageContent = {
               icon: 'run',
             },
             {
-              title: 'Return to perf',
+              title: 'Return à la perf',
               description: 'Encadrement reprise compétition',
               icon: 'sprint',
             },
             {
-              title: 'HIIT',
+              title: 'Recondionnement',
               description: 'Sessions actives spécifiques',
               icon: 'hiit',
             },
