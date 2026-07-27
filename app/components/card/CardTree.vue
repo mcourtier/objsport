@@ -2,7 +2,10 @@
   <!-- CardTree -->
   <section
     class="card-tree"
-    :class="{ 'card-tree--wide': isWideLayout }"
+    :class="{
+      'card-tree--wide': isWideLayout,
+      'card-tree--mobile-carousel': mobileCarousel,
+    }"
     :style="{ '--card-tree-count': childCount }"
   >
     <div class="card-tree-root">
@@ -31,6 +34,10 @@
 
 <script setup lang="ts">
 import { Comment, Fragment, Text, useSlots, type VNode } from 'vue'
+
+defineProps<{
+  mobileCarousel?: boolean
+}>()
 
 const slots = useSlots()
 
@@ -146,5 +153,28 @@ const isWideLayout = computed(() => childCount.value >= 4)
 
 .card-tree--wide .card-tree-mobile-link {
   @apply sm:hidden;
+}
+
+.card-tree--mobile-carousel .card-tree-mobile-link {
+  @apply hidden;
+}
+
+.card-tree--mobile-carousel {
+  @apply min-w-0 max-w-full overflow-x-clip;
+}
+
+@media (width < theme(--breakpoint-md)) {
+  .card-tree--mobile-carousel .card-tree-cards {
+    @apply flex w-full max-w-full min-w-0 flex-row flex-nowrap overflow-x-auto;
+    gap: var(--card-tree-gap);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card-tree--mobile-carousel .card-tree-cards > :deep(*:not(.card-tree-mobile-link)) {
+    @apply shrink-0;
+    flex: 0 0 80vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
 }
 </style>
