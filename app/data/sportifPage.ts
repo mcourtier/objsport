@@ -195,7 +195,7 @@ export const sportifPageContent: SportifPageContent = {
               icon: 'sprint',
             },
             {
-              title: 'Recondionnement',
+              title: 'Reconditionnement',
               description: 'Sessions actives spécifiques',
               icon: 'hiit',
             },
