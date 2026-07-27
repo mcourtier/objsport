@@ -5,7 +5,7 @@
     <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
       <CardStationService class="md:col-span-6" />
 
-      <CardTree class="md:col-span-6">
+      <CardTree class="min-w-0 md:col-span-6" mobile-carousel>
         <template #root>
           <CardText
             :subheading="content.zonesSubheading"
