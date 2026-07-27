@@ -49,7 +49,7 @@ export const sportifPageContent: SportifPageContent = {
       name: 'Le Studio',
       subtitle: 'Cours en small-group',
       headline: 'Cours en small-group',
-      headlineAccent: 'Gymnastique & formations',
+      headlineAccent: 'Gymnastiques & formations',
       description:
         'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
       headerIcon: 'studio',
@@ -58,7 +58,7 @@ export const sportifPageContent: SportifPageContent = {
         'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
       sections: [
         {
-          title: 'Gymnastique (45 min)',
+          title: 'Gymnastiques (45 min)',
           items: [
             {
               title: 'Pilates',
@@ -72,7 +72,7 @@ export const sportifPageContent: SportifPageContent = {
             },
             {
               title: 'Fondamentale',
-              description: 'Les clés du mouvement',
+              description: "Les clés du mouvement et de l'équilibre",
               icon: 'movement',
             },
             {
@@ -247,6 +247,11 @@ export const sportifPageContent: SportifPageContent = {
             {
               title: 'Spé épaule',
               description: 'Sessions actives spécifiques',
+              icon: 'rehab',
+            },
+            {
+              title: 'Reprogrammation',
+              description: 'Posturales et neuromotrices',
               icon: 'rehab',
             },
           ],
