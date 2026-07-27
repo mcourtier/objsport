@@ -112,7 +112,7 @@ export const sportifPageContent: SportifPageContent = {
             },
             {
               title: 'Commotion et sport',
-              description: 'Formation au cmomosport',
+              description: 'Formation au commosport',
               icon: 'concussion',
             },
           ],

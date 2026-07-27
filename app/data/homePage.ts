@@ -66,7 +66,7 @@ export const homePageContent = {
 
   zonesHeading: 'Trois zones, une performance',
   zonesSubheading:
-    'Un service de réathlétisation complet — coaching, soins et cours collectif réunis pour accompagner chaque sportif, du premier pas au retour à la compétition.',
+    'Un service de réathlétisation complet — coaching, soins et cours collectifs réunis pour accompagner chaque sportif, du premier pas au retour à la compétition.',
 
   eztmPromo: {
     title: 'Découvrez EZTM',
