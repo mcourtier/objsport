@@ -46,7 +46,7 @@
               </p>
 
               <p
-                class="mt-2 text-xs font-bold uppercase tracking-wide"
+                class="mt-2 text-xs font-bold tracking-wide uppercase"
                 :class="pillarTextClass(callout.accent)"
               >
                 {{ callout.highlight }}
@@ -69,12 +69,7 @@
                 stroke-width="1"
                 vector-effect="non-scaling-stroke"
               />
-              <circle
-                cx="50"
-                cy="100"
-                r="8"
-                fill="white"
-              />
+              <circle cx="50" cy="100" r="8" fill="white" />
             </svg>
           </div>
         </div>
@@ -94,10 +89,7 @@
 
 <script setup lang="ts">
 import type { PillarAccent } from '~/types/homepage'
-import {
-  pillarBorderClass,
-  pillarTextClass,
-} from '~/utils/pillarTheme'
+import { pillarBorderClass, pillarTextClass } from '~/utils/pillarTheme'
 import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 
 type StationMapCallout = {
@@ -142,6 +134,10 @@ const callouts: StationMapCallout[] = [
 
 <style scoped>
 @reference "~/assets/css/main.css";
+
+.station-map__callouts {
+  @apply mx-auto w-4/5;
+}
 
 .station-map-callout {
   @apply relative overflow-visible;
