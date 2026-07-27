@@ -45,80 +45,75 @@ export const sportifPageContent: SportifPageContent = {
   },
   pillars: [
     {
-      accent: 'gym',
-      name: 'Le Gym',
-      subtitle: 'Coaching 1-3 personnes',
-      headline: 'Coaching en petit groupe',
-      headlineAccent: 'Préhab, réhab & réathlé',
+      accent: 'studio',
+      name: 'Le Studio',
+      subtitle: 'Cours small-groupe',
+      headline: 'Cours en small-groupe',
+      headlineAccent: 'Gymnastique & formations',
       description:
-        'Sessions de 45 min en solo ou en trio pour activer, rééduquer et retrouver la performance — routines préventives, rééducation spécifique et retour à l’entraînement.',
-      headerIcon: 'gym',
-      imageSrc: '/images/hero/gym.png',
+        'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
+      headerIcon: 'studio',
+      imageSrc: '/images/hero/studio.png',
       imageAlt:
-        'Sportif en kettlebell swing — coaching Le Gym Objectif Sport',
+        'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
       sections: [
         {
-          title: 'Préhab (dès 45 min)',
+          title: 'Gymnastique (45 min)',
           items: [
             {
-              title: 'Routine activation',
-              description: 'Session pour partir du bon pied',
-              icon: 'run',
+              title: 'Pilates',
+              description: 'Force — Souplesse — Contrôle',
+              icon: 'pilates',
             },
             {
-              title: 'Rituel prévention',
-              description: 'Prévoir c’est gouverner',
-              icon: 'stopwatch',
+              title: 'Yoga',
+              description: 'Harmonie — Confiance — Sérénité',
+              icon: 'yoga',
             },
             {
-              title: 'Circuit recovery',
-              description: 'Récup active — Décrassage',
-              icon: 'recovery',
-            },
-          ],
-        },
-        {
-          title: 'Réhab (dès 45 min)',
-          items: [
-            {
-              title: 'Spé genou',
-              description: 'Sessions actives spécifiques',
-              icon: 'rehab',
+              title: 'Fondamentale',
+              description: 'Les clés du mouvement',
+              icon: 'movement',
             },
             {
-              title: 'Spé cheville',
-              description: 'Sessions actives spécifiques',
-              icon: 'rehab',
-            },
-            {
-              title: 'Spé rachis',
-              description: 'Sessions actives spécifiques',
-              icon: 'rehab',
-            },
-            {
-              title: 'Spé épaule',
-              description: 'Sessions actives spécifiques',
-              icon: 'rehab',
-            },
-          ],
-        },
-        {
-          title: 'Réathlé (dès 45 min)',
-          items: [
-            {
-              title: 'Return to train',
-              description: 'Encadrement reprise terrain',
-              icon: 'run',
-            },
-            {
-              title: 'Return to perf',
-              description: 'Encadrement reprise compétition',
-              icon: 'sprint',
+              title: 'SIIT',
+              description: 'Soft Intensity Interval Training',
+              icon: 'target',
             },
             {
               title: 'HIIT',
-              description: 'Sessions actives spécifiques',
-              icon: 'hiit',
+              description: 'High Intensity Interval Training',
+              icon: 'burst',
+            },
+          ],
+        },
+        {
+          title: 'Formations (2h)',
+          items: [
+            {
+              title: 'L’échauffement',
+              description: 'L’enseignement de la construction',
+              icon: 'warmup',
+            },
+            {
+              title: 'Les étirements',
+              description: 'Actifs — Passifs — Dynamiques',
+              icon: 'reach',
+            },
+            {
+              title: 'La prévention',
+              description: 'Prévenir c’est guérir',
+              icon: 'shield',
+            },
+            {
+              title: 'Le repos & la récup',
+              description: 'Et si c’était le secret de la perf ?',
+              icon: 'rest',
+            },
+            {
+              title: 'Commotion et sport',
+              description: 'Les premiers gestes qui sauvent',
+              icon: 'concussion',
             },
           ],
         },
@@ -200,75 +195,80 @@ export const sportifPageContent: SportifPageContent = {
       ],
     },
     {
-      accent: 'studio',
-      name: 'Le Studio',
-      subtitle: 'Cours small-groupe',
-      headline: 'Cours en small-groupe',
-      headlineAccent: 'Gymnastique & formations',
+      accent: 'gym',
+      name: 'Le Gym',
+      subtitle: 'Coaching 1-3 personnes',
+      headline: 'Coaching en petit groupe',
+      headlineAccent: 'Préhab, réhab & réathlé',
       description:
-        'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',
-      headerIcon: 'studio',
-      imageSrc: '/images/hero/studio.png',
+        'Sessions de 45 min en solo ou en trio pour activer, rééduquer et retrouver la performance — routines préventives, rééducation spécifique et retour à l’entraînement.',
+      headerIcon: 'gym',
+      imageSrc: '/images/hero/gym.png',
       imageAlt:
-        'Sportif en posture yoga warrior — cours Le Studio Objectif Sport',
+        'Sportif en kettlebell swing — coaching Le Gym Objectif Sport',
       sections: [
         {
-          title: 'Gymnastique (45 min)',
+          title: 'Préhab (dès 45 min)',
           items: [
             {
-              title: 'Pilates',
-              description: 'Force — Souplesse — Contrôle',
-              icon: 'pilates',
+              title: 'Routine activation',
+              description: 'Session pour partir du bon pied',
+              icon: 'run',
             },
             {
-              title: 'Yoga',
-              description: 'Harmonie — Confiance — Sérénité',
-              icon: 'yoga',
+              title: 'Rituel prévention',
+              description: 'Prévoir c’est gouverner',
+              icon: 'stopwatch',
             },
             {
-              title: 'Fondamentale',
-              description: 'Les clés du mouvement',
-              icon: 'movement',
-            },
-            {
-              title: 'SIIT',
-              description: 'Soft Intensity Interval Training',
-              icon: 'target',
-            },
-            {
-              title: 'HIIT',
-              description: 'High Intensity Interval Training',
-              icon: 'burst',
+              title: 'Circuit recovery',
+              description: 'Récup active — Décrassage',
+              icon: 'recovery',
             },
           ],
         },
         {
-          title: 'Formations (2h)',
+          title: 'Réhab (dès 45 min)',
           items: [
             {
-              title: 'L’échauffement',
-              description: 'L’enseignement de la construction',
-              icon: 'warmup',
+              title: 'Spé genou',
+              description: 'Sessions actives spécifiques',
+              icon: 'rehab',
             },
             {
-              title: 'Les étirements',
-              description: 'Actifs — Passifs — Dynamiques',
-              icon: 'reach',
+              title: 'Spé cheville',
+              description: 'Sessions actives spécifiques',
+              icon: 'rehab',
             },
             {
-              title: 'La prévention',
-              description: 'Prévenir c’est guérir',
-              icon: 'shield',
+              title: 'Spé rachis',
+              description: 'Sessions actives spécifiques',
+              icon: 'rehab',
             },
             {
-              title: 'Le repos & la récup',
-              description: 'Et si c’était le secret de la perf ?',
-              icon: 'rest',
+              title: 'Spé épaule',
+              description: 'Sessions actives spécifiques',
+              icon: 'rehab',
+            },
+          ],
+        },
+        {
+          title: 'Réathlé (dès 45 min)',
+          items: [
+            {
+              title: 'Return to train',
+              description: 'Encadrement reprise terrain',
+              icon: 'run',
             },
             {
-              title: 'Commotion et sport',
-              description: 'Les premiers gestes qui sauvent',
-              icon: 'concussion',
+              title: 'Return to perf',
+              description: 'Encadrement reprise compétition',
+              icon: 'sprint',
+            },
+            {
+              title: 'HIIT',
+              description: 'Sessions actives spécifiques',
+              icon: 'hiit',
             },
           ],
         },
