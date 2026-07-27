@@ -40,21 +40,6 @@
                   {{ callout.title }}
                 </h3>
               </div>
-
-              <p class="mt-3 text-sm leading-snug text-neutral-100">
-                {{ callout.description }}
-              </p>
-
-              <p
-                class="mt-2 text-xs font-bold tracking-wide uppercase"
-                :class="pillarTextClass(callout.accent)"
-              >
-                {{ callout.highlight }}
-              </p>
-
-              <p class="mt-1 text-xs leading-snug text-neutral-100">
-                {{ callout.note }}
-              </p>
             </div>
 
             <svg
@@ -95,9 +80,6 @@ import { sportifPillarHeaderIcon } from '~/utils/sportifIcons'
 type StationMapCallout = {
   accent: PillarAccent
   title: string
-  description: string
-  highlight: string
-  note: string
   connectorPath: string
 }
 
@@ -105,28 +87,16 @@ const callouts: StationMapCallout[] = [
   {
     accent: 'lab',
     title: 'Lab',
-    description:
-      'Évaluation, tests, analyses et suivi de la performance et de la santé.',
-    highlight: "Inclut l'espace SOINS",
-    note: '(kinésithérapie et soins spécifiques du sportif).',
     connectorPath: 'M50 0 V100',
   },
   {
     accent: 'gym',
     title: 'Gym',
-    description:
-      'Coaching en petit groupe pour activer, rééduquer et retrouver la performance.',
-    highlight: "Inclut l'espace COACHING",
-    note: '(préhab, réhab et réathlétisation en sessions de 45 min).',
     connectorPath: 'M50 0 V100',
   },
   {
     accent: 'studio',
     title: 'Studio',
-    description:
-      'Cours en small-groupe pour renforcer le corps et maîtriser les fondamentaux du mouvement.',
-    highlight: 'Inclut les espaces COURS',
-    note: '(pilates, yoga, HIIT et ateliers pédagogiques).',
     connectorPath: 'M50 0 V100',
   },
 ]
