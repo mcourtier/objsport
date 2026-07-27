@@ -3,11 +3,11 @@ import type { PageHeroContent } from '~/types/pageHero'
 
 export const homePageContent = {
   hero: {
-    tagline: 'Santé • Performance • Résultats',
+    tagline: 'Prévention • Santé • Performance',
     showTagline: true,
     title: 'Un objectif <strong>commun</strong> : votre performance.',
     description:
-      "Nous mettons l'expertise du sport de haut niveau au service de <strong>chacun</strong>, à chaque étape de la vie.",
+      'nous mettons l’excellence du sport de haut niveau au service de chacun, à chaque étape de la vie et adaptée à tous.',
     backgroundImage: '/images/hero/home.png',
     backgroundImageAlt:
       'Sportif en sprint — réathlétisation et performance Objectif Sport',
