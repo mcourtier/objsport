@@ -51,6 +51,17 @@ export const homePageContent = {
       to: '/club',
       cta: 'Découvrir',
     },
+    {
+      id: 'sport-sante',
+      title: 'Sport Santé',
+      label: 'Sport Santé',
+      accent: 'consulting',
+      icon: 'material-symbols:apartment',
+      description:
+        'Stations partenaires — soins, réadaptation et accompagnement au plus près du terrain.',
+      to: '/stations',
+      cta: 'Découvrir',
+    },
   ] satisfies AudienceBlock[],
 
   zonesHeading: 'Trois zones, une performance',
