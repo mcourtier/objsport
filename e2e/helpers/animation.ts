@@ -1,73 +1,75 @@
 import type { Page } from '@playwright/test'
 
-export interface RevealState {
+export interface AnimateState {
   opacity: number
   translateY: number
-  scaleX: number
 }
 
-export const IMMEDIATE_OPACITY_SELECTOR =
-  '[data-reveal-immediate]:not([data-reveal-draw-x])'
+export const ANIMATE_SELECTOR = '[data-animate]'
 
-export async function getRevealStates(
+export async function getAnimateStates(
   page: Page,
-  selector: string = IMMEDIATE_OPACITY_SELECTOR,
-): Promise<RevealState[]> {
+  selector: string = ANIMATE_SELECTOR,
+): Promise<AnimateState[]> {
   return page.evaluate((sel) => {
     return [...document.querySelectorAll(sel)].map((el) => {
       const { opacity, transform } = getComputedStyle(el)
       let translateY = 0
-      let scaleX = 1
 
       const match = transform.match(/matrix\(([^)]+)\)/)
       if (match) {
         const parts = match[1]!.split(',').map((value) => parseFloat(value.trim()))
-        scaleX = parts[0] ?? 1
         translateY = parts[5] ?? 0
       }
 
       return {
         opacity: parseFloat(opacity),
         translateY,
-        scaleX,
       }
     })
   }, selector)
 }
 
-export function isAnimatingIn(state: RevealState): boolean {
-  return (
-    state.opacity < 0.95 ||
-    Math.abs(state.translateY) > 2 ||
-    state.scaleX < 0.95
-  )
+export function isAnimatingIn(state: AnimateState): boolean {
+  return state.opacity < 0.95 || Math.abs(state.translateY) > 2
 }
 
-export function isFullyRevealed(state: RevealState): boolean {
-  return (
-    state.opacity >= 0.99 &&
-    Math.abs(state.translateY) < 1 &&
-    state.scaleX >= 0.99
-  )
+export function isFullyRevealed(state: AnimateState): boolean {
+  return state.opacity >= 0.99 && Math.abs(state.translateY) < 1
 }
 
-export async function waitForRevealProgress(page: Page): Promise<void> {
+export async function waitForAnimateProgress(page: Page): Promise<void> {
   await page.waitForFunction((selector) => {
     const elements = document.querySelectorAll(selector)
     if (elements.length === 0) return false
 
     return [...elements].some((el) => {
       const { opacity, transform } = getComputedStyle(el)
-      const translateY = transform.match(/matrix\([^,]+,[^,]+,[^,]+,[^,]+,[^,]+,\s*(-?\d+\.?\d*)\)/)?.[1]
-      return parseFloat(opacity) < 0.95 || (translateY != null && Math.abs(parseFloat(translateY)) > 2)
+      const translateY = transform.match(
+        /matrix\([^,]+,[^,]+,[^,]+,[^,]+,[^,]+,\s*(-?\d+\.?\d*)\)/,
+      )?.[1]
+      return (
+        parseFloat(opacity) < 0.95 ||
+        (translateY != null && Math.abs(parseFloat(translateY)) > 2)
+      )
     })
-  }, IMMEDIATE_OPACITY_SELECTOR)
+  }, ANIMATE_SELECTOR)
 }
 
-export async function sampleHeroRevealMidpoint(
-  page: Page,
-): Promise<RevealState[]> {
-  await page.goto('/', { waitUntil: 'commit' })
-  await waitForRevealProgress(page)
-  return getRevealStates(page)
+export async function waitForAnimateComplete(page: Page): Promise<void> {
+  await page.waitForFunction((selector) => {
+    const root = document.querySelector('[data-anim-ready]')
+    if (!root) return false
+
+    return [...document.querySelectorAll(selector)].every((el) => {
+      const { opacity, transform } = getComputedStyle(el)
+      const translateY = transform.match(
+        /matrix\([^,]+,[^,]+,[^,]+,[^,]+,[^,]+,\s*(-?\d+\.?\d*)\)/,
+      )?.[1]
+      return (
+        parseFloat(opacity) >= 0.99 &&
+        (translateY == null || Math.abs(parseFloat(translateY)) < 1)
+      )
+    })
+  }, ANIMATE_SELECTOR)
 }
