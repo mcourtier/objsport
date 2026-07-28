@@ -9,7 +9,11 @@ description: >-
 
 All JavaScript-driven motion uses **GSAP**. Do not add CSS `@keyframes`, Vue `<Transition>` for complex sequences, or other animation libraries for new work.
 
-Match existing site motion: page route transitions (`app/assets/css/page-transitions.css`) and Tailwind `duration-200` hovers.
+Match existing site motion: page enter stagger via `[data-animate]` + `usePageAnimations` (client navigations only — skipped on first load), route leave in `page-transitions.css`, and Tailwind `duration-200` hovers.
+
+## Page enter (default)
+
+Mark blocks with `data-animate`. Call `usePageAnimations(root)` on the page root ref. On client navigations, top-level markers stagger fade-up. Nested `[data-animate]` are ignored. The first page load shows content immediately (no enter animation).
 
 ## Setup
 

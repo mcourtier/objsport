@@ -1,28 +1,63 @@
 /*
  * Page route transitions (client-side navigation only).
  * mode: 'out-in' — leave finishes before enter, so pages never overlap.
+ *
+ * Leave: whole-page slide + fade.
+ * Enter: no whole-page motion — `[data-animate]` blocks stagger via GSAP
+ * (usePageAnimations), only after the first page load (`html[data-page-anim]`).
+ *
+ * First load: blocks stay visible (no hide) to avoid jank while assets load.
+ * Client navigations: blocks are hidden until GSAP sets `[data-anim-ready]`.
  */
-.page-enter-active,
 .page-leave-active {
   transition:
     opacity 0.35s ease,
     transform 0.35s ease;
 }
 
-.page-enter-from,
 .page-leave-to {
   opacity: 0;
   transform: translateY(1rem);
 }
 
+/* Hold enter-active long enough for GSAP to take over block opacity. */
+.page-enter-active {
+  transition: opacity 0.35s ease;
+}
+
+.page-enter-from {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Only after first load — top-level markers; nested stay visible. */
+  html[data-page-anim] [data-animate] {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+
+  html[data-page-anim] [data-animate] [data-animate],
+  html[data-page-anim] [data-anim-ready] [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-enter-active,
-  .page-leave-active {
+  .page-leave-active,
+  .page-enter-active {
     transition-duration: 0.01ms;
   }
 
-  .page-enter-from,
   .page-leave-to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (scripting: none) {
+  [data-animate] {
     opacity: 1;
     transform: none;
   }

@@ -2,12 +2,11 @@ import gsap from 'gsap'
 
 gsap.config({ force3D: true })
 
-/** Set to true to re-enable scroll / reveal animations site-wide. */
-export const SCROLL_ANIMATIONS_ENABLED = false
-
 export const ANIMATION = {
   duration: {
     micro: 0.4,
+    /** Matches `page-transitions.css` leave duration. */
+    page: 0.35,
     standard: 0.7,
     emphasis: 1,
   },
@@ -17,42 +16,33 @@ export const ANIMATION = {
   },
   distance: {
     y: 48,
+    /** 1rem — matches `page-transitions.css` translateY. */
+    pageY: 16,
   },
   stagger: {
     default: 0.08,
+    page: 0.15,
   },
 } as const
+
+export const ANIMATE_SELECTOR = '[data-animate]'
+
+/** Top-level `[data-animate]` only (nested markers are ignored). */
+export function getAnimateTargets(root: ParentNode): Element[] {
+  return [...root.querySelectorAll(ANIMATE_SELECTOR)].filter((el) => {
+    let parent = el.parentElement
+    while (parent && parent !== root) {
+      if (parent.matches(ANIMATE_SELECTOR)) return false
+      parent = parent.parentElement
+    }
+    return true
+  })
+}
 
 export function prefersReducedMotion(): boolean {
   if (import.meta.server) return false
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
-
-export function parseRevealDelay(element: Element): number {
-  const value = element.getAttribute('data-reveal-delay')?.trim()
-  if (!value) return 0
-
-  if (value in ANIMATION.duration) {
-    return ANIMATION.duration[value as keyof typeof ANIMATION.duration]
-  }
-
-  const parsed = Number(value)
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0
-}
-
-let scrollTriggerRegistered = false
-
-export async function registerScrollTrigger() {
-  if (scrollTriggerRegistered || import.meta.server) return
-  const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-  gsap.registerPlugin(ScrollTrigger)
-  scrollTriggerRegistered = true
-}
-
-export const SCROLL_TRIGGER_DEFAULTS = {
-  start: 'top 85%',
-  toggleActions: 'play reverse play reverse',
-} as const
 
 export function reveal(
   targets: gsap.TweenTarget,
@@ -63,7 +53,6 @@ export function reveal(
       opacity: 1,
       y: 0,
       x: 0,
-      scaleX: 1,
       force3D: true,
     })
   }
@@ -75,37 +64,5 @@ export function reveal(
     ease: ANIMATION.ease.default,
     force3D: true,
     ...options,
-  })
-}
-
-export async function scrollReveal(
-  targets: gsap.TweenTarget,
-  options: gsap.TweenVars = {},
-): Promise<gsap.core.Tween | gsap.core.Timeline> {
-  if (!SCROLL_ANIMATIONS_ENABLED) {
-    return gsap.set(targets, {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      scaleX: 1,
-      force3D: true,
-    })
-  }
-
-  await registerScrollTrigger()
-
-  const { scrollTrigger: scrollTriggerOptions, ...tweenOptions } = options
-  const scrollTrigger =
-    typeof scrollTriggerOptions === 'object' && scrollTriggerOptions !== null
-      ? scrollTriggerOptions
-      : {}
-
-  return reveal(targets, {
-    ...tweenOptions,
-    scrollTrigger: {
-      trigger: targets as gsap.DOMTarget,
-      ...SCROLL_TRIGGER_DEFAULTS,
-      ...scrollTrigger,
-    },
   })
 }
