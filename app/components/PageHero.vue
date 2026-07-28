@@ -36,13 +36,9 @@
     </div>
 
     <div
-      class="relative z-10 p-5 sm:p-6 md:min-h-72 md:max-w-[52%] md:p-8 lg:min-h-80 lg:p-10"
+      class="relative z-10 p-5 sm:p-6 md:min-h-72 md:max-w-[52%] lg:min-h-80"
     >
-      <CardHeroTagLine
-        v-if="showTagline"
-        :tagline="tagline"
-        :accent="accent"
-      />
+      <CardHeroTagLine v-if="showTagline" :tagline="tagline" :accent="accent" />
 
       <CardHeroTitle
         :title="title"
