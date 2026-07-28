@@ -210,8 +210,8 @@ export const sportifPageContent: SportifPageContent = {
     {
       accent: 'studio',
       name: 'Le Studio',
-      subtitle: 'Cours en small-group',
-      headline: 'Cours en small-group',
+      subtitle: 'Cours en petit groupe',
+      headline: 'Cours en petit groupe',
       headlineAccent: 'Gymnastiques & formations',
       description:
         'Pilates, yoga, HIIT et ateliers pédagogiques — renforcer le corps, gagner en souplesse et maîtriser les fondamentaux du mouvement.',

@@ -8,7 +8,7 @@
 
 ## Concept
 
-**Le Studio** est la zone de **cours en small-groupe** et d’**ateliers pédagogiques**. Elle vise le renforcement, la souplesse, la maîtrise du mouvement et la transmission de bonnes pratiques.
+**Le Studio** est la zone de **cours en petit groupe** et d’**ateliers pédagogiques**. Elle vise le renforcement, la souplesse, la maîtrise du mouvement et la transmission de bonnes pratiques.
 
 Format collectif mais encadré, adapté au niveau des participants.
 
@@ -49,7 +49,7 @@ Format collectif mais encadré, adapté au niveau des participants.
 
 ## Modalités
 
-- **Format :** cours small-groupe (45 min) ; ateliers formation (2 h)
+- **Format :** cours en petit groupe (45 min) ; ateliers formation (2 h)
 - **Fil éditorial :** coaching (animation), consulting (pédagogie, prévention)
 
 ---

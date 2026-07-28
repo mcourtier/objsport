@@ -3,6 +3,7 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 const navLinkSchema = z.object({
   label: z.string(),
   to: z.string(),
+  accent: z.enum(['gym', 'lab', 'studio']).optional(),
 })
 
 const sidebarNavLinkSchema = navLinkSchema.extend({

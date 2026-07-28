@@ -1,8 +1,12 @@
+import type { PillarAccent } from './homepage'
+
 export type SectionAccent = 'consulting' | 'coaching' | 'care'
 
 export interface NavLink {
   label: string
   to: string
+  /** Optional pillar accent for Sportif subnav active color. */
+  accent?: PillarAccent
 }
 
 export interface SidebarNavLink extends NavLink {

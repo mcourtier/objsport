@@ -84,6 +84,15 @@ export function pillarTextClass(accent: PillarAccent) {
   return map[accent]
 }
 
+export function pillarTextHoverClass(accent: PillarAccent) {
+  const map: Record<PillarAccent, string> = {
+    gym: 'hover:text-gym',
+    lab: 'hover:text-lab',
+    studio: 'hover:text-studio',
+  }
+  return map[accent]
+}
+
 export function pillarIconCircleClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
     gym: 'bg-gym text-neutral-100',

@@ -16,10 +16,13 @@ sidebar:
     children:
       - label: Le Gym
         to: /sportif/le-gym
+        accent: gym
       - label: Le Lab
         to: /sportif/le-lab
+        accent: lab
       - label: Le Studio
         to: /sportif/le-studio
+        accent: studio
   - label: Équipe
     to: /equipe
     icon: material-symbols:groups-outline

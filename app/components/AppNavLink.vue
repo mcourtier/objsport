@@ -22,8 +22,8 @@
         v-for="child in link.children"
         :key="child.to"
         :to="child.to"
-        class="font-display tracking-button rounded-lg px-4 py-2 text-xs font-semibold uppercase transition-colors"
-        :class="subNavLinkClass(child.to)"
+        class="font-display tracking-button rounded-lg px-4 py-2 text-sm font-bold uppercase transition-colors"
+        :class="subNavLinkClass(child)"
         :aria-current="route.path === child.to ? 'page' : undefined"
       >
         {{ child.label }}
@@ -33,7 +33,8 @@
 </template>
 
 <script setup lang="ts">
-import type { SidebarNavLink } from '~/types/navigation'
+import type { NavLink, SidebarNavLink } from '~/types/navigation'
+import { pillarTextClass, pillarTextHoverClass } from '~/utils/pillarTheme'
 
 defineProps<{
   link: SidebarNavLink
@@ -42,9 +43,18 @@ defineProps<{
 const route = useRoute()
 const { isNavActive, navLinkClass } = await useSiteNavigation()
 
-function subNavLinkClass(to: string) {
-  return route.path === to
-    ? 'text-primary text-sm underline underline-offset-4'
-    : 'text-neutral-300 hover:text-primary'
+function subNavLinkClass(child: NavLink) {
+  if (route.path === child.to) {
+    const accentClass = child.accent
+      ? pillarTextClass(child.accent)
+      : 'text-primary'
+    return `${accentClass} underline underline-offset-4`
+  }
+
+  const hoverClass = child.accent
+    ? pillarTextHoverClass(child.accent)
+    : 'hover:text-primary'
+
+  return `text-neutral-300 ${hoverClass}`
 }
 </script>
