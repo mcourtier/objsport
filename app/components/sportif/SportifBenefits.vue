@@ -1,6 +1,6 @@
 <template>
   <section
-    class="border-neutral-700 border-t py-12 md:py-16"
+    class="py-12 md:py-16"
     aria-labelledby="sportif-benefits-heading"
     data-reveal-section
   >

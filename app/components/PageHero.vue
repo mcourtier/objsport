@@ -38,9 +38,17 @@
     <div
       class="relative z-10 p-5 sm:p-6 md:min-h-72 md:max-w-[52%] md:p-8 lg:min-h-80 lg:p-10"
     >
-      <CardHeroTagLine v-if="showTagline" :tagline="tagline" />
+      <CardHeroTagLine
+        v-if="showTagline"
+        :tagline="tagline"
+        :accent="accent"
+      />
 
-      <CardHeroTitle :title="title" :title-accent="titleAccent" />
+      <CardHeroTitle
+        :title="title"
+        :title-accent="titleAccent"
+        :accent="accent"
+      />
 
       <p
         v-if="showDescription && description"
@@ -51,7 +59,7 @@
           v-for="part in parsedDescription"
           :key="`${part.text}-${part.isHighlight}`"
         >
-          <strong v-if="part.isHighlight" class="text-primary">
+          <strong v-if="part.isHighlight" :class="accentTextClass">
             {{ part.text }}
           </strong>
           <span v-else>{{ part.text }}</span>
@@ -74,6 +82,7 @@
 <script setup lang="ts">
 import type { PageHeroContent } from '~/types/pageHero'
 import { parseHighlightedText } from '~/utils/parseHighlightedText'
+import { heroAccentTextClass } from '~/utils/pillarTheme'
 
 const props = withDefaults(defineProps<PageHeroContent>(), {
   tagline: 'Santé • Performance • Résultats',
@@ -84,9 +93,12 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
   backgroundImageAlt: 'Sportif en action — réathlétisation Objectif Sport',
   showTagline: false,
   showDescription: true,
+  accent: 'primary',
   ctaLabel: undefined,
   ctaTo: undefined,
 })
+
+const accentTextClass = computed(() => heroAccentTextClass(props.accent))
 
 const parsedDescription = computed(() =>
   parseHighlightedText(props.description),

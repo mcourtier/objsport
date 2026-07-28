@@ -17,6 +17,10 @@ export const sportifPillarPaths = Object.values(sportifPillarSlugByAccent).map(
   (slug) => `/sportif/${slug}`,
 )
 
+export function getSportifPillarPath(accent: PillarAccent): string {
+  return `/sportif/${sportifPillarSlugByAccent[accent]}`
+}
+
 export function getSportifPillarBySlug(
   slug: string,
 ): SportifPillar | undefined {

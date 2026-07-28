@@ -1,5 +1,16 @@
 import type { SectionAccent } from '~/types/navigation'
 import type { PillarAccent } from '~/types/homepage'
+import type { HeroAccent } from '~/types/pageHero'
+
+export function heroAccentTextClass(accent: HeroAccent = 'primary') {
+  const map: Record<HeroAccent, string> = {
+    primary: 'text-primary',
+    gym: 'text-gym',
+    lab: 'text-lab',
+    studio: 'text-studio',
+  }
+  return map[accent]
+}
 
 export function sectionFillClass(accent: SectionAccent) {
   const map: Record<SectionAccent, string> = {

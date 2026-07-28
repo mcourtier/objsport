@@ -247,7 +247,7 @@ onMounted(() => {
     const phones = mediaRef.value!.querySelectorAll<HTMLElement>('.eztm-phone')
     gsap.set(phones, { xPercent: 0, opacity: 0, zIndex: 0, force3D: true })
     gsap.set(phones[0]!, { opacity: 1, zIndex: 1, force3D: true })
-  }, mediaRef)
+  }, mediaRef.value)
 })
 
 onUnmounted(() => {

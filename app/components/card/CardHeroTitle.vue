@@ -13,13 +13,14 @@
       {{ stackedTitle.line1 }}
     </span>
     <span
-      class="brand-headline hero-title-line hero-title-line--accent text-primary block text-4xl md:text-5xl lg:text-6xl"
+      class="brand-headline hero-title-line hero-title-line--accent block text-4xl md:text-5xl lg:text-6xl"
+      :class="accentTextClass"
       data-reveal-immediate
     >
       {{ stackedTitle.line2 }}
     </span>
     <BrandBrushLine
-      class="text-primary"
+      :class="accentTextClass"
       data-reveal-immediate
       data-reveal-draw-x
       data-reveal-delay="0.4"
@@ -42,7 +43,7 @@
         v-for="part in parsedTitle"
         :key="`${part.text}-${part.isHighlight}`"
       >
-        <strong v-if="part.isHighlight" class="text-primary">
+        <strong v-if="part.isHighlight" :class="accentTextClass">
           {{ part.text }}
         </strong>
         <span v-else>{{ part.text }}</span>
@@ -50,7 +51,8 @@
     </h1>
     <p
       v-if="titleAccent"
-      class="brand-headline text-primary mt-2 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+      class="brand-headline mt-2 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
+      :class="accentTextClass"
       data-reveal-immediate
     >
       <template
@@ -67,13 +69,22 @@
 </template>
 
 <script setup lang="ts">
-import type { HighlightedTextProp } from '~/types/pageHero'
+import type { HeroAccent, HighlightedTextProp } from '~/types/pageHero'
 import { parseHighlightedText } from '~/utils/parseHighlightedText'
+import { heroAccentTextClass } from '~/utils/pillarTheme'
 
-const props = defineProps<{
-  title?: HighlightedTextProp
-  titleAccent?: HighlightedTextProp
-}>()
+const props = withDefaults(
+  defineProps<{
+    title?: HighlightedTextProp
+    titleAccent?: HighlightedTextProp
+    accent?: HeroAccent
+  }>(),
+  {
+    accent: 'primary',
+  },
+)
+
+const accentTextClass = computed(() => heroAccentTextClass(props.accent))
 
 interface StackedHeroTitle {
   line1: string

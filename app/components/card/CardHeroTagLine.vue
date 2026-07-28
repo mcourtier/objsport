@@ -8,7 +8,7 @@
     <template v-for="(segment, index) in taglineSegments" :key="segment">
       <span
         v-if="index > 0"
-        class="brand-tagline-bullet"
+        :class="accentTextClass"
         aria-hidden="true"
       >
         •
@@ -19,9 +19,20 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  tagline?: string
-}>()
+import type { HeroAccent } from '~/types/pageHero'
+import { heroAccentTextClass } from '~/utils/pillarTheme'
+
+const props = withDefaults(
+  defineProps<{
+    tagline?: string
+    accent?: HeroAccent
+  }>(),
+  {
+    accent: 'primary',
+  },
+)
+
+const accentTextClass = computed(() => heroAccentTextClass(props.accent))
 
 const taglineSegments = computed(() =>
   (props.tagline ?? '')
