@@ -2,20 +2,18 @@
   <section
     class="py-8 md:py-16 lg:py-24"
     aria-labelledby="rdv-form-heading"
-    data-reveal-section
+    data-animate
   >
     <div class="mx-auto max-w-3xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
       <h2
         id="rdv-form-heading"
         class="font-display text-neutral-100 text-3xl font-bold tracking-wide uppercase sm:text-4xl md:text-5xl"
-        data-reveal
       >
         {{ heading }}
       </h2>
       <p
         v-if="intro"
         class="text-neutral-300 mt-6 max-w-prose text-lg"
-        data-reveal
       >
         {{ intro }}
       </p>
@@ -28,14 +26,12 @@
         title="Demande envoyée"
         :description="successMessage"
         role="status"
-        data-reveal
       />
 
       <form
         v-else
         class="border-neutral-700 bg-neutral-800 mt-8 space-y-5 border p-5 sm:mt-10 sm:space-y-6 sm:p-8 md:p-10"
         novalidate
-        data-reveal
         @submit.prevent="onSubmit"
       >
         <UiFormField

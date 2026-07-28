@@ -8,27 +8,19 @@
     <span
       v-if="stackedTitle.line1"
       class="brand-headline hero-title-line block text-3xl md:text-4xl lg:text-5xl"
-      data-reveal-immediate
     >
       {{ stackedTitle.line1 }}
     </span>
     <span
       class="brand-headline hero-title-line hero-title-line--accent block text-4xl md:text-5xl lg:text-6xl"
       :class="accentTextClass"
-      data-reveal-immediate
     >
       {{ stackedTitle.line2 }}
     </span>
-    <BrandBrushLine
-      :class="accentTextClass"
-      data-reveal-immediate
-      data-reveal-draw-x
-      data-reveal-delay="0.4"
-    />
+    <BrandBrushLine :class="accentTextClass" />
     <span
       v-if="stackedTitle.line3"
       class="brand-headline hero-title-line hero-title-line--closing block text-xl md:text-2xl lg:text-3xl"
-      data-reveal-immediate
     >
       {{ stackedTitle.line3 }}
     </span>
@@ -37,7 +29,6 @@
     <h1
       id="hero-heading"
       class="card-hero-title brand-headline text-3xl md:text-4xl lg:text-5xl"
-      data-reveal-immediate
     >
       <template
         v-for="part in parsedTitle"
@@ -53,7 +44,6 @@
       v-if="titleAccent"
       class="brand-headline mt-2 max-w-3xl text-4xl md:text-5xl lg:text-6xl"
       :class="accentTextClass"
-      data-reveal-immediate
     >
       <template
         v-for="part in parsedTitleAccent"

@@ -7,7 +7,7 @@
 
     <div class="eztm-layout">
       <div class="eztm-layout__content">
-        <div class="eztm-platform" data-reveal>
+        <div class="eztm-platform">
           <p class="eztm-platform__title">
             Une plateforme
             <br />
@@ -44,13 +44,12 @@
           external
           size="xl"
           class="eztm-cta eztm-cta--desktop"
-          data-reveal
         >
           Voir le site
         </UButton>
       </div>
 
-      <div class="eztm-layout__media" data-reveal>
+      <div class="eztm-layout__media">
         <p class="eztm-carousel__label" aria-live="polite">
           {{ slides[activeIndex]!.label }}
         </p>

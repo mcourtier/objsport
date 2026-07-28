@@ -10,7 +10,6 @@
       :surface="false"
       class="group-hover:border-primary flex h-full flex-col overflow-hidden bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
       :ui="cardUi"
-      data-reveal
     >
       <div
         class="relative aspect-4/3 w-full shrink-0 overflow-hidden bg-neutral-900"

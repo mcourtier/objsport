@@ -8,26 +8,28 @@
     }"
     :style="{ '--card-tree-count': childCount }"
   >
-    <div class="card-tree-root">
-      <slot name="root" />
-    </div>
+    <div class="card-tree-root-unit" data-animate>
+      <div class="card-tree-root">
+        <slot name="root" />
+      </div>
 
-    <div class="card-tree-branches" aria-hidden="true">
-      <div class="card-tree-line card-tree-branches-trunk" />
-      <div class="card-tree-branches-row">
-        <span
-          v-for="index in childCount"
-          :key="index"
-          class="card-tree-branches-stem"
-        />
+      <div class="card-tree-branches" aria-hidden="true">
+        <div class="card-tree-line card-tree-branches-trunk" />
+        <div class="card-tree-branches-rail" />
       </div>
     </div>
 
     <div class="card-tree-cards">
-      <template v-for="(child, index) in childVNodes" :key="child.key ?? index">
+      <div
+        v-for="(child, index) in childVNodes"
+        :key="child.key ?? index"
+        class="card-tree-card"
+        data-animate
+      >
         <div class="card-tree-line card-tree-mobile-link" aria-hidden="true" />
+        <span class="card-tree-branches-stem" aria-hidden="true" />
         <component :is="child" />
-      </template>
+      </div>
     </div>
   </section>
 </template>
@@ -85,7 +87,18 @@ const isWideLayout = computed(() => childCount.value >= 4)
   @apply w-0 shrink-0 border-l border-dashed border-neutral-600/70;
 }
 
-.card-tree-branches-row::before {
+.card-tree-branches-trunk {
+  @apply hidden md:block;
+  height: var(--card-tree-gap);
+}
+
+/* Horizontal connector — revealed with the root (trunk). */
+.card-tree-branches-rail {
+  @apply relative hidden w-full md:block;
+  height: 0;
+}
+
+.card-tree-branches-rail::before {
   content: '';
   @apply absolute top-0 h-0 border-t border-dashed border-neutral-600/70;
   left: calc(
@@ -98,25 +111,6 @@ const isWideLayout = computed(() => childCount.value >= 4)
   );
 }
 
-.card-tree-branches-trunk {
-  @apply hidden md:block;
-  height: var(--card-tree-gap);
-}
-
-.card-tree-branches-row {
-  @apply relative hidden h-5 w-full md:flex;
-  gap: var(--card-tree-gap);
-}
-
-.card-tree-branches-stem {
-  @apply flex min-w-0 flex-1 justify-center;
-}
-
-.card-tree-branches-stem::before {
-  content: '';
-  @apply h-full;
-}
-
 .card-tree-cards {
   @apply flex flex-col md:flex-row;
 }
@@ -127,23 +121,33 @@ const isWideLayout = computed(() => childCount.value >= 4)
   }
 }
 
+.card-tree-card {
+  @apply flex min-w-0 flex-1 flex-col;
+}
+
+/* Stem above each card — revealed with that card. */
+.card-tree-branches-stem {
+  @apply relative hidden h-5 shrink-0 justify-center md:flex;
+}
+
+.card-tree-branches-stem::before {
+  content: '';
+  @apply h-full;
+}
+
 .card-tree-mobile-link {
   @apply mx-auto md:hidden;
   height: var(--card-tree-gap);
 }
 
-.card-tree-cards > :deep(*:not(.card-tree-mobile-link)) {
-  @apply min-w-0 flex-1;
-}
-
 /* 4+ children: 2×2 grid on tablet, single row with connectors on xl+ */
 .card-tree--wide .card-tree-branches-trunk,
-.card-tree--wide .card-tree-branches-row {
+.card-tree--wide .card-tree-branches-rail {
   @apply hidden xl:block;
 }
 
-.card-tree--wide .card-tree-branches-row {
-  @apply xl:flex;
+.card-tree--wide .card-tree-branches-stem {
+  @apply hidden xl:flex;
 }
 
 .card-tree--wide .card-tree-cards {
@@ -174,7 +178,7 @@ const isWideLayout = computed(() => childCount.value >= 4)
     -webkit-overflow-scrolling: touch;
   }
 
-  .card-tree--mobile-carousel .card-tree-cards > :deep(*:not(.card-tree-mobile-link)) {
+  .card-tree--mobile-carousel .card-tree-card {
     @apply shrink-0;
     flex: 0 0 80vw;
     width: 80vw;

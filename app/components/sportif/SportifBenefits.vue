@@ -2,7 +2,7 @@
   <section
     class="py-12 md:py-16"
     aria-labelledby="sportif-benefits-heading"
-    data-reveal-section
+    data-animate
   >
     <h2 id="sportif-benefits-heading" class="sr-only">Nos engagements</h2>
     <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -10,7 +10,6 @@
         v-for="benefit in benefits"
         :key="benefit.title"
         class="flex gap-4"
-        data-reveal
       >
         <span
           class="text-primary flex h-12 w-12 shrink-0 items-center justify-center"

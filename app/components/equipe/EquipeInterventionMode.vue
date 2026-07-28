@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="equipe-intervention-heading" data-reveal-section>
+  <section aria-labelledby="equipe-intervention-heading" data-animate>
     <EntrepriseSectionHeading
       title="Notre mode d'intervention"
       heading-id="equipe-intervention-heading"
@@ -7,7 +7,7 @@
 
     <ol class="mt-8 flex flex-col gap-10 lg:mt-10 lg:flex-row lg:items-start lg:gap-3">
       <template v-for="(step, index) in steps" :key="step.title">
-        <li class="relative min-w-0 flex-1 px-2 text-center" data-reveal>
+        <li class="relative min-w-0 flex-1 px-2 text-center">
           <span
             class="bg-primary text-neutral-100 absolute top-0 left-2 flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold"
             aria-hidden="true"

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-surface entreprise-reason-card @container" data-reveal>
+  <div class="card-surface entreprise-reason-card @container">
     <div
       class="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 @sm:grid-cols-[auto_minmax(0,1fr)] @sm:gap-x-4 @sm:gap-y-3"
     >

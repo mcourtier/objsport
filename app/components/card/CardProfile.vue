@@ -4,7 +4,6 @@
     <Card
       :surface="false"
       class="group-hover:border-primary flex h-full flex-col bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
-      data-reveal
     >
       <div
         class="relative aspect-square w-full shrink-0 overflow-hidden bg-neutral-900"

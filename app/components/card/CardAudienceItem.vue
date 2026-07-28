@@ -1,7 +1,7 @@
 <template>
   <!-- CardAudienceItem -->
   <NuxtLink :to="to" class="card-audience-link group">
-    <Card class="card-audience-item" :ui="cardUi" data-reveal>
+    <Card class="card-audience-item" :ui="cardUi">
       <div class="flex items-start gap-4">
         <span
           class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/15 ring-2 ring-primary"

@@ -3,7 +3,6 @@
   <p
     v-if="taglineSegments.length"
     class="card-hero-tag-line brand-tagline"
-    data-reveal-immediate
   >
     <template v-for="(segment, index) in taglineSegments" :key="segment">
       <span

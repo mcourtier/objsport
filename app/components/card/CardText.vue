@@ -1,7 +1,7 @@
 <template>
   <!-- CardText -->
   <Card class="card-header" :aria-labelledby="headingId">
-    <header class="text-center" data-reveal>
+    <header class="text-center">
       <h2
         :id="headingId"
         class="brand-headline mx-auto max-w-2xl text-2xl md:text-3xl lg:text-4xl"

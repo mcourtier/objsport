@@ -3,7 +3,7 @@
   <Card
     class="card-sportif-section h-full"
     :ui="cardUi"
-    data-reveal
+    data-animate
   >
     <h3
       class="font-display tracking-button text-sm font-bold uppercase"
@@ -16,7 +16,6 @@
         v-for="item in section.items"
         :key="item.title"
         class="flex gap-3"
-        data-reveal
       >
         <span
           class="mt-0.5"

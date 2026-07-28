@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="equipe-valeurs-heading" data-reveal-section>
+  <section aria-labelledby="equipe-valeurs-heading" data-animate>
     <EntrepriseSectionHeading
       title="Nos valeurs"
       heading-id="equipe-valeurs-heading"
@@ -10,7 +10,6 @@
         v-for="value in values"
         :key="value.title"
         class="flex min-w-0 gap-3"
-        data-reveal
       >
         <Icon
           :name="value.icon"

@@ -1,6 +1,6 @@
 <template>
   <!-- CardMissionOutcome -->
-  <div class="card-surface card-mission-outcome" data-reveal>
+  <div class="card-surface card-mission-outcome">
     <div
       class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/15 ring-2 ring-primary sm:h-16 sm:w-16"
       aria-hidden="true"

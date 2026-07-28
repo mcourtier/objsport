@@ -1,6 +1,6 @@
 <template>
   <!-- CardEquipeValue -->
-  <article class="card-equipe-value" data-reveal>
+  <article class="card-equipe-value">
     <Icon
       :name="equipeValueIcon(icon)"
       class="h-12 w-12 shrink-0 md:h-14 md:w-14"

@@ -51,13 +51,10 @@ const rootClass = computed(() => [
 
 const cardAttrs = computed(() => {
   const { class: _, ...rest } = attrs
-  const hasRevealAttr =
-    'data-reveal' in rest ||
-    'data-reveal-section' in rest ||
-    'data-reveal-hero-section' in rest
+  const hasAnimateAttr = 'data-animate' in rest
 
   return {
-    ...(!hasRevealAttr && { 'data-reveal-section': '' }),
+    ...(!hasAnimateAttr && { 'data-animate': '' }),
     ...rest,
   }
 })

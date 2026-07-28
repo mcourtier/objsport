@@ -1,6 +1,6 @@
 <template>
   <!-- CardStationService -->
-  <NuxtLink to="/stations" class="card-station-service group" data-reveal>
+  <NuxtLink to="/stations" class="card-station-service group">
     <Card class="card-station-service__card" :ui="cardUi">
       <div class="flex items-center justify-center gap-4">
         <img

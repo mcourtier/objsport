@@ -6,7 +6,7 @@
     </template>
 
     <div class="flex flex-col gap-3">
-      <div class="contact-channel" data-reveal>
+      <div class="contact-channel">
         <span class="contact-label">
           <Icon
             name="material-symbols:mail-outline"
@@ -22,7 +22,7 @@
         </span>
       </div>
 
-      <div v-if="phone" class="contact-channel" data-reveal>
+      <div v-if="phone" class="contact-channel">
         <span class="contact-label">
           <Icon
             name="material-symbols:call-outline"
@@ -37,7 +37,7 @@
 
     <template #footer>
       <div class="flex justify-center">
-        <UButton :to="ctaTo" size="xl" data-reveal>
+        <UButton :to="ctaTo" size="xl">
           {{ ctaLabel }}
         </UButton>
       </div>

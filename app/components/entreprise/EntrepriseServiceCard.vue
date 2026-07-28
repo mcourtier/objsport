@@ -1,5 +1,5 @@
 <template>
-  <Card class="entreprise-service-card h-full" data-reveal>
+  <Card class="entreprise-service-card h-full">
     <div class="flex items-center gap-4">
       <span
         class="bg-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-neutral-100"

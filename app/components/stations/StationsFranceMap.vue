@@ -1,7 +1,6 @@
 <template>
   <div
     class="stations-france-map relative flex h-full items-center justify-center"
-    data-reveal
   >
     <svg
       viewBox="0 0 507 520"

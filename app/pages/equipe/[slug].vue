@@ -12,18 +12,17 @@
     <article
       v-if="profile"
       class="py-16 md:py-24"
-      data-reveal-section
+      data-animate
     >
       <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
         <div class="prose-team text-neutral-300">
           <p
             v-if="bioIntro"
             class="mb-4 text-lg leading-relaxed"
-            data-reveal
           >
             {{ bioIntro }}
           </p>
-          <div data-reveal>
+          <div>
             <ContentRenderer :value="profile" />
           </div>
         </div>
@@ -31,7 +30,6 @@
         <div
           v-if="hasContact"
           class="border-neutral-700 mt-16 border-t pt-12"
-          data-reveal
         >
           <h2 class="font-display text-neutral-100 text-2xl font-bold">
             Contact
@@ -56,7 +54,7 @@
           </ul>
         </div>
 
-        <div class="mt-12" data-reveal>
+        <div class="mt-12">
           <NuxtLink
             to="/equipe"
             class="text-primary inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
@@ -114,7 +112,7 @@ useSeoMeta({
 })
 
 const root = ref<HTMLElement | null>(null)
-useScrollAnimations(root)
+usePageAnimations(root)
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   <UCard
     class="relative overflow-hidden bg-black"
     aria-labelledby="hero-heading"
-    data-reveal-hero-section
+    data-animate
     :ui="{ body: 'p-0 sm:p-0' }"
   >
     <div
@@ -11,7 +11,6 @@
     >
       <img
         class="hero-athlete-mobile h-full w-full object-cover"
-        data-reveal-hero-img
         :src="backgroundImage"
         :alt="backgroundImageAlt"
         loading="eager"
@@ -28,7 +27,6 @@
     >
       <img
         class="hero-athlete-bg h-full w-full object-cover"
-        data-reveal-hero-img
         :src="backgroundImage"
         :alt="backgroundImageAlt"
         loading="eager"
@@ -49,7 +47,6 @@
       <p
         v-if="showDescription && description"
         class="font-display mt-4 max-w-xl text-base text-neutral-300 uppercase italic sm:mt-6 sm:text-lg md:text-xl"
-        data-reveal-immediate
       >
         <template
           v-for="part in parsedDescription"
@@ -67,7 +64,6 @@
         :to="ctaTo"
         size="sm"
         class="mt-5 sm:mt-6"
-        data-reveal-immediate
       >
         {{ ctaLabel }}
       </UButton>

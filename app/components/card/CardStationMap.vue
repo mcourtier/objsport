@@ -4,7 +4,6 @@
     class="overflow-hidden bg-black"
     :surface="false"
     :ui="{ body: '' }"
-    data-reveal
   >
     <div class="station-map">
       <div

@@ -10,9 +10,9 @@
             pillarBorderClass(pillar.accent),
           ],
     ]"
-    data-reveal-section
+    data-animate
   >
-    <header v-if="!hideHeader" data-reveal>
+    <header v-if="!hideHeader">
       <div class="flex items-center gap-2.5">
         <span
           class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
@@ -48,7 +48,6 @@
         v-for="section in pillar.sections"
         :key="section.title"
         class="min-w-0 flex-1"
-        data-reveal
       >
         <h3
           class="font-display tracking-button text-sm font-bold uppercase"
@@ -61,7 +60,6 @@
             v-for="item in section.items"
             :key="item.title"
             class="flex gap-3"
-            data-reveal
           >
             <span
               class="mt-0.5"

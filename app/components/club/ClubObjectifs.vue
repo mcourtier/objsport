@@ -1,6 +1,6 @@
 <template>
-  <section aria-labelledby="club-objectifs-heading" data-reveal-section>
-    <div class="border-primary rounded-xl border p-5 md:p-6" data-reveal>
+  <section aria-labelledby="club-objectifs-heading" data-animate>
+    <div class="border-primary rounded-xl border p-5 md:p-6">
       <p
         id="club-objectifs-heading"
         class="font-display tracking-button text-neutral-100 text-sm leading-relaxed font-normal uppercase md:text-base"
@@ -36,7 +36,7 @@
       </ul>
     </div>
 
-    <div class="mt-6 flex gap-4" data-reveal>
+    <div class="mt-6 flex gap-4">
       <Icon
         name="material-symbols:rocket-launch-outline"
         class="text-yellow-400 h-10 w-10 shrink-0 -rotate-12"

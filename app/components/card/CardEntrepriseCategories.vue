@@ -8,7 +8,6 @@
       <li
         v-for="category in categories"
         :key="category.accent"
-        data-reveal
       >
         <Pictogram
           :to="category.to"

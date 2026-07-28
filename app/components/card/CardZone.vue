@@ -1,7 +1,7 @@
 <template>
   <!-- CardZone -->
   <NuxtLink :to="to" class="card-zone-link group">
-    <Card class="card-zone" :ui="cardCtaUi" data-reveal>
+    <Card class="card-zone" :ui="cardCtaUi">
       <div class="flex items-center gap-4">
         <span
           class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full"

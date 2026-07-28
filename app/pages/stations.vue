@@ -44,5 +44,5 @@ useSeoMeta({
 })
 
 const root = ref<HTMLElement | null>(null)
-useScrollAnimations(root)
+usePageAnimations(root)
 </script>

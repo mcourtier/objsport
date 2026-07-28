@@ -1,6 +1,6 @@
 <template>
   <div class="stations-intro flex h-full flex-col justify-center gap-10">
-    <header data-reveal>
+    <header>
       <h2
         id="stations-intro-heading"
         class="brand-headline text-xl md:text-2xl lg:text-3xl"
@@ -16,7 +16,6 @@
         v-for="feature in features"
         :key="feature.title"
         class="flex gap-4"
-        data-reveal
       >
         <span
           class="text-primary mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center"
