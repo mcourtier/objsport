@@ -8,7 +8,7 @@ import type {
 } from '~/types/admin'
 import type { Station } from '~/types/station'
 
-const STORAGE_KEY = 'objsport-admin-v1'
+const STORAGE_KEY = 'objsport-admin-v3'
 
 function createId(prefix: string) {
   return `${prefix}-${crypto.randomUUID().slice(0, 8)}`
@@ -48,7 +48,14 @@ export function useAdminStore() {
       if (!raw) return
       const parsed = JSON.parse(raw) as AdminState
       if (Array.isArray(parsed.stations) && Array.isArray(parsed.members)) {
-        state.value = parsed
+        state.value = {
+          stations: parsed.stations,
+          members: parsed.members.map((member) => ({
+            ...member,
+            biography: member.biography ?? '',
+            photo: member.photo ?? '',
+          })),
+        }
       }
     } catch {
       // Ignore invalid storage and keep seed data.

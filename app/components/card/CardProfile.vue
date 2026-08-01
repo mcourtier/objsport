@@ -35,10 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import type { TeamProfilePage } from '~/types/team'
+import type { TeamProfile } from '~/types/team'
 
 defineProps<{
-  profile: TeamProfilePage
+  profile: TeamProfile
 }>()
 </script>
 

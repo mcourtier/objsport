@@ -6,6 +6,9 @@ export interface TeamMember {
   role: string
   region: string
   stationId: string
+  biography: string
+  /** Public URL (Supabase Storage) or empty string. */
+  photo: string
 }
 
 export type TeamMemberInput = Omit<TeamMember, 'id'>

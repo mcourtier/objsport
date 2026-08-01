@@ -23,7 +23,19 @@
             {{ bioIntro }}
           </p>
           <div>
-            <ContentRenderer :value="profile" />
+            <p
+              v-for="(paragraph, index) in biographyParagraphs"
+              :key="index"
+              class="text-lg leading-relaxed"
+            >
+              <template
+                v-for="(part, partIndex) in parseInlineMarkdown(paragraph)"
+                :key="partIndex"
+              >
+                <strong v-if="part.bold">{{ part.text }}</strong>
+                <template v-else>{{ part.text }}</template>
+              </template>
+            </p>
           </div>
         </div>
 
@@ -74,8 +86,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { TeamProfilePage } from '~/types/team'
+import {
+  parseInlineMarkdown,
+  splitMarkdownParagraphs,
+} from '~/utils/simpleMarkdown'
 
 const route = useRoute()
 
@@ -83,18 +97,14 @@ const slug = computed(() => route.params.slug as string)
 
 const rdvTo = computed(() => `/rdv?membre=${slug.value}`)
 
-const { data: profile } = await useAsyncData(
-  () => `team-profile-${slug.value}`,
-  async () => {
-    const doc = (await queryCollection('team')
-      .where('slug', '=', slug.value)
-      .first()) as TeamProfilePage | null
-    return doc
-  },
-)
+const { data: profile } = await useTeamProfile(slug)
 
 const bioIntro = computed(
   () => profile.value?.excerpt ?? profile.value?.description,
+)
+
+const biographyParagraphs = computed(() =>
+  splitMarkdownParagraphs(profile.value?.biography ?? ''),
 )
 
 const hasContact = computed(() =>
@@ -118,34 +128,14 @@ usePageAnimations(root)
 <style scoped>
 .prose-team :deep(p) {
   margin-bottom: 1rem;
-  font-size: 1.125rem;
-  line-height: 1.625;
 }
 
 .prose-team :deep(p:last-child) {
   margin-bottom: 0;
 }
 
-.prose-team :deep(p + p) {
-  margin-top: 0;
-}
-
 .prose-team :deep(strong) {
   font-weight: 600;
   color: var(--color-neutral-100);
-}
-
-.prose-team :deep(ul),
-.prose-team :deep(ol) {
-  margin-block: 1rem;
-  margin-left: 1rem;
-}
-
-.prose-team :deep(ul) {
-  list-style-type: disc;
-}
-
-.prose-team :deep(li + li) {
-  margin-top: 0.5rem;
 }
 </style>

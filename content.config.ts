@@ -27,24 +27,10 @@ export default defineContentConfig({
       type: 'page',
       source: {
         include: '**',
-        exclude: ['team/**', 'navigation.yml'],
+        exclude: ['navigation.yml'],
       },
       schema: z.object({
         hero: pageHeroSchema.optional(),
-      }),
-    }),
-    team: defineCollection({
-      type: 'page',
-      source: 'team/**',
-      schema: z.object({
-        name: z.string(),
-        slug: z.string(),
-        role: z.string(),
-        photo: z.string(),
-        email: z.string().email().optional(),
-        phone: z.string().optional(),
-        order: z.number().default(0),
-        excerpt: z.string().optional(),
       }),
     }),
     navigation: defineCollection({

@@ -157,7 +157,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Admin — Stations',
+  title: 'Objectif Sport - Admin — Stations',
   robots: 'noindex, nofollow',
 })
 

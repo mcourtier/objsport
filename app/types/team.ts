@@ -1,4 +1,5 @@
 export interface TeamProfile {
+  id: string
   name: string
   slug: string
   role: string
@@ -9,6 +10,8 @@ export interface TeamProfile {
   excerpt?: string
   title?: string
   description?: string
+  biography?: string
+  path: string
 }
 
 export type EquipeValueIcon =
@@ -37,14 +40,4 @@ export interface EquipeCoreValue {
   title: string
   description: string
   icon: string
-}
-
-export interface TeamProfilePage extends TeamProfile {
-  id: string
-  path: string
-  body?: {
-    type: string
-    value: unknown[]
-    toc?: { links: unknown[] }
-  }
 }

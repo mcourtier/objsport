@@ -5,8 +5,6 @@ import { stubRoutes } from './app/utils/siteRoutes'
 const prerenderedPaths = [
   '/',
   '/contact',
-  '/rdv',
-  '/equipe',
   '/sportif',
   ...sportifPillarPaths,
   '/club',
@@ -79,8 +77,11 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    supabaseServiceRoleKey: '',
     public: {
       copyrightYear: 2026,
+      supabaseUrl: '',
+      supabaseAnonKey: '',
     },
   },
 

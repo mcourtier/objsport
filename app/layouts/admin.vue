@@ -10,11 +10,12 @@
           to="/admin"
           class="flex items-center gap-2 truncate px-2 font-display text-sm font-bold tracking-wide text-highlighted uppercase italic"
         >
-          <UIcon
-            name="material-symbols:admin-panel-settings-outline"
-            class="size-5 shrink-0 text-primary"
-          />
-          <span v-if="!collapsed">Admin</span>
+          <img
+            src="/logo-square.svg"
+            alt="Objectif Sport"
+            class="size-6 shrink-0"
+          >
+          <span v-if="!collapsed">Objectif Sport - Admin</span>
         </NuxtLink>
       </template>
 
