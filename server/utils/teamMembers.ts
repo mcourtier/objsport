@@ -1,5 +1,5 @@
 import type { TeamProfile } from '../../app/types/team'
-import { useSupabaseService } from './supabase'
+import { useSupabaseAnon } from './supabase'
 
 export interface TeamMemberRow {
   id: string
@@ -40,7 +40,7 @@ export function mapTeamMember(row: TeamMemberRow): TeamProfile {
 }
 
 export async function fetchTeamMembers(): Promise<TeamProfile[]> {
-  const supabase = useSupabaseService()
+  const supabase = useSupabaseAnon()
   const { data, error } = await supabase
     .from('team_members')
     .select(TEAM_MEMBER_COLUMNS)
@@ -59,7 +59,7 @@ export async function fetchTeamMembers(): Promise<TeamProfile[]> {
 export async function fetchTeamMemberBySlug(
   slug: string,
 ): Promise<TeamProfile | null> {
-  const supabase = useSupabaseService()
+  const supabase = useSupabaseAnon()
   const { data, error } = await supabase
     .from('team_members')
     .select(TEAM_MEMBER_COLUMNS)
