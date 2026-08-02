@@ -8,6 +8,7 @@ const prerenderedPaths = [
   '/sportif',
   ...sportifPillarPaths,
   '/club',
+  '/equipe',
   ...Object.keys(stubRoutes),
 ]
 
@@ -15,6 +16,11 @@ export default defineNuxtConfig({
   ssr: true,
 
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', '@nuxtjs/google-fonts'],
+
+  // Avoid better-sqlite3 on Vercel (native bindings fail in serverless). Requires Node ≥ 22.5.
+  content: {
+    experimental: { sqliteConnector: 'native' },
+  },
 
   ui: {
     fonts: false,
