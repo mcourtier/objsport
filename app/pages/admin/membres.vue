@@ -50,6 +50,7 @@
         "
         :ui="{
           content: 'w-3/4 max-w-none bg-neutral-900',
+          body: 'flex flex-col overflow-hidden',
           footer: 'justify-end gap-2',
         }"
       >
@@ -58,10 +59,10 @@
             id="member-form"
             :schema="schema"
             :state="form"
-            class="space-y-4"
+            class="flex min-h-0 flex-1 flex-col gap-4"
             @submit="onSubmit"
           >
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div class="flex min-h-0 flex-1 flex-col gap-4 sm:flex-row">
               <UFormField name="photo" label="Photo" size="xl" class="w-48 shrink-0">
                 <div
                   class="bg-elevated border-default group/photo relative aspect-square w-full overflow-hidden rounded-lg border"
@@ -109,56 +110,69 @@
                 </div>
               </UFormField>
 
-              <div class="grid min-w-0 flex-1 grid-cols-1 gap-4 sm:grid-cols-2">
-                <div class="space-y-4">
-                  <UFormField name="name" label="Nom" required size="xl">
-                    <UInput
-                      v-model="form.name"
-                      placeholder="Prénom Nom"
-                      class="w-full"
-                    />
-                  </UFormField>
+              <div class="flex min-h-0 min-w-0 flex-1 flex-col gap-4">
+                <div class="grid shrink-0 grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div class="space-y-4">
+                    <UFormField name="name" label="Nom" required size="xl">
+                      <UInput
+                        v-model="form.name"
+                        placeholder="Prénom Nom"
+                        class="w-full"
+                      />
+                    </UFormField>
 
-                  <UFormField name="role" label="Rôle" required size="xl">
-                    <UInput
-                      v-model="form.role"
-                      placeholder="Ex. Kinésithérapeute du sport"
-                      class="w-full"
-                    />
-                  </UFormField>
+                    <UFormField name="role" label="Rôle" required size="xl">
+                      <UInput
+                        v-model="form.role"
+                        placeholder="Ex. Kinésithérapeute du sport"
+                        class="w-full"
+                      />
+                    </UFormField>
+                  </div>
+
+                  <div class="space-y-4">
+                    <UFormField name="region" label="Région" required size="xl">
+                      <USelect
+                        v-model="form.region"
+                        :items="regionItems"
+                        placeholder="Choisir une région"
+                        class="w-full"
+                      />
+                    </UFormField>
+
+                    <UFormField name="stationId" label="Station" required size="xl">
+                      <USelect
+                        v-model="form.stationId"
+                        :items="stationItems"
+                        placeholder="Choisir une station"
+                        class="w-full"
+                      />
+                    </UFormField>
+                  </div>
                 </div>
 
-                <div class="space-y-4">
-                  <UFormField name="region" label="Région" required size="xl">
-                    <USelect
-                      v-model="form.region"
-                      :items="regionItems"
-                      placeholder="Choisir une région"
-                      class="w-full"
-                    />
-                  </UFormField>
-
-                  <UFormField name="stationId" label="Station" required size="xl">
-                    <USelect
-                      v-model="form.stationId"
-                      :items="stationItems"
-                      placeholder="Choisir une station"
-                      class="w-full"
-                    />
-                  </UFormField>
-                </div>
+                <UFormField
+                  name="biography"
+                  label="Biographie"
+                  size="xl"
+                  class="flex min-h-0 flex-1 flex-col"
+                  :ui="{
+                    root: 'flex min-h-0 flex-1 flex-col',
+                    container: 'flex min-h-0 flex-1 flex-col',
+                  }"
+                >
+                  <UTextarea
+                    v-model="form.biography"
+                    placeholder="Présentation du membre…"
+                    class="min-h-0 w-full flex-1"
+                    :ui="{
+                      root: 'flex h-full min-h-0 w-full flex-1 flex-col',
+                      base: 'h-full min-h-0 flex-1 resize-none',
+                    }"
+                  />
+                </UFormField>
               </div>
             </div>
-
-            <UFormField name="biography" label="Biographie" size="xl">
-              <UTextarea
-                v-model="form.biography"
-                :rows="6"
-                autoresize
-                placeholder="Présentation du membre…"
-                class="w-full"
-              />
-            </UFormField>
           </UForm>
         </template>
 
