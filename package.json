@@ -14,21 +14,22 @@
     "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
+    "@iconify-json/material-symbols": "^1.2.74",
     "@nuxt/content": "^3.13.0",
     "@nuxt/ui": "^4.8.0",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/seo": "5.1.3",
+    "@resvg/resvg-js": "^2.6.2",
     "@supabase/supabase-js": "^2.111.0",
     "better-sqlite3": "^12.5.0",
     "gsap": "^3.15.0",
     "nuxt": "^4.4.4",
-    "playwright-core": "^1.60.0",
+    "satori": "^0.19.3",
     "tailwindcss": "^4.3.0",
     "ws": "^8.21.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@iconify-json/material-symbols": "^1.2.74",
     "@playwright/test": "^1.60.0",
     "@smit-io/color-palette": "github:smit-io/color-palette",
     "@types/ws": "^8.18.1",
@@ -39,7 +40,9 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "better-sqlite3"
+      "better-sqlite3",
+      "esbuild",
+      "@resvg/resvg-js"
     ]
   }
 }

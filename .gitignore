@@ -29,4 +29,5 @@ logs
 .env.*
 !.env.example
 
-pnpm-lock.yaml
+# Vercel / local build artifacts
+.vercel
