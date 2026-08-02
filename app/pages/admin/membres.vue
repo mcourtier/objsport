@@ -61,85 +61,101 @@
             class="space-y-4"
             @submit="onSubmit"
           >
-            <UFormField name="photo" label="Photo">
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-start">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+              <UFormField name="photo" label="Photo" size="xl" class="w-48 shrink-0">
                 <div
-                  class="bg-elevated border-default flex size-24 shrink-0 items-center justify-center overflow-hidden rounded-lg border"
+                  class="bg-elevated border-default group/photo relative aspect-square w-full overflow-hidden rounded-lg border"
                 >
-                  <img
-                    v-if="form.photo"
-                    :src="form.photo"
-                    alt=""
-                    class="size-full object-cover"
-                  />
-                  <UIcon
-                    v-else
-                    name="material-symbols:person-outline"
-                    class="text-muted size-10"
-                  />
-                </div>
-                <div class="min-w-0 flex-1 space-y-2">
+                  <template v-if="form.photo">
+                    <img
+                      :src="form.photo"
+                      alt=""
+                      class="size-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      class="absolute top-1.5 right-1.5 opacity-0 transition-opacity group-hover/photo:opacity-100 focus-visible:opacity-100 disabled:pointer-events-none"
+                      :disabled="photoUploading"
+                      aria-label="Retirer la photo"
+                      @click="clearPhoto"
+                    >
+                      <UIcon
+                        name="material-symbols:close"
+                        class="size-5 text-white drop-shadow-sm"
+                      />
+                    </button>
+                    <p
+                      v-if="photoUploading"
+                      class="absolute inset-x-0 bottom-0 bg-default/80 px-2 py-1 text-center text-xs"
+                    >
+                      Envoi en cours…
+                    </p>
+                  </template>
                   <UFileUpload
+                    v-else
                     v-model="photoFile"
                     accept="image/jpeg,image/png,image/webp"
                     label="Choisir une photo"
                     description="JPEG, PNG ou WebP — max 5 Mo"
+                    size="sm"
+                    class="size-full"
                     :disabled="photoUploading"
+                    :ui="{
+                      root: 'size-full',
+                      base: 'size-full border-0 rounded-none justify-center p-3',
+                      wrapper: 'px-1 py-1',
+                    }"
                   />
-                  <div class="flex flex-wrap gap-2">
-                    <UButton
-                      v-if="form.photo"
-                      label="Retirer"
-                      color="neutral"
-                      variant="ghost"
-                      size="sm"
-                      :disabled="photoUploading"
-                      @click="clearPhoto"
+                </div>
+              </UFormField>
+
+              <div class="grid min-w-0 flex-1 grid-cols-1 gap-4 sm:grid-cols-2">
+                <div class="space-y-4">
+                  <UFormField name="name" label="Nom" required size="xl">
+                    <UInput
+                      v-model="form.name"
+                      placeholder="Prénom Nom"
+                      class="w-full"
                     />
-                    <p v-if="photoUploading" class="text-muted text-sm">
-                      Envoi en cours…
-                    </p>
-                  </div>
+                  </UFormField>
+
+                  <UFormField name="role" label="Rôle" required size="xl">
+                    <UInput
+                      v-model="form.role"
+                      placeholder="Ex. Kinésithérapeute du sport"
+                      class="w-full"
+                    />
+                  </UFormField>
+                </div>
+
+                <div class="space-y-4">
+                  <UFormField name="region" label="Région" required size="xl">
+                    <USelect
+                      v-model="form.region"
+                      :items="regionItems"
+                      placeholder="Choisir une région"
+                      class="w-full"
+                    />
+                  </UFormField>
+
+                  <UFormField name="stationId" label="Station" required size="xl">
+                    <USelect
+                      v-model="form.stationId"
+                      :items="stationItems"
+                      placeholder="Choisir une station"
+                      class="w-full"
+                    />
+                  </UFormField>
                 </div>
               </div>
-            </UFormField>
+            </div>
 
-            <UFormField name="name" label="Nom" required>
-              <UInput v-model="form.name" placeholder="Prénom Nom" class="w-full" />
-            </UFormField>
-
-            <UFormField name="role" label="Rôle" required>
-              <UInput
-                v-model="form.role"
-                placeholder="Ex. Kinésithérapeute du sport"
-                class="w-full"
-              />
-            </UFormField>
-
-            <UFormField name="biography" label="Biographie">
+            <UFormField name="biography" label="Biographie" size="xl">
               <UTextarea
                 v-model="form.biography"
                 :rows="6"
                 autoresize
                 placeholder="Présentation du membre…"
-                class="w-full"
-              />
-            </UFormField>
-
-            <UFormField name="region" label="Région" required>
-              <USelect
-                v-model="form.region"
-                :items="regionItems"
-                placeholder="Choisir une région"
-                class="w-full"
-              />
-            </UFormField>
-
-            <UFormField name="stationId" label="Station" required>
-              <USelect
-                v-model="form.stationId"
-                :items="stationItems"
-                placeholder="Choisir une station"
                 class="w-full"
               />
             </UFormField>

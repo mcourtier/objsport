@@ -55,7 +55,7 @@
             class="space-y-4"
             @submit="onSubmit"
           >
-            <UFormField name="name" label="Nom" required>
+            <UFormField name="name" label="Nom" required size="xl">
               <UInput
                 v-model="form.name"
                 placeholder="Nom de la station"
@@ -63,7 +63,7 @@
               />
             </UFormField>
 
-            <UFormField name="location" label="Localisation" required>
+            <UFormField name="location" label="Localisation" required size="xl">
               <UInput
                 v-model="form.location"
                 placeholder="Ville (code postal)"
@@ -71,7 +71,7 @@
               />
             </UFormField>
 
-            <UFormField name="description" label="Description" required>
+            <UFormField name="description" label="Description" required size="xl">
               <UTextarea
                 v-model="form.description"
                 :rows="3"
@@ -80,7 +80,7 @@
               />
             </UFormField>
 
-            <UFormField name="image" label="Image (URL)" required>
+            <UFormField name="image" label="Image (URL)" required size="xl">
               <UInput
                 v-model="form.image"
                 placeholder="/images/stations/…"
@@ -88,7 +88,7 @@
               />
             </UFormField>
 
-            <UFormField name="imageAlt" label="Texte alternatif" required>
+            <UFormField name="imageAlt" label="Texte alternatif" required size="xl">
               <UInput
                 v-model="form.imageAlt"
                 placeholder="Description de l’image"
@@ -96,7 +96,7 @@
               />
             </UFormField>
 
-            <UFormField name="website" label="Site web" required>
+            <UFormField name="website" label="Site web" required size="xl">
               <UInput
                 v-model="form.website"
                 type="url"

@@ -4,8 +4,8 @@ import ws from 'ws'
 export const TEAM_PHOTOS_BUCKET = 'team-photos'
 
 function requireSupabaseUrl(): string {
-  const url = useRuntimeConfig().public.supabaseUrl
-  if (!url) {
+  const url = useRuntimeConfig().public.supabaseUrl?.trim()
+  if (!url || !/^https?:\/\//i.test(url)) {
     throw createError({
       statusCode: 500,
       statusMessage:
