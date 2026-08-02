@@ -1,21 +1,37 @@
 <template>
-  <UDashboardGroup storage-key="objsport-admin">
+  <UDashboardGroup storage-key="objsport-admin-v2">
     <UDashboardSidebar
       collapsible
       resizable
-      :ui="{ footer: 'border-t border-default' }"
+      :default-size="11"
+      :min-size="10"
+      :max-size="16"
+      :ui="{
+        header: 'h-auto justify-center py-2',
+        footer: 'border-t border-default',
+      }"
     >
       <template #header="{ collapsed }">
         <NuxtLink
           to="/admin"
-          class="flex items-center gap-2 truncate px-2 font-display text-sm font-bold tracking-wide text-highlighted uppercase italic"
+          class="mt-4 flex w-full flex-col items-center gap-1 truncate px-2"
         >
           <img
+            v-if="collapsed"
             src="/logo-square.svg"
             alt="Objectif Sport"
-            class="size-6 shrink-0"
+            class="size-8 shrink-0"
           >
-          <span v-if="!collapsed">Objectif Sport - Admin</span>
+          <template v-else>
+            <img
+              src="/logo.svg"
+              alt="Objectif Sport"
+              class="h-auto w-full max-w-[9rem] shrink-0"
+            >
+            <span class="font-display text-xs font-bold tracking-widest text-highlighted uppercase italic">
+              Admin
+            </span>
+          </template>
         </NuxtLink>
       </template>
 
@@ -24,6 +40,10 @@
           :collapsed="collapsed"
           :items="items"
           orientation="vertical"
+          :ui="{
+            link: 'text-base gap-2.5 py-2.5',
+            linkLeadingIcon: 'size-6',
+          }"
         />
       </template>
 
@@ -34,6 +54,7 @@
           to="/"
           color="neutral"
           variant="ghost"
+          size="lg"
           block
           :square="collapsed"
         />
