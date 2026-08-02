@@ -224,6 +224,7 @@ import type { TeamMember, TeamMemberInput } from '~/types/admin'
 
 definePageMeta({
   layout: 'admin',
+  pageTransition: false,
 })
 
 useSeoMeta({

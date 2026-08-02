@@ -154,6 +154,7 @@ import type { Station } from '~/types/station'
 
 definePageMeta({
   layout: 'admin',
+  pageTransition: false,
 })
 
 useSeoMeta({
