@@ -23,7 +23,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Mathias Giustiniani est **médecin du sport** chez Objectif Sport. Il assure le suivi médical des sportifs, de la prévention au retour à la compétition, en coordination avec l’ensemble de l’équipe pluridisciplinaire.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/mathias-giustiniani.jpg',
   },
   {
     id: 'member-barthelemy-frederique',
@@ -33,7 +33,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Barthélémy Frédérique est **médecin du sport** au sein d’Objectif Sport. Il travaille en lien avec les kinésithérapeutes, ostéopathes et coachs pour un accompagnement complet des sportifs.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/barthelemy-frederique.jpg',
   },
   {
     id: 'member-yann-bourrel',
@@ -43,7 +43,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Yann Bourrel est **ostéopathe** chez Objectif Sport. Il prend en charge les sportifs pour optimiser la mobilité, soulager les douleurs et prévenir les récidives, en coordination avec le reste de l’équipe.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/yann-bourrel.jpg',
   },
   {
     id: 'member-helene-pierrel',
@@ -53,7 +53,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Hélène Pierrel est **kinésithérapeute** au sein d’Objectif Sport. Elle assure la prise en charge des sportifs en rééducation fonctionnelle et en prévention des blessures.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/helene-pierrel.jpg',
   },
   {
     id: 'member-stephane-re',
@@ -63,7 +63,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Stéphane Ré est **kinésithérapeute** chez Objectif Sport. Il prend en charge les sportifs dans leur parcours de soin, de la rééducation au retour à l’entraînement.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/stephane-re.jpg',
   },
   {
     id: 'member-nathalie-faglia',
@@ -73,7 +73,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Nathalie Faglia est **ostéopathe** au sein d’Objectif Sport. Elle accompagne les sportifs pour restaurer l’équilibre du corps et optimiser la récupération.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/nathalie-faglia.jpg',
   },
   {
     id: 'member-maxime-matton',
@@ -83,7 +83,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Maxime Matton est **kinésithérapeute** chez Objectif Sport. Il assure la prise en charge des sportifs, de la prévention à la rééducation fonctionnelle.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/maxime-matton.jpg',
   },
   {
     id: 'member-vladimir-duparc',
@@ -93,7 +93,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Vladimir Duparc est **coach APA** (activité physique adaptée) au sein d’Objectif Sport. Il accompagne les sportifs dans la reprise ou le maintien de l’activité physique, en lien avec l’équipe soignante.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/vladimir-duparc.jpg',
   },
   {
     id: 'member-amelie-raynal',
@@ -103,7 +103,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Amélie Raynal est **coach APA** (activité physique adaptée) chez Objectif Sport. Elle accompagne les sportifs dans la reprise d’activité, le renforcement et l’optimisation de la performance.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/amelie-raynal.jpg',
   },
   {
     id: 'member-cecile-capdeville',
@@ -113,7 +113,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Cécile Capdeville est **nutritionniste** au sein d’Objectif Sport. Elle accompagne les sportifs pour adapter leur alimentation à leurs objectifs de performance, de récupération et de bien-être.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/cecile-capdeville.jpg',
   },
   {
     id: 'member-lucas-bonnaud',
@@ -123,7 +123,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Lucas Bonnaud est **kinésithérapeute** chez Objectif Sport. Il prend en charge les sportifs dans leur parcours de soin et de retour à la performance.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/lucas-bonnaud.jpg',
   },
   {
     id: 'member-marielle-rollet',
@@ -133,7 +133,7 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Marielle Rollet est **kinésithérapeute** au sein d’Objectif Sport. Elle assure la prise en charge des sportifs, de la prévention à la rééducation fonctionnelle.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/marielle-rollet.jpg',
   },
   {
     id: 'member-albert-antonio',
@@ -143,6 +143,6 @@ export const adminSeedMembers: TeamMember[] = [
     stationId: defaultStationId,
     biography:
       'Albert Antonio est **kinésithérapeute** chez Objectif Sport. Il accompagne les sportifs dans leur parcours de soin, de la rééducation au retour à l’entraînement.',
-    photo: '/images/athlete.png',
+    photo: '/images/team/albert-antonio.jpg',
   },
 ]
