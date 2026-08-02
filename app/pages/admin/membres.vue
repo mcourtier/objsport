@@ -33,8 +33,8 @@
           base: 'table-fixed border-separate border-spacing-0',
           thead: '[&>tr]:bg-elevated/50 [&>tr]:after:content-none',
           tbody: '[&>tr]:last:[&>td]:border-b-0',
-          th: 'py-2 first:rounded-l-lg last:rounded-r-lg border-y border-default first:border-l last:border-r',
-          td: 'border-b border-default',
+          th: 'py-3.5 text-lg first:rounded-l-lg last:rounded-r-lg border-y border-default first:border-l last:border-r',
+          td: 'py-4 text-lg border-b border-default',
           tr: 'cursor-pointer',
         }"
         @select="onRowSelect"
@@ -309,12 +309,12 @@ const columns: TableColumn<TeamMember>[] = [
           'div',
           {
             class:
-              'bg-elevated text-muted flex size-8 items-center justify-center rounded-full',
+              'bg-elevated text-muted flex size-16 items-center justify-center rounded-lg',
           },
           [
             h(resolveComponent('UIcon'), {
               name: 'material-symbols:person-outline',
-              class: 'size-4',
+              class: 'size-8',
             }),
           ],
         )
@@ -322,7 +322,7 @@ const columns: TableColumn<TeamMember>[] = [
       return h('img', {
         src: photo,
         alt: '',
-        class: 'size-8 rounded-full object-cover',
+        class: 'size-16 rounded-lg object-cover',
       })
     },
   },
