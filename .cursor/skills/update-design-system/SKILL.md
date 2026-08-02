@@ -66,15 +66,7 @@ Keep shades the project already uses unless DESIGN implies a full scale: `100`, 
 
 ### 3. Generate color scales
 
-For brand (or any token needing 50–950):
-
-```bash
-pnpm palette <hex> --name brand --format css
-```
-
-Example: `pnpm palette #de241b --name brand --format css`
-
-Merge the script output into `@theme` in `main.css`. If the command fails with a missing module error, run `node scripts/build-color-palette-dep.mjs` once, then retry.
+For brand (or any token needing 50–950), generate a Tailwind-style scale (e.g. via [uicolors.app](https://uicolors.app)) and merge into `@theme` in `main.css`.
 
 For **single hex anchors** (no full scale), set only `--color-brand: #hex` as today.
 

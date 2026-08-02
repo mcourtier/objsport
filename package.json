@@ -8,7 +8,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "palette": "node scripts/generate-tailwind-palette.mjs",
     "typecheck": "nuxt typecheck",
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install chromium"
@@ -30,7 +29,6 @@
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.2.74",
     "@playwright/test": "^1.60.0",
-    "@smit-io/color-palette": "github:smit-io/color-palette",
     "@types/ws": "^8.18.1",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",

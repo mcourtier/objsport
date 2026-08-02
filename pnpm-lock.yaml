@@ -51,9 +51,6 @@ importers:
       '@playwright/test':
         specifier: ^1.60.0
         version: 1.60.0
-      '@smit-io/color-palette':
-        specifier: github:smit-io/color-palette
-        version: https://codeload.github.com/smit-io/color-palette/tar.gz/85d347cfa831dcca778c6b259eb8f4114caedc3d
       '@types/ws':
         specifier: ^8.18.1
         version: 8.18.1
@@ -2155,10 +2152,6 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@smit-io/color-palette@https://codeload.github.com/smit-io/color-palette/tar.gz/85d347cfa831dcca778c6b259eb8f4114caedc3d':
-    resolution: {gitHosted: true, integrity: sha512-0cZ4Yw6/W3cknptWcw7VhO1SG/7XwiPWR0P79vGrh7zMBamKk1l5b7+NN1ME8PAf9EKkRKe/rj5d4A5T1z6BxQ==, tarball: https://codeload.github.com/smit-io/color-palette/tar.gz/85d347cfa831dcca778c6b259eb8f4114caedc3d}
-    version: 0.1.1
-
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
 
@@ -3134,9 +3127,6 @@ packages:
 
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
-
-  colord@2.9.3:
-    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
 
   colortranslator@5.0.0:
     resolution: {integrity: sha512-Z3UPUKasUVDFCDYAjP2fmlVRf1jFHJv1izAmPjiOa0OCIw1W7iC8PZ2GsoDa8uZv+mKyWopxxStT9q05+27h7w==}
@@ -8376,10 +8366,6 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@smit-io/color-palette@https://codeload.github.com/smit-io/color-palette/tar.gz/85d347cfa831dcca778c6b259eb8f4114caedc3d':
-    dependencies:
-      colord: 2.9.3
-
   '@socket.io/component-emitter@3.1.2': {}
 
   '@speed-highlight/core@1.2.15': {}
@@ -9378,8 +9364,6 @@ snapshots:
       color-name: 1.1.4
 
   color-name@1.1.4: {}
-
-  colord@2.9.3: {}
 
   colortranslator@5.0.0: {}
 

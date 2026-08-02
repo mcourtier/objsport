@@ -36,18 +36,6 @@ Shared brand utilities in `main.css` `@layer components`:
 - `.brand-tagline`, `.brand-tagline-bullet`
 - `.brand-headline`, `.brand-headline-accent`, `.brand-section-rule`
 
-## Palette script
-
-```bash
-pnpm palette <hex> [--name brand] [--format css|json]
-```
-
-- `--format css` — paste into `@theme`
-- `--format json` — inspect shades before merging
-- Anchor shade is chosen automatically (uicolors algorithm)
-
 ## Related paths
 
 - Design source: `--DESIGN.md`
-- Palette generator: `scripts/generate-tailwind-palette.mjs`
-- Dep build (postinstall): `scripts/build-color-palette-dep.mjs`
