@@ -14,18 +14,29 @@
     </Card>
 
     <ul
-      v-if="content.stations.length"
+      v-if="visibleStations.length"
       class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
       aria-label="Liste des stations"
     >
       <li
-        v-for="station in content.stations"
+        v-for="station in visibleStations"
         :key="station.id"
         class="min-w-0"
       >
         <CardStation :station="station" />
       </li>
     </ul>
+
+    <div v-if="hasMoreStations" class="flex justify-center">
+      <UButton
+        size="xl"
+        color="neutral"
+        variant="outline"
+        @click="showMoreStations"
+      >
+        Afficher plus
+      </UButton>
+    </div>
   </div>
 </template>
 
@@ -33,6 +44,24 @@
 import { stationsPageContent } from '~/data/stationsPage'
 
 const content = stationsPageContent
+
+const pageSize = 12
+const visibleCount = ref(pageSize)
+
+const visibleStations = computed(() =>
+  content.stations.slice(0, visibleCount.value),
+)
+
+const hasMoreStations = computed(
+  () => visibleCount.value < content.stations.length,
+)
+
+function showMoreStations() {
+  visibleCount.value = Math.min(
+    visibleCount.value + pageSize,
+    content.stations.length,
+  )
+}
 
 const networkCardUi = {
   body: 'p-6 md:p-8 lg:p-10',

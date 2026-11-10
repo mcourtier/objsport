@@ -13,6 +13,7 @@ export interface Station {
 export interface StationsIntroFeature {
   title: string
   body: string
+  icon: string
 }
 
 export interface StationsIntro {

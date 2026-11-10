@@ -22,10 +22,12 @@ export const stationsPageContent: StationsPageContent = {
     features: [
       {
         title: 'Des dirigeants engagés',
+        icon: 'material-symbols:supervisor-account-outline',
         body: 'Chaque Station est dirigée par des professionnels de santé et du sport, experts dans leur domaine. Ils portent le projet localement et garantissent la qualité, la cohérence et l’excellence des services proposés.',
       },
       {
         title: 'Un réseau plus grand',
+        icon: 'material-symbols:hub-outline',
         body: 'Toutes les Stations sont connectées au réseau Objectif Sport. Partage d’expertises, formations, outils communs, événements et standards de qualité. Une force collective au service de la santé et de la performance.',
       },
     ],

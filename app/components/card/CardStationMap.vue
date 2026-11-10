@@ -67,6 +67,34 @@
           loading="lazy"
         />
       </div>
+
+      <ul class="grid grid-cols-3 gap-2 px-4 py-4 lg:hidden">
+        <li
+          v-for="callout in callouts"
+          :key="`label-${callout.accent}`"
+          class="flex flex-col items-center gap-1.5 text-center"
+        >
+          <span
+            class="flex h-8 w-8 items-center justify-center rounded-full ring-2"
+            :class="[
+              pillarBorderClass(callout.accent),
+              pillarTextClass(callout.accent),
+            ]"
+            aria-hidden="true"
+          >
+            <Icon
+              :name="sportifPillarHeaderIcon(callout.accent)"
+              class="h-4 w-4"
+            />
+          </span>
+          <span
+            class="font-display text-xs font-bold uppercase italic"
+            :class="pillarTextClass(callout.accent)"
+          >
+            {{ callout.title }}
+          </span>
+        </li>
+      </ul>
     </div>
   </Card>
 </template>
