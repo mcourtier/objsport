@@ -5,6 +5,7 @@
 @theme {
   --font-display: Raleway, ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  --tracking-button: 0.06em;
 }
 
 /* Static so Nuxt UI primary always has 50–950 shades in the bundle */
@@ -42,6 +43,10 @@
   --color-gym: #388828;
   --color-lab: #e8a800;
   --color-studio: #0848a0;
+
+  /* Text variants: gym and studio fills are too dark for text on dark surfaces (WCAG AA 4.5:1) */
+  --color-gym-light: #45a433;
+  --color-studio-light: #4b8fe8;
 }
 
 :root,
@@ -110,11 +115,13 @@
     @apply bg-primary h-px w-full;
   }
 
-  .brand-headline-accent {
-    @apply after:bg-primary relative inline-block after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:content-[''];
-  }
-
   .card-surface {
     @apply divide-y-0 overflow-hidden rounded-2xl border border-neutral-700 !bg-neutral-900/50 ring-0;
+  }
+
+  /* Visible fill and border for Nuxt UI inputs placed on a card surface */
+  .form-fields {
+    --ui-bg: var(--color-neutral-800);
+    --ui-border-accented: var(--color-neutral-600);
   }
 }

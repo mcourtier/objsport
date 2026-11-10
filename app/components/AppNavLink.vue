@@ -47,13 +47,13 @@ function subNavLinkClass(child: NavLink) {
   if (route.path === child.to) {
     const accentClass = child.accent
       ? pillarTextClass(child.accent)
-      : 'text-primary'
+      : 'text-primary-500'
     return `${accentClass} underline underline-offset-4`
   }
 
   const hoverClass = child.accent
     ? pillarTextHoverClass(child.accent)
-    : 'hover:text-primary'
+    : 'hover:text-primary-500'
 
   return `text-neutral-300 ${hoverClass}`
 }

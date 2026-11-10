@@ -5,6 +5,17 @@ import type { HeroAccent } from '~/types/pageHero'
 export function heroAccentTextClass(accent: HeroAccent = 'primary') {
   const map: Record<HeroAccent, string> = {
     primary: 'text-primary',
+    gym: 'text-gym-light',
+    lab: 'text-lab',
+    studio: 'text-studio-light',
+  }
+  return map[accent]
+}
+
+/** Base accent hue for decorative `currentColor` fills (hero brush line). */
+export function heroAccentFillClass(accent: HeroAccent = 'primary') {
+  const map: Record<HeroAccent, string> = {
+    primary: 'text-primary',
     gym: 'text-gym',
     lab: 'text-lab',
     studio: 'text-studio',
@@ -77,18 +88,18 @@ export function pillarBorderClass(accent: PillarAccent) {
 
 export function pillarTextClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'text-gym',
+    gym: 'text-gym-light',
     lab: 'text-lab',
-    studio: 'text-studio',
+    studio: 'text-studio-light',
   }
   return map[accent]
 }
 
 export function pillarTextHoverClass(accent: PillarAccent) {
   const map: Record<PillarAccent, string> = {
-    gym: 'hover:text-gym',
+    gym: 'hover:text-gym-light',
     lab: 'hover:text-lab',
-    studio: 'hover:text-studio',
+    studio: 'hover:text-studio-light',
   }
   return map[accent]
 }

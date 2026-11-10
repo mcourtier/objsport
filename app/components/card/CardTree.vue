@@ -125,6 +125,11 @@ const isWideLayout = computed(() => childCount.value >= 4)
   @apply flex min-w-0 flex-1 flex-col;
 }
 
+/* Slotted card fills the column so every card in a row ends at the same height. */
+.card-tree-card > :deep(:last-child) {
+  @apply flex-1;
+}
+
 /* Stem above each card — revealed with that card. */
 .card-tree-branches-stem {
   @apply relative hidden h-5 shrink-0 justify-center md:flex;

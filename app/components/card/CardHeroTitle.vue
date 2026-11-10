@@ -17,7 +17,7 @@
     >
       {{ stackedTitle.line2 }}
     </span>
-    <BrandBrushLine :class="accentTextClass" />
+    <BrandBrushLine :class="accentFillClass" />
     <span
       v-if="stackedTitle.line3"
       class="brand-headline hero-title-line hero-title-line--closing block text-xl md:text-2xl lg:text-3xl"
@@ -61,7 +61,7 @@
 <script setup lang="ts">
 import type { HeroAccent, HighlightedTextProp } from '~/types/pageHero'
 import { parseHighlightedText } from '~/utils/parseHighlightedText'
-import { heroAccentTextClass } from '~/utils/pillarTheme'
+import { heroAccentFillClass, heroAccentTextClass } from '~/utils/pillarTheme'
 
 const props = withDefaults(
   defineProps<{
@@ -75,6 +75,7 @@ const props = withDefaults(
 )
 
 const accentTextClass = computed(() => heroAccentTextClass(props.accent))
+const accentFillClass = computed(() => heroAccentFillClass(props.accent))
 
 interface StackedHeroTitle {
   line1: string

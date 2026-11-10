@@ -41,7 +41,7 @@
           <li
             v-for="label in sectionLabels"
             :key="label"
-            class="font-display rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wide"
+            class="font-display rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide"
             :class="[pillarBorderClass(accent), pillarTextClass(accent)]"
           >
             {{ label }}

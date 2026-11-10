@@ -15,7 +15,7 @@
           aria-hidden="true"
         />
         <span
-          class="font-display text-[10px] leading-none font-bold tracking-wide text-neutral-900 uppercase sm:text-xs"
+          class="font-display text-xs leading-none font-bold tracking-wide text-neutral-900 uppercase"
         >
           {{ label }}
         </span>

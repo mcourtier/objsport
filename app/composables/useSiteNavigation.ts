@@ -28,7 +28,7 @@ export async function useSiteNavigation() {
   function navLinkClass(to: string) {
     return isNavActive(to)
       ? 'bg-primary text-neutral-100'
-      : 'text-neutral-100 hover:text-primary'
+      : 'text-neutral-100 hover:text-primary-500'
   }
 
   return {

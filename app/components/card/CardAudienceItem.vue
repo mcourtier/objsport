@@ -24,7 +24,7 @@
 
       <template #footer>
         <span
-          class="font-display inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-primary"
+          class="font-display inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-primary-500"
         >
           {{ cta }}
           <Icon

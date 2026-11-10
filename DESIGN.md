@@ -1,106 +1,70 @@
 # Objectif Sport
 
-Spot
-
-## Overview
-
-VoiceBox is a high-contrast editorial design system for opinion blogs and cultural commentary sites. It channels the energy of print magazines — massive headlines, stark black-and-white foundations, and a single aggressive red accent that punctuates like an exclamation mark. The density is intentionally mixed: bold, oversized headers create dramatic entries while compact body text maintains readability for long-form argument. Every element is flat and sharp, with borders doing all the structural work.
+Système visuel du site : fond sombre, cartes arrondies, typographie italique en capitales, un rouge de marque et trois couleurs de zone (Gym, Lab, Studio).
 
 ## Colors
 
-### Brand Palette
+### Brand
 
-| Token          | Hex       | Role                                      |
-|----------------|-----------|-------------------------------------------|
-| Brand          | `#de241b` | Red — headings, primary UI, dominant tone |
-| Neutral        | `#222527` | Red — headings, primary UI, dominant tone |
+| Token | Hex | Role |
+|-------|-----|------|
+| Primary | `#de241b` | Boutons, filets, pastilles. Texte courant : `primary-500` (`#f6463d`), le rouge de base passe sous 4,5:1 sur les cartes |
+| Neutral | `#222527` | Texte et bordures, échelle `neutral-50` à `neutral-950` |
 
-### Surface Palette
+### Surfaces
 
-| Token          | Value              | Role                                      |
-|----------------|--------------------|-------------------------------------------|
-| Background     | `#9e1c16`          | Pure black page background                |
-| Surface        | Neutral @ 5%       | Card backgrounds, aside blocks — Neutral (`#222527`) at 5% opacity |
+| Token | Value | Role |
+|-------|-------|------|
+| Page | `#0a0a0c` | Fond de page (`body`) |
+| Card | `neutral-900` à 50 % | Classe `.card-surface` : `rounded-2xl`, bordure `neutral-700`. Une seule surface pour toutes les cartes |
 
-### Content Palette
+### Zones
 
-| Token          | Hex       | Role                                      |
-|----------------|-----------|-------------------------------------------|
-| Text Primary   | `#0A0A0A` | Headlines, body copy                      |
-| Text Secondary | `#525252` | Bylines, datelines, secondary prose       |
-| Text Tertiary  | `#A3A3A3` | Placeholders, disabled text               |
+| Token | Hex | Texte sur fond sombre |
+|-------|-----|------------------------|
+| Gym | `#388828` | `--color-gym-light` `#45a433` |
+| Lab | `#e8a800` | le jaune passe tel quel |
+| Studio | `#0848a0` | `--color-studio-light` `#4b8fe8` |
 
-### Section Palette
-
-| Token      | Hex       | Role                          |
-|------------|-----------|-------------------------------|
-| Consulting | `#f8ef04` | Consulting section accent     |
-| Coaching   | `#0183db` | Coaching section accent       |
-| Care       | `#b3b4b3` | Care section accent           |
+Les aplats (pastilles, traits, bordures) gardent la teinte de base. Le texte utilise la variante claire via `pillarTextClass` et `heroAccentTextClass`.
 
 ## Typography
 
-### Font Stack
+| Role | Font |
+|------|------|
+| Display, titres, boutons | Raleway (`font-display`) |
+| Corps | Source Sans 3 (`font-body`) |
 
-| Role             | Font                                                      |
-|------------------|-----------------------------------------------------------|
-| Display/Headings | Raleway, ui-sans-serif, system-ui, sans-serif             |
-| UI/Body          | 'Source Sans 3', ui-sans-serif, system-ui, sans-serif     |
+Deux niveaux de titre :
+
+- Section : `CardText`, italique, centré, capitales.
+- Carte : `AppTitle`, capitales, trait pinceau rouge (`BrandBrushLine`).
+
+Les libellés en capitales utilisent `tracking-button` (`0.06em`). Taille minimale du texte : 12px.
 
 ## Components
 
-### Buttons
+### Boutons
 
-**Primary**
-- Background: `#0A0A0A`
-- Text: `#FAFAFA`
-- Border: `2px solid #0A0A0A`
-- Padding: 10px 24px
-- Font: Work Sans, 14px, weight 700, uppercase
-- Letter spacing: 0.06em
-- Radius: 0px
-- Hover: Background `#EF4444`, border `#EF4444`
-- Active: Background `#DC2626`, border `#DC2626`
+- Capitales, `font-display`, gras, `rounded-sm`, texte `neutral-100`.
+- Principal : fond `#de241b`, survol à 90 %. Taille `xl` pour les actions de page : `px-8 py-3.5`.
+- Secondaire : `color="neutral"` `variant="outline"`.
 
-**Secondary**
-- Background: transparent
-- Text: `#0A0A0A`
-- Border: `2px solid #0A0A0A`
-- Padding: 10px 24px
-- Font: Work Sans, 14px, weight 700, uppercase
-- Letter spacing: 0.06em
-- Radius: 0px
-- Hover: Background `#0A0A0A`, text `#FAFAFA`
-- Active: Background `#262626`
+### Cartes
 
-**Sizes:** Small 6px 16px / 12px, Medium 10px 24px / 14px, Large 14px 32px / 16px
+`.card-surface` pour tout bloc encadré. Les photos (profils, stations) sont rognées par les coins de la carte, sans marge interne.
 
-**Disabled:** Opacity 0.35, cursor not-allowed, no hover transition.
+### Hero
 
-### Tooltips
-
-- Background: `#0A0A0A`
-- Text: `#FAFAFA`
-- Font: Work Sans, 12px, weight 600
-- Padding: 8px 14px
-- Radius: 0px
-- Max width: 220px
-- Arrow: 6px, same background
-- Delay: 250ms enter, 0ms leave
-- Shadow: none
+Image à droite, masque en dégradé. `object-position` par défaut `72% 12%` (athlètes). Les portraits passent `backgroundPosition`.
 
 ## Do's and Don'ts
 
-1. **Do** make headlines massive and unapologetic — Archivo Black at 38px+ demands attention.
-2. **Don't** use red (`#EF4444`) for more than one element per viewport — it is a scalpel, not a paintbrush.
-3. **Do** use thick 2px borders for interactive elements to maintain the editorial weight.
-4. **Don't** introduce rounded corners or soft shadows — VoiceBox is angular and assertive.
-5. **Do** use pull quotes styled with a left `4px solid #EF4444` border and Body Large italic.
-6. **Don't** use more than three type sizes on a single page — headline, body, caption is the standard.
-7. **Do** set overline category labels in uppercase Work Sans to establish section identity.
-8. **Do** maintain stark black-on-white contrast — the palette is intentionally limited.
-9. **Don't** add decorative imagery, gradients, or background textures that dilute the typographic focus.
-10. **Do** use the red accent on hover states for primary buttons to create a visceral interaction cue.
-
-
-
+1. Une seule surface de carte. Pas de fond `neutral-800` ou noir à côté de `.card-surface`.
+2. Deux niveaux de titre seulement : `CardText` ou `AppTitle`.
+3. Le rouge de base reste pour les aplats. Le petit texte rouge utilise `text-primary-500`.
+4. Gym et Studio en texte utilisent `text-gym-light` et `text-studio-light`.
+5. Pas de jaune hors palette (`yellow-400`).
+6. Pas de texte sous 12px.
+7. Les cartes d'une même rangée ont la même hauteur.
+8. Coins arrondis (`rounded-2xl` pour les cartes, `rounded-sm` pour les boutons).
