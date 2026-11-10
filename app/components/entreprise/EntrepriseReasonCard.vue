@@ -1,37 +1,23 @@
 <template>
-  <div class="card-surface entreprise-reason-card @container">
-    <div
-      class="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 @sm:grid-cols-[auto_minmax(0,1fr)] @sm:gap-x-4 @sm:gap-y-3"
-    >
-      <div
-        class="col-start-1 row-start-1 self-start @sm:row-span-2 @sm:self-center"
+  <div class="card-surface entreprise-reason-card">
+    <div class="flex items-start gap-3 md:gap-4">
+      <span
+        class="bg-primary flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-100"
+        aria-hidden="true"
       >
-        <span
-          v-if="reason.icon !== 'results'"
-          class="bg-primary flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-100"
-          aria-hidden="true"
+        <Icon :name="entrepriseReasonIcon(reason.icon)" class="h-5 w-5" />
+      </span>
+
+      <div class="min-w-0">
+        <p
+          class="font-display tracking-button text-sm leading-snug font-bold text-neutral-100 uppercase md:text-base"
         >
-          <Icon :name="entrepriseReasonIcon(reason.icon)" class="h-5 w-5" />
-        </span>
-        <Icon
-          v-else
-          :name="entrepriseReasonIcon(reason.icon)"
-          class="text-primary h-11 w-11 shrink-0"
-          aria-hidden="true"
-        />
+          {{ reason.title }}
+        </p>
+        <p class="mt-1 text-sm leading-relaxed text-neutral-300">
+          {{ reason.description }}
+        </p>
       </div>
-
-      <p
-        class="font-display tracking-button col-start-2 row-start-1 min-w-0 text-xs leading-snug font-bold text-neutral-100 uppercase @xs:text-sm @md:text-base"
-      >
-        {{ reason.title }}
-      </p>
-
-      <p
-        class="col-start-2 row-start-2 min-w-0 text-xs leading-relaxed text-neutral-300 @xs:text-sm"
-      >
-        {{ reason.description }}
-      </p>
     </div>
   </div>
 </template>

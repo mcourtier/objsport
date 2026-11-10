@@ -12,7 +12,7 @@
         <li
           v-for="benefit in benefits"
           :key="benefit.title"
-          class="flex flex-col items-center px-3 text-center sm:px-4 lg:flex-1 lg:px-5"
+          class="flex flex-col items-center px-3 text-center last:odd:col-span-2 sm:px-4 sm:last:odd:col-span-1 lg:flex-1 lg:px-5 lg:last:odd:col-auto"
         >
           <span
             class="bg-primary flex h-14 w-14 items-center justify-center rounded-full text-neutral-100"

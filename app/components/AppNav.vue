@@ -7,7 +7,7 @@
       aria-labelledby="hero-heading"
     >
       <div
-        class="flex min-h-(--ui-header-height) items-center justify-between gap-3 lg:block lg:min-h-0"
+        class="flex items-center justify-between gap-3 lg:block"
       >
         <AppLogo />
         <AppNavBurger v-model="menuOpen" />
