@@ -1,39 +1,29 @@
 <template>
-  <section
-    class="py-8 md:py-16 lg:py-24"
-    aria-labelledby="contact-form-heading"
-    data-animate
-  >
-    <div class="mx-auto max-w-3xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
-      <h2
-        id="contact-form-heading"
-        class="font-display text-neutral-100 text-3xl font-bold tracking-wide uppercase sm:text-4xl md:text-5xl"
-      >
-        {{ heading }}
-      </h2>
-      <p
-        v-if="intro"
-        class="text-neutral-300 mt-6 max-w-prose text-lg"
-      >
-        {{ intro }}
-      </p>
+  <Card as="section" aria-labelledby="contact-form-heading">
+    <template #title>
+      <AppTitle id="contact-form-heading">{{ heading }}</AppTitle>
+    </template>
 
-      <UAlert
-        v-if="status === 'success'"
-        class="mt-10"
-        color="success"
-        variant="subtle"
-        title="Message envoyé"
-        :description="successMessage"
-        role="status"
-      />
+    <p v-if="intro" class="max-w-prose text-neutral-300">
+      {{ intro }}
+    </p>
 
-      <form
-        v-else
-        class="border-neutral-700 bg-neutral-800 mt-8 space-y-5 border p-5 sm:mt-10 sm:space-y-6 sm:p-8 md:p-10"
-        novalidate
-        @submit.prevent="onSubmit"
-      >
+    <UAlert
+      v-if="status === 'success'"
+      class="mt-6"
+      color="success"
+      variant="subtle"
+      title="Message envoyé"
+      :description="successMessage"
+      role="status"
+    />
+
+    <form
+      v-else
+      class="form-fields mt-6 space-y-5"
+      novalidate
+      @submit.prevent="onSubmit"
+    >
         <UiFormField
           id="contact-name"
           v-model="fields.name"
@@ -92,14 +82,14 @@
 
         <UButton
           type="submit"
+          size="xl"
           :loading="isSubmitting"
           :disabled="isSubmitting"
         >
           {{ isSubmitting ? 'Envoi en cours…' : submitLabel }}
         </UButton>
-      </form>
-    </div>
-  </section>
+    </form>
+  </Card>
 </template>
 
 <script setup lang="ts">

@@ -1,8 +1,9 @@
 <template>
-  <div ref="root">
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="content.hero" />
 
     <RdvForm
+      class="mx-auto w-full max-w-3xl"
       :heading="content.form.heading"
       :intro="formIntro"
       :submit-label="content.form.submitLabel"

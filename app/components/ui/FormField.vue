@@ -1,5 +1,11 @@
 <template>
-  <UFormField :label="label" :name="name" :required="required" :error="error">
+  <UFormField
+    :label="label"
+    :name="name"
+    :required="required"
+    :error="error"
+    size="xl"
+  >
     <UTextarea
       v-if="multiline"
       :id="id"
@@ -8,6 +14,7 @@
       :required="required"
       :rows="rows"
       :autocomplete="autocomplete"
+      size="xl"
       class="w-full"
       @update:model-value="emit('update:modelValue', $event)"
     />
@@ -20,6 +27,7 @@
       :required="required"
       :autocomplete="autocomplete"
       :inputmode="inputmode"
+      size="xl"
       class="w-full"
       @update:model-value="emit('update:modelValue', $event)"
     />

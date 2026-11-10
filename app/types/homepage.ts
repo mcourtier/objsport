@@ -1,9 +1,10 @@
 export type PillarAccent = 'gym' | 'lab' | 'studio'
 
-export interface HomeContactPanelContent {
+/** Contact card: coordinates, plus an optional call-to-action button. */
+export interface ContactPanelContent {
   heading: string
-  email: string
+  email?: string
   phone?: string
-  ctaLabel: string
-  ctaTo: string
+  ctaLabel?: string
+  ctaTo?: string
 }
