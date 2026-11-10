@@ -11,7 +11,7 @@
           <p class="eztm-platform__title">
             Une plateforme
             <br />
-            4 expériences, une même interface.
+            5 expériences, une même interface.
           </p>
 
           <div
@@ -263,15 +263,15 @@ onUnmounted(() => {
 }
 
 .eztm-layout {
-  @apply flex flex-col items-stretch gap-6 md:flex-row md:items-center md:gap-8;
+  @apply flex flex-col items-stretch gap-4 md:flex-row md:items-center md:gap-6;
 }
 
 .eztm-layout__content {
-  @apply flex min-w-0 w-full flex-col items-start gap-6 self-stretch md:w-1/2;
+  @apply flex w-full min-w-0 flex-col items-start gap-6 self-stretch md:w-auto md:flex-1;
 }
 
 .eztm-layout__media {
-  @apply flex w-full flex-col items-center gap-4 md:w-1/2 md:gap-0;
+  @apply flex w-full flex-col items-center gap-4 md:w-auto md:shrink-0 md:gap-0;
 }
 
 .eztm-cta--desktop {
@@ -303,7 +303,7 @@ onUnmounted(() => {
 }
 
 .eztm-slideshow {
-  @apply relative w-full max-w-[160px] overflow-hidden md:max-w-[200px];
+  @apply relative w-[220px] overflow-hidden md:w-[260px];
   aspect-ratio: 192 / 395;
 }
 

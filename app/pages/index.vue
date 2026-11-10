@@ -46,48 +46,44 @@
         </template>
       </CardTree>
 
-      <CardTree class="md:col-span-6">
-        <template #root>
-          <CardText
-            subheading="Nous apportons notre expertise et méthodologie issue du sport professionnel"
-            heading-id="mission-heading"
-          >
-            <template #heading>
+      <section
+        class="grid gap-4 md:col-span-6 lg:grid-cols-2 lg:gap-5"
+        aria-label="Notre mission"
+      >
+        <Card>
+          <template #title>
+            <AppTitle id="mission-heading">
               Chaque minute te rapproche de la
               <span class="text-primary">victoire</span>
-            </template>
-          </CardText>
-        </template>
+            </AppTitle>
+          </template>
+          <p class="text-sm leading-relaxed text-neutral-400">
+            Nous apportons notre expertise et méthodologie issue du sport
+            professionnel
+          </p>
+          <ul class="mt-5 flex flex-col gap-5">
+            <li v-for="outcome in missionOutcomes" :key="outcome.title">
+              <CardMissionOutcome v-bind="outcome" />
+            </li>
+          </ul>
+        </Card>
 
-        <template #children>
-          <CardMissionOutcome
-            v-for="outcome in missionOutcomes"
-            :key="outcome.title"
-            v-bind="outcome"
-          />
-        </template>
-      </CardTree>
-
-      <CardTree class="md:col-span-6">
-        <template #root>
-          <CardText
-            subheading="La commotion cérébrale et la santé mentale dans le sport"
-            heading-id="must-have-heading"
-          >
-            <template #heading>
+        <Card>
+          <template #title>
+            <AppTitle id="must-have-heading">
               Notre <span class="text-primary">must have</span>
-            </template>
-          </CardText>
-        </template>
-
-        <template #children>
-          <CardMissionOutcome
-            v-for="item in mustHaveItems"
-            :key="item.title"
-            v-bind="item"
-          />
-        </template>
-      </CardTree>
+            </AppTitle>
+          </template>
+          <p class="text-sm leading-relaxed text-neutral-400">
+            La commotion cérébrale et la santé mentale dans le sport
+          </p>
+          <ul class="mt-5 flex flex-col gap-5">
+            <li v-for="item in mustHaveItems" :key="item.title">
+              <CardMissionOutcome v-bind="item" />
+            </li>
+          </ul>
+        </Card>
+      </section>
 
       <CardEztm v-bind="content.eztmPromo" class="md:col-span-6" />
       <CardContact v-bind="content.contact" class="md:col-span-6" />

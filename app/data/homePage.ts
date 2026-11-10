@@ -11,6 +11,8 @@ export const homePageContent = {
     backgroundImage: '/images/hero/home.png',
     backgroundImageAlt:
       'Sportif en sprint — réathlétisation et performance Objectif Sport',
+    ctaLabel: 'Prendre RDV',
+    ctaTo: '/rdv',
   } satisfies PageHeroContent,
 
   audienceHeading: 'Performance pour tous',
