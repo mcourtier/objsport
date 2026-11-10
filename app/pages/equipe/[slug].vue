@@ -1,87 +1,67 @@
 <template>
-  <div ref="root">
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero
       :title="profile?.name"
       :description="profile?.role"
       :background-image="profile?.photo"
       :background-image-alt="`Portrait de ${profile?.name}`"
+      background-position="50% 20%"
       cta-label="Prendre RDV"
       :cta-to="rdvTo"
     />
 
-    <article
-      v-if="profile"
-      class="py-16 md:py-24"
-      data-animate
-    >
-      <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
-        <div class="prose-team text-neutral-300">
-          <p
-            v-if="bioIntro"
-            class="mb-4 text-lg leading-relaxed"
-          >
-            {{ bioIntro }}
-          </p>
-          <div>
-            <p
-              v-for="(paragraph, index) in biographyParagraphs"
-              :key="index"
-              class="text-lg leading-relaxed"
-            >
-              <template
-                v-for="(part, partIndex) in parseInlineMarkdown(paragraph)"
-                :key="partIndex"
-              >
-                <strong v-if="part.bold">{{ part.text }}</strong>
-                <template v-else>{{ part.text }}</template>
-              </template>
-            </p>
-          </div>
-        </div>
-
-        <div
-          v-if="hasContact"
-          class="border-neutral-700 mt-16 border-t pt-12"
+    <template v-if="profile">
+      <div class="grid gap-4 lg:grid-cols-3 lg:items-start lg:gap-5">
+        <Card
+          as="article"
+          :class="hasContact ? 'lg:col-span-2' : 'lg:col-span-3'"
         >
-          <h2 class="font-display text-neutral-100 text-2xl font-bold">
-            Contact
-          </h2>
-          <ul class="mt-6 space-y-4">
-            <li v-if="profile.email">
-              <a
-                :href="`mailto:${profile.email}`"
-                class="text-primary underline-offset-4 transition-colors hover:underline"
+          <div class="prose-team text-neutral-300">
+            <p
+              v-if="bioIntro"
+              class="mb-4 text-lg leading-relaxed"
+            >
+              {{ bioIntro }}
+            </p>
+            <div>
+              <p
+                v-for="(paragraph, index) in biographyParagraphs"
+                :key="index"
+                class="text-lg leading-relaxed"
               >
-                {{ profile.email }}
-              </a>
-            </li>
-            <li v-if="profile.phone">
-              <a
-                :href="`tel:${normalizedPhone}`"
-                class="text-primary underline-offset-4 transition-colors hover:underline"
-              >
-                {{ profile.phone }}
-              </a>
-            </li>
-          </ul>
-        </div>
+                <template
+                  v-for="(part, partIndex) in parseInlineMarkdown(paragraph)"
+                  :key="partIndex"
+                >
+                  <strong v-if="part.bold">{{ part.text }}</strong>
+                  <template v-else>{{ part.text }}</template>
+                </template>
+              </p>
+            </div>
+          </div>
+        </Card>
 
-        <div class="mt-12">
-          <NuxtLink
-            to="/equipe"
-            class="text-primary inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
-          >
-            ← Retour à l'équipe
-          </NuxtLink>
-        </div>
+        <CardContact
+          v-if="hasContact"
+          heading="Contact"
+          :email="profile.email"
+          :phone="profile.phone"
+        />
       </div>
-    </article>
 
-    <div v-else class="py-16 md:py-24">
-      <div class="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
-        <p class="text-neutral-400">Profil non trouvé.</p>
+      <div data-animate>
+        <NuxtLink
+          to="/equipe"
+          class="text-primary-500 inline-flex items-center gap-2 underline-offset-4 transition-colors hover:underline"
+        >
+          ← Retour à l'équipe
+        </NuxtLink>
       </div>
-    </div>
+    </template>
+
+    <Card v-else>
+      <p class="text-neutral-400">Profil non trouvé.</p>
+    </Card>
   </div>
 </template>
 
@@ -109,10 +89,6 @@ const biographyParagraphs = computed(() =>
 
 const hasContact = computed(() =>
   Boolean(profile.value?.email || profile.value?.phone),
-)
-
-const normalizedPhone = computed(
-  () => profile.value?.phone?.replace(/\s/g, '') ?? '',
 )
 
 useSeoMeta({

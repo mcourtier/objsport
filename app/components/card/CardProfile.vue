@@ -2,8 +2,8 @@
   <!-- CardProfile -->
   <NuxtLink :to="`/equipe/${profile.slug}`" class="card-profile group">
     <Card
-      :surface="false"
-      class="group-hover:border-primary flex h-full flex-col bg-neutral-800 transition-all duration-200 group-hover:shadow-lg"
+      class="group-hover:border-primary flex h-full flex-col transition-all duration-200 group-hover:shadow-lg"
+      :ui="cardUi"
     >
       <div
         class="relative aspect-square w-full shrink-0 overflow-hidden bg-neutral-900"
@@ -18,14 +18,14 @@
         />
       </div>
 
-      <div class="flex flex-1 flex-col py-6">
+      <div class="flex flex-1 flex-col p-4 md:p-6">
         <h2
-          class="font-display text-xl font-bold tracking-wide text-neutral-100 uppercase italic"
+          class="font-display text-base font-bold tracking-wide text-neutral-100 uppercase italic md:text-xl"
         >
           {{ profile.name }}
         </h2>
         <p
-          class="font-display tracking-button text-primary mt-2 text-sm font-semibold uppercase"
+          class="font-display tracking-button text-primary-500 mt-2 text-xs font-semibold uppercase md:text-sm"
         >
           {{ profile.role }}
         </p>
@@ -40,6 +40,11 @@ import type { TeamProfile } from '~/types/team'
 defineProps<{
   profile: TeamProfile
 }>()
+
+/* Photo runs edge to edge: the card's rounded corners clip it. */
+const cardUi = {
+  body: 'p-0 sm:p-0 md:p-0 flex flex-col h-full',
+}
 </script>
 
 <style scoped>

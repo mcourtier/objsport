@@ -1,11 +1,10 @@
 <template>
-  <section aria-labelledby="equipe-valeurs-heading" data-animate>
-    <EntrepriseSectionHeading
-      title="Nos valeurs"
-      heading-id="equipe-valeurs-heading"
-    />
+  <Card as="section" aria-labelledby="equipe-valeurs-heading">
+    <template #title>
+      <AppTitle id="equipe-valeurs-heading">Nos valeurs</AppTitle>
+    </template>
 
-    <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:mt-10 lg:grid-cols-5 lg:gap-6">
+    <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
       <li
         v-for="value in values"
         :key="value.title"
@@ -19,7 +18,7 @@
 
         <div class="min-w-0">
           <p
-            class="font-display tracking-button text-primary text-xs leading-snug font-bold uppercase md:text-sm"
+            class="font-display tracking-button text-primary-500 text-xs leading-snug font-bold uppercase md:text-sm"
           >
             {{ value.title }}
           </p>
@@ -29,7 +28,7 @@
         </div>
       </li>
     </ul>
-  </section>
+  </Card>
 </template>
 
 <script setup lang="ts">

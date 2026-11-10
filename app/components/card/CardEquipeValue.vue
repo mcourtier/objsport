@@ -1,6 +1,6 @@
 <template>
   <!-- CardEquipeValue -->
-  <article class="card-equipe-value">
+  <article class="card-surface card-equipe-value">
     <Icon
       :name="equipeValueIcon(icon)"
       class="h-12 w-12 shrink-0 md:h-14 md:w-14"
@@ -30,6 +30,6 @@ defineProps<EquipeValue>()
 <style scoped>
 @reference "~/assets/css/main.css";
 .card-equipe-value {
-  @apply flex h-full flex-col items-center rounded-xl border border-neutral-700 bg-black px-4 py-8 text-center md:px-5 md:py-10;
+  @apply flex h-full flex-col items-center px-4 py-8 text-center md:px-5 md:py-10;
 }
 </style>

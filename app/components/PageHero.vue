@@ -11,6 +11,7 @@
     >
       <img
         class="hero-athlete-mobile h-full w-full object-cover"
+        :style="imageStyle"
         :src="backgroundImage"
         :alt="backgroundImageAlt"
         loading="eager"
@@ -27,6 +28,7 @@
     >
       <img
         class="hero-athlete-bg h-full w-full object-cover"
+        :style="imageStyle"
         :src="backgroundImage"
         :alt="backgroundImageAlt"
         loading="eager"
@@ -62,7 +64,7 @@
       <UButton
         v-if="ctaLabel && ctaTo"
         :to="ctaTo"
-        size="sm"
+        size="xl"
         class="mt-5 sm:mt-6"
       >
         {{ ctaLabel }}
@@ -83,6 +85,7 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
     'Service de réathlétisation — Le Gym, Le Lab et Le Studio au service des entreprises, clubs et sportifs.',
   backgroundImage: '/images/hero/home.png',
   backgroundImageAlt: 'Sportif en action — réathlétisation Objectif Sport',
+  backgroundPosition: undefined,
   showTagline: false,
   showDescription: true,
   accent: 'primary',
@@ -91,6 +94,13 @@ const props = withDefaults(defineProps<PageHeroContent>(), {
 })
 
 const accentTextClass = computed(() => heroAccentTextClass(props.accent))
+
+/* Overrides the scoped default `object-position` (tuned for athlete photos). */
+const imageStyle = computed(() =>
+  props.backgroundPosition
+    ? { objectPosition: props.backgroundPosition }
+    : undefined,
+)
 
 const parsedDescription = computed(() =>
   parseHighlightedText(props.description),

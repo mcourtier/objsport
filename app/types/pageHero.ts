@@ -16,6 +16,8 @@ export interface PageHeroContent {
   description?: HighlightedTextProp
   backgroundImage?: string
   backgroundImageAlt?: string
+  /** CSS `object-position` for the image. Default frames the athlete photos (`72% 12%`). */
+  backgroundPosition?: string
   showTagline?: boolean
   showDescription?: boolean
   /** Highlight color for title accent, brush line, and `<strong>` marks. Default: `primary` (red). */

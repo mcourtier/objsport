@@ -5,8 +5,12 @@
     aria-label="Les atouts de l'équipe Objectif Sport"
     data-animate
   >
-    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
-      <li v-for="value in values" :key="value.title" class="min-w-0">
+    <ul class="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-5">
+      <li
+        v-for="value in values"
+        :key="value.title"
+        class="min-w-0 last:odd:col-span-2 lg:last:odd:col-span-1"
+      >
         <CardEquipeValue v-bind="value" />
       </li>
     </ul>
