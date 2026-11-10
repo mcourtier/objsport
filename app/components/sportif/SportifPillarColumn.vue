@@ -1,19 +1,16 @@
 <template>
   <NuxtLink
     :to="getSportifPillarPath(pillar.accent)"
-    class="flex flex-col transition-opacity hover:opacity-90"
-    :class="[
+    class="flex flex-col"
+    :class="
       hideHeader
-        ? 'border-0 p-0'
-        : [
-            'rounded-2xl border px-5 py-5 md:px-6 md:py-6',
-            pillarBorderClass(pillar.accent),
-          ],
-    ]"
+        ? 'border-0 p-0 transition-opacity hover:opacity-90'
+        : 'card-surface px-5 py-5 transition-colors duration-200 hover:border-neutral-600 md:px-6 md:py-6'
+    "
     data-animate
   >
     <header v-if="!hideHeader">
-      <div class="flex items-center gap-2.5">
+      <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
         <span
           class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
           :class="pillarIconCircleClass(pillar.accent)"
@@ -89,7 +86,6 @@
 import { getSportifPillarPath } from '~/data/sportifPage'
 import type { SportifPillar } from '~/types/sportif'
 import {
-  pillarBorderClass,
   pillarDividerClass,
   pillarIconCircleClass,
   pillarTextClass,

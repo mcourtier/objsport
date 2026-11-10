@@ -1,7 +1,7 @@
 <template>
   <!-- CardSportifSection -->
   <Card
-    class="card-sportif-section h-full"
+    class="card-sportif-section"
     :ui="cardUi"
     data-animate
   >
@@ -57,7 +57,8 @@ const cardUi = {
 <style scoped>
 @reference "~/assets/css/main.css";
 
+/* No fixed height: the flex row stretches every section to the tallest one. */
 .card-sportif-section {
-  @apply relative flex h-full flex-col;
+  @apply relative flex flex-col;
 }
 </style>

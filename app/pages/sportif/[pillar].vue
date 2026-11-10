@@ -1,9 +1,9 @@
 <template>
-  <div v-if="pillar" ref="root">
+  <div v-if="pillar" ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="hero" />
 
     <section
-      class="mt-4 flex flex-col gap-4 md:flex-row"
+      class="flex flex-col gap-4 md:flex-row lg:gap-5"
       :aria-label="pillar.name"
     >
       <CardSportifSection

@@ -1,11 +1,7 @@
 <template>
-  <section
-    class="py-12 md:py-16"
-    aria-labelledby="sportif-benefits-heading"
-    data-animate
-  >
+  <Card as="section" aria-labelledby="sportif-benefits-heading">
     <h2 id="sportif-benefits-heading" class="sr-only">Nos engagements</h2>
-    <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
       <li
         v-for="benefit in benefits"
         :key="benefit.title"
@@ -29,7 +25,7 @@
         </div>
       </li>
     </ul>
-  </section>
+  </Card>
 </template>
 
 <script setup lang="ts">

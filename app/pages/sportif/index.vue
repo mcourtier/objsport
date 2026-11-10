@@ -1,10 +1,10 @@
 <template>
-  <div ref="root">
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="content.hero" />
 
     <section
       aria-label="Le Gym, Le Lab et Le Studio"
-      class="mt-4 flex flex-col gap-4"
+      class="flex flex-col gap-4 lg:gap-5"
     >
       <SportifPillarColumn
         v-for="pillar in content.pillars"
