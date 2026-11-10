@@ -1,19 +1,17 @@
 <template>
-  <div ref="root">
+  <div ref="root" class="flex flex-col gap-4 lg:gap-5">
     <PageHero v-bind="content.hero" />
 
-    <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
-      <section
-        class="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12"
-        aria-label="Notre approche"
-      >
-        <ClubObjectifs
-          :objectifs="content.objectifs"
-          class="order-2 lg:order-1"
-        />
-        <ClubApproach :approach="content.approach" class="order-1 lg:order-2" />
-      </section>
-    </div>
+    <section
+      class="grid gap-4 lg:gap-5 xl:grid-cols-2"
+      aria-label="Notre approche"
+    >
+      <ClubObjectifs
+        :objectifs="content.objectifs"
+        class="order-2 xl:order-1"
+      />
+      <ClubApproach :approach="content.approach" class="order-1 xl:order-2" />
+    </section>
   </div>
 </template>
 

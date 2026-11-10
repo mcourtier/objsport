@@ -1,62 +1,57 @@
 <template>
-  <section aria-labelledby="club-objectifs-heading" data-animate>
-    <div class="border-primary rounded-xl border p-5 md:p-6">
-      <p
-        id="club-objectifs-heading"
-        class="font-display tracking-button text-neutral-100 text-sm leading-relaxed font-normal uppercase md:text-base"
-      >
-        {{ objectifs.intro }}
-      </p>
-      <p
-        class="font-display tracking-button text-yellow-400 mt-4 text-sm font-bold uppercase md:text-base"
-      >
-        {{ objectifs.goal }}
-      </p>
+  <Card
+    as="section"
+    aria-labelledby="club-objectifs-heading"
+    :ui="{ body: 'flex flex-col' }"
+  >
+    <p
+      id="club-objectifs-heading"
+      class="font-display tracking-button text-sm leading-relaxed font-normal text-neutral-100 uppercase md:text-base"
+    >
+      {{ objectifs.intro }}
+    </p>
+    <p
+      class="font-display tracking-button text-primary-500 mt-4 text-sm font-bold uppercase md:text-base"
+    >
+      {{ objectifs.goal }}
+    </p>
 
-      <ul
-        class="mt-6 grid grid-cols-3 divide-x divide-neutral-700 border-t border-neutral-700 pt-6"
-        aria-label="Nos engagements"
+    <p
+      class="font-display tracking-button my-6 text-sm leading-relaxed font-normal text-neutral-100 uppercase md:text-base"
+    >
+      <template
+        v-for="(part, index) in parsedTagline"
+        :key="`${part.text}-${index}`"
       >
-        <li
-          v-for="pillar in objectifs.pillars"
-          :key="pillar.label"
-          class="flex flex-col items-center gap-2 px-2 text-center first:pl-0 last:pr-0"
-        >
-          <Icon
-            :name="clubObjectifPillarIcon(pillar.icon)"
-            class="text-yellow-400 h-7 w-7"
-            aria-hidden="true"
-          />
-          <span
-            class="font-display tracking-button text-neutral-100 text-[10px] font-bold uppercase sm:text-xs"
-          >
-            {{ pillar.label }}
-          </span>
-        </li>
-      </ul>
-    </div>
+        <strong v-if="part.isHighlight" class="text-primary-500">
+          {{ part.text }}
+        </strong>
+        <span v-else>{{ part.text }}</span>
+      </template>
+    </p>
 
-    <div class="mt-6 flex gap-4">
-      <Icon
-        name="material-symbols:rocket-launch-outline"
-        class="text-yellow-400 h-10 w-10 shrink-0 -rotate-12"
-        aria-hidden="true"
-      />
-      <p
-        class="font-display tracking-button text-neutral-100 text-sm leading-relaxed font-normal uppercase md:text-base"
+    <ul
+      class="mt-auto grid gap-3 border-t border-neutral-700 pt-6 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-neutral-700"
+      aria-label="Nos engagements"
+    >
+      <li
+        v-for="pillar in objectifs.pillars"
+        :key="pillar.label"
+        class="flex items-center gap-3 sm:flex-col sm:gap-2 sm:px-2 sm:text-center"
       >
-        <template
-          v-for="(part, index) in parsedTagline"
-          :key="`${part.text}-${index}`"
+        <Icon
+          :name="clubObjectifPillarIcon(pillar.icon)"
+          class="text-primary h-7 w-7 shrink-0"
+          aria-hidden="true"
+        />
+        <span
+          class="font-display tracking-button text-xs font-bold text-neutral-100 uppercase"
         >
-          <strong v-if="part.isHighlight" class="text-yellow-400">
-            {{ part.text }}
-          </strong>
-          <span v-else>{{ part.text }}</span>
-        </template>
-      </p>
-    </div>
-  </section>
+          {{ pillar.label }}
+        </span>
+      </li>
+    </ul>
+  </Card>
 </template>
 
 <script setup lang="ts">

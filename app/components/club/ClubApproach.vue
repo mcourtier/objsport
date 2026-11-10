@@ -1,13 +1,10 @@
 <template>
-  <section aria-labelledby="club-approach-heading" data-animate>
-    <h2
-      id="club-approach-heading"
-      class="brand-headline-accent font-display tracking-button text-neutral-100 text-xl font-bold uppercase md:text-2xl"
-    >
-      {{ approach.title }}
-    </h2>
+  <Card as="section" aria-labelledby="club-approach-heading">
+    <template #title>
+      <AppTitle id="club-approach-heading">{{ approach.title }}</AppTitle>
+    </template>
 
-    <ul class="mt-8 space-y-6">
+    <ul class="space-y-6">
       <li
         v-for="item in approach.items"
         :key="item.title"
@@ -35,12 +32,12 @@
     </ul>
 
     <aside
-      class="border-yellow-400 mt-8 rounded-xl border-2 p-5 md:p-6"
+      class="border-primary/40 bg-primary/10 mt-8 rounded-xl border p-5 md:p-6"
       aria-labelledby="club-highlight-heading"
     >
       <div class="flex gap-4">
         <span
-          class="text-yellow-400 flex h-10 w-10 shrink-0 items-center justify-center"
+          class="text-primary flex h-10 w-10 shrink-0 items-center justify-center"
           aria-hidden="true"
         >
           <Icon name="material-symbols:my-location-outline" class="h-9 w-9" />
@@ -48,7 +45,7 @@
         <div>
           <p
             id="club-highlight-heading"
-            class="font-display tracking-button text-yellow-400 text-sm font-bold uppercase"
+            class="font-display tracking-button text-primary-500 text-sm font-bold uppercase"
           >
             {{ approach.highlight.title }}
           </p>
@@ -60,7 +57,7 @@
         </div>
       </div>
     </aside>
-  </section>
+  </Card>
 </template>
 
 <script setup lang="ts">
