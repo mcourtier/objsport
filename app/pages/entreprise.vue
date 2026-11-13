@@ -3,11 +3,6 @@
     <PageHero v-bind="content.hero" />
 
     <div class="grid gap-4 md:grid-cols-6 lg:gap-5">
-      <!-- <CardEntrepriseCategories
-        :categories="content.categories"
-        class="md:col-span-6"
-      /> -->
-
       <CardEntrepriseBenefits
         :benefits="content.benefits"
         class="md:col-span-6"

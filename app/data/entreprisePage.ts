@@ -15,32 +15,6 @@ export const entreprisePageContent: EntreprisePageContent = {
     backgroundImageAlt:
       'Sportif en étirements dynamiques — prévention en entreprise Objectif Sport',
   },
-  categories: [
-    {
-      label: 'Consulting',
-      accent: 'consulting',
-      icon: 'material-symbols:monitoring',
-      title: 'Stratégie & Audit',
-      description: 'Analyse, diagnostic et stratégie RH',
-      to: '/entreprise/audit',
-    },
-    {
-      label: 'Soins',
-      accent: 'care',
-      icon: 'material-symbols:handyman-outline',
-      title: 'Bien-être & Santé',
-      description: 'Soins et prévention en entreprise',
-      to: '/entreprise/formation',
-    },
-    {
-      label: 'Coaching',
-      accent: 'coaching',
-      icon: 'material-symbols:bolt',
-      title: 'Performance & Énergie',
-      description: 'Coaching et programmes terrain',
-      to: '/entreprise/conception',
-    },
-  ],
   servicesSubheading:
     '3 prestations complémentaires pour prévenir, former et ancrer le bien-être dans votre organisation : mobilité, gestion du stress, cohésion et vitalité',
   services: [

@@ -15,7 +15,6 @@ export const homePageContent = {
     ctaTo: '/rdv',
   } satisfies PageHeroContent,
 
-  audienceHeading: 'Performance pour tous',
   audienceSubheading:
     "L'excellence du sport de haut niveau, adaptée à chaque univers et à tous les âges.",
 
@@ -23,8 +22,6 @@ export const homePageContent = {
     {
       id: 'sportif',
       title: 'Sportifs',
-      label: 'Sportifs',
-      accent: 'coaching',
       icon: 'material-symbols:directions-run',
       description:
         'Amateurs, compétiteurs et professionnels — préhab, réhab et réathlétisation.',
@@ -34,8 +31,6 @@ export const homePageContent = {
     {
       id: 'entreprise',
       title: 'Entreprises',
-      label: 'Entreprises',
-      accent: 'consulting',
       icon: 'material-symbols:corporate-fare',
       description:
         'Collaborateurs, dirigeants et équipes: prévention, bien-être et performance.',
@@ -45,8 +40,6 @@ export const homePageContent = {
     {
       id: 'club',
       title: 'Clubs',
-      label: 'Clubs',
-      accent: 'care',
       icon: 'material-symbols:shield-outline',
       description:
         'Équipes, encadrants, jeunes talents: accompagnement , renfort logistique , expertise RH et suivi digital.',
@@ -56,8 +49,6 @@ export const homePageContent = {
     {
       id: 'sport-sante',
       title: 'Parcours Santé',
-      label: 'Parcours Santé',
-      accent: 'consulting',
       icon: 'material-symbols:apartment',
       description:
         'Seniors, public APA, sport inclusif: conditionning, développement et autonomie active.',
@@ -66,7 +57,6 @@ export const homePageContent = {
     },
   ] satisfies AudienceBlock[],
 
-  zonesHeading: 'Trois zones, une performance',
   zonesSubheading:
     'Un service de réathlétisation complet — coaching, soins et cours collectifs réunis pour accompagner chaque sportif, du premier pas au retour à la compétition.',
 

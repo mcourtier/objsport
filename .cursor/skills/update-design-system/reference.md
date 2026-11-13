@@ -33,8 +33,8 @@ Button copy in DESIGN may list Work Sans; Nuxt UI buttons use `font-display` (Ra
 
 Shared brand utilities in `main.css` `@layer components`:
 
-- `.brand-tagline`, `.brand-tagline-bullet`
-- `.brand-headline`, `.brand-headline-accent`, `.brand-section-rule`
+- `.brand-tagline`
+- `.brand-headline`
 
 ## Related paths
 

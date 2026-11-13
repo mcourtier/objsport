@@ -20,13 +20,6 @@ export default defineAppConfig({
           },
         },
       },
-      // variants: {
-      //   variant: {
-      //     solid: 'bg-primary text-neutral-100 hover:bg-primary/90',
-      //     outline:
-      //       'border border-neutral-100 text-neutral-100 hover:bg-neutral-100 hover:text-neutral-900',
-      //   },
-      // },
     },
     card: {
       slots: {
@@ -50,21 +43,5 @@ export default defineAppConfig({
         },
       },
     },
-    // formField: {
-    //   slots: {
-    //     label:
-    //       'font-display text-xs font-semibold uppercase tracking-button text-neutral-400',
-    //   },
-    // },
-    // input: {
-    //   slots: {
-    //     base: 'border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-400 focus:border-primary',
-    //   },
-    // },
-    // textarea: {
-    //   slots: {
-    //     base: 'border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-400 focus:border-primary',
-    //   },
-    // },
   },
 })
