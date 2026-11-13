@@ -15,6 +15,11 @@ const prerenderedPaths = [
 export default defineNuxtConfig({
   ssr: true,
 
+  // 3000 is often already taken on this machine.
+  devServer: {
+    port: 3100,
+  },
+
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', '@nuxtjs/google-fonts'],
 
   // Avoid better-sqlite3 on Vercel (native bindings fail in serverless). Requires Node ≥ 22.5.

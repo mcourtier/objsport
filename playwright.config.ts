@@ -5,9 +5,13 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
+  workers: 1,
+  timeout: 20_000,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3100',
+    navigationTimeout: 15_000,
+    actionTimeout: 5_000,
     trace: 'on-first-retry',
   },
   projects: [
@@ -23,7 +27,7 @@ export default defineConfig({
     ? undefined
     : {
         command: 'pnpm dev',
-        url: 'http://localhost:3000',
+        url: 'http://localhost:3100',
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
       },
